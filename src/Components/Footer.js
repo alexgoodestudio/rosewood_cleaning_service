@@ -3,7 +3,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="mt-5 text-center">
+    <div className="mt-5 text-center ">
       <section className="mb-3">
         <div className="row">
           <div className="col-lg-3 col-12">

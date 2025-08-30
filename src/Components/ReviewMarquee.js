@@ -77,7 +77,7 @@ function ReviewMarquee() {
   }, []);
 
   return (
-    <div className=" container space-y-12 bg-white py-12">
+    <div className="space-y-12 bg-white py-12">
       <h1>Loved by our customers</h1>
       {/* Row 1 */}
       <div className="overflow-hidden">
