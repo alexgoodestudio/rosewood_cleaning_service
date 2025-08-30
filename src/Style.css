@@ -12,6 +12,14 @@
   text-align: center;
 }
 
+.bold{
+  font-weight: 600;
+}
+
+.thin{
+  font-weight: 250;
+}
+
 .br {
   border-radius: 1rem;
 }

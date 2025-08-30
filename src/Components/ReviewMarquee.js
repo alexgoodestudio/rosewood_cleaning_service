@@ -25,20 +25,25 @@ const reviewsRow2 = [
 
 // Pastel Tailwind color classes
 const pastelColors = [
-  "bg-red-100",
-  "bg-pink-100",
-  "bg-purple-100",
-  "bg-indigo-100",
-  "bg-blue-100",
-  "bg-cyan-100",
-  "bg-teal-100",
-  "bg-green-100",
-  "bg-lime-100",
-  "bg-yellow-100",
-  "bg-amber-100",
-  "bg-orange-100",
-  "bg-rose-100",
+  "border-red-300",
+  "border-pink-300",
+  "border-purple-300",
+  "border-indigo-300",
+  "border-blue-300",
+  "border-cyan-300",
+  "border-teal-300",
+  "border-green-300",
+  "border-lime-300",
+  "border-yellow-300",
+  "border-amber-300",
+  "border-orange-300",
+  "border-rose-300",
 ];
+
+// helper: pick random pastel
+function getRandomColor() {
+  return pastelColors[Math.floor(Math.random() * pastelColors.length)];
+}
 
 function ReviewMarquee() {
   const row1Ref = useRef(null);
@@ -78,16 +83,15 @@ function ReviewMarquee() {
 
   return (
     <div className="space-y-12 bg-white py-12">
-      <h1>Loved by our customers</h1>
+      <h1 className="text-xl font-semibold ms-5">Loved by our customers</h1>
+
       {/* Row 1 */}
       <div className="overflow-hidden">
         <div ref={row1Ref} className="flex gap-6">
           {[...reviewsRow1, ...reviewsRow1].map((text, i) => (
             <div
               key={`row1-${i}`}
-              className={`min-w-[260px] shadow-md rounded-2xl p-5 text-base text-gray-700 ${
-                pastelColors[i % pastelColors.length]
-              }`}
+              className={`min-w-[260px] shadow-md rounded-2xl py-5 px-3 text-base text-gray-700 border-2 ${getRandomColor()}`}
             >
               {text}
             </div>
@@ -101,9 +105,7 @@ function ReviewMarquee() {
           {[...reviewsRow2, ...reviewsRow2].map((text, i) => (
             <div
               key={`row2-${i}`}
-              className={`min-w-[260px] shadow-md rounded-2xl p-5 text-base text-gray-800 ${
-                pastelColors[(i + 5) % pastelColors.length] // offset so rows don’t match exactly
-              }`}
+              className={`min-w-[260px] shadow-md rounded-2xl py-5 px-3 text-base text-gray-800 border-2 ${getRandomColor()}`}
             >
               {text}
             </div>
