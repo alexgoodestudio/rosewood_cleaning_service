@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Image3 from "../Images/card3.png";
-import Image4 from "../Images/card5.png";
-import Image5 from "../Images/qwe.png";
 
 function AccordionItem({ title, children, isOpen, onClick }) {
   return (
@@ -33,7 +30,7 @@ function Accordion_Services() {
   };
 
   return (
-    <div className="w-full max-w-4xl mx-auto mt-6">
+    <div className="w-full max-w-7xl mx-auto mt-6">
       <h2 className="text-4xl font-semibold mb-4 text-center">Our Services</h2>
 
       {/* One-Time Clean */}
@@ -43,11 +40,7 @@ function Accordion_Services() {
         onClick={() => toggle(0)}
       >
         <div className="flex flex-col md:flex-row gap-4 items-start">
-          <img
-            src={Image5}
-            alt="One-Time Clean"
-            className="w-32 h-32 object-cover rounded-xl shadow"
-          />
+
           <div>
             <p className="text-gray-700 mb-3">
               A thorough, one-off cleaning service using eco-friendly products
@@ -67,11 +60,7 @@ function Accordion_Services() {
         onClick={() => toggle(1)}
       >
         <div className="flex flex-col md:flex-row gap-4 items-start">
-          <img
-            src={Image3}
-            alt="Move In/Out Cleaning"
-            className="w-32 h-32 object-cover rounded-xl shadow"
-          />
+
           <div>
             <p className="text-gray-700 mb-3">
               Comprehensive cleaning for hassle-free moving, ensuring your new
@@ -91,11 +80,7 @@ function Accordion_Services() {
         onClick={() => toggle(2)}
       >
         <div className="flex flex-col md:flex-row gap-4 items-start">
-          <img
-            src={Image4}
-            alt="Recurring Service"
-            className="w-32 h-32 object-cover rounded-xl shadow"
-          />
+
           <div>
             <p className="text-gray-700 mb-3">
               Regular cleaning schedules tailored to your needs, maintaining

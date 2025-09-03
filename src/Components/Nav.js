@@ -25,7 +25,7 @@ function Nav() {
   }, [isOpen]);
 
   return (
-    <nav className="navbar navbar-light bg-slate-100 text-slate-800 flex flex-col">
+    <nav className="navbar bg-indigo-100 text-slate-800 flex flex-col">
       {/* Always fixed header row */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <button className="navbar-brand btn btn-link p-0"><span className="font-bold">Rosewood</span> Cleaning Services</button>

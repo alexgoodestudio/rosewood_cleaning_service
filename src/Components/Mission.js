@@ -5,11 +5,11 @@ function Mission() {
     <div className=" ">
       <div className="mission-body row">
         <div className="col-lg-1 col-12 "></div>
-        <div className="col-lg-3 col-12 me-lg-4">
+        <div className="col-lg-3 col-12 p-lg-5 p-4 me-lg-4">
           <img src={Image} alt="Clean Home" className="br" />
         </div>
        
-        <div className="col-lg-4 col-12 ms-lg-5">
+        <div className="col-lg-4 col-12 ms-lg-5 p-lg-0 px-4">
           <h2 className=" text-4xl text-start mb-lg-4">
             Rosewood Cleaning Services
           </h2>

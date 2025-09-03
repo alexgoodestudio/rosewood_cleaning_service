@@ -70,8 +70,8 @@ function Section1() {
 
         {/* Image container */}
         <div className="col-lg-6 col-12  relative overflow-hidden">
-          <img src={Image} className="br w-100 p-lg-5" alt="Before" />
-          <img ref={image2Ref} src={Image2} className="br w-100 p-lg-5" alt="After" />
+          <img src={Image} className="rounded w-100 p-lg-5" alt="Before" />
+          <img ref={image2Ref} src={Image2} className="rounded w-100 p-lg-5" alt="After" />
         </div>
       </div>
     </div>

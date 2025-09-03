@@ -38,11 +38,11 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="banner-container bg-gray-800 overflow-hidden whitespace-nowrap w-full"
+      className="banner-container bg-light text-sky-900 bold overflow-hidden whitespace-nowrap w-full"
     >
       <span
         ref={textRef}
-        className="banner-text py-4 text-white text-6xl inline-block"
+        className="banner-text py-4 text-6xl inline-block"
       >
         How can we help you make an impact? Let’s talk about it.
       </span>

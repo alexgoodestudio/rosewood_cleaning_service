@@ -11,12 +11,11 @@ import Services from "./Services";
 function Home(){
     return(
         <div>
-            <Opener/>
-            
-            <Mission/>
+            <Opener/>            
             <ReviewMarquee/>
-            <Section1/>  
+            <Mission/>
             <Services/>    
+            <Section1/>  
             <FooterMarquee/>
         </div>
     )
