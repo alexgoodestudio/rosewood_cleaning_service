@@ -2,18 +2,18 @@ import Image from "../Images/qwe.png";
 
 function Mission() {
   return (
-    <div className=" ">
+    <div className="container">
       <div className="mission-body row">
-        <div className="col-lg-1 col-12 "></div>
-        <div className="col-lg-3 col-12 p-lg-5 p-4 me-lg-4">
-          <img src={Image} alt="Clean Home" className="br" />
-        </div>
+
        
-        <div className="col-lg-4 col-12 ms-lg-5 p-lg-0 px-4">
+        <div className="col-lg-12 col-12 ms-lg-4 p-lg-0 px-4">
+          {/* <div className=" ">
+              <img src={Image} alt="Clean Home" className="br" />
+          </div> */}
           <h2 className=" text-4xl text-start mb-lg-4">
             Rosewood Cleaning Services
           </h2>
-          <p className="text-lg text-start thin">
+          <p className="text-md justify-text thin ">
             {" "}
             At Rosewood Cleaning Services, we specialize in providing top-tier
             house cleaning that caters to the unique needs of each client,
@@ -27,7 +27,6 @@ function Mission() {
              Columbia South Carolina
           </p>
         </div>
-        <div className="col-lg-1 col-12 "></div>
       </div>
     </div>
   );

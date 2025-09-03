@@ -42,7 +42,7 @@ function FooterMarquee() {
     >
       <span
         ref={textRef}
-        className="banner-text py-4 text-6xl inline-block"
+        className="banner-text py-4 text-6xl bold inline-block"
       >
         How can we help you make an impact? Let’s talk about it.
       </span>

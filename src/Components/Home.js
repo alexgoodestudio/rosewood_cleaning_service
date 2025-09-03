@@ -1,7 +1,6 @@
 import Opener from "./Opener";
 import ReviewMarquee from "./ReviewMarquee";
-import Section1 from "./Section1"
-// import Bento from "./Bento"
+import Why from "./Why"
 import FooterMarquee from "./FooterMarquee"
 import Mission from "./Mission";
 import Services from "./Services";
@@ -15,7 +14,7 @@ function Home(){
             <ReviewMarquee/>
             <Mission/>
             <Services/>    
-            <Section1/>  
+            <Why/>  
             <FooterMarquee/>
         </div>
     )

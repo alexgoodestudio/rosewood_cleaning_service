@@ -30,7 +30,7 @@ function Opener() {
             span.style.position = "relative";
 
             if (!excludeIndices.includes(i)) {
-              gsap.set(span, { opacity: 0.4, y: 30, scale: 0.9 }); // softer entry
+              gsap.set(span, { opacity: 0.4, y: 30, scale: 0.9 });
             }
 
             container.appendChild(span);
@@ -61,7 +61,7 @@ function Opener() {
           transformOrigin: "center center",
         });
 
-        // Timeline with smoother motion
+        // Timeline
         const tl = gsap.timeline({ delay: 0.2 });
 
         tl.to(
@@ -71,66 +71,36 @@ function Opener() {
             opacity: 1,
             y: 0,
             scale: 1,
-            stagger: 0.08, // smooth flowing reveal
+            stagger: 0.08,
             ease: "power3.out",
           }
         )
           .to(
             rosewoodRRef.current,
-            {
-              duration: 0.9,
-              y: 0,
-              opacity: 1,
-              scale: 1,
-              ease: "elastic.out(1, 0.6)", // keep bounce for personality
-            },
+            { duration: 0.9, y: 0, opacity: 1, scale: 1, ease: "elastic.out(1,0.6)" },
             "-=1"
           )
           .to(
             rosewoodORef.current,
-            {
-              duration: 0.7,
-              opacity: 1,
-              scale: 1,
-              ease: "power3.out",
-            },
+            { duration: 0.7, opacity: 1, scale: 1, ease: "power3.out" },
             "-=0.75"
           )
           .to(
             rosewoodSRef.current,
-            {
-              duration: 0.7,
-              opacity: 1,
-              scale: 1,
-              ease: "power3.out",
-            },
+            { duration: 0.7, opacity: 1, scale: 1, ease: "power3.out" },
             "-=0.75"
           )
           .to(
             rosewoodSecondORef.current,
-            {
-              duration: 0.6,
-              scaleX: 1,
-              opacity: 1,
-              ease: "power3.out",
-            },
+            { duration: 0.6, scaleX: 1, opacity: 1, ease: "power3.out" },
             "-=0.4"
           )
-          // Refined breathing effect
           .to(
             rosewoodRef.current,
-            {
-              duration: 7,
-              scale: 1.01,
-              y: 2,
-              ease: "sine.inOut",
-              repeat: -1,
-              yoyo: true,
-            },
+            { duration: 7, scale: 1.01, y: 2, ease: "sine.inOut", repeat: -1, yoyo: true },
             "+=0.5"
           );
 
-        // timeline speed-up (~1s faster)
         tl.timeScale(1.15);
       }, containerRef);
 
@@ -148,32 +118,37 @@ function Opener() {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className="container-fluid bg-light text-sky-900 min-vh-100 d-flex align-items-center"
-    >
-      <div className="row w-100 ">
-        {/* LEFT COLUMN: Text */}
-        <div className="col-12 col-lg-12 d-flex flex-column justify-content-center align-items-center align-items-lg-start px-4">
-          <h1 className="text-8xl fw-bold text-start text-lg-start">
-            <span ref={rosewoodRef}>Rosewood</span>
-            <br />
-            <span>Cleaning Services</span>
-          </h1>
+    <div className="relative w-full" style={{ height: "75vh" }}>
+      {/* Hero Image */}
+      <img
+        src={heroImage}
+        alt="Hero"
+        className="w-full h-full object-cover"
+      />
 
-          {/* Hidden animated letters */}
-          <div style={{ position: "absolute", visibility: "hidden" }}>
-            <span ref={rosewoodRRef} style={{ display: "inline-block" }}>R</span>
-            <span ref={rosewoodORef} style={{ display: "inline-block" }}>o</span>
-            <span ref={rosewoodSRef} style={{ display: "inline-block" }}>s</span>
-            <span ref={rosewoodSecondORef} style={{ display: "inline-block" }}>o</span>
-          </div>
-          <p className="text-lg">Top-tier house cleaning services in Columbia, South Carolina</p>
-          <button className="bg-primary text-white hover:bg-indigo-200 hover:text-slate-900 rounded mt-4 px-4 py-2">
-            Call Us
-          </button>
+      {/* Text + Button in bottom-left */}
+      <div className="absolute bottom-0 left-0 p-6 md:p-12 text-white">
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4">
+          <span ref={rosewoodRef}>Rosewood</span>
+          <br />
+          <span>Cleaning Services</span>
+        </h1>
+
+        {/* Hidden animated letters */}
+        <div style={{ position: "absolute", visibility: "hidden" }}>
+          <span ref={rosewoodRRef} style={{ display: "inline-block" }}>R</span>
+          <span ref={rosewoodORef} style={{ display: "inline-block" }}>o</span>
+          <span ref={rosewoodSRef} style={{ display: "inline-block" }}>s</span>
+          <span ref={rosewoodSecondORef} style={{ display: "inline-block" }}>o</span>
         </div>
 
+        <p className="text-lg md:text-xl mb-4">
+          Top-tier house cleaning services in Columbia, South Carolina
+        </p>
+
+        <button className="bg-primary text-white hover:bg-indigo-200 hover:text-slate-900 rounded px-6 py-3 font-semibold">
+          Call Us
+        </button>
       </div>
     </div>
   );

@@ -5,13 +5,19 @@
 .font-bold{
   font-weight: 600;
 }
+
+
+
 .btn-call{
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
-
+.justify-text{
+  text-align: justify;
+  text-justify: inter-word;
+}
 .bold{
   font-weight: 600;
 }
@@ -35,12 +41,16 @@
 /* ===== Mission Body ===== */
 .mission-body {
   display: flex;
-  height: 100vh;
+  height: 70vh;
   justify-content: center;
   align-items: center;
   text-align: center;
   color: rgb(0, 0, 0);
   box-sizing: border-box;
+}
+
+.why-section{
+    height: 100vh;
 }
 
 

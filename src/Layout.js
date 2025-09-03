@@ -9,6 +9,7 @@ function Layout(){
             <Banner/>
             <Nav/>
             <WebRoutes/>
+            <Banner/>
             <Footer/>
         </div>
     )
