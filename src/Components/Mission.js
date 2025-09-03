@@ -1,19 +1,19 @@
-import Image from "../Images/card5.png";
+import Image from "../Images/qwe.png";
 
 function Mission() {
   return (
     <div className=" ">
       <div className="mission-body row">
         <div className="col-lg-1 col-12 "></div>
-        <div className="col-lg-2 col-12 me-lg-5">
-          <img src={Image} alt="Clean Home" />
+        <div className="col-lg-3 col-12 me-lg-4">
+          <img src={Image} alt="Clean Home" className="br" />
         </div>
        
-        <div className="col-lg-5 col-12 ms-lg-5">
+        <div className="col-lg-4 col-12 ms-lg-5">
           <h2 className=" text-4xl text-start mb-lg-4">
             Rosewood Cleaning Services
           </h2>
-          <p className="text-xl text-start thin">
+          <p className="text-lg text-start thin">
             {" "}
             At Rosewood Cleaning Services, we specialize in providing top-tier
             house cleaning that caters to the unique needs of each client,
@@ -24,7 +24,7 @@ function Mission() {
             your home.
           </p>
           <p className="text-start mt-lg-5 text-sm bold">
-            Columbia South Carolina
+             Columbia South Carolina
           </p>
         </div>
         <div className="col-lg-1 col-12 "></div>

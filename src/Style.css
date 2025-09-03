@@ -54,6 +54,10 @@
     padding: 10px;
 }
 
+.opener-text{
+    font-size: 12rem;
+  }
+
 /* ------------------------------    TEXT SIZE SYSTEM --------------------------------*/
 
 /* Headings */
@@ -108,6 +112,11 @@
 
 /* Small Screens */
 @media (max-width: 768px) {
+
+  .opener-text{
+    font-size: 3rem;
+  }
+  
   .text-16xl { font-size: 12rem; }
   .text-15xl { font-size: 10rem; }
   .text-14xl { font-size: 9rem; }

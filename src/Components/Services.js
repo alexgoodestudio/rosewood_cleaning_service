@@ -1,10 +1,12 @@
+import { Accordion } from "gestalt";
+import Accordion_Services from "./Accordion_Services";
 
 function Services(){
     
     return(
-        <div>
-            <h1>Services</h1>
-
+        <div className="container py-5 mb-5">
+       
+            <Accordion_Services/>
         </div>
     )
 }
