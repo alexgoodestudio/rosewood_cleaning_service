@@ -10,7 +10,7 @@ function Mission() {
               <img src={Image} alt="Clean Home" className="br" />
           </div> */}
           <h2 className=" text-4xl text-start mb-lg-4">
-            Rosewood Cleaning Services
+            Our Mission
           </h2>
           <p className="text-md justify-text thin ">
             {" "}

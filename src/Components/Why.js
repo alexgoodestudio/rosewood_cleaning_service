@@ -32,7 +32,7 @@ function Section1() {
   }, containerRef);
 
   return (
-    <div ref={containerRef} className="container why-section relative">
+    <div ref={containerRef} className="container why-section  mt-5 relative">
       <div className="mission-body row items-center">
         <div className="col-lg-6 col-12 pe-lg-5">
           <h2 className="text-4xl text-start mb-lg-4">Why Choose Us?</h2>
@@ -57,7 +57,7 @@ function Section1() {
         </div>
 
         {/* Image container */}
-        <div className="col-lg-6 col-12 scroll-images px-5 pt-5 relative overflow-hidden">
+        <div className="col-lg-6 col-12  scroll-images px-5 pt-5 relative overflow-hidden">
           <div className="relative w-full max-w-[500px] mx-auto aspect-square">
             {/* Use aspect-square for consistent ratio */}
             <img

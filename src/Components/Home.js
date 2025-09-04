@@ -4,6 +4,7 @@ import Why from "./Why"
 import FooterMarquee from "./FooterMarquee"
 import Mission from "./Mission";
 import Services from "./Services";
+import Contact from "./Contact";
 
 
 
@@ -15,6 +16,7 @@ function Home(){
             <Mission/>
             <Services/>    
             <Why/>  
+            <Contact/>
             <FooterMarquee/>
         </div>
     )

@@ -25,7 +25,7 @@ function Form() {
             Email <input type="email" name="email" required  className="rounded"/>
           </label>
         </p>
-        <p>
+        <p className="mt-4">
           <button type="submit"  className="btn btn-primary">Send</button>
         </p>
       </form>

@@ -8,8 +8,7 @@ function Layout(){
         <div>
             <Banner/>
             <Nav/>
-            <WebRoutes/>
-            <Banner/>
+            <WebRoutes/>           
             <Footer/>
         </div>
     )
