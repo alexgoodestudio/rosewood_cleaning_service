@@ -28,7 +28,9 @@ function Nav() {
     <nav className="navbar bg-indigo-100 text-slate-800 flex flex-col">
       {/* Always fixed header row */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        <button className="navbar-brand btn btn-link p-0"><span className="font-bold">Rosewood</span> Cleaning Services</button>
+        <button className="navbar-brand btn btn-link p-0">
+          <span className="font-bold">Rosewood</span> Cleaning Services
+        </button>
         <button
           className="navbar-toggler d-block"
           type="button"
@@ -46,40 +48,59 @@ function Nav() {
         {/* Row 1 */}
         <div className="row mb-3">
           <div className="col-12 text-slate-800 p-3">
-            <h4>Row 1 - Full Width</h4>
-            <p>Some filler text for the full-width column.</p>
+            <h4>Welcome</h4>
+            <p>
+              We make homes cleaner, healthier, and more relaxing — so you can
+              focus on what matters.
+            </p>
           </div>
         </div>
 
         {/* Row 2 */}
         <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 1</h5>
-            <p>Filler text for column 1.</p>
+            <h5>About Us</h5>
+            <p>
+              Local, reliable, and eco-friendly. We treat every home like our
+              own.
+            </p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 2</h5>
-            <p>Filler text for column 2.</p>
+            <h5>Contact</h5>
+            <p>
+              Call, email, or book online. We’ll build a plan that works for
+              you.
+            </p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 2 - Column 3</h5>
-            <p>Filler text for column 3.</p>
+            <h5>FAQ</h5>
+            <p>
+              Quick answers about pricing, supplies, and what’s included in our
+              services.
+            </p>
           </div>
         </div>
 
         {/* Row 3 */}
         <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 1</h5>
-            <p>Filler text for column 1.</p>
+            <h5>One-Time</h5>
+            <p>
+              Perfect for deep cleans, special events, or seasonal refreshes.
+            </p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 2</h5>
-            <p>Filler text for column 2.</p>
+            <h5>Recurring</h5>
+            <p>
+              Weekly, bi-weekly, or monthly cleanings to keep your home
+              spotless.
+            </p>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Row 3 - Column 3</h5>
-            <p>Filler text for column 3.</p>
+            <h5>Move In / Out</h5>
+            <p>
+              We’ll handle the scrubbing so your move is easier and stress-free.
+            </p>
           </div>
         </div>
       </div>

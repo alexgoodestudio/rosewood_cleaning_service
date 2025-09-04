@@ -1,4 +1,3 @@
-import Image from "../Images/qwe.png";
 
 function Mission() {
   return (
@@ -6,7 +5,7 @@ function Mission() {
       <div className="mission-body row">
 
        
-        <div className="col-lg-12 col-12 ms-lg-4 p-lg-0 px-4">
+        <div className="col-lg-7 col-12 ms-lg-4 p-lg-0 px-4">
           {/* <div className=" ">
               <img src={Image} alt="Clean Home" className="br" />
           </div> */}

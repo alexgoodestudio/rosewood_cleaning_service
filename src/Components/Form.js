@@ -17,16 +17,16 @@ function Form() {
         </p>
         <p>
           <label>
-            Name <input type="text" name="name" required />
+            Name <input type="text" name="name" required  className="rounded"/>
           </label>
         </p>
         <p>
           <label>
-            Email <input type="email" name="email" required />
+            Email <input type="email" name="email" required  className="rounded"/>
           </label>
         </p>
         <p>
-          <button type="submit">Send</button>
+          <button type="submit"  className="btn btn-primary">Send</button>
         </p>
       </form>
     </div>

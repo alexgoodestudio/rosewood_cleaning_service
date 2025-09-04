@@ -12,25 +12,24 @@ function Footer() {
            <div className="col-lg-1 col-12"></div>
           <div className="col-lg-2 col-12">
      <Form/>
-
           </div>
           <div className="col-lg-2 col-12"></div>
           <div className="col-lg-2 col-12 ">
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
+            <div className="row mb-3">One Time</div>
+            <div className="row mb-3">Contact</div>
+            
 
           </div>
           <div className="col-lg-2 col-12">
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
+            <div className="row mb-3">Recurring</div>
+            <div className="row mb-3">About Us</div>
+            
 
           </div>
           <div className="col-lg-2 col-12">
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
-            <div className="row mb-3"> Hello</div>
+            <div className="row mb-3">Moving</div>
+            <div className="row mb-3">FAQ</div>
+    
 
           </div>
           <div className="col-lg-1 col-12"></div>

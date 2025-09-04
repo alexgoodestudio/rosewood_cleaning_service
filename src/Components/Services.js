@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Image1 from "../Images/card3.png"
+import Image2 from "../Images/card5.png"
+import Image3 from "../Images/qwe.png"
 import "../Style.css";
 
 function AccordionItem({ title, subtitle, description, link, isOpen, onClick }) {
@@ -36,7 +39,7 @@ function Services() {
     {
       title: "One-Time Clean",
       subtitle: "Perfect for a quick refresh",
-      image: "https://via.placeholder.com/400x250?text=One-Time+Clean",
+      image: Image1,
       description:
         "A thorough, one-off cleaning service using eco-friendly products for a sparkling, healthy home.",
       link: "/onetime",
@@ -44,7 +47,7 @@ function Services() {
     {
       title: "Move In / Out Cleaning",
       subtitle: "Hassle-free moving",
-      image: "https://via.placeholder.com/400x250?text=Move+In+Out+Cleaning",
+      image: Image2,
       description:
         "Comprehensive cleaning for your new or old space, ensuring it’s immaculate and move-in ready.",
       link: "/moving",
@@ -52,7 +55,7 @@ function Services() {
     {
       title: "Recurring Service",
       subtitle: "Keep your home consistently clean",
-      image: "https://via.placeholder.com/400x250?text=Recurring+Service",
+      image: Image3,
       description:
         "Regular cleaning schedules tailored to your needs, maintaining cleanliness with eco-safe products.",
       link: "/recurring",
@@ -65,7 +68,7 @@ function Services() {
 
   return (
     <div className="bg-white container py-8 px-4">
-      <h1 className="text-gray-800 text-start mb-5">Our Services:</h1>
+      <h2 className="text-gray-800 text-start text-4xl mb-5">Our Services</h2>
 
       {/* Desktop Cards */}
       <div className="row g-4 d-none d-md-flex">
@@ -88,7 +91,7 @@ function Services() {
               <div className="card-footer p-3">
                 <Link
                   to={service.link}
-                  className="btn btn-outline-secondary w-full p-2 text-center"
+                  className="btn btn-outline-secondary w-50 p-2 text-center"
                 >
                   Visit
                 </Link>
@@ -99,7 +102,7 @@ function Services() {
       </div>
 
       {/* Mobile Accordion */}
-      <div className="d-md-none">
+      <div className="d-md-none mb-5">
         {serviceData.map((service, idx) => (
           <AccordionItem
             key={idx}

@@ -41,7 +41,7 @@
 /* ===== Mission Body ===== */
 .mission-body {
   display: flex;
-  height: 70vh;
+  height: 50vh;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -50,7 +50,7 @@
 }
 
 .why-section{
-    height: 100vh;
+    height: 80vh;
 }
 
 
