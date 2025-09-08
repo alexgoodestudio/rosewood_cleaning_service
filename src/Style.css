@@ -174,14 +174,22 @@
   .text-sm   { font-size: 0.75rem; }
   .text-xs   { font-size: 0.6875rem; }
 }
-@media (max-width: 420px) {
-.mtm{
-  margin-top: 6rem;
-}
-}
 
-@media (max-width: 380px) {
+
+@media (max-width: 992px) {
+.mtm{
+  margin-top: 16rem;
+}
+}
+@media (max-width: 520px) {
 .mtm{
   margin-top: 14rem;
 }
 }
+
+@media (max-width: 420px) {
+.mtm{
+  margin-top: 9rem;
+}
+}
+

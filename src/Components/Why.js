@@ -19,8 +19,8 @@ function Why() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "center center",
-        end: "+=1000",
+        start: "top top",
+        end: "+=800",
         scrub: true,
         pin: true,
         anticipatePin: 1,

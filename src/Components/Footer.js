@@ -11,25 +11,25 @@ function Footer() {
 
          
 
-          <div className="col-lg-2 col-12 text-center">
-            <h5>Services</h5>
-            <div className="mb-3">One Time</div>
-            <div className="mb-3">Recurring</div>
-            <div className="mb-3">Moving</div>
+          <div className="col-lg-2 col-12 py-lg-0 pb-3 text-center">
+            <h5 className="bold">Services</h5>
+            <div className="mb-3 text-sm">One Time</div>
+            <div className="mb-3 text-sm">Recurring</div>
+            <div className="mb-3 text-sm">Moving</div>
             
           </div>
 
-          <div className="col-lg-2 col-12 text-center">
-            <h5>Info</h5>
+          <div className="col-lg-2 col-12 py-lg-0 pb-3 text-center">
+            <h5 className="bold">Info</h5>
             
-            <div className="mb-3">About Us</div>
-            <div className="mb-3">Contact</div>
-            <div className="mb-3">FAQ</div>
+            <div className="mb-3 text-sm">About Us</div>
+            <div className="mb-3 text-sm">Contact</div>
+            <div className="mb-3 text-sm">FAQ</div>
           </div>
 
-          <div className="col-lg-2 col-12 text-center">
-            <h5>Socials</h5>
-            <div className="mb-3">Facebook</div>
+          <div className="col-lg-2 col-12 py-lg-0 pb-3 text-center">
+            <h5 className="bold">Socials</h5>
+            <div className="mb-3 text-sm">Facebook</div>
           </div>
 
           <div className="col-lg-3 col-12"></div>
