@@ -125,7 +125,9 @@
 
 /* Small Screens */
 @media (max-width: 768px) {
-  
+  .why-section{
+    height: 85vh;   
+}
 
   .opener-text{
     font-size: 3rem;

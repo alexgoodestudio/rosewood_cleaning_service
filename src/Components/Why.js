@@ -32,7 +32,7 @@ function Why() {
   }, containerRef);
 
   return (
-    <div ref={containerRef} className="container why-section  mt-5 relative">
+    <div ref={containerRef} className="container why-section  mt-4 relative">
       <div className="mission-body row items-center">
         <div className="col-lg-6 col-12 pe-lg-5">
           <h2 className="text-4xl text-start mb-lg-4">Why Choose Us?</h2>
