@@ -38,6 +38,8 @@
   text-align: center;      /* center text inside h1 */
 }
 
+
+
 /* ===== Mission Body ===== */
 .mission-body {
   display: flex;
@@ -50,9 +52,8 @@
 }
 
 .why-section{
-    height: 80vh;
+    height: 80vh;   
 }
-
 
 .box{
   height: 25vh;
@@ -67,6 +68,8 @@
 .opener-text{
     font-size: 12rem;
   }
+
+  
 
 /* ------------------------------    TEXT SIZE SYSTEM --------------------------------*/
 
@@ -122,6 +125,7 @@
 
 /* Small Screens */
 @media (max-width: 768px) {
+  
 
   .opener-text{
     font-size: 3rem;
@@ -169,4 +173,15 @@
   .text-md   { font-size: 0.8125rem; }
   .text-sm   { font-size: 0.75rem; }
   .text-xs   { font-size: 0.6875rem; }
+}
+@media (max-width: 420px) {
+.mtm{
+  margin-top: 6rem;
+}
+}
+
+@media (max-width: 380px) {
+.mtm{
+  margin-top: 14rem;
+}
 }

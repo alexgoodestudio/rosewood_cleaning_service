@@ -7,7 +7,7 @@ import Image2 from "../Images/image1.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Section1() {
+function Why() {
   const containerRef = useRef(null);
   const image2Ref = useRef(null);
   const image1Ref = useRef(null);
@@ -57,8 +57,8 @@ function Section1() {
         </div>
 
         {/* Image container */}
-        <div className="col-lg-6 col-12  scroll-images px-5 pt-5 relative overflow-hidden">
-          <div className="relative w-full max-w-[500px] mx-auto aspect-square">
+        <div className="col-lg-6 col-12 scroll-images px-5 pt-5  relative overflow-hidden">
+          <div className="relative w-full   max-w-[500px] mx-auto aspect-square">
             {/* Use aspect-square for consistent ratio */}
             <img
               ref={image1Ref}
@@ -79,4 +79,4 @@ function Section1() {
   );
 }
 
-export default Section1;
+export default Why;
