@@ -32,9 +32,9 @@ function Why() {
   }, containerRef);
 
   return (
-    <div ref={containerRef} className="container why-section  mt-4 relative">
+    <div ref={containerRef} className="container why-section mt-4 relative">
       <div className="mission-body row items-center">
-        <div className="col-lg-6 col-12 pe-lg-5">
+        <div className="col-lg-6 col-12 pe-lg-5 p-4">
           <h2 className="text-4xl text-start mb-lg-4">Why Choose Us?</h2>
           <p className="text-sm justify-text thin">
             We’re not just another cleaning company — we’re part of your

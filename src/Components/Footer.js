@@ -36,9 +36,9 @@ function Footer() {
         </div>
       </section>
 
-      <p className="text-center p-3 text-xs mt-5 py-3">
+      <p className="text-center px-2 text-xs mt-5 py-3">
         © {currentYear} <span className="px-1">•</span> Rosewood Cleaning
-        Services <span className="px-1">•</span> Columbia, South Carolina
+        <span className="px-1">•</span> Columbia, South Carolina
       </p>
     </div>
   );

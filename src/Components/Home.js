@@ -14,8 +14,8 @@ function Home(){
             <Opener/>            
             <ReviewMarquee/>
             <Mission/>
-            <Services/>    
             <Why/>  
+            <Services/>    
             <Contact/>
             <FooterMarquee/>
         </div>
