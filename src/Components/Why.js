@@ -36,7 +36,7 @@ function Why() {
       <div className="mission-body row items-center">
         <div className="col-lg-6 col-12 pe-lg-5 p-4">
           <h2 className="text-4xl text-start mb-lg-4">Why Choose Us?</h2>
-          <p className="text-sm justify-text thin">
+          <p className="text-md justify-text thin">
             We’re not just another cleaning company — we’re part of your
             community. From local families to busy professionals, we take pride
             in making homes across Columbia cleaner, healthier, and more

@@ -8,6 +8,7 @@ import "../Style.css";
 function AccordionItem({ title, subtitle, description, link, isOpen, onClick }) {
   return (
     <div className="border rounded-lg shadow-sm mb-2 d-md-none">
+      
       <button
         onClick={onClick}
         className="w-100 text-start p-3 bg-gray-100 hover:bg-gray-200 transition flex justify-between items-center"
