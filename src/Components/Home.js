@@ -5,6 +5,7 @@ import FooterMarquee from "./FooterMarquee"
 import Mission from "./Mission";
 import Services from "./Services";
 import Contact from "./Contact";
+import WaveBorder from "./Wave";
 
 
 
@@ -14,8 +15,9 @@ function Home(){
             <Opener/>            
             <ReviewMarquee/>
             <Mission/>
-            <Why/>  
+            <WaveBorder/>
             <Services/>    
+            <Why/>  
             <Contact/>
             <FooterMarquee/>
         </div>

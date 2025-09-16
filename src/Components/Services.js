@@ -68,7 +68,7 @@ function Services() {
   };
 
   return (
-    <div className="bg-white container py-8 px-4 services-container">
+    <div className="bg-white container py-5 px-4 services-container">
       <h2 className="text-gray-800 text-start text-4xl mb-5">Our Services</h2>
 
       {/* Desktop Cards */}

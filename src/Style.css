@@ -38,9 +38,6 @@
   text-align: center;      /* center text inside h1 */
 }
 
-.services-container{
-  height: 100vh;
-}
 
 /* ===== Mission Body ===== */
 .mission-body {
@@ -53,9 +50,7 @@
   box-sizing: border-box;
 }
 
-.why-section{
-    height: 90vh;   
-}
+
 
 .box{
   height: 25vh;
@@ -125,30 +120,16 @@
   .text-2xl  { font-size: 1.375rem; }
 }
 
-.services-container{
 
-  height: 100vh;
-}
-  .why-section{
-    height: 100vh;   
-}
+
 
 /* Small Screens */
 @media (max-width: 768px) {
 
 .mission-body {
-
   height: 50vh;
-
 }
 
-  .why-section{
-    height: 85vh;   
-}
-.services-container{
-  margin-top: 35%;
-  height: 45vh;
-}
 
   .opener-text{
     font-size: 3rem;

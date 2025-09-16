@@ -25,7 +25,7 @@ function FooterMarquee() {
         onEnter: () => {
           gsap.to(el, {
             x: -textWidth - containerWidth,
-            duration: 20,
+            duration: 34,
             ease: "linear",
             repeat: -1,
           });
@@ -44,7 +44,7 @@ function FooterMarquee() {
         ref={textRef}
         className="banner-text py-4 text-6xl bold inline-block"
       >
-        How can we help you make an impact? Let’s talk about it.
+        Interested in working with us? Let us help you get your home the way it should be.
       </span>
     </div>
   );

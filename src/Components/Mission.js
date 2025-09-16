@@ -1,7 +1,7 @@
 
 function Mission() {
   return (
-    <div className="container">
+    <div className="px-5 bg-sky-50">
       <div className="mission-body row">
 
        
