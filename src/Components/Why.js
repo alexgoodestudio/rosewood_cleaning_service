@@ -9,46 +9,123 @@ gsap.registerPlugin(ScrollTrigger);
 
 function Why() {
   const containerRef = useRef(null);
+  const paragraphRef = useRef(null);
   const image2Ref = useRef(null);
   const image1Ref = useRef(null);
 
+  const splitTextIntoLines = (element) => {
+    const text = element.textContent;
+    const words = text.split(" ");
+    let lines = [];
+    let currentLine = [];
+
+    element.innerHTML = "";
+    let previousTop = null;
+
+    words.forEach((word) => {
+      const wordSpan = document.createElement("span");
+      wordSpan.textContent = word + " ";
+      wordSpan.className = "word inline-block mr-2";
+      element.appendChild(wordSpan);
+
+      const rect = wordSpan.getBoundingClientRect();
+      const currentTop = rect.top;
+
+      if (previousTop !== null && Math.abs(currentTop - previousTop) > 5) {
+        if (currentLine.length > 0) {
+          lines.push([...currentLine]);
+        }
+        currentLine = [wordSpan];
+      } else {
+        currentLine.push(wordSpan);
+      }
+
+      previousTop = currentTop;
+    });
+
+    if (currentLine.length > 0) {
+      lines.push(currentLine);
+    }
+
+    element.innerHTML = "";
+    const lineElements = [];
+
+    lines.forEach((lineWords) => {
+      const lineDiv = document.createElement("div");
+      lineDiv.className = "line-container overflow-hidden";
+
+      const lineInner = document.createElement("div");
+      lineInner.className = "line-inner";
+
+      lineWords.forEach((wordSpan) => {
+        lineInner.appendChild(wordSpan);
+      });
+
+      lineDiv.appendChild(lineInner);
+      element.appendChild(lineDiv);
+      lineElements.push(lineInner);
+    });
+
+    return lineElements;
+  };
+
   useGSAP(() => {
-    // Start Image2 off to the right
-    gsap.set(image2Ref.current, { x: "130%" });
+    // Hide paragraph initially
+    gsap.set(paragraphRef.current, { opacity: 0 });
+
+    // Initial image positions
+    gsap.set(image2Ref.current, { x: "130%", rotation: 0 });
+    gsap.set(image1Ref.current, { rotation: 0 });
 
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
         start: "top top",
-        end: "+=800",
+        end: "+=1500",
         scrub: true,
         pin: true,
         anticipatePin: 1,
       },
     });
 
-    tl.to(image2Ref.current, { x: "0%", ease: "none" }, 0)
+    // Animate top image: slide in + full rotation
+    tl.to(image2Ref.current, { x: "0%", rotation: -360, ease: "none" }, 0)
       .to(image1Ref.current, { opacity: 0, ease: "none" }, 0);
+
+    // Paragraph scroll animation
+    ScrollTrigger.create({
+      trigger: paragraphRef.current,
+      start: "top 80%",
+      onEnter: () => {
+        const lines = splitTextIntoLines(paragraphRef.current);
+
+        gsap.set(paragraphRef.current, { opacity: 1 });
+        gsap.set(lines, { y: 50, opacity: 0 });
+        gsap.to(lines, {
+          y: 0,
+          opacity: 1,
+          duration: 0.4,
+          stagger: 0.08,
+          ease: "power2.out",
+        });
+      },
+      once: true,
+    });
   }, containerRef);
 
   return (
-    <div ref={containerRef} className="container  mt-4 mb-5 relative">
+    <div ref={containerRef} className="container mt-5  relative">
       <div className="row items-center">
         <div className="col-lg-6 col-12 px-lg-0 p-4">
           <h2 className="text-4xl text-start mb-lg-5">Why Choose Us?</h2>
-          <p className="text-md justify-text thin">
+          <p ref={paragraphRef} className="text-md justify-text thin leading-relaxed">
             We’re not just another cleaning company — we’re part of your
             community. From local families to busy professionals, we take pride
             in making homes across Columbia cleaner, healthier, and more
             welcoming. At Rosewood Cleaning Services, we understand the unique
             needs of our neighbors. We know what it means to juggle work,
             family, and daily responsibilities, which is why we offer reliable,
-            flexible cleaning solutions that save you time and energy. But it’s
-            more than just cleaning — it’s about creating spaces where families
-            can relax, children can play safely, and pets can roam without
-            worry. We use eco-friendly products and sustainable practices
-            because caring for your home also means caring for our shared
-            environment. By choosing Rosewood Cleaning Services, you’re
+            flexible cleaning solutions that save you time and energy. By choosing Rosewood Cleaning Services, you’re
             supporting a locally owned business that values relationships,
             trust, and the well-being of our community. Every home we care for
             is a part of the neighborhood we love.
@@ -56,10 +133,8 @@ function Why() {
           <p className="text-start mt-lg-5 text-sm bold">LEARN MORE</p>
         </div>
 
-        {/* Image container */}
-        <div className="col-lg-6 col-12  relative overflow-hidden">
+        <div className="col-lg-6 col-12 relative overflow-hidden">
           <div className="relative w-full max-w-[420px] mx-auto aspect-square">
-            {/* Use aspect-square for consistent ratio */}
             <img
               ref={image1Ref}
               src={Image}

@@ -25,7 +25,7 @@ function FooterMarquee() {
         onEnter: () => {
           gsap.to(el, {
             x: -textWidth - containerWidth,
-            duration: 34,
+            duration: 22,
             ease: "linear",
             repeat: -1,
           });
@@ -38,7 +38,7 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="banner-container bg-indigo-200  text-sky-900 bold overflow-hidden whitespace-nowrap w-full"
+      className="banner-container bg-indigo-200  text-sky-800  overflow-hidden whitespace-nowrap w-full"
     >
       <span
         ref={textRef}

@@ -6,30 +6,31 @@ function Footer() {
       <section className="mb-3">
         <div className="row text-center">
 
-          <div className="col-lg-3 col-1"></div>
+          <div className="col-lg-3 col-0"></div>
 
-          <div className="col-lg-2 col-3 py-lg-0 pb-3 text-start">
-            <h5 className="bold">Services</h5>
-            <div className="mb-3 text-sm">One Time</div>
-            <div className="mb-3 text-sm">Recurring</div>
-            <div className="mb-3 text-sm">Moving</div>
+          <div className="col-lg-2 col-4 py-lg-0 pb-3 px-5 text-start">
+            <h5 className="bold mb-2 text-gray-500">Services</h5>
+            <div className="mb-2 text-sm">One Time</div>
+            <div className="mb-2 text-sm">Recurring</div>
+            <div className="mb-2 text-sm">Moving</div>
             
           </div>
 
-          <div className="col-lg-2 col-3 py-lg-0 pb-3 text-start">
-            <h5 className="bold">Info</h5>
+          <div className="col-lg-2 col-4 py-lg-0 pb-3 px-5 text-start">
+            <h5 className="bold mb-2 text-gray-500">Info</h5>
             
-            <div className="mb-3 text-sm">About Us</div>
-            <div className="mb-3 text-sm">Contact</div>
-            <div className="mb-3 text-sm">FAQ</div>
+            <div className="mb-2 text-sm">About Us</div>
+            <div className="mb-2 text-sm">Contact</div>
+  
           </div>
 
-          <div className="col-lg-2 col-3 py-lg-0 pb-3 text-start">
-            <h5 className="bold">Socials</h5>
-            <div className="mb-3 text-sm">Facebook</div>
+          <div className="col-lg-2 col-4 py-lg-0 pb-3 px-5 text-start">
+            <h5 className="bold mb-2 text-gray-500">Socials</h5>
+            <div className="mb-2 text-sm">Facebook</div>
+            <div className="mb-2 text-sm">Instagram</div>
           </div>
 
-          <div className="col-lg-3 col-1"></div>
+          <div className="col-lg-3 col-4"></div>
         </div>
       </section>
 
