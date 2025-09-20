@@ -90,13 +90,13 @@ function Mission() {
   }, []);
 
   return (
-    <div className="px-5 bg-sky-50">
+    <div className="px-lg-5 px-4 bg-sky-50">
       <div className="mission-body row">
-        <div className="col-lg-12 col-12 ms-lg-4 p-lg-0 px-4">
+        <div className="col-12 ">
           <h2 className=" text-4xl text-start mb-lg-4">Our Mission</h2>
           <p
             ref={container}
-            className="text-lg justify-text thin leading-relaxed"
+            className="text-xl justify-text thin leading-relaxed"
           >
             At Rosewood Cleaning Services, we specialize in providing top-tier
             house cleaning that caters to the unique needs of each client,

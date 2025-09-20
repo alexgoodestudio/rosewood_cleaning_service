@@ -52,7 +52,7 @@ function Why() {
 
     lines.forEach((lineWords) => {
       const lineDiv = document.createElement("div");
-      lineDiv.className = "line-container overflow-hidden";
+      lineDiv.className = "line-container overflow-hidden ";
 
       const lineInner = document.createElement("div");
       lineInner.className = "line-inner";
@@ -80,8 +80,8 @@ function Why() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top top",
-        end: "+=1500",
+        start: "center center",
+        end: "+=1000",
         scrub: true,
         pin: true,
         anticipatePin: 1,
@@ -114,27 +114,24 @@ function Why() {
   }, containerRef);
 
   return (
-    <div ref={containerRef} className="container mt-5  relative">
+    <div ref={containerRef} className="container mt-5 mb-lg-5 mb-0  relative">
       <div className="row items-center">
-        <div className="col-lg-6 col-12 px-lg-0 p-4">
+        <div className="col-lg-8 col-12 px-lg-0 p-4">
           <h2 className="text-4xl text-start mb-lg-5">Why Choose Us?</h2>
-          <p ref={paragraphRef} className="text-md justify-text thin leading-relaxed">
+          <p ref={paragraphRef} className="text-xl justify-text thin leading-relaxed">
             We’re not just another cleaning company — we’re part of your
             community. From local families to busy professionals, we take pride
             in making homes across Columbia cleaner, healthier, and more
-            welcoming. At Rosewood Cleaning Services, we understand the unique
-            needs of our neighbors. We know what it means to juggle work,
-            family, and daily responsibilities, which is why we offer reliable,
-            flexible cleaning solutions that save you time and energy. By choosing Rosewood Cleaning Services, you’re
+            welcoming. By choosing Rosewood Cleaning Services, you’re
             supporting a locally owned business that values relationships,
             trust, and the well-being of our community. Every home we care for
             is a part of the neighborhood we love.
           </p>
-          <p className="text-start mt-lg-5 text-sm bold">LEARN MORE</p>
+          <p className="text-start mt-lg-5 text-sm bold mb-lg-5 mb-0">LEARN MORE</p>
         </div>
 
-        <div className="col-lg-6 col-12 relative overflow-hidden">
-          <div className="relative w-full max-w-[420px] mx-auto aspect-square">
+        <div className="col-lg-4 col-12 ps-lg-5 ps-0 relative overflow-hidden">
+          <div className="relative w-full max-w-[340px] mx-auto aspect-square">
             <img
               ref={image1Ref}
               src={Image}
@@ -144,7 +141,7 @@ function Why() {
             <img
               ref={image2Ref}
               src={Image2}
-              className="rounded absolute top-0 left-0 w-full h-full object-cover"
+              className="rounded mb-lg-5 mb-0 absolute top-0 left-0 w-full h-full object-cover"
               alt="After"
             />
           </div>

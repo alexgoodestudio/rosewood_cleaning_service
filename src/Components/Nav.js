@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { gsap } from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -24,13 +25,17 @@ function Nav() {
     }
   }, [isOpen]);
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar bg-indigo-100 text-slate-800 flex flex-col">
       {/* Always fixed header row */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        <button className="navbar-brand btn btn-link p-0">
+        <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
           <span className="font-bold">Rosewood</span> Cleaning Services
-        </button>
+        </Link>
         <button
           className="navbar-toggler d-block"
           type="button"
@@ -40,7 +45,7 @@ function Nav() {
         </button>
       </div>
 
-      {/* Collapsible content BELOW, doesn’t push brand/toggler */}
+      {/* Collapsible content BELOW, doesn't push brand/toggler */}
       <div
         className={`w-100 px-3 mt-2 ${isOpen ? "d-block" : "d-none"}`}
         ref={navContentRef}
@@ -56,51 +61,87 @@ function Nav() {
           </div>
         </div>
 
-        {/* Row 2 */}
+        {/* Row 2 - Company Info Links */}
         <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>About Us</h5>
-            <p>
-              Local, reliable, and eco-friendly. We treat every home like our
-              own.
-            </p>
+            <Link 
+              to="/about" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">About Us</h5>
+              <p>
+                Local, reliable, and eco-friendly. We treat every home like our
+                own.
+              </p>
+            </Link>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Contact</h5>
-            <p>
-              Call, email, or book online. We’ll build a plan that works for
-              you.
-            </p>
+            <Link 
+              to="/contact" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">Contact</h5>
+              <p>
+                Call, email, or book online. We'll build a plan that works for
+                you.
+              </p>
+            </Link>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>FAQ</h5>
-            <p>
-              Quick answers about pricing, supplies, and what’s included in our
-              services.
-            </p>
+            <Link 
+              to="/faq" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">FAQ</h5>
+              <p>
+                Quick answers about pricing, supplies, and what's included in our
+                services.
+              </p>
+            </Link>
           </div>
         </div>
 
-        {/* Row 3 */}
+        {/* Row 3 - Service Links */}
         <div className="row mb-3">
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>One-Time</h5>
-            <p>
-              Perfect for deep cleans, special events, or seasonal refreshes.
-            </p>
+            <Link 
+              to="/onetime" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">One-Time</h5>
+              <p>
+                Perfect for deep cleans, special events, or seasonal refreshes.
+              </p>
+            </Link>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Recurring</h5>
-            <p>
-              Weekly, bi-weekly, or monthly cleanings to keep your home
-              spotless.
-            </p>
+            <Link 
+              to="/recurring" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">Recurring</h5>
+              <p>
+                Weekly, bi-weekly, or monthly cleanings to keep your home
+                spotless.
+              </p>
+            </Link>
           </div>
           <div className="col-lg-4 col-12 text-slate-800 p-3">
-            <h5>Move In / Out</h5>
-            <p>
-              We’ll handle the scrubbing so your move is easier and stress-free.
-            </p>
+            <Link 
+              to="/moving" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="text-primary">Move In / Out</h5>
+              <p>
+                We'll handle the scrubbing so your move is easier and stress-free.
+              </p>
+            </Link>
           </div>
         </div>
       </div>

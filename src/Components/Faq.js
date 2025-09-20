@@ -1,5 +1,5 @@
 
-function Faq(){
+function FAQ(){
     return(
         <div>
 
@@ -7,4 +7,4 @@ function Faq(){
     )
 }
 
-export default Faq;
+export default FAQ;

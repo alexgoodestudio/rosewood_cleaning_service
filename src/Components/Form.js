@@ -17,12 +17,12 @@ function Form() {
         </p>
         <p>
           <label>
-            Name <input type="text" name="name" required  className="rounded"/>
+            Name <input type="text" name="name" required  className="rounded ms-2"/>
           </label>
         </p>
         <p>
           <label>
-            Email <input type="email" name="email" required  className="rounded"/>
+            Email <input type="email" name="email" required  className="rounded ms-2"/>
           </label>
         </p>
         <p className="mt-4">

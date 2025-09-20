@@ -1,11 +1,10 @@
 import Opener from "./Opener";
 import ReviewMarquee from "./ReviewMarquee";
 import Why from "./Why"
-import FooterMarquee from "./FooterMarquee"
 import Mission from "./Mission";
 import Services from "./Services";
-import Contact from "./Contact";
 import WaveBorder from "./Wave";
+// import WaveRoller from "./WaveRoller"
 
 
 
@@ -15,11 +14,11 @@ function Home(){
             <Opener/>            
             <ReviewMarquee/>
             <Mission/>
+            {/* <WaveRoller/> */}
             <WaveBorder/>
             <Services/>    
-            <Why/>  
-            <Contact/>
-            <FooterMarquee/>
+            <Why/> 
+            
         </div>
     )
 }
