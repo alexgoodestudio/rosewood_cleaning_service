@@ -18,7 +18,7 @@ function WaveBorder() {
 
       // Create scroll trigger animation
       gsap.to(textElement, {
-        scale: 1.4,
+        scale: 1.3,
         opacity: 1,
         duration: 1,
         ease: "power2.out",
