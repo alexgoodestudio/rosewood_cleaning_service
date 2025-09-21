@@ -93,7 +93,7 @@ function Mission() {
     <div className="px-lg-5 px-4 bg-sky-50">
       <div className="mission-body row">
         <div className="col-12 ">
-          <h2 className=" text-4xl text-start mb-lg-4">Our Mission</h2>
+          <h2 className=" text-5xl text-start mb-lg-4">Our Mission</h2>
           <p
             ref={container}
             className="text-xl justify-text thin leading-relaxed"

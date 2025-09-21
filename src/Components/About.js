@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import IMG from "../Images/1.jpg";
+import IMG from "../Images/7.jpg";
 import IMG2 from "../Images/2.jpg";
 import IMG3 from "../Images/3.jpg";
 import IMG4 from "../Images/4.jpg";
@@ -188,7 +188,7 @@ function About() {
           
           <div className="col-lg-6">
             <div className="position-relative">
-              <div className="hero-image bg-gradient-to-br from-amber-100 to-orange-100 rounded-4 p-4 shadow-lg">
+              <div className="hero-image bg-slate-50 rounded-4 p-4 shadow-lg">
                 <img 
                   src={IMG} 
                   alt="Our Story" 
@@ -205,12 +205,7 @@ function About() {
                   <div className="text-xs text-stone-600">Happy Homes</div>
                 </div>
               </div>
-              
-              {/* Secondary floating element */}
-              <div className="floating-badge position-absolute bg-amber-400 text-stone-900 rounded-pill px-3 py-2 shadow-lg text-sm" 
-                   style={{ bottom: '15%', left: '-5%', zIndex: 10, fontWeight: '500' }}>
-                100% Eco-Friendly
-              </div>
+     
             </div>
           </div>
         </div>
@@ -222,7 +217,7 @@ function About() {
           
           {/* Hero bento - Eco focus */}
           <div className="col-xl-8">
-            <div className="bento-item h-100 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 rounded-4 p-5 position-relative overflow-hidden border border-emerald-200">
+            <div className="bento-item h-100  rounded-4 p-5 position-relative overflow-hidden border border-emerald-200">
               <div className="row h-100 align-items-center">
                 <div className="col-md-7">
                   <div className="mb-3">

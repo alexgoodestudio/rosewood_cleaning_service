@@ -38,7 +38,7 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="banner-container bg-indigo-200  text-sky-800  overflow-hidden whitespace-nowrap w-full"
+      className="banner-container bg-indigo-200  text-sky-950  overflow-hidden whitespace-nowrap w-full"
     >
       <span
         ref={textRef}

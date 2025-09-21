@@ -116,8 +116,8 @@ function Why() {
   return (
     <div ref={containerRef} className="container mt-5 mb-lg-5 mb-0  relative">
       <div className="row items-center">
-        <div className="col-lg-8 col-12 px-lg-0 p-4">
-          <h2 className="text-4xl text-start mb-lg-5">Why Choose Us?</h2>
+        <div className="col-lg-8 col-12 px-lg-0 p-4 ">
+          <h2 className="text-5xl text-start mb-lg-5">Why Choose Us?</h2>
           <p ref={paragraphRef} className="text-xl justify-text thin leading-relaxed">
             We’re not just another cleaning company — we’re part of your
             community. From local families to busy professionals, we take pride
@@ -127,10 +127,15 @@ function Why() {
             trust, and the well-being of our community. Every home we care for
             is a part of the neighborhood we love.
           </p>
+                            <div className="d-flex gap-2 flex-wrap">
+                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Plant-based</span>
+                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Pet-safe</span>
+                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Locally sourced</span>
+                  </div>
           <p className="text-start mt-lg-5 text-sm bold mb-lg-5 mb-0">LEARN MORE</p>
         </div>
 
-        <div className="col-lg-4 col-12 ps-lg-5 ps-0 relative overflow-hidden">
+        <div className="col-lg-4 col-12 ps-lg-5 ps-0  relative overflow-hidden">
           <div className="relative w-full max-w-[380px] mx-auto aspect-square">
             <img
               ref={image1Ref}

@@ -5,7 +5,7 @@ import Recurring from "./Components/Recurring";
 import Moving from "./Components/Moving";
 import About from "./Components/About";
 import ContactPage from "./Components/ContactPage";
-import FAQ from "./Components/FAQ";
+import FAQ from "./Components/Faq";
 
 function WebRoutes() {
   return (
@@ -16,7 +16,7 @@ function WebRoutes() {
       <Route path="/moving" element={<Moving />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<ContactPage />} />
-      <Route path="/faq" element={<FAQ />} />
+      <Route path="/faq" element={<FAQ/>} />
     </Routes>
   );
 }

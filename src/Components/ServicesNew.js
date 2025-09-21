@@ -81,7 +81,7 @@ function ServicesNew() {
 
   return (
     <div className="container py-5 px-4">
-      <h2 className="text-gray-800 text-start text-4xl mb-5">Our Services</h2>
+      <h2 className="text-gray-800 text-start text-5xl mb-5">Services</h2>
 
       {/* Desktop Cards */}
       <div className="row g-4 d-none d-md-flex">

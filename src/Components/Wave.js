@@ -40,7 +40,7 @@ function WaveBorder() {
   }, []);
 
   return (
-    <div className="bg-indigo-100 text-sky-800">
+    <div className="bg-indigo-100 text-sky-900">
       <div className="h-64 relative flex items-center justify-center">
         <h1 
           ref={textRef}

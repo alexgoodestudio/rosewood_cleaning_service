@@ -4,7 +4,7 @@ function Contact(){
     return(
         <div className=" bg-indigo-100 py-5 px-lg-0 px-4 mtm">
             <div className="container">
-            <h2 className="text-4xl">Contact</h2>
+            <h2 className="text-5xl">Contact</h2>
             <p className="">Get in touch today and we will reach out for next steps about a quote, booking an appointment and more!</p>
             <Form/>
             </div>
