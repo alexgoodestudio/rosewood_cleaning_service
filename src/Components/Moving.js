@@ -18,15 +18,15 @@ function Moving(){
                 </div>
                 <div className="row mt-5">
                     <div className="col-lg-4 rounded p-lg-5">
-                        <h2 className="text-7xl">70%</h2>
+                        <h2 className="text-7xl text-slate-400">70%</h2>
                         <p className="text-md">Proper cleaning and disinfection can remove the majority of bacteria on household surfaces — studies report reductions ranging from about 50% up to over 90%, depending on methods used.</p>
                     </div>
                     <div className="col-lg-4 rounded p-lg-5">
-                        <h2 className="text-7xl">75%</h2>
+                        <h2 className="text-7xl text-slate-400">75%</h2>
                         <p className="text-md">HEPA vacuuming and professional steam cleaning can substantially lower common allergens — studies report reductions of roughly 60–85% in carpet dust and dust-mite allergens depending on the method used.</p>
                     </div>
                     <div className="col-lg-4 rounded p-lg-5">
-                        <h2 className="text-7xl">99%</h2>
+                        <h2 className="text-7xl text-slate-400">99%</h2>
                         <p className="text-md">When EPA-registered disinfectants are used exactly as directed, they can inactivate many viruses on high-touch surfaces (products are often tested and labeled to show &gt;99% reduction for the listed pathogens).</p>
                     </div>
                 </div>
