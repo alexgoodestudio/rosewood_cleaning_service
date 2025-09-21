@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Sparkles, Home, RotateCcw } from "lucide-react";
+import { Sparkles, Home, RotateCcw, ArrowUpRight } from "lucide-react";
 import Image1 from "../Images/card3.png";
 import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
@@ -30,8 +30,12 @@ function AccordionItem({ title, subtitle, description, link, isOpen, onClick, ic
         }`}
       >
         <p className="text-gray-700 mb-2">{description}</p>
-        <Link to={link} className="btn btn-outline-secondary w-100">
-          Visit
+        <Link 
+          to={link} 
+          className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors text-center inline-flex items-center justify-center space-x-2 w-full"
+        >
+          <span>Get Started</span>
+          <ArrowUpRight className="w-4 h-4" />
         </Link>
       </div>
     </div>
@@ -107,9 +111,10 @@ function ServicesNew() {
               <div className="card-footer p-3">
                 <Link
                   to={service.link}
-                  className="btn btn-outline-secondary w-50 p-2 text-center"
+                  className="bg-black text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors text-center inline-flex items-center space-x-2 w-auto"
                 >
-                  Visit
+                  <span>Get Started</span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </div>
             </div>

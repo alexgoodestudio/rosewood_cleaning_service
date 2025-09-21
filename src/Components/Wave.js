@@ -18,7 +18,7 @@ function WaveBorder() {
 
       // Create scroll trigger animation
       gsap.to(textElement, {
-        scale: 1.15,
+        scale: 1.11,
         opacity: 1,
         duration: 1,
         ease: "power2.out",
@@ -34,7 +34,6 @@ function WaveBorder() {
       });
     }
 
-    // Cleanup function
     return () => {
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
@@ -47,7 +46,7 @@ function WaveBorder() {
           ref={textRef}
           className="text-2xl font-semibold"
         >
-          Let us handle the cleaning
+          Let us handle the cleaning!
         </h1>
         <svg 
           className="absolute bottom-0 left-0 w-full h-16" 
