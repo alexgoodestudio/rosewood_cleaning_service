@@ -131,7 +131,7 @@ function Why() {
         </div>
 
         <div className="col-lg-4 col-12 ps-lg-5 ps-0 relative overflow-hidden">
-          <div className="relative w-full max-w-[340px] mx-auto aspect-square">
+          <div className="relative w-full max-w-[380px] mx-auto aspect-square">
             <img
               ref={image1Ref}
               src={Image}
