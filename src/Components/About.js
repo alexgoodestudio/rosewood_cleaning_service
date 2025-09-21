@@ -20,75 +20,24 @@ function About() {
   const philosophyRef = useRef(null);
 
   useGSAP(() => {
-    // Sophisticated hero entrance with layered timing
-    const heroTl = gsap.timeline();
-    heroTl
-      .from(".hero-badge", { 
-        opacity: 0, 
-        scale: 0.8, 
-        duration: 0.6, 
-        ease: "back.out(2)" 
-      })
-      .from(".hero-title", { 
-        opacity: 0, 
-        y: 80, 
-        duration: 1, 
-        ease: "power3.out" 
-      }, "-=0.3")
-      .from(".hero-subtitle", { 
-        opacity: 0, 
-        y: 40, 
-        duration: 0.8, 
-        ease: "power2.out" 
-      }, "-=0.5")
-      .from(".hero-image", { 
-        opacity: 0, 
-        scale: 0.95, 
-        duration: 1.2, 
-        ease: "power3.out" 
-      }, "-=0.8")
-      .from(".floating-badge", { 
-        opacity: 0, 
-        scale: 0, 
-        duration: 0.8, 
-        ease: "elastic.out(1, 0.8)" 
-      }, "-=0.4");
-
-    // Floating element continuous animation
-    gsap.to(".floating-badge", {
-      y: -10,
-      duration: 2,
-      ease: "sine.inOut",
-      repeat: -1,
-      yoyo: true
-    });
-
-    // Enhanced bento grid reveal with sophisticated stagger
+    // Simple bento grid reveal
     gsap.from(".bento-item", {
       opacity: 0,
-      scale: 0.92,
-      y: 60,
-      rotation: 2,
-      stagger: {
-        amount: 0.8,
-        from: "start",
-        ease: "power2.out"
-      },
-      duration: 1,
-      ease: "back.out(1.4)",
+      y: 40,
+      stagger: 0.15,
+      duration: 0.8,
+      ease: "power2.out",
       scrollTrigger: {
         trigger: bentoRef.current,
-        start: "top 75%",
-        end: "bottom 25%",
+        start: "top 80%",
       },
     });
 
-    // Micro-interactions for bento items
+    // Subtle micro-interactions for bento items
     gsap.utils.toArray(".bento-item").forEach((item) => {
       const tl = gsap.timeline({ paused: true });
       tl.to(item, { 
-        y: -8, 
-        scale: 1.02, 
+        y: -4, 
         duration: 0.3, 
         ease: "power2.out" 
       });
@@ -97,17 +46,17 @@ function About() {
       item.addEventListener("mouseleave", () => tl.reverse());
     });
 
-    // Sophisticated stats animation with typewriter effect
+    // Stats count-up animation
     gsap.utils.toArray(".stat-number").forEach((stat, i) => {
       const finalValue = parseInt(stat.textContent);
       gsap.fromTo(stat, 
         { textContent: 0 },
         {
           textContent: finalValue,
-          duration: 2.5,
+          duration: 1.8,
           ease: "power2.out",
           snap: { textContent: 1 },
-          delay: i * 0.2,
+          delay: i * 0.1,
           scrollTrigger: {
             trigger: statsRef.current,
             start: "top 80%",
@@ -115,47 +64,6 @@ function About() {
         }
       );
     });
-
-    // Philosophy section reveal with mask effect
-    gsap.from(philosophyRef.current, {
-      clipPath: "inset(0 100% 0 0)",
-      duration: 1.5,
-      ease: "power3.inOut",
-      scrollTrigger: {
-        trigger: philosophyRef.current,
-        start: "top 80%",
-      },
-    });
-
-    // Team section sophisticated entrance
-    const teamTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: teamRef.current,
-        start: "top 80%",
-      },
-    });
-    
-    teamTl
-      .from(".team-content", { 
-        opacity: 0, 
-        x: -60, 
-        duration: 0.8, 
-        ease: "power3.out" 
-      })
-      .from(".team-visual", { 
-        opacity: 0, 
-        x: 60, 
-        scale: 0.9, 
-        duration: 0.8, 
-        ease: "power3.out" 
-      }, "-=0.6")
-      .from(".team-badges", { 
-        opacity: 0, 
-        y: 20, 
-        stagger: 0.1, 
-        duration: 0.5, 
-        ease: "back.out(2)" 
-      }, "-=0.3");
 
   }, []);
 
@@ -169,12 +77,12 @@ function About() {
             <div className="hero-badge d-inline-block px-4 py-2 bg-emerald-100 text-emerald-800 rounded-pill text-sm font-medium mb-4">
               ✨ Est. 2023 • Columbia, SC
             </div>
-            <h1 className="hero-title text-10xl text-stone-900 mb-4" 
-                style={{ letterSpacing: '-0.02em', fontWeight: '900' }}>
+            <h1 className="hero-title text-stone-900 mb-4" 
+                style={{ letterSpacing: '-0.02em', fontWeight: '900', fontSize: 'clamp(3.5rem, 8vw, 6rem)', lineHeight: '0.9' }}>
               About
               <span className="d-block text-amber-600">Us</span>
             </h1>
-            <p className="hero-subtitle text-2xl text-stone-600 mb-5" style={{ fontWeight: '300', lineHeight: '1.4' }}>
+            <p className="hero-subtitle text-stone-600 mb-5" style={{ fontWeight: '300', lineHeight: '1.4', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}>
               Two hearts, one mission—creating spaces that inspire you to live beautifully. 
               We're more than cleaners; we're curators of comfort.
             </p>
@@ -201,11 +109,10 @@ function About() {
               <div className="floating-badge position-absolute bg-white rounded-3 p-3 shadow-lg" 
                    style={{ top: '20%', right: '-5%', zIndex: 10 }}>
                 <div className="text-center">
-                  <div className="text-3xl text-emerald-600 mb-1" style={{ fontWeight: '700' }}>150+</div>
+                  <div className="text-emerald-600 mb-1" style={{ fontWeight: '700', fontSize: '2rem' }}>150+</div>
                   <div className="text-xs text-stone-600">Happy Homes</div>
                 </div>
               </div>
-     
             </div>
           </div>
         </div>
@@ -217,7 +124,7 @@ function About() {
           
           {/* Hero bento - Eco focus */}
           <div className="col-xl-8">
-            <div className="bento-item h-100  rounded-4 p-5 position-relative overflow-hidden border border-emerald-200">
+            <div className="bento-item h-100 bg-emerald-50 rounded-4 p-5 position-relative overflow-hidden border border-emerald-200">
               <div className="row h-100 align-items-center">
                 <div className="col-md-7">
                   <div className="mb-3">
@@ -225,10 +132,10 @@ function About() {
                       Our Promise
                     </span>
                   </div>
-                  <h3 className="text-5xl text-emerald-900 mb-4" style={{ fontWeight: '700' }}>
+                  <h3 className="text-emerald-900 mb-4" style={{ fontWeight: '700', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>
                     Planet-First Cleaning
                   </h3>
-                  <p className="text-lg text-emerald-800 mb-4" style={{ lineHeight: '1.6' }}>
+                  <p className="text-emerald-800 mb-4" style={{ lineHeight: '1.6', fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
                     Every product in our arsenal is a conscious choice—non-toxic, biodegradable, 
                     and safe for your family, pets, and our shared environment.
                   </p>
@@ -256,19 +163,19 @@ function About() {
           <div className="col-xl-4">
             <div className="row g-4 h-100">
               <div className="col-12">
-                <div className="bento-item bg-gradient-to-br from-rose-50 to-pink-50 rounded-4 p-4 text-center h-100 border border-rose-200">
-                  <div className="text-6xl mb-3">🏡</div>
-                  <h4 className="text-2xl text-rose-900 mb-3" style={{ fontWeight: '700' }}>Community Roots</h4>
-                  <p className="text-md text-rose-800" style={{ lineHeight: '1.5' }}>
+                <div className="bento-item bg-rose-50 rounded-4 p-4 text-center h-100 border border-rose-200">
+                  <div style={{ fontSize: '3rem' }} className="mb-3">🏡</div>
+                  <h4 className="text-rose-900 mb-3" style={{ fontWeight: '700', fontSize: '1.5rem' }}>Community Roots</h4>
+                  <p className="text-rose-800" style={{ lineHeight: '1.5', fontSize: '1rem' }}>
                     Born and raised in Columbia. Every home we clean strengthens the community we love.
                   </p>
                 </div>
               </div>
               <div className="col-12">
-                <div className="bento-item bg-gradient-to-br from-violet-50 to-purple-50 rounded-4 p-4 text-center h-100 border border-violet-200">
-                  <div className="text-6xl mb-3">✨</div>
-                  <h4 className="text-2xl text-violet-900 mb-3" style={{ fontWeight: '700' }}>Obsessive Care</h4>
-                  <p className="text-md text-violet-800" style={{ lineHeight: '1.5' }}>
+                <div className="bento-item bg-violet-50 rounded-4 p-4 text-center h-100 border border-violet-200">
+                  <div style={{ fontSize: '3rem' }} className="mb-3">✨</div>
+                  <h4 className="text-violet-900 mb-3" style={{ fontWeight: '700', fontSize: '1.5rem' }}>Obsessive Care</h4>
+                  <p className="text-violet-800" style={{ lineHeight: '1.5', fontSize: '1rem' }}>
                     We notice what others miss—every detail matters in creating your perfect space.
                   </p>
                 </div>
@@ -278,7 +185,7 @@ function About() {
 
           {/* Philosophy section */}
           <div className="col-12">
-            <div ref={philosophyRef} className="bento-item bg-gradient-to-r from-stone-900 via-stone-800 to-stone-700 rounded-4 p-5 text-white position-relative overflow-hidden">
+            <div ref={philosophyRef} className="bento-item  rounded-4 p-5 border   position-relative overflow-hidden">
               <div className="row align-items-center">
                 <div className="col-lg-8">
                   <div className="mb-3">
@@ -286,18 +193,18 @@ function About() {
                       Our Philosophy
                     </span>
                   </div>
-                  <h3 className="text-5xl mb-4" style={{ fontWeight: '700' }}>Clean Canvas, Creative Life</h3>
-                  <p className="text-xl mb-4" style={{ opacity: '0.9', lineHeight: '1.6' }}>
+                  <h3 className="mb-4" style={{ fontWeight: '700', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>Clean Canvas, Creative Life</h3>
+                  <p className="mb-4" style={{ opacity: '0.9', lineHeight: '1.6', fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
                     A thoughtfully maintained space becomes a sanctuary for inspiration. We don't just clean—we create 
                     environments where life's most meaningful moments unfold naturally.
                   </p>
                   <div className="d-flex gap-3 align-items-center">
                     <span className="text-amber-400">•</span>
-                    <span className="text-lg">Mindful</span>
+                    <span style={{ fontSize: '1.125rem' }}>Mindful</span>
                     <span className="text-amber-400">•</span>
-                    <span className="text-lg">Sustainable</span>
+                    <span style={{ fontSize: '1.125rem' }}>Sustainable</span>
                     <span className="text-amber-400">•</span>
-                    <span className="text-lg">Personal</span>
+                    <span style={{ fontSize: '1.125rem' }}>Personal</span>
                   </div>
                 </div>
                 <div className="col-lg-4">
@@ -316,7 +223,7 @@ function About() {
 
           {/* Service highlights - three column */}
           <div className="col-lg-4">
-            <div className="bento-item bg-gradient-to-br from-amber-50 to-yellow-50 rounded-4 p-4 text-center h-100 border border-amber-200">
+            <div className="bento-item bg-amber-50 rounded-4 p-4 text-center h-100 border border-amber-200">
               <div className="mb-4">
                 <img 
                   src={IMG4} 
@@ -325,15 +232,15 @@ function About() {
                   style={{ aspectRatio: '16/10', objectFit: 'cover' }}
                 />
               </div>
-              <h4 className="text-2xl text-amber-900 mb-3" style={{ fontWeight: '700' }}>Life-First Scheduling</h4>
-              <p className="text-md text-amber-800" style={{ lineHeight: '1.5' }}>
+              <h4 className="text-amber-900 mb-3" style={{ fontWeight: '700', fontSize: '1.5rem' }}>Life-First Scheduling</h4>
+              <p className="text-amber-800" style={{ lineHeight: '1.5', fontSize: '1rem' }}>
                 Your rhythm, our flexibility. We adapt our schedule to honor your life's natural flow.
               </p>
             </div>
           </div>
 
           <div className="col-lg-4">
-            <div className="bento-item bg-gradient-to-br from-blue-50 to-indigo-50 rounded-4 p-4 text-center h-100 border border-blue-200">
+            <div className="bento-item bg-blue-50 rounded-4 p-4 text-center h-100 border border-blue-200">
               <div className="mb-4">
                 <img 
                   src={IMG5} 
@@ -342,15 +249,15 @@ function About() {
                   style={{ aspectRatio: '16/10', objectFit: 'cover' }}
                 />
               </div>
-              <h4 className="text-2xl text-blue-900 mb-3" style={{ fontWeight: '700' }}>Story-Driven Care</h4>
-              <p className="text-md text-blue-800" style={{ lineHeight: '1.5' }}>
+              <h4 className="text-blue-900 mb-3" style={{ fontWeight: '700', fontSize: '1.5rem' }}>Story-Driven Care</h4>
+              <p className="text-blue-800" style={{ lineHeight: '1.5', fontSize: '1rem' }}>
                 Every home tells a unique story. We listen, learn, and clean with deep respect for your narrative.
               </p>
             </div>
           </div>
 
           <div className="col-lg-4">
-            <div className="bento-item bg-gradient-to-br from-indigo-50 to-purple-50 rounded-4 p-4 text-center h-100 border border-indigo-200">
+            <div className="bento-item bg-indigo-50 rounded-4 p-4 text-center h-100 border border-indigo-200">
               <div className="mb-4">
                 <img 
                   src={IMG6} 
@@ -359,8 +266,8 @@ function About() {
                   style={{ aspectRatio: '16/10', objectFit: 'cover' }}
                 />
               </div>
-              <h4 className="text-2xl text-indigo-900 mb-3" style={{ fontWeight: '700' }}>Satisfaction Guaranteed</h4>
-              <p className="text-md text-indigo-800" style={{ lineHeight: '1.5' }}>
+              <h4 className="text-indigo-900 mb-3" style={{ fontWeight: '700', fontSize: '1.5rem' }}>Satisfaction Guaranteed</h4>
+              <p className="text-indigo-800" style={{ lineHeight: '1.5', fontSize: '1rem' }}>
                 Not completely happy? We'll return and make it right. Your peace of mind is our priority.
               </p>
             </div>
@@ -372,31 +279,31 @@ function About() {
       <div className="bg-white py-5 my-5" ref={statsRef}>
         <div className="container">
           <div className="text-center mb-5">
-            <h2 className="text-6xl text-stone-900 mb-3" style={{ fontWeight: '700' }}>Impact by Numbers</h2>
-            <p className="text-xl text-stone-600">Small team, meaningful difference</p>
+            <h2 className="text-stone-900 mb-3" style={{ fontWeight: '700', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>Impact by Numbers</h2>
+            <p className="text-stone-600" style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>Small team, meaningful difference</p>
           </div>
           <div className="row g-4">
             <div className="col-lg-3 col-md-6">
-              <div className="bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-4 p-4 text-center border border-emerald-200 h-100">
-                <div className="stat-number text-5xl text-emerald-700 mb-2" style={{ fontWeight: '900' }}>150</div>
+              <div className="bg-emerald-50 rounded-4 p-4 text-center border border-emerald-200 h-100">
+                <div className="stat-number text-emerald-700 mb-2" style={{ fontWeight: '900', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>150</div>
                 <div className="text-emerald-800" style={{ fontWeight: '500' }}>Homes Transformed</div>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-4 p-4 text-center border border-blue-200 h-100">
-                <div className="stat-number text-5xl text-blue-700 mb-2" style={{ fontWeight: '900' }}>2</div>
+              <div className="bg-blue-50 rounded-4 p-4 text-center border border-blue-200 h-100">
+                <div className="stat-number text-blue-700 mb-2" style={{ fontWeight: '900', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>2</div>
                 <div className="text-blue-800" style={{ fontWeight: '500' }}>Years Serving Columbia</div>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="bg-gradient-to-br from-rose-50 to-rose-100 rounded-4 p-4 text-center border border-rose-200 h-100">
-                <div className="stat-number text-5xl text-rose-700 mb-2" style={{ fontWeight: '900' }}>100</div>
+              <div className="bg-rose-50 rounded-4 p-4 text-center border border-rose-200 h-100">
+                <div className="stat-number text-rose-700 mb-2" style={{ fontWeight: '900', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>100</div>
                 <div className="text-rose-800" style={{ fontWeight: '500' }}>% Eco-Friendly Products</div>
               </div>
             </div>
             <div className="col-lg-3 col-md-6">
-              <div className="bg-gradient-to-br from-violet-50 to-violet-100 rounded-4 p-4 text-center border border-violet-200 h-100">
-                <div className="stat-number text-5xl text-violet-700 mb-2" style={{ fontWeight: '900' }}>24</div>
+              <div className="bg-violet-50 rounded-4 p-4 text-center border border-violet-200 h-100">
+                <div className="stat-number text-violet-700 mb-2" style={{ fontWeight: '900', fontSize: 'clamp(2rem, 4vw, 3rem)' }}>24</div>
                 <div className="text-violet-800" style={{ fontWeight: '500' }}>Hour Response Time</div>
               </div>
             </div>
@@ -415,12 +322,12 @@ function About() {
                     The Humans Behind the Service
                   </span>
                 </div>
-                <h2 className="text-6xl text-dark mb-4" style={{ fontWeight: '700' }}>Meet Sarah & Marcus</h2>
-                <p className="text-xl text-stone-800 mb-4" style={{ lineHeight: '1.6' }}>
+                <h2 className="text-dark mb-4" style={{ fontWeight: '700', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>Meet Sarah & Marcus</h2>
+                <p className="text-stone-800 mb-4" style={{ lineHeight: '1.6', fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
                   We're two friends who discovered that our shared obsession with beautiful, 
                   thoughtfully maintained spaces could become something larger than ourselves.
                 </p>
-                <p className="text-lg text-stone-800 mb-5" style={{ lineHeight: '1.6' }}>
+                <p className="text-stone-800 mb-5" style={{ lineHeight: '1.6', fontSize: 'clamp(0.9rem, 1.8vw, 1.125rem)' }}>
                   What started as weekend help for friends has evolved into a service built on trust, 
                   genuine care, and the belief that everyone deserves a space that feels like home.
                 </p>
@@ -433,11 +340,11 @@ function About() {
             
             <div className="col-lg-6">
               <div className="team-visual position-relative">
-                <div className=" rounded-4 p-5 shadow-lg">
+                <div className="bg-white rounded-4 p-5 shadow-lg">
                   <div className="text-center">
-                    <div className="text-6xl mb-4">👋</div>
-                    <h3 className="text-3xl text-stone-900 mb-2" style={{ fontWeight: '700' }}>Sarah & Marcus</h3>
-                    <p className="text-stone-800 mb-4 text-lg">Co-Founders & Lead Cleaners</p>
+                    <div className="mb-4" style={{ fontSize: '3rem' }}>👋</div>
+                    <h3 className="text-stone-900 mb-2" style={{ fontWeight: '700', fontSize: 'clamp(1.5rem, 3vw, 2rem)' }}>Sarah & Marcus</h3>
+                    <p className="text-stone-800 mb-4" style={{ fontSize: '1.125rem' }}>Co-Founders & Lead Cleaners</p>
                     <div className="team-badges d-flex gap-2 justify-content-center flex-wrap">
                       <span className="badge bg-stone-900 text-white px-3 py-2 rounded-pill">Columbia Natives</span>
                       <span className="badge bg-stone-900 text-white px-3 py-2 rounded-pill">Detail Obsessed</span>
@@ -446,11 +353,7 @@ function About() {
                   </div>
                 </div>
                 
-                {/* Floating elements around team card */}
-                <div className="position-absolute bg-white rounded-3 p-2 shadow" 
-                     style={{ top: '10%', right: '-3%', zIndex: 10 }}>
-                  <div className="text-2xl">🌱</div>
-                </div>
+
                 <div className="position-absolute bg-emerald-100 text-emerald-800 rounded-pill px-3 py-1 text-sm shadow" 
                      style={{ bottom: '20%', left: '-5%', zIndex: 10, fontWeight: '500' }}>
                   Est. 2023
