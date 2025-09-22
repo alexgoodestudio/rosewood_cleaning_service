@@ -72,7 +72,7 @@ function About() {
             <h1 className="hero-title text-stone-900 mb-4" 
                 style={{ letterSpacing: '-0.02em', fontWeight: '900', fontSize: 'clamp(3.5rem, 8vw, 6rem)', lineHeight: '0.9' }}>
               About
-              <span className="d-block text-amber-600">Us</span>
+              <span className="d-block text-blue-900">Us</span>
             </h1>
             <p className="hero-subtitle text-stone-600 mb-5" style={{ fontWeight: '300', lineHeight: '1.4', fontSize: 'clamp(1.1rem, 2.5vw, 1.5rem)' }}>
               Two hearts, one mission—creating spaces that inspire you to live beautifully. 
@@ -314,7 +314,7 @@ function About() {
                     The Humans Behind the Service
                   </span>
                 </div>
-                <h2 className="text-dark mb-4" style={{ fontWeight: '700', fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>Meet Sarah & Marcus</h2>
+                <h2 className="text-dark mb-4" style={{ fontWeight: '900', fontSize: 'clamp(2.5rem, 5vw, 3.6rem)' }}>Meet Sarah & Marcus</h2>
                 <p className="text-stone-800 mb-4" style={{ lineHeight: '1.6', fontSize: 'clamp(1rem, 2vw, 1.25rem)' }}>
                   We're two friends who discovered that our shared obsession with beautiful, 
                   thoughtfully maintained spaces could become something larger than ourselves.
