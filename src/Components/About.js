@@ -20,33 +20,7 @@ function About() {
   const philosophyRef = useRef(null);
 
   useGSAP(() => {
-    // Simple bento grid reveal
-    gsap.from(".bento-item", {
-      opacity: 0,
-      y: 40,
-      stagger: 0.15,
-      duration: 0.8,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: bentoRef.current,
-        start: "top 80%",
-      },
-    });
-
-    // Subtle micro-interactions for bento items
-    gsap.utils.toArray(".bento-item").forEach((item) => {
-      const tl = gsap.timeline({ paused: true });
-      tl.to(item, { 
-        y: -4, 
-        duration: 0.3, 
-        ease: "power2.out" 
-      });
-
-      item.addEventListener("mouseenter", () => tl.play());
-      item.addEventListener("mouseleave", () => tl.reverse());
-    });
-
-    // Stats count-up animation
+    // Stats count-up animation (keeping only this animation)
     gsap.utils.toArray(".stat-number").forEach((stat, i) => {
       const finalValue = parseInt(stat.textContent);
       gsap.fromTo(stat, 
