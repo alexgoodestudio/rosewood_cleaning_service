@@ -20,12 +20,19 @@ function About() {
   const philosophyRef = useRef(null);
 
   useGSAP(() => {
-    // Stats count-up animation (keeping only this animation)
-    gsap.utils.toArray(".stat-number").forEach((stat, i) => {
-      const finalValue = parseInt(stat.textContent);
-      gsap.fromTo(stat, 
-        { textContent: 0 },
-        {
+    // Ensure ScrollTrigger is refreshed after component mounts
+    ScrollTrigger.refresh();
+
+    // Small delay to ensure DOM is fully rendered
+    gsap.delayedCall(0.1, () => {
+      // Stats count-up animation (keeping only this animation)
+      gsap.utils.toArray(".stat-number").forEach((stat, i) => {
+        const finalValue = parseInt(stat.textContent);
+        
+        // Set initial value to 0
+        gsap.set(stat, { textContent: 0 });
+        
+        gsap.to(stat, {
           textContent: finalValue,
           duration: 1.8,
           ease: "power2.out",
@@ -33,10 +40,21 @@ function About() {
           delay: i * 0.1,
           scrollTrigger: {
             trigger: statsRef.current,
-            start: "top 80%",
+            start: "top 85%",
+            end: "bottom 20%",
+            toggleActions: "play none none reset",
+            onRefresh: () => {
+              // Reset to 0 when ScrollTrigger refreshes
+              gsap.set(stat, { textContent: 0 });
+            },
+            // Add markers for debugging (remove in production)
+            // markers: true,
           },
-        }
-      );
+        });
+      });
+      
+      // Force ScrollTrigger to check positions
+      ScrollTrigger.refresh();
     });
 
   }, []);
