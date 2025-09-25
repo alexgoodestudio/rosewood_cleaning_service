@@ -91,9 +91,9 @@ function Mission() {
 
   return (
     <div className="px-lg-5 px-4 bg-indigo-50">
-      <div className="mission-body container row">
+      <div className="mission-body  row">
         <div className="col-12 ">
-          <h2 className=" text-5xl text-start mb-lg-4">Our Mission</h2>
+          <h2 className=" text-5xl text-start mb-lg-4">What We Do</h2>
           <p
             ref={container}
             className="text-xl justify-text thin leading-relaxed"

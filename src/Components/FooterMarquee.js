@@ -17,7 +17,8 @@ function FooterMarquee() {
       const containerWidth = container.offsetWidth;
       const textWidth = el.offsetWidth;
 
-      gsap.set(el, { x: containerWidth }); // start offscreen right
+      // Start 1/3 visible: move text so only 1/3 is on screen
+      gsap.set(el, { x: containerWidth * 2 / 3 });
 
       ScrollTrigger.create({
         trigger: container,
@@ -38,11 +39,11 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="banner-container bg-indigo-200  text-sky-950  overflow-hidden whitespace-nowrap w-full"
+      className="banner-container bg-indigo-200 text-sky-900 overflow-hidden whitespace-nowrap w-full"
     >
       <span
         ref={textRef}
-        className="banner-text py-4 text-6xl bold inline-block"
+        className="banner-text py-4 text-6xl font-semibold inline-block"
       >
         Interested in working with us? Let us help you get your home the way it should be.
       </span>
