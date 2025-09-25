@@ -54,7 +54,7 @@ function About() {
             <h1 className="text-5xl text-stone-900 mb-1">About Us</h1>
             <h6 className="text-stone-600">Meet Sarah & Marcus</h6>
             <p className="text-stone-700 mb-5 mt-4">
-              Husband and Wife Duo who discovered that our shared obsession with
+              Husband and Wife duo who discovered that our shared obsession with
               beautiful, thoughtfully maintained spaces could become something
               larger than ourselves. What started as weekend help for friends
               has evolved into a service built on trust, genuine care, and the
@@ -79,11 +79,11 @@ function About() {
               {/* Floating stats badge */}
               <div
                 className="floating-badge position-absolute bg-white rounded-3 p-3 shadow-lg"
-                style={{ top: "20%", right: "-13%", zIndex: 10 }}
+              
               >
                 <div className="text-center">
                   <div
-                    className="text-emerald-600 mb-1 text-lg"
+                    className="text-emerald-600 mb-1 text-lg  "
                     style={{ fontWeight: "700"}}
                     ref={happyHomesRef}
                   >
