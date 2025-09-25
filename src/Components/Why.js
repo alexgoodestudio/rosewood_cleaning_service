@@ -128,9 +128,9 @@ function Why() {
             is a part of the neighborhood we love.
           </p>
                             <div className="d-flex gap-2 flex-wrap">
-                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Plant-based</span>
+                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Local</span>
+                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Small Business</span>
                     <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Pet-safe</span>
-                    <span className="badge bg-emerald-300 text-emerald-900 px-3 py-2 rounded-pill">Locally sourced</span>
                   </div>
           <p className="text-start mt-lg-5 text-sm bold mb-lg-5 mb-0">LEARN MORE</p>
         </div>
