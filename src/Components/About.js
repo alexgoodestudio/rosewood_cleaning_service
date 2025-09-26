@@ -109,7 +109,7 @@ function About() {
                 <img
                   src={IMG3}
                   alt="Clean sanctuary"
-                  className="w-100 rounded-3 shadow-lg"
+                  className="w-100 rounded-3 shadow-lg mb-lg-0 mb-3"
                   style={{ aspectRatio: "1/1", objectFit: "cover", opacity: 0.8 }}
                 />
               </div>
@@ -146,7 +146,7 @@ function About() {
                     Every product in our arsenal is a conscious choice—non-toxic,
                     biodegradable, and safe for your family, pets, and our shared environment.
                   </p>
-                  <div className="d-flex gap-2 flex-wrap">
+                  <div className="d-flex gap-2 flex-wrap mb-lg-0 mb-3">
                     <span className="badge bg-emerald-500 text-emerald-900 px-3 py-2 rounded-pill">Local</span>
                     <span className="badge bg-emerald-500 text-emerald-900 px-3 py-2 rounded-pill">Pet-safe</span>
                     <span className="badge bg-emerald-500 text-emerald-900 px-3 py-2 rounded-pill">Small Business</span>
