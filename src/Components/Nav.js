@@ -54,7 +54,7 @@ function Nav() {
         <div className="row mb-3">
           <div className="col-12 text-slate-800 p-3">
             <h4>Welcome</h4>
-            <p>
+            <p className="text-slate-600">
               We make homes cleaner, healthier, and more relaxing — so you can
               focus on what matters.
             </p>
@@ -69,8 +69,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">About Us</h5>
-              <p>
+              <h5 className="underline">About Us</h5>
+              <p className="text-slate-600">
                 Local, reliable, and eco-friendly. We treat every home like our
                 own.
               </p>
@@ -82,8 +82,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">Contact</h5>
-              <p>
+              <h5 className="underline">Contact</h5>
+              <p className="text-slate-600">
                 Call, email, or book online. We'll build a plan that works for
                 you.
               </p>
@@ -95,8 +95,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">FAQ</h5>
-              <p>
+              <h5 className="underline">FAQ</h5>
+              <p className="text-slate-600">
                 Quick answers about pricing, supplies, and what's included in our
                 services.
               </p>
@@ -112,8 +112,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">One-Time</h5>
-              <p>
+              <h5 className="underline">One-Time</h5>
+              <p className="text-slate-600">
                 Perfect for deep cleans, special events, or seasonal refreshes.
               </p>
             </Link>
@@ -124,8 +124,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">Recurring</h5>
-              <p>
+              <h5 className="underline">Recurring</h5>
+              <p className="text-slate-600">
                 Weekly, bi-weekly, or monthly cleanings to keep your home
                 spotless.
               </p>
@@ -137,8 +137,8 @@ function Nav() {
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="text-primary">Move In / Out</h5>
-              <p>
+              <h5 className="underline">Move In / Out</h5>
+              <p className="text-slate-600">
                 We'll handle the scrubbing so your move is easier and stress-free.
               </p>
             </Link>
