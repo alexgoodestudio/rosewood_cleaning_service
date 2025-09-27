@@ -1,6 +1,6 @@
 function Banner(){
     return(
-        <div className="bg-indigo-50 text-center bold text-sm py-3">
+        <div className="bg-indigo-50 text-center bold text-md py-3">
             Let us handle the cleaning!
         </div>
     )

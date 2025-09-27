@@ -92,7 +92,8 @@ function Mission() {
   return (
     <div className="px-lg-5 px-4 bg-indigo-50">
       <div className="mission-body  row">
-        <div className="col-12 ">
+        <div className="col-12 px-5">
+          <div className="container">
           <h2 className=" text-5xl text-start mb-lg-4">What We Do</h2>
           <p
             ref={container}
@@ -109,6 +110,7 @@ function Mission() {
           <p className="text-start mt-lg-5 text-sm bold">
             Columbia South Carolina
           </p>
+          </div>
         </div>
       </div>
     </div>
