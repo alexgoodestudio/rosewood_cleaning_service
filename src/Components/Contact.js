@@ -41,7 +41,7 @@ function Contact() {
   }, []);
 
   return (
-    <section className="bg-indigo-50">
+    <section className="bg-slate-50">
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-10 col-xl-8">

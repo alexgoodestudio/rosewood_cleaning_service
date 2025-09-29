@@ -23,7 +23,7 @@ function Opener() {
           Top-tier house cleaning services in <span className="font-bold">Columbia, South Carolina</span>
         </p>
 
-        <button className="bg-primary text-white hover:bg-indigo-200 hover:text-slate-900 rounded px-6 py-3 font-semibold">
+        <button className="btn btn-primary px-4 py-2 font-semibold">
           Call Us
         </button>
       </div>

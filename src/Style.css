@@ -64,6 +64,13 @@
 .text-caption { font-size: 0.75rem; font-weight: 400; }
 
 /* ------------------------------    TEXT ANIMATION SYSTEM --------------------------------*/
+.transition-colors {
+  transition: color 0.3s ease;
+}
+
+.hover\:text-slate-50:hover {
+  color: rgb(248 250 252);
+}
 
 .line-container {
   overflow: hidden;
