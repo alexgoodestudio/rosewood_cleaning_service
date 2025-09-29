@@ -52,7 +52,8 @@ function Nav() {
       >
         {/* Row 1 */}
         <div className="row mb-3">
-          <div className="col-12 text-slate-800 p-3">
+          
+          <div className="col-12  text-slate-800  p-3">
             <h4>Welcome</h4>
             <p className="text-slate-600">
               We make homes cleaner, healthier, and more relaxing — so you can
@@ -63,81 +64,95 @@ function Nav() {
 
         {/* Row 2 - Company Info Links */}
         <div className="row mb-3">
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+                    <div className="col-lg-3 col-12  text-slate-800 p-3">
+            <Link 
+              to="/" 
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="">Home</h5>
+              <p className="text-slate-600">
+                Welcome to Rosewood Cleaning Services, your trusted partner for
+                a cleaner, healthier home.
+              </p>
+            </Link>
+          </div>
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/about" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">About Us</h5>
+              <h5 className="">About Us</h5>
               <p className="text-slate-600">
                 Local, reliable, and eco-friendly. We treat every home like our
                 own.
               </p>
             </Link>
           </div>
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/contact" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">Contact</h5>
+              <h5 className="">Contact</h5>
               <p className="text-slate-600">
                 Call, email, or book online. We'll build a plan that works for
                 you.
               </p>
             </Link>
           </div>
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/faq" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">FAQ</h5>
+              <h5 className="">FAQ</h5>
               <p className="text-slate-600">
                 Quick answers about pricing, supplies, and what's included in our
                 services.
               </p>
             </Link>
           </div>
+          
         </div>
 
         {/* Row 3 - Service Links */}
         <div className="row mb-3">
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/onetime" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">One-Time</h5>
+              <h5 className="">One-Time</h5>
               <p className="text-slate-600">
                 Perfect for deep cleans, special events, or seasonal refreshes.
               </p>
             </Link>
           </div>
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/recurring" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">Recurring</h5>
+              <h5 className="">Recurring</h5>
               <p className="text-slate-600">
                 Weekly, bi-weekly, or monthly cleanings to keep your home
                 spotless.
               </p>
             </Link>
           </div>
-          <div className="col-lg-4 col-12 text-slate-800 p-3">
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
             <Link 
               to="/moving" 
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
-              <h5 className="underline">Move In / Out</h5>
+              <h5 className="">Move In / Out</h5>
               <p className="text-slate-600">
                 We'll handle the scrubbing so your move is easier and stress-free.
               </p>

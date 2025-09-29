@@ -1,61 +1,27 @@
-import { useGSAP } from '@gsap/react';
-import { gsap } from 'gsap';
-import Form from "./Form";
+import { Link } from 'react-router-dom';
 
-const MOTION = {
-  instant: 0.15,
-  quick: 0.3,
-  smooth: 0.5,
-  slow: 0.8,
-  story: 1.2
-};
+
 
 function Contact() {
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  useGSAP(() => {
-    if (!prefersReducedMotion) {
-      gsap.from('.contact-heading', {
-        y: 30,
-        opacity: 0,
-        duration: MOTION.smooth,
-        ease: 'power2.out'
-      });
-
-      gsap.from('.contact-description', {
-        y: 20,
-        opacity: 0,
-        duration: MOTION.smooth,
-        ease: 'power2.out',
-        delay: 0.1
-      });
-
-      gsap.from('.contact-form', {
-        y: 30,
-        opacity: 0,
-        duration: MOTION.smooth,
-        ease: 'power2.out',
-        delay: 0.2
-      });
-    }
-  }, []);
+ 
 
   return (
-    <section className="bg-slate-50">
+    <section className="bg-slate-100 vh-50 text-center">
+      <div class="vh-50 d-flex align-items-center justify-content-center text-center">
       <div className="container">
-        <div className="row">
-          <div className="col-12 col-lg-10 col-xl-8">
-            <div className="py-5 py-md-6">
-              <h2 className="contact-heading text-5xl mb-4">Contact</h2>
-              <p className="contact-description text-lg text-slate-700 mb-5">
-                Get in touch today and we will reach out for next steps about a quote, booking an appointment and more.
+            <div className="py-5">
+              <h2 className=" text-3xl mb-4">Interesting in our services?</h2>
+              <p className=" text-lg text-slate-700 mb-5">
+                Rosewood Cleaning Services would love to work with you! Get in touch today and we will reach out with next steps about a quote, booking an appointment and more. Currently servicing Columbia, SC and surrounding areas.
               </p>
-              <div className="contact-form">
-                <Form />
-              </div>
+              
             </div>
-          </div>
-        </div>
+        <Link to="/contact">
+  <button className="bg-amber-900 text-white py-3 px-4  rounded mb-5">
+    Contact Us
+  </button>
+</Link>
+      </div>
       </div>
     </section>
   );

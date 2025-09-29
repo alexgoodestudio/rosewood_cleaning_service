@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -7,27 +7,31 @@ gsap.registerPlugin(ScrollTrigger);
 
 function FooterMarquee() {
   const containerRef = useRef();
-  const textRef = useRef();
+  const trackRef = useRef();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(
     () => {
-      const el = textRef.current;
+      if (prefersReducedMotion) return;
+
+      const track = trackRef.current;
       const container = containerRef.current;
 
+      const trackWidth = track.offsetWidth;
       const containerWidth = container.offsetWidth;
-      const textWidth = el.offsetWidth;
+      const startPosition = containerWidth * 2 / 3;
+      const distance = trackWidth + startPosition;
 
-      // Start 1/3 visible: move text so only 1/3 is on screen
-      gsap.set(el, { x: containerWidth * 2 / 3 });
+      gsap.set(track, { x: startPosition });
 
       ScrollTrigger.create({
         trigger: container,
-        start: "top bottom", // when top of container hits bottom of viewport
+        start: "top bottom",
         onEnter: () => {
-          gsap.to(el, {
-            x: -textWidth - containerWidth,
-            duration: 22,
-            ease: "linear",
+          gsap.to(track, {
+            x: -trackWidth,
+            duration: distance / 80,
+            ease: "none",
             repeat: -1,
           });
         },
@@ -39,14 +43,31 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="banner-container bg-indigo-100 text-sky-900 overflow-hidden whitespace-nowrap w-full"
+      className="marquee-container bg-indigo-100 overflow-hidden w-full"
+      role="complementary"
+      aria-label="Call to action banner"
     >
-      <span
-        ref={textRef}
-        className="banner-text py-4 text-6xl font-semibold inline-block"
+      <div
+        ref={trackRef}
+        className="marquee-track"
       >
-        Interested in working with us? Let us help you get your home the way it should be.
-      </span>
+        <span className="marquee-text text-sky-900">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-sky-300">•</span>
+        <span className="marquee-text text-sky-900">
+          Let us help you get your home the way it should be
+        </span>
+        <span className="marquee-separator text-sky-300">•</span>
+        <span className="marquee-text text-sky-900">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-sky-300">•</span>
+        <span className="marquee-text text-sky-900">
+          Let us help you get your home the way it should be
+        </span>
+        <span className="marquee-separator text-sky-300">•</span>
+      </div>
     </div>
   );
 }

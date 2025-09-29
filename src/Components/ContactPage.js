@@ -20,31 +20,40 @@ function ContactPage() {
     message: ''
   });
   const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   useGSAP(() => {
     if (!prefersReducedMotion) {
-      gsap.from('.contact-hero', {
+      gsap.from('.hero-title', {
         y: 40,
         opacity: 0,
         duration: MOTION.smooth,
         ease: 'power2.out'
       });
 
-      gsap.from('.contact-form-container', {
+      gsap.from('.hero-subtitle', {
+        y: 30,
+        opacity: 0,
+        duration: MOTION.smooth,
+        ease: 'power2.out',
+        delay: 0.15
+      });
+
+      gsap.from('.form-container', {
         y: 60,
         opacity: 0,
         duration: MOTION.slow,
         ease: 'power3.out',
-        delay: 0.2
+        delay: 0.25
       });
 
-      gsap.from('.contact-info-item', {
+      gsap.from('.info-item', {
         y: 30,
         opacity: 0,
         duration: MOTION.smooth,
         ease: 'power2.out',
         stagger: 0.1,
-        delay: 0.3
+        delay: 0.35
       });
     }
   }, []);
@@ -83,32 +92,91 @@ function ContactPage() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
     if (!validateForm()) {
-      e.preventDefault();
       return;
+    }
+
+    setSubmitStatus('sending');
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formState
+        }).toString()
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
     }
   };
 
   return (
     <div className="contact-page">
-      <div className="container py-5">
-        <div className="row justify-content-center py-5">
-          <div className="col-lg-10">
-            <div className="contact-hero text-center mb-5 pb-4">
-              <h1 className="text-fluid-display font-bold text-slate-900 mb-3">Let's talk</h1>
-              <p className="text-xl text-slate-600">
-                Ready to experience a cleaner space? We're here to help.
+      <div className="container">
+        <div className="row justify-content-center" style={{ paddingTop: '6rem', paddingBottom: '3rem' }}>
+          <div className="col-lg-10 col-xl-9">
+            <div className="text-center" style={{ marginBottom: '6rem' }}>
+              <h1 className="hero-title text-4xl text-slate-900 mb-3">
+                hello.
+              </h1>
+              <p className="hero-subtitle text-lg text-slate-600" style={{ maxWidth: '42rem', margin: '0 auto' }}>
+                Ready to experience a cleaner, more organized space? We typically respond within 24 hours.
               </p>
             </div>
           </div>
         </div>
 
         <div className="row justify-content-center">
-          <div className="col-lg-10">
+          <div className="col-lg-10 col-xl-9">
             <div className="row g-5">
-              <div className="col-lg-7">
-                <div className="contact-form-container">
+              <div className="col-lg-7 mb-lg-5 mb-0">
+                <div className="form-container">
+                  {submitStatus === 'success' && (
+                    <div className="success-message text-center" style={{ 
+                      padding: '3rem 2rem',
+                      backgroundColor: '#f8faf9',
+                      borderRadius: '8px',
+                      marginBottom: '2rem'
+                    }}>
+                      <div className="text-2xl text-slate-900 mb-2">Message Sent</div>
+                      <p className="text-base text-slate-600">
+                        We'll get back to you within one business day. Check your inbox for a confirmation.
+                      </p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="error-message" style={{
+                      padding: '1rem 1.25rem',
+                      backgroundColor: '#fef2f2',
+                      border: '1px solid #fecaca',
+                      borderRadius: '6px',
+                      marginBottom: '2rem'
+                    }}>
+                      <p className="text-sm text-red-700 mb-0">
+                        Something went wrong. Please try again or email us directly at hello@rosewoodcleaning.com
+                      </p>
+                    </div>
+                  )}
+
                   <form 
                     name="contact" 
                     method="POST" 
@@ -119,74 +187,100 @@ function ContactPage() {
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="d-none">
                       <label>
-                        Don't fill this out if you're human: <input name="bot-field" />
+                        Don't fill this out: <input name="bot-field" />
                       </label>
                     </div>
 
-                    <div className="mb-4">
-                      <label htmlFor="name" className="form-label text-sm font-semibold text-slate-700">
+                    <div style={{ marginBottom: '2rem' }}>
+                      <label htmlFor="name" className="text-sm text-slate-700" style={{ 
+                        display: 'block',
+                        marginBottom: '0.5rem',
+                        fontWeight: '500'
+                      }}>
                         Full Name
                       </label>
                       <input
                         type="text"
-                        className={`form-control form-control-custom ${errors.name ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.name ? 'is-invalid' : ''}`}
                         id="name"
                         name="name"
                         value={formState.name}
                         onChange={handleChange}
                         placeholder="Enter your name"
+                        aria-describedby={errors.name ? "name-error" : undefined}
                       />
                       {errors.name && (
-                        <div className="form-error text-xs mt-2">{errors.name}</div>
+                        <div id="name-error" className="text-xs text-red-600" style={{ marginTop: '0.5rem' }}>
+                          {errors.name}
+                        </div>
                       )}
                     </div>
 
-                    <div className="mb-4">
-                      <label htmlFor="email" className="form-label text-sm font-semibold text-slate-700">
+                    <div style={{ marginBottom: '2rem' }}>
+                      <label htmlFor="email" className="text-sm text-slate-700" style={{ 
+                        display: 'block',
+                        marginBottom: '0.5rem',
+                        fontWeight: '500'
+                      }}>
                         Email Address
                       </label>
                       <input
                         type="email"
-                        className={`form-control form-control-custom ${errors.email ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                         id="email"
                         name="email"
                         value={formState.email}
                         onChange={handleChange}
                         placeholder="your@email.com"
+                        aria-describedby={errors.email ? "email-error" : undefined}
                       />
                       {errors.email && (
-                        <div className="form-error text-xs mt-2">{errors.email}</div>
+                        <div id="email-error" className="text-xs text-red-600" style={{ marginTop: '0.5rem' }}>
+                          {errors.email}
+                        </div>
                       )}
                     </div>
 
-                    <div className="mb-4">
-                      <label htmlFor="phone" className="form-label text-sm font-semibold text-slate-700">
+                    <div style={{ marginBottom: '2rem' }}>
+                      <label htmlFor="phone" className="text-sm text-slate-700" style={{ 
+                        display: 'block',
+                        marginBottom: '0.5rem',
+                        fontWeight: '500'
+                      }}>
                         Phone Number
                       </label>
                       <input
                         type="tel"
-                        className={`form-control form-control-custom ${errors.phone ? 'is-invalid' : ''}`}
+                        className={`form-control ${errors.phone ? 'is-invalid' : ''}`}
                         id="phone"
                         name="phone"
                         value={formState.phone}
                         onChange={handleChange}
                         placeholder="(803) 555-0123"
+                        aria-describedby={errors.phone ? "phone-error" : undefined}
                       />
                       {errors.phone && (
-                        <div className="form-error text-xs mt-2">{errors.phone}</div>
+                        <div id="phone-error" className="text-xs text-red-600" style={{ marginTop: '0.5rem' }}>
+                          {errors.phone}
+                        </div>
                       )}
                     </div>
 
-                    <div className="mb-4">
-                      <label htmlFor="service" className="form-label text-sm font-semibold text-slate-700">
+                    <div style={{ marginBottom: '2rem' }}>
+                      <label htmlFor="service" className="text-sm text-slate-700" style={{ 
+                        display: 'block',
+                        marginBottom: '0.5rem',
+                        fontWeight: '500'
+                      }}>
                         Service Interest
                       </label>
                       <select
-                        className={`form-select form-control-custom ${errors.service ? 'is-invalid' : ''}`}
+                        className={`form-select ${errors.service ? 'is-invalid' : ''}`}
                         id="service"
                         name="service"
                         value={formState.service}
                         onChange={handleChange}
+                        aria-describedby={errors.service ? "service-error" : undefined}
                       >
                         <option value="">Select a service</option>
                         <option value="onetime">One Time Cleaning</option>
@@ -195,16 +289,22 @@ function ContactPage() {
                         <option value="other">Other / Not Sure</option>
                       </select>
                       {errors.service && (
-                        <div className="form-error text-xs mt-2">{errors.service}</div>
+                        <div id="service-error" className="text-xs text-red-600" style={{ marginTop: '0.5rem' }}>
+                          {errors.service}
+                        </div>
                       )}
                     </div>
 
-                    <div className="mb-4">
-                      <label htmlFor="message" className="form-label text-sm font-semibold text-slate-700">
-                        Message
+                    <div style={{ marginBottom: '2rem' }}>
+                      <label htmlFor="message" className="text-sm text-slate-700" style={{ 
+                        display: 'block',
+                        marginBottom: '0.5rem',
+                        fontWeight: '500'
+                      }}>
+                        Message <span className="text-slate-500">(Optional)</span>
                       </label>
                       <textarea
-                        className="form-control form-control-custom"
+                        className="form-control"
                         id="message"
                         name="message"
                         rows="5"
@@ -216,9 +316,17 @@ function ContactPage() {
 
                     <button 
                       type="submit"
-                      className="btn-contact-primary w-100"
+                      className="btn-primary w-100"
+                      disabled={submitStatus === 'sending'}
+                      style={{
+                        padding: '0.875rem 2rem',
+                        fontSize: '0.875rem',
+                        fontWeight: '600',
+                        opacity: submitStatus === 'sending' ? 0.6 : 1,
+                        cursor: submitStatus === 'sending' ? 'not-allowed' : 'pointer'
+                      }}
                     >
-                      Send Message
+                      {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
                     </button>
                   </form>
                 </div>
@@ -226,31 +334,95 @@ function ContactPage() {
 
               <div className="col-lg-5">
                 <div className="contact-info">
-                  <h3 className="text-2xl font-semibold text-slate-900 mb-4">Get in Touch</h3>
+                  <div className="text-xs text-slate-500 mb-4" style={{ 
+                    letterSpacing: '0.05em',
+                    textTransform: 'uppercase'
+                  }}>
+                    Contact Information
+                  </div>
                   
-                  <div className="contact-info-item mb-4 pb-4 border-bottom border-slate-200">
-                    <div className="text-xs font-semibold text-slate-500 mb-1">Location</div>
+                  <div className="info-item" style={{ 
+                    marginBottom: '2rem',
+                    paddingBottom: '2rem',
+                    borderBottom: '1px solid #e2e8f0'
+                  }}>
+                    <div className="text-xs text-slate-500 mb-1" style={{ 
+                      letterSpacing: '0.025em',
+                      textTransform: 'uppercase'
+                    }}>
+                      Service Area
+                    </div>
                     <div className="text-base text-slate-900">Columbia, South Carolina</div>
+                    <div className="text-sm text-slate-600" style={{ marginTop: '0.25rem' }}>
+                      Within 20 miles of downtown
+                    </div>
                   </div>
 
-                  <div className="contact-info-item mb-4 pb-4 border-bottom border-slate-200">
-                    <div className="text-xs font-semibold text-slate-500 mb-1">Email</div>
-                    <a href="mailto:hello@rosewoodcleaning.com" className="text-base text-slate-900 text-decoration-none hover-link">
+                  <div className="info-item" style={{ 
+                    marginBottom: '2rem',
+                    paddingBottom: '2rem',
+                    borderBottom: '1px solid #e2e8f0'
+                  }}>
+                    <div className="text-xs text-slate-500 mb-1" style={{ 
+                      letterSpacing: '0.025em',
+                      textTransform: 'uppercase'
+                    }}>
+                      Email
+                    </div>
+                    <a 
+                      href="mailto:hello@rosewoodcleaning.com" 
+                      className="text-base text-slate-900"
+                      style={{ 
+                        textDecoration: 'none',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
                       hello@rosewoodcleaning.com
                     </a>
+                    <div className="text-sm text-slate-600" style={{ marginTop: '0.25rem' }}>
+                      Response within 24 hours
+                    </div>
                   </div>
 
-                  <div className="contact-info-item mb-4 pb-4 border-bottom border-slate-200">
-                    <div className="text-xs font-semibold text-slate-500 mb-1">Phone</div>
-                    <a href="tel:+18035550123" className="text-base text-slate-900 text-decoration-none hover-link">
+                  <div className="info-item" style={{ 
+                    marginBottom: '2rem',
+                    paddingBottom: '2rem',
+                    borderBottom: '1px solid #e2e8f0'
+                  }}>
+                    <div className="text-xs text-slate-500 mb-1" style={{ 
+                      letterSpacing: '0.025em',
+                      textTransform: 'uppercase'
+                    }}>
+                      Phone
+                    </div>
+                    <a 
+                      href="tel:+18035550123" 
+                      className="text-base text-slate-900"
+                      style={{ 
+                        textDecoration: 'none',
+                        transition: 'color 0.3s ease'
+                      }}
+                    >
                       (803) 555-0123
                     </a>
+                    <div className="text-sm text-slate-600" style={{ marginTop: '0.25rem' }}>
+                      Call or text, we're here to help
+                    </div>
                   </div>
 
-                  <div className="contact-info-item">
-                    <div className="text-xs font-semibold text-slate-500 mb-3">Hours</div>
-                    <div className="text-sm text-slate-700 mb-2">Monday - Friday: 8am - 6pm</div>
-                    <div className="text-sm text-slate-700 mb-2">Saturday: 9am - 4pm</div>
+                  <div className="info-item">
+                    <div className="text-xs text-slate-500 mb-2" style={{ 
+                      letterSpacing: '0.025em',
+                      textTransform: 'uppercase'
+                    }}>
+                      Availability
+                    </div>
+                    <div className="text-sm text-slate-700" style={{ marginBottom: '0.5rem' }}>
+                      Monday - Friday: 8am - 6pm
+                    </div>
+                    <div className="text-sm text-slate-700" style={{ marginBottom: '0.5rem' }}>
+                      Saturday: 9am - 4pm
+                    </div>
                     <div className="text-sm text-slate-700">Sunday: Closed</div>
                   </div>
                 </div>
