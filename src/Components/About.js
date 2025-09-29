@@ -3,7 +3,7 @@ import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IMG from "../Images/7.jpg";
-import IMG2 from "../Images/2.jpg";
+// import IMG2 from "../Images/2.jpg";
 import IMG3 from "../Images/3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -171,7 +171,7 @@ function About() {
               Columbia, South Carolina
             </div>
             
-            <h1 className=" text-5xl font-semibold text-stone-900 mb-4">
+            <h1 className=" text-4xl font-semibold text-stone-900 mb-4">
               Meet the Owners
             </h1>
             
@@ -234,7 +234,7 @@ function About() {
               >
                 <div className="text-center">
                   <div
-                    className="text-emerald-600 mb-1"
+                    className="text-emerald-600 mb-1 px-4 "
                     style={{ 
                       fontSize: '1.5rem',
                       fontWeight: '700',
@@ -301,7 +301,7 @@ function About() {
         </div>
       </div>
 
-      <div className="bento-grid container" style={{ 
+      {/* <div className="bento-grid container" style={{ 
         paddingTop: '8rem',
         paddingBottom: '8rem'
       }}>
@@ -412,7 +412,7 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="values-section" style={{
         backgroundColor: '#fafaf9',

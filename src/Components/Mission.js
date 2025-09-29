@@ -129,7 +129,7 @@ function Mission() {
 
   return (
     <section className="bg-slate-50 py-5">
-      <div className="container-fluid px-4 px-lg-5">
+      <div className="container-fluid ">
         <div className="row justify-content-center">
           <div className="col-12 col-lg-10 col-xl-8">
             <h2 

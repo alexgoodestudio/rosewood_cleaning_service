@@ -57,7 +57,7 @@ function Footer() {
 
           <div className="footer-column col-lg-4 col-md-12">
             <h3 className="text-sm font-semibold mb-3 text-slate-400 uppercase tracking-wide">Connect</h3>
-            <div className="d-flex gap-3">
+            <div className="d-flex flex-column gap-3">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50">Facebook</a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50">Instagram</a>
             </div>
