@@ -27,7 +27,7 @@ function FAQ() {
   const faqs = [
     {
       q: "Do you have standard pricing?",
-      a: "We don't have a one-size-fits-all pricing model because every home has unique needs. To ensure we provide a tailored service, we offer FREE estimates. Book yours today through the 'Contact' tab or email us at support@getneatfreakclean.com."
+      a: "We don't have a one-size-fits-all pricing model because every home has unique needs. To ensure we provide a tailored service, we offer FREE estimates. Book yours today through the 'Contact' tab or email us at support@rosewoodcleaning.com."
     },
     {
       q: "Do you offer move-in/move-out cleaning?",
@@ -35,15 +35,15 @@ function FAQ() {
     },
     {
       q: "What’s your cancellation policy?",
-      a: "Please provide a 48-hour notice for cancellations or rescheduling by emailing support@getneatfreakclean.com. If you need to cancel within 48 hours, call or text (804) 482-0516."
+      a: "Please provide a 48-hour notice for cancellations or rescheduling by emailing support@rosewoodcleaning.com. If you need to cancel within 48 hours, call or text (804) 482-0516."
     },
     {
       q: "How can I contact you?",
-      a: "You can reach us at (804) 482-0516 or email support@getneatfreakclean.com for assistance."
+      a: "You can email support@rosewoodcleaning.com for assistance."
     },
     {
       q: "Do you provide holiday cleaning services?",
-      a: "Yes! Hosting a holiday gathering? Let us handle the cleaning. Email support@getneatfreakclean.com to book holiday cleaning services."
+      a: "Yes! Hosting a holiday gathering? Let us handle the cleaning. Email support@rosewoodcleaning.com to book holiday cleaning services."
     },
     {
       q: "Can you remove pet hair from my home?",
@@ -63,7 +63,7 @@ function FAQ() {
     },
     {
       q: "What areas do you serve?",
-      a: "We proudly serve Richmond, Virginia, and surrounding areas."
+      a: "We proudly serve Columbia, South Carolina, and surrounding areas."
     }
   ];
 

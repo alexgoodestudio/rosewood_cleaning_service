@@ -1,42 +1,52 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Sparkles, Home, RotateCcw, ArrowUpRight } from "lucide-react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/all";
+import { useGSAP } from "@gsap/react";
 import Image1 from "../Images/card3.png";
 import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
 import "../Style.css";
 
+gsap.registerPlugin(ScrollTrigger);
+
+const MOTION = {
+  instant: 0.15,
+  quick: 0.3,
+  smooth: 0.5,
+  slow: 0.8,
+  story: 1.2
+};
+
 function AccordionItem({ title, subtitle, description, link, isOpen, onClick, icon: Icon }) {
   return (
-    <div className="border rounded-lg shadow-sm mb-2 d-md-none">
+    <div className="accordion-item-custom mb-3 d-md-none">
       <button
         onClick={onClick}
-        className="w-100 text-start p-3 bg-gray-100 hover:bg-gray-200 transition flex justify-between items-center"
+        className="accordion-button-custom"
+        aria-expanded={isOpen}
+        aria-label={`${title} - ${subtitle}`}
       >
-        <div className="flex items-center space-x-3">
-          <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-            <Icon className="w-5 h-5 text-gray-600" />
+        <div className="d-flex align-items-center">
+          <div className="accordion-icon-container">
+            <Icon className="text-slate-700" size={20} />
           </div>
           <div>
-            <h3 className="mb-1 font-semibold">{title}</h3>
-            <small className="text-gray-600">{subtitle}</small>
+            <h3 className="text-lg text-slate-900 mb-1">{title}</h3>
+            <p className="text-sm text-slate-600 mb-0">{subtitle}</p>
           </div>
         </div>
-        <span>{isOpen ? "−" : "+"}</span>
+        <span className="accordion-toggle">{isOpen ? "−" : "+"}</span>
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-screen p-3" : "max-h-0"
-        }`}
-      >
-        <p className="text-gray-700 mb-2">{description}</p>
-        <Link 
-          to={link} 
-          className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors text-center inline-flex items-center justify-center space-x-2 w-full"
-        >
-          <span>Get Started</span>
-          <ArrowUpRight className="w-4 h-4" />
-        </Link>
+      <div className={`accordion-content ${isOpen ? "is-open" : ""}`}>
+        <div className="accordion-body">
+          <p className="text-md text-slate-700 mb-4">{description}</p>
+          <Link to={link} className="btn-custom-dark">
+            <span>Get Started</span>
+            <ArrowUpRight size={16} />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -44,6 +54,9 @@ function AccordionItem({ title, subtitle, description, link, isOpen, onClick, ic
 
 function ServicesNew() {
   const [open, setOpen] = useState(null);
+  const headingRef = useRef();
+  const cardsRef = useRef();
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const serviceData = [
     {
@@ -79,65 +92,103 @@ function ServicesNew() {
     setOpen(open === idx ? null : idx);
   };
 
-  return (
-    <div className="container py-5 px-4">
-      <h2 className="text-gray-800 text-start text-5xl mb-5">Services</h2>
+  useGSAP(() => {
+    if (prefersReducedMotion) {
+      gsap.set([headingRef.current, ".service-card"], { opacity: 1, y: 0 });
+      return;
+    }
 
-      {/* Desktop Cards */}
-      <div className="row g-4 d-none d-md-flex">
-        {serviceData.map((service, idx) => (
-          <div key={idx} className="col-lg-4 col-md-6">
-            <div className="rounded-2xl shadow-md overflow-hidden flex flex-col h-full text-start transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg card-animate">
-              <div className="relative">
-                <img
-                  src={service.image}
-                  className="card-img-top object-cover w-full h-48"
-                  alt={service.subtitle}
-                />
-                <div className="absolute top-4 left-4">
-                  <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center shadow-lg">
-                    <service.icon className="w-6 h-6 text-gray-600" />
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: headingRef.current,
+        start: "top 80%",
+        once: true
+      }
+    });
+
+    tl.fromTo(headingRef.current,
+      { y: 30, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: MOTION.smooth,
+        ease: "power2.out"
+      }
+    );
+
+    tl.fromTo(".service-card",
+      { y: 40, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: MOTION.smooth,
+        stagger: 0.08,
+        ease: "power2.out"
+      },
+      "-=0.2"
+    );
+  }, []);
+
+  return (
+    <section className="bg-white">
+      <div className="container py-5 px-4 px-lg-5">
+        <h2 
+          ref={headingRef}
+          className="text-5xl text-slate-900 mb-5"
+        >
+          Services
+        </h2>
+
+        {/* Desktop Cards */}
+        <div ref={cardsRef} className="row g-4 d-none d-md-flex">
+          {serviceData.map((service, idx) => (
+            <div key={idx} className="col-lg-4 col-md-6">
+              <div className="service-card card-modern">
+                <div className="card-image-wrapper">
+                  <img
+                    src={service.image}
+                    className="card-image"
+                    alt={service.subtitle}
+                    loading="lazy"
+                  />
+                  <div className="card-icon-overlay">
+                    <service.icon className="text-slate-700" size={24} />
                   </div>
                 </div>
-              </div>
-              <div className="card-body p-5 flex-grow-1">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-md leading-relaxed text-gray-600">
-                  {service.description}
-                </p>
-              </div>
-              <div className="card-footer p-3">
-                <Link
-                  to={service.link}
-                  className="bg-gray-900 text-white px-6 py-3 rounded-full font-semibold hover:bg-gray-800 transition-colors text-center inline-flex items-center space-x-2 w-auto"
-                >
-                  <span>Get Started</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </Link>
+                <div className="card-body-modern">
+                  <h3 className="text-xl text-slate-900 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-md text-slate-600 mb-4">
+                    {service.description}
+                  </p>
+                  <Link to={service.link} className="btn-custom-dark">
+                    <span>Get Started</span>
+                    <ArrowUpRight size={16} />
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      {/* Mobile Accordion */}
-      <div className="d-md-none mb-5">
-        {serviceData.map((service, idx) => (
-          <AccordionItem
-            key={idx}
-            title={service.title}
-            subtitle={service.subtitle}
-            description={service.description}
-            icon={service.icon}
-            link={service.link}
-            isOpen={open === idx}
-            onClick={() => toggle(idx)}
-          />
-        ))}
+        {/* Mobile Accordion */}
+        <div className="d-md-none">
+          {serviceData.map((service, idx) => (
+            <AccordionItem
+              key={idx}
+              title={service.title}
+              subtitle={service.subtitle}
+              description={service.description}
+              icon={service.icon}
+              link={service.link}
+              isOpen={open === idx}
+              onClick={() => toggle(idx)}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
