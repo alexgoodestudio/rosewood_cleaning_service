@@ -4,7 +4,7 @@ import SideBarNav from "./SideBarNav";
 const HeroModule = () => (
   <div className="space-y-8">
     <div className="space-y-6">
-      <h1 className="text-6xl font-semibold tracking-tight leading-tight text-slate-900">
+      <h1 className="text-5xl font-semibold tracking-tight leading-tight text-slate-900">
         Recurring Cleaning Services
       </h1>
       <div className="max-w-2xl">
