@@ -55,7 +55,7 @@ function Nav() {
           
           <div className="col-12  text-slate-800  p-3">
             <h4>Welcome</h4>
-            <p className="text-slate-600">
+            <p className="text-slate-600 text-sm">
               We make homes cleaner, healthier, and more relaxing — so you can
               focus on what matters.
             </p>
@@ -71,7 +71,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">Home</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Welcome to Rosewood Cleaning Services, your trusted partner for
                 a cleaner, healthier home.
               </p>
@@ -84,7 +84,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">About Us</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Local, reliable, and eco-friendly. We treat every home like our
                 own.
               </p>
@@ -97,7 +97,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">Contact</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Call, email, or book online. We'll build a plan that works for
                 you.
               </p>
@@ -110,7 +110,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">FAQ</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Quick answers about pricing, supplies, and what's included in our
                 services.
               </p>
@@ -128,7 +128,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">One-Time</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Perfect for deep cleans, special events, or seasonal refreshes.
               </p>
             </Link>
@@ -140,7 +140,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">Recurring</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 Weekly, bi-weekly, or monthly cleanings to keep your home
                 spotless.
               </p>
@@ -153,7 +153,7 @@ function Nav() {
               onClick={handleLinkClick}
             >
               <h5 className="">Move In / Out</h5>
-              <p className="text-slate-600">
+              <p className="text-slate-600 text-sm">
                 We'll handle the scrubbing so your move is easier and stress-free.
               </p>
             </Link>

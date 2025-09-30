@@ -17,10 +17,10 @@ function Contact() {
               
             </div>
         <Link to="/contact">
-  <button className="bg-amber-900 text-white py-3 px-4  rounded mb-5">
-    Contact Us
-  </button>
-</Link>
+          <button className="bg-slate-900 text-white py-3 px-4  rounded mb-5">
+            Contact Us
+          </button>
+        </Link>
       </div>
       </div>
     </section>
