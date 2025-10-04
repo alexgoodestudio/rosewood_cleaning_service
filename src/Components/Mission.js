@@ -76,7 +76,7 @@ function Mission() {
         </h2>
         <p
           ref={paragraphRef}
-          className="text-md  text-slate-700 leading-relaxed mb-8"
+          className="text-lg  text-slate-700 leading-relaxed mb-8"
         >
           At Rosewood Cleaning Services, we specialize in providing top-tier
           house cleaning that caters to the unique needs of each client,

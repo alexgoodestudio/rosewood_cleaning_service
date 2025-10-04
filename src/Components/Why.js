@@ -145,7 +145,7 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-6xl text-slate-900 mb-4" style={{ fontWeight: 600 }}>
+              <h2 ref={headingRef} className="text-5xl text-slate-900 mb-4" style={{ fontWeight: 600 }}>
                 Why Choose Us
               </h2>
             </div>
@@ -153,7 +153,7 @@ function Why() {
             <div className="mb-5">
               <p 
                 ref={paragraphRef} 
-                className="text-lg text-slate-700 mb-0"
+                className="text-md text-slate-700 mb-0"
                 style={{ maxWidth: '600px' }}
               >
                 We're not just another cleaning company — we're part of your
@@ -183,19 +183,19 @@ function Why() {
             <div ref={statsRef} className="row gx-4 gy-4">
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-3xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>500+</div>
+                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>500+</div>
                   <div className="text-sm text-slate-600">Homes Served</div>
                 </div>
               </div>
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-3xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>5 Years</div>
+                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>5 Years</div>
                   <div className="text-sm text-slate-600">In Columbia</div>
                 </div>
               </div>
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-3xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>4.9★</div>
+                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>4.9★</div>
                   <div className="text-sm text-slate-600">Average Rating</div>
                 </div>
               </div>

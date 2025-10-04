@@ -240,8 +240,8 @@ function ServicesNew() {
       <div className="container py-5">
         <div className="row mb-5">
           <div className="col-lg-8">
-            <h2 ref={headingRef} className="text-6xl text-slate-900 mb-3">
-              Services
+            <h2 ref={headingRef} className="text-5xl text-slate-900 mb-3">
+              Our Services
             </h2>
             <p ref={subtitleRef} className="text-lg text-slate-600">
               Professional cleaning solutions designed around your life
