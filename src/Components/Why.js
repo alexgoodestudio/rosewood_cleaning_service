@@ -166,16 +166,16 @@ function Why() {
             </div>
 
             <div ref={badgesRef} className="d-flex gap-2 flex-wrap mb-5">
-              <span className="community-badge badge bg-slate-100 text-slate-800 border border-slate-200 px-4 py-2 text-button transition-all" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Local
               </span>
-              <span className="community-badge badge bg-slate-100 text-slate-800 border border-slate-200 px-4 py-2 text-button transition-all" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Small Business
               </span>
-              <span className="community-badge badge bg-slate-100 text-slate-800 border border-slate-200 px-4 py-2 text-button transition-all" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Pet-Safe Products
               </span>
-              <span className="community-badge badge bg-slate-100 text-slate-800 border border-slate-200 px-4 py-2 text-button transition-all" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Community Focused
               </span>
             </div>
