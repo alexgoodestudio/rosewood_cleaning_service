@@ -7,6 +7,7 @@ import About from "./Components/About";
 import ContactPage from "./Components/ContactPage";
 import FAQ from "./Components/Faq";
 
+
 function WebRoutes() {
   return (
     <Routes>

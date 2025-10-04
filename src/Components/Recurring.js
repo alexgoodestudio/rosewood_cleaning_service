@@ -1,5 +1,6 @@
-import React from 'react';
 import SideBarNav from "./SideBarNav";
+import { Link } from 'react-router-dom';
+
 
 const HeroModule = () => (
   <div className="space-y-8">
@@ -44,12 +45,17 @@ const CTAModule = () => (
         with a consistently clean home. Choose your frequency and let us handle the rest.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <button className="bg-slate-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors">
+        <a 
+          href="tel:8035096700" 
+          className="bg-slate-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors text-center"
+        >
           Call
-        </button>
-        <button className="border border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors">
-          Contact
-        </button>
+        </a>
+<Link to="/contact">
+  <button className="border border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors">
+    Contact
+  </button>
+</Link>
       </div>
     </div>
   </div>

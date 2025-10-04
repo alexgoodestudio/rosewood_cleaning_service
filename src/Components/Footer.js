@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
+import { Facebook, Instagram } from "lucide-react";
+
 function Footer() {
   const currentYear = new Date().getFullYear();
-
-
 
   return (
     <footer className="bg-slate-950 text-slate-50">
@@ -17,26 +18,42 @@ function Footer() {
           <div className="footer-column col-6 col-lg-2 col-md-3 mb-4 mb-lg-0">
             <h3 className="text-sm font-semibold mb-3 text-slate-400 uppercase tracking-wide">Services</h3>
             <nav className="d-flex flex-column gap-2">
-              <a href="/onetime" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">One Time Cleaning</a>
-              <a href="/recurring" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Recurring Service</a>
-              <a href="/moving" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Moving Clean</a>
+              <Link to="/onetime" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">One Time Cleaning</Link>
+              <Link to="/recurring" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Recurring Service</Link>
+              <Link to="/moving" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Moving Clean</Link>
             </nav>
           </div>
 
           <div className="footer-column col-6 col-lg-2 col-md-3 mb-4 mb-lg-0">
             <h3 className="text-sm font-semibold mb-3 text-slate-400 uppercase tracking-wide">Company</h3>
             <nav className="d-flex flex-column gap-2">
-              <a href="/about" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">About</a>
-              <a href="/contact" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Contact</a>
-              <a href="/faq" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">FAQ</a>
+              <Link to="/about" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">About</Link>
+              <Link to="/contact" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">Contact</Link>
+              <Link to="/faq" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 hover:translate-x-1">FAQ</Link>
             </nav>
           </div>
 
           <div className="footer-column col-lg-4 col-md-12">
             <h3 className="text-sm font-semibold mb-3 text-slate-400 uppercase tracking-wide">Connect</h3>
             <div className="d-flex flex-column gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50">Facebook</a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50">Instagram</a>
+              <a 
+                href="https://maderight.studio/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 d-flex align-items-center gap-2"
+              >
+                <Facebook size={18} />
+                <span>Facebook</span>
+              </a>
+              <a 
+                href="https://maderight.studio/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-sm text-slate-300 text-decoration-none transition-all hover:text-slate-50 d-flex align-items-center gap-2"
+              >
+                <Instagram size={18} />
+                <span>Instagram</span>
+              </a>
             </div>
           </div>
         </div>

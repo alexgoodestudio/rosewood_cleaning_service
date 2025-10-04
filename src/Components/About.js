@@ -18,7 +18,6 @@ const MOTION = {
 
 function About() {
   const containerRef = useRef(null);
-  const metricRef = useRef(null);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
@@ -73,7 +72,7 @@ function About() {
         }
       });
 
-      gsap.from('.philosophy-heading', {
+      gsap.from('.philosophy-heading-static', {
         y: 30,
         opacity: 0,
         duration: MOTION.smooth,
@@ -84,6 +83,23 @@ function About() {
           start: 'top 75%',
         }
       });
+
+      gsap.fromTo('.philosophy-heading-reveal', 
+        {
+          clipPath: 'inset(0 0 0 100%)',
+        },
+        {
+          clipPath: 'inset(0 0 0 0%)',
+          duration: MOTION.story,
+          ease: 'power4.inOut',
+          delay: 0.4,
+          stagger: 0.2,
+          scrollTrigger: {
+            trigger: '.philosophy-section',
+            start: 'top 75%',
+          }
+        }
+      );
 
       gsap.from('.philosophy-text', {
         y: 30,
@@ -131,31 +147,6 @@ function About() {
           start: 'top 80%',
         }
       });
-
-      const metric = metricRef.current;
-      if (metric) {
-        const finalValue = 150;
-        
-        gsap.to(metric, {
-          textContent: finalValue,
-          duration: MOTION.story,
-          ease: 'power2.out',
-          snap: { textContent: 1 },
-          scrollTrigger: {
-            trigger: '.hero-image',
-            start: 'top 75%',
-            once: true
-          },
-          onUpdate: function() {
-            const current = Math.round(this.targets()[0].textContent);
-            metric.textContent = current + '+';
-          }
-        });
-      }
-    } else {
-      if (metricRef.current) {
-        metricRef.current.textContent = '150+';
-      }
     }
   }, { scope: containerRef });
 
@@ -171,7 +162,7 @@ function About() {
               Columbia, South Carolina
             </div>
             
-            <h1 className=" text-4xl font-semibold text-stone-900 mb-4">
+            <h1 className="hero-title text-4xl font-semibold text-stone-900 mb-4">
               Meet the Owners
             </h1>
             
@@ -222,34 +213,6 @@ function About() {
                   boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.15)'
                 }}
               />
-
-              <div
-                className="position-absolute bg-white rounded-3 shadow-lg"
-                style={{
-                  bottom: '-1.5rem',
-                  right: '-1.5rem',
-                  padding: '1rem 1.5 rem',
-                  border: '1px solid #e7e5e4'
-                }}
-              >
-                <div className="text-center">
-                  <div
-                    className="text-emerald-600 mb-1 px-4 "
-                    style={{ 
-                      fontSize: '1.5rem',
-                      fontWeight: '700',
-                      lineHeight: '1.2'
-                    }}
-                    ref={metricRef}
-                  >
-                    150+
-                  </div>
-                  <div className="text-xs text-stone-600" style={{ letterSpacing: '0.025em' }}>
-                    Happy Homes
-                  </div>
-       
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -286,8 +249,19 @@ function About() {
                 Our Philosophy
               </div>
               
-              <h2 className="philosophy-heading text-4xl text-blue-900 mb-4" style={{ fontWeight: '400' }}>
-                Clean Canvas, Creative Life
+              <h2 className="text-4xl text-blue-900 mb-4" style={{ fontWeight: '400' }}>
+                <span className="philosophy-heading-static">Clean </span>
+                <span className="philosophy-heading-reveal" style={{ 
+                  display: 'inline-block',
+                  clipPath: 'inset(0 0 0 100%)',
+                  willChange: 'clip-path'
+                }}>Canvas</span>
+                <span className="philosophy-heading-static">, Creative </span>
+                <span className="philosophy-heading-reveal" style={{ 
+                  display: 'inline-block',
+                  clipPath: 'inset(0 0 0 100%)',
+                  willChange: 'clip-path'
+                }}>Life</span>
               </h2>
               
               <p className="philosophy-text text-lg text-blue-800 mb-0" style={{ 
@@ -300,119 +274,6 @@ function About() {
           </div>
         </div>
       </div>
-
-      {/* <div className="bento-grid container" style={{ 
-        paddingTop: '8rem',
-        paddingBottom: '8rem'
-      }}>
-        <div className="row g-4">
-          <div className="col-lg-8">
-            <div className="bento-item h-100 rounded-4 position-relative overflow-hidden" style={{
-              backgroundColor: '#ecfdf5',
-              border: '1px solid #a7f3d0',
-              padding: '3.5rem'
-            }}>
-              <div className="row h-100 align-items-center g-4">
-                <div className="col-md-7">
-                  <div className="text-xs text-emerald-700 mb-3" style={{ 
-                    letterSpacing: '0.05em',
-                    textTransform: 'uppercase',
-                    fontWeight: '600'
-                  }}>
-                    Our Commitment
-                  </div>
-                  
-                  <h3 className="text-3xl text-emerald-900 mb-4" style={{ fontWeight: '400' }}>
-                    Planet-First Cleaning
-                  </h3>
-                  
-                  <p className="text-base text-emerald-800 mb-4" style={{ 
-                    lineHeight: '1.7',
-                    maxWidth: '28rem'
-                  }}>
-                    Every product in our arsenal is a conscious choice—non-toxic, biodegradable, and safe for your family, pets, and our shared environment. We partner with local suppliers who share our values.
-                  </p>
-                  
-                  <div className="d-flex gap-2 flex-wrap">
-                    <span className="text-xs text-emerald-900 px-3 py-2 rounded-pill" style={{
-                      backgroundColor: '#a7f3d0',
-                      fontWeight: '600'
-                    }}>
-                      Local Suppliers
-                    </span>
-                    <span className="text-xs text-emerald-900 px-3 py-2 rounded-pill" style={{
-                      backgroundColor: '#a7f3d0',
-                      fontWeight: '600'
-                    }}>
-                      Pet-Safe
-                    </span>
-                    <span className="text-xs text-emerald-900 px-3 py-2 rounded-pill" style={{
-                      backgroundColor: '#a7f3d0',
-                      fontWeight: '600'
-                    }}>
-                      Family-Owned
-                    </span>
-                  </div>
-                </div>
-                
-                <div className="col-md-5">
-                  <img
-                    src={IMG2}
-                    alt="Eco cleaning products"
-                    className="w-100 rounded-3 shadow"
-                    style={{ 
-                      aspectRatio: '4/5',
-                      objectFit: 'cover'
-                    }}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4">
-            <div className="row g-4 h-100">
-              <div className="col-12">
-                <div className="bento-item rounded-4 h-100" style={{
-                  backgroundColor: '#fef2f2',
-                  border: '1px solid #fecaca',
-                  padding: '2.5rem 2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center'
-                }}>
-                  <h4 className="text-xl text-rose-900 mb-3" style={{ fontWeight: '500' }}>
-                    Community Roots
-                  </h4>
-                  
-                  <p className="text-sm text-rose-800 mb-0" style={{ lineHeight: '1.6' }}>
-                    Born and raised in Columbia. Every home we clean strengthens the community we love.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="col-12">
-                <div className="bento-item rounded-4 h-100" style={{
-                  backgroundColor: '#f5f3ff',
-                  border: '1px solid #ddd6fe',
-                  padding: '2.5rem 2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'center'
-                }}>
-                  <h4 className="text-xl text-violet-900 mb-3" style={{ fontWeight: '500' }}>
-                    Detail-Oriented
-                  </h4>
-                  
-                  <p className="text-sm text-violet-800 mb-0" style={{ lineHeight: '1.6' }}>
-                    We notice what others miss. Every corner matters in creating your perfect space.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
 
       <div className="values-section" style={{
         backgroundColor: '#fafaf9',
