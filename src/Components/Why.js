@@ -20,17 +20,16 @@ function Why() {
   const metadataRef = useRef(null);
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
-  const badgesRef = useRef(null);
   const imageContainerRef = useRef(null);
   const image1Ref = useRef(null);
   const image2Ref = useRef(null);
-  const statsRef = useRef(null);
+
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
     if (prefersReducedMotion) {
-      gsap.set([metadataRef.current, headingRef.current, paragraphRef.current, badgesRef.current, statsRef.current], { opacity: 1 });
+      gsap.set([metadataRef.current, headingRef.current, paragraphRef.current], { opacity: 1 });
       gsap.set(image2Ref.current, { x: "0%" });
       return;
     }
@@ -95,39 +94,7 @@ function Why() {
       once: true,
     });
 
-    ScrollTrigger.create({
-      trigger: badgesRef.current,
-      start: "top 80%",
-      onEnter: () => {
-        const badges = badgesRef.current.querySelectorAll('.community-badge');
-        gsap.from(badges, {
-          y: 20,
-          opacity: 0,
-          duration: MOTION.quick,
-          stagger: 0.08,
-          ease: 'power2.out',
-          delay: 0.2
-        });
-      },
-      once: true,
-    });
 
-    ScrollTrigger.create({
-      trigger: statsRef.current,
-      start: "top 80%",
-      onEnter: () => {
-        const stats = statsRef.current.querySelectorAll('.stat-item');
-        gsap.from(stats, {
-          y: 20,
-          opacity: 0,
-          duration: MOTION.smooth,
-          stagger: 0.1,
-          ease: 'power2.out',
-          delay: 0.3
-        });
-      },
-      once: true,
-    });
 
   }, { scope: containerRef });
 
@@ -145,7 +112,7 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-5xl text-slate-900 mb-4" style={{ fontWeight: 600 }}>
+              <h2 ref={headingRef} className="text-5xl text-slate-900 mb-4">
                 Why Choose Us
               </h2>
             </div>
@@ -165,7 +132,7 @@ function Why() {
               </p>
             </div>
 
-            <div ref={badgesRef} className="d-flex gap-2 flex-wrap mb-5">
+            <div  className="d-flex gap-2 flex-wrap mb-5">
               <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Local
               </span>
@@ -180,7 +147,7 @@ function Why() {
               </span>
             </div>
 
-            <div ref={statsRef} className="row gx-4 gy-4">
+            <div className="row gx-4 gy-4">
               <div className="col-6 col-md-4">
                 <div className="stat-item">
                   <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>500+</div>

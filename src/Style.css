@@ -441,12 +441,31 @@
 .tracking-wider {
   letter-spacing: 0.05em;
 }
+.mission-section {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
 
+@media (max-width: 768px) {
+  .mission-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.mission-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.tracking-wider {
+  letter-spacing: 0.05em;
+}
 
 .image-square {
   aspect-ratio: 1 / 1;
   width: 100%;
-  max-width: 320px;
+  max-width: 380px;
 }
 
 @media (min-width: 768px) {
