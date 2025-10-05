@@ -51,7 +51,7 @@ function WaveBorder() {
         <div className="row g-0">
           <div className="col-12">
             <div className="position-relative d-flex align-items-center justify-content-center overflow-hidden" style={{ minHeight: '384px' }}>
-              <h1 className="wave-heading text-4xl font-semibold px-3">
+              <h1 className="wave-heading text-5xl font-semibold px-3">
                 Let us handle the cleaning stuff
               </h1>
               <svg 
