@@ -205,8 +205,8 @@ function Why() {
           <div className="col-12 col-lg-4 order-1 order-lg-2 mb-4 mb-lg-0">
             <div 
               ref={imageContainerRef}
-              className="position-relative w-100 mx-auto overflow-hidden rounded" 
-              style={{ aspectRatio: '1 / 1', maxWidth: '380px' }}
+              className="position-relative w-100 image-square mx-auto overflow-hidden rounded" 
+              
             >
               <img
                 ref={image1Ref}

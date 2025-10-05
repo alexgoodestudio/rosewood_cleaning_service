@@ -443,7 +443,17 @@
 }
 
 
+.image-square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  max-width: 260px;
+}
 
+@media (min-width: 768px) {
+  .image-square {
+    max-width: 380px;
+  }
+}
 
 
 
