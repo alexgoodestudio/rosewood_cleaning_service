@@ -25,7 +25,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="bg-slate-100 text-center py-3">
+    <section className=" bg-indigo-100 text-center py-3">
       <div className="container">
         <p className="banner-text text-md font-semibold text-slate-600 mb-0">
           Let us handle the cleaning stuff.

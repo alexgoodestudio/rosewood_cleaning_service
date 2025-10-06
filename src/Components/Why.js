@@ -150,19 +150,19 @@ function Why() {
             <div className="row gx-4 gy-4">
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>500+</div>
+                  <div className="text-2xl text-slate-900 mb-1">500+</div>
                   <div className="text-sm text-slate-600">Homes Served</div>
                 </div>
               </div>
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>5 Years</div>
+                  <div className="text-2xl text-slate-900 mb-1">5 Years</div>
                   <div className="text-sm text-slate-600">In Columbia</div>
                 </div>
               </div>
               <div className="col-6 col-md-4">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1" style={{ fontWeight: 600 }}>4.9★</div>
+                  <div className="text-2xl text-slate-900 mb-1">4.9★</div>
                   <div className="text-sm text-slate-600">Average Rating</div>
                 </div>
               </div>

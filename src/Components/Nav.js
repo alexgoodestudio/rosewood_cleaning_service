@@ -30,7 +30,7 @@ function Nav() {
   };
 
   return (
-    <nav className="navbar bg-indigo-100 text-slate-800 flex flex-col">
+    <nav className="navbar bg-slate-50 text-slate-800 flex flex-col">
       {/* Always fixed header row */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
         <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">

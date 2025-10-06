@@ -141,20 +141,16 @@
   color: rgb(248 250 252);
 }
 
-.line-container {
-  overflow: hidden;
+
+
+.wave-border-hero {
+  min-height: 384px;
+}
+
+.wave-border-svg {
+  height: 80px;
   display: block;
-  line-height: inherit;
 }
-
-.line-inner {
-  display: inline;
-}
-/* Ensure smooth SVG rendering */
-.wave-path {
-  will-change: transform;
-}
-
 /* Section vertical spacing using 8px base unit system */
 .py-6 {
   padding-top: 6rem; /* 96px */

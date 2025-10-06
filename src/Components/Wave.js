@@ -1,70 +1,81 @@
-import { useEffect, useRef, useState } from 'react';
-import { gsap } from 'gsap';
+import { useRef, useState } from "react";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+
+const MOTION = {
+  instant: 0.15,
+  quick: 0.3,
+  smooth: 0.5,
+  slow: 0.8,
+  story: 1.2
+};
+
+const phrases = [
+  "We handle the cleaning",
+  "You handle everything else",
+  "Clean homes, clear minds",
+  "Thoughtfully cleaned spaces",
+  "Done right, every time"
+];
 
 function WaveBorder() {
-  const phrases = [
-    "Let us handle the cleaning stuff",
-    "Relax while we make it shine",
-    "Your space, spotlessly clean",
-    "Professional cleaning made easy",
-    "Fresh and clean, every time"
-  ];
-
   const [currentIndex, setCurrentIndex] = useState(0);
   const textRef = useRef(null);
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      // Animate current text out to the left
-      gsap.to(textRef.current, {
-        x: -100,
-        opacity: 0,
-        duration: 0.5,
-        ease: "power2.in",
-        onComplete: () => {
-          // Update the text
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-          
-          // Reset position to right (off-screen)
-          gsap.set(textRef.current, { x: 100, opacity: 0 });
-          
-          // Animate new text in from the right
-          gsap.to(textRef.current, {
-            x: 0,
-            opacity: 1,
-            duration: 0.5,
-            ease: "power2.out"
-          });
-        }
-      });
-    }, 3200);
+  useGSAP(() => {
+    if (prefersReducedMotion) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % phrases.length);
+      }, 3200);
+      return () => clearInterval(interval);
+    }
 
-    // Initial animation on mount
     gsap.from(textRef.current, {
       x: 100,
       opacity: 0,
-      duration: 0.5,
+      duration: MOTION.smooth,
       ease: "power2.out"
     });
+
+    const interval = setInterval(() => {
+      gsap.to(textRef.current, {
+        x: -100,
+        opacity: 0,
+        duration: MOTION.smooth,
+        ease: "power2.in",
+        onComplete: () => {
+          setCurrentIndex((prev) => (prev + 1) % phrases.length);
+          gsap.fromTo(textRef.current,
+            { x: 100, opacity: 0 },
+            { 
+              x: 0, 
+              opacity: 1, 
+              duration: MOTION.smooth, 
+              ease: "power2.out" 
+            }
+          );
+        }
+      });
+    }, 3200);
 
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <section className="bg-slate-50 text-slate-900">
+    <section className="wave-border-section bg-slate-50 text-slate-900">
       <div className="container-fluid p-0">
         <div className="row g-0">
           <div className="col-12">
-            <div className="position-relative d-flex align-items-center justify-content-center overflow-hidden" style={{ minHeight: '384px' }}>
+            <div className="wave-border-hero position-relative d-flex align-items-center justify-content-center overflow-hidden">
               <h1 
                 ref={textRef}
-                className="text-3xl text-semibold px-3"
+                className="text-4xl md:text-4xl fw-semibold px-4 text-center"
               >
                 {phrases[currentIndex]}
               </h1>
               <svg 
-                className="position-absolute bottom-0 start-0 w-100" 
-                style={{ height: '80px', display: 'block' }}
+                className="wave-border-svg position-absolute bottom-0 start-0 w-100" 
                 viewBox="0 0 1200 80" 
                 preserveAspectRatio="none"
                 role="img"
