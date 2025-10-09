@@ -16,14 +16,14 @@ const MOTION = {
 function Mission() {
   const containerRef = useRef();
   const metaRef = useRef();
-  const headingRef = useRef();
-  const paragraph1Ref = useRef();
-  const paragraph2Ref = useRef();
+  const statementRef = useRef();
+  const mobileStatementRef = useRef();
+  const cardsRef = useRef();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
     if (prefersReducedMotion) {
-      gsap.set([metaRef.current, headingRef.current, paragraph1Ref.current, paragraph2Ref.current], { 
+      gsap.set([metaRef.current, statementRef.current, mobileStatementRef.current, '.mission-card'], { 
         opacity: 1, 
         x: 0,
         y: 0
@@ -34,86 +34,157 @@ function Mission() {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none"
+        start: "top 75%",
+        once: true
       }
     });
 
-    tl.from(metaRef.current.querySelectorAll('.meta-item'), {
+    tl.from(metaRef.current, {
       x: -30,
       opacity: 0,
       duration: MOTION.smooth,
-      ease: "power2.out",
-      stagger: 0.1
+      ease: "power2.out"
     })
-    .from(headingRef.current, {
+    .from([statementRef.current, mobileStatementRef.current], {
       y: 40,
       opacity: 0,
       duration: MOTION.slow,
       ease: "power3.out"
     }, "-=0.3")
-    .from(paragraph1Ref.current, {
-      x: -40,
+    .from('.mission-card', {
+      y: 30,
       opacity: 0,
       duration: MOTION.smooth,
-      ease: "power2.out"
-    }, "-=0.4")
-    .from(paragraph2Ref.current, {
-      x: 40,
-      opacity: 0,
-      duration: MOTION.smooth,
-      ease: "power2.out"
-    }, "-=0.3");
+      ease: "power2.out",
+      stagger: 0.12
+    }, "-=0.4");
 
   }, []);
 
   return (
-    <section ref={containerRef} className="mission-section">
+    <section ref={containerRef} className="mission-section bg-stone-50">
       <div className="container">
+        
+        {/* Metadata bar - offset on desktop */}
         <div className="row">
-          <div className="col-12 col-lg-10 offset-lg-1">
+          <div className="col-12 offset-lg-1 col-lg-11">
+            <div className="mb-4 mb-md-5">
+              <div 
+                ref={metaRef}
+                className="d-flex flex-wrap align-items-center"
+                style={{ gap: '0.5rem 0.75rem' }}
+              >
+                <span className="text-metadata text-slate-500">
+                  Columbia, SC
+                </span>
+                <span className="text-slate-300">•</span>
+                <span className="text-metadata text-slate-500">
+                  Since 2019
+                </span>
+                <span className="text-slate-300">•</span>
+                <span className="text-metadata text-slate-500">
+                  Residential
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Mobile-only hero - full width */}
+        <div className="row d-lg-none">
+          <div className="col-12">
+            <div className="mb-4">
+              <div ref={mobileStatementRef}>
+                <h2 className="mission-mobile-title text-slate-900 mb-3">
+                  Two people. Same every time.
+                </h2>
+                <p className="mission-mobile-body text-slate-600">
+                  No rotating crews. No strangers. Just Sarah and Marcus, 
+                  Tuesday afternoons, learning where you keep the vinegar.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop layout - offset with 60/40 split */}
+        <div className="row">
+          <div className="col-12 offset-lg-1 col-lg-11">
             <div className="row align-items-start">
               
-              <div ref={metaRef} className="col-12 col-md-3 mb-6 mb-md-0">
-                <p className="text-xs text-slate-500 tracking-wider uppercase mb-6">
-                  Our Focus
+              {/* Large statement - 60% */}
+              <div className="col-12 col-lg-7 mb-5 mb-lg-0 pe-lg-5 d-none d-lg-block">
+                <h2 
+                  ref={statementRef}
+                  className="mission-desktop-title text-5xl text-slate-900"
+                >
+                  The same two people clean your home.
+                </h2>
+                <p className="text-lg text-slate-600 mt-4">
+                  No rotating crews. No strangers. Just Sarah and Marcus, 
+                  Tuesday afternoons, learning where you keep the vinegar.
                 </p>
-                <div className="mission-meta">
-                  <p className="meta-item text-sm text-slate-600 mb-4">
-                    Columbia, SC
-                  </p>
-                  <p className="meta-item text-sm text-slate-600 mb-4">
-                    Est. 2019
-                  </p>
-                  <p className="meta-item text-sm text-slate-600">
-                    Residential
-                  </p>
-                </div>
               </div>
 
-              <div className="col-12 col-md-9">
-                <h2 
-                  ref={headingRef}
-                  className="text-3xl md:text-4xl text-slate-900 mb-8"
-                >
-                  We clean homes for people who care about what goes into their space
-                </h2>
-                
-                <div className="row">
-                  <div className="col-12 col-lg-10">
-                    <p ref={paragraph1Ref} className="text-md text-slate-700 mb-6">
-                      Most cleaning services use whatever's cheapest. We don't. Every product we bring into your home is plant-based, biodegradable, and safe for kids and pets. No synthetic fragrances. No harsh chemicals lingering in the air after we leave.
+              {/* Bento cards - 40% */}
+              <div ref={cardsRef} className="col-12 col-lg-5">
+                <div className="mission-cards-container">
+                  
+                  {/* Card 1: Products */}
+                  <div className="mission-card bg-white rounded">
+                    <p className="text-metadata text-slate-500 mb-2">
+                      What We Use
                     </p>
-                    <p ref={paragraph2Ref} className="text-md text-slate-700">
-                      Our clients tend to be families who cook at home, keep houseplants, compost their scraps—people building intentional lives who want their cleaning to match that ethos. We're not the fastest option, but we're thorough, and we show up consistently.
+                    <p className="mission-card-text text-slate-700">
+                      Branch Basics concentrates diluted to spec. Seventh Generation 
+                      dish soap. Unscented everything. We've been using the same 
+                      products since 2019—no experiments on your counters.
                     </p>
                   </div>
+
+                  {/* Card 2: Service area */}
+                  <div className="mission-card bg-stone-100 rounded">
+                    <p className="text-metadata text-slate-500 mb-2">
+                      Where We Work
+                    </p>
+                    <p className="mission-card-text text-slate-700">
+                      Shandon, Rosewood, Forest Acres, Elmwood Park. 
+                      Within 4 miles of Five Points. If you're further, 
+                      we'll be honest about drive time affecting our schedule.
+                    </p>
+                  </div>
+
+                  {/* Card 3: Target client */}
+                  <div className="mission-card bg-white rounded">
+                    <p className="text-metadata text-slate-500 mb-2">
+                      Who Hires Us
+                    </p>
+                    <p className="mission-card-text text-slate-700">
+                      Families with toddlers crawling on floors. People with 
+                      asthma or chemical sensitivities. Households that compost, 
+                      keep plants, cook daily. Not the fastest service in town, 
+                      but we remember your dog's name.
+                    </p>
+                  </div>
+
+                  {/* Card 4: Honest limitations */}
+                  <div className="mission-card bg-stone-50 rounded border border-stone-200">
+                    <p className="text-metadata text-slate-500 mb-2">
+                      What We Don't Do
+                    </p>
+                    <p className="mission-card-text-small text-slate-600">
+                      Last-minute requests. We're a two-person operation scheduling 
+                      3 weeks out—this isn't TaskRabbit.
+                    </p>
+                  </div>
+
                 </div>
               </div>
 
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );
