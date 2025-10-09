@@ -72,34 +72,7 @@ function About() {
         }
       });
 
-      gsap.from('.philosophy-heading-static', {
-        y: 30,
-        opacity: 0,
-        duration: MOTION.smooth,
-        ease: 'power2.out',
-        delay: 0.1,
-        scrollTrigger: {
-          trigger: '.philosophy-section',
-          start: 'top 75%',
-        }
-      });
-
-      gsap.fromTo('.philosophy-heading-reveal', 
-        {
-          clipPath: 'inset(0 0 0 100%)',
-        },
-        {
-          clipPath: 'inset(0 0 0 0%)',
-          duration: MOTION.story,
-          ease: 'power4.inOut',
-          delay: 0.4,
-          stagger: 0.2,
-          scrollTrigger: {
-            trigger: '.philosophy-section',
-            start: 'top 75%',
-          }
-        }
-      );
+    
 
       gsap.from('.philosophy-text', {
         y: 30,
@@ -251,17 +224,9 @@ function About() {
               
               <h2 className="text-4xl text-blue-900 mb-4" style={{ fontWeight: '400' }}>
                 <span className="philosophy-heading-static">Clean </span>
-                <span className="philosophy-heading-reveal" style={{ 
-                  display: 'inline-block',
-                  clipPath: 'inset(0 0 0 100%)',
-                  willChange: 'clip-path'
-                }}>Canvas</span>
+                <span className="philosophy-heading-reveal" >Canvas</span>
                 <span className="philosophy-heading-static">, Creative </span>
-                <span className="philosophy-heading-reveal" style={{ 
-                  display: 'inline-block',
-                  clipPath: 'inset(0 0 0 100%)',
-                  willChange: 'clip-path'
-                }}>Life</span>
+                <span className="philosophy-heading-reveal">Life</span>
               </h2>
               
               <p className="philosophy-text text-lg text-blue-800 mb-0" style={{ 
