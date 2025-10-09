@@ -63,14 +63,14 @@ function WaveBorder() {
   }, []);
 
   return (
-    <section className="wave-border-section bg-slate-50 text-slate-900">
+    <section className="wave-border-section bg-slate-100 text-slate-900">
       <div className="container-fluid p-0">
         <div className="row g-0">
           <div className="col-12">
             <div className="wave-border-hero position-relative d-flex align-items-center justify-content-center overflow-hidden">
               <h1 
                 ref={textRef}
-                className="text-4xl md:text-4xl fw-semibold px-4 text-center"
+                className="text-3xl fw-semibold px-4 text-center"
               >
                 {phrases[currentIndex]}
               </h1>

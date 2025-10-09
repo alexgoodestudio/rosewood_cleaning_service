@@ -236,7 +236,7 @@ function ServicesNew() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-white">
+    <section ref={sectionRef} className="bg-white mb-5">
       <div className="container py-5">
         <div className="row mb-5">
           <div className="col-lg-8">

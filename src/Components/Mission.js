@@ -131,7 +131,7 @@ function Mission() {
                 <div className="mission-cards-container">
                   
                   {/* Card 1: Products */}
-                  <div className="mission-card bg-white rounded">
+                  <div className="mission-card  bg-white rounded">
                     <p className="text-metadata text-slate-500 mb-2">
                       What We Use
                     </p>
@@ -143,7 +143,7 @@ function Mission() {
                   </div>
 
                   {/* Card 2: Service area */}
-                  <div className="mission-card bg-stone-100 rounded">
+                  <div className="mission-card  bg-stone-100 rounded">
                     <p className="text-metadata text-slate-500 mb-2">
                       Where We Work
                     </p>
@@ -155,7 +155,7 @@ function Mission() {
                   </div>
 
                   {/* Card 3: Target client */}
-                  <div className="mission-card bg-white rounded">
+                  <div className="mission-card  bg-white rounded">
                     <p className="text-metadata text-slate-500 mb-2">
                       Who Hires Us
                     </p>
@@ -168,13 +168,13 @@ function Mission() {
                   </div>
 
                   {/* Card 4: Honest limitations */}
-                  <div className="mission-card bg-stone-50 rounded border border-stone-200">
+                  <div className="mission-card  bg-stone-50 rounded border border-stone-200">
                     <p className="text-metadata text-slate-500 mb-2">
                       What We Don't Do
                     </p>
                     <p className="mission-card-text-small text-slate-600">
-                      Last-minute requests. We're a two-person operation scheduling 
-                      3 weeks out—this isn't TaskRabbit.
+                      Last-minute requests. We're a two-person team scheduling 
+                      2 to 3 weeks out. Keep up with us on Instagram for additional openings. 
                     </p>
                   </div>
 

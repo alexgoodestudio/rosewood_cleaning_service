@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -15,6 +15,14 @@ const MOTION = {
   story: 1.2
 };
 
+const phrases = [
+  // "Why Choose Us",
+  "We handle the cleaning",
+  "You handle everything else",
+  "Clean homes, clear minds",
+  "Done right, every time"
+];
+
 function Why() {
   const containerRef = useRef(null);
   const metadataRef = useRef(null);
@@ -23,7 +31,7 @@ function Why() {
   const imageContainerRef = useRef(null);
   const image1Ref = useRef(null);
   const image2Ref = useRef(null);
-
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -31,7 +39,11 @@ function Why() {
     if (prefersReducedMotion) {
       gsap.set([metadataRef.current, headingRef.current, paragraphRef.current], { opacity: 1 });
       gsap.set(image2Ref.current, { x: "0%" });
-      return;
+      
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % phrases.length);
+      }, 3200);
+      return () => clearInterval(interval);
     }
 
     gsap.set(image2Ref.current, { x: "100%", rotation: 0 });
@@ -70,11 +82,34 @@ function Why() {
       start: "top 80%",
       onEnter: () => {
         gsap.from(headingRef.current, {
-          y: 40,
+          x: 100,
           opacity: 0,
-          duration: MOTION.slow,
-          ease: 'power3.out'
+          duration: MOTION.smooth,
+          ease: "power2.out"
         });
+
+        const interval = setInterval(() => {
+          gsap.to(headingRef.current, {
+            x: -100,
+            opacity: 0,
+            duration: MOTION.smooth,
+            ease: "power2.in",
+            onComplete: () => {
+              setCurrentIndex((prev) => (prev + 1) % phrases.length);
+              gsap.fromTo(headingRef.current,
+                { x: 100, opacity: 0 },
+                { 
+                  x: 0, 
+                  opacity: 1, 
+                  duration: MOTION.smooth, 
+                  ease: "power2.out" 
+                }
+              );
+            }
+          });
+        }, 4200);
+
+        return () => clearInterval(interval);
       },
       once: true,
     });
@@ -94,12 +129,10 @@ function Why() {
       once: true,
     });
 
-
-
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-5 py-md-6">
+    <section ref={containerRef} className="py-5 py-md-6 mb-5 mt-5">
       <div className="container">
         <div className="row align-items-center">
           
@@ -112,8 +145,8 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-5xl text-slate-900 mb-4">
-                Why Choose Us
+              <h2 ref={headingRef} className="text-4xl text-slate-900 mb-4">
+                {phrases[currentIndex]}
               </h2>
             </div>
 
@@ -132,37 +165,34 @@ function Why() {
               </p>
             </div>
 
-            <div  className="d-flex gap-2 flex-wrap mb-5">
+            <div className="d-flex gap-2 flex-wrap mb-5">
               <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
-                Local
-              </span>
-              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
-                Small Business
-              </span>
-              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
-                Pet-Safe Products
+                Child Safe Products
               </span>
               <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Community Focused
               </span>
+              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+                Small Business
+              </span>
             </div>
 
             <div className="row gx-4 gy-4">
-              <div className="col-6 col-md-4">
+              <div className="col-4 col-md-4 col-lg-3">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1">500+</div>
+                  <div className="text-xl text-slate-900 mb-1">500+</div>
                   <div className="text-sm text-slate-600">Homes Served</div>
                 </div>
               </div>
-              <div className="col-6 col-md-4">
+              <div className="col-4 col-md-4 col-lg-3">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1">5 Years</div>
+                  <div className="text-xl text-slate-900 mb-1">5 Years</div>
                   <div className="text-sm text-slate-600">In Columbia</div>
                 </div>
               </div>
-              <div className="col-6 col-md-4">
+              <div className="col-4 col-md-4 col-lg-3">
                 <div className="stat-item">
-                  <div className="text-2xl text-slate-900 mb-1">4.9★</div>
+                  <div className="text-xl text-slate-900 mb-1">4.9★</div>
                   <div className="text-sm text-slate-600">Average Rating</div>
                 </div>
               </div>
@@ -173,7 +203,6 @@ function Why() {
             <div 
               ref={imageContainerRef}
               className="position-relative w-100 image-square mx-auto overflow-hidden rounded" 
-              
             >
               <img
                 ref={image1Ref}
