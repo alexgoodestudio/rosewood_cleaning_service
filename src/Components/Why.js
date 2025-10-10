@@ -107,7 +107,7 @@ function Why() {
               );
             }
           });
-        }, 4200);
+        }, 3500);
 
         return () => clearInterval(interval);
       },
