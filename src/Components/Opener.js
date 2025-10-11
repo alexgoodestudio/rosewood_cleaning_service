@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Loader2 } from "lucide-react";
 import heroImage from "../Images/alex-tyson-1eUtEZDFH9Y-unsplash.jpg";
 
 function Opener() {
@@ -10,12 +9,11 @@ function Opener() {
       {/* Loading indicator */}
       {!imageLoaded && (
         <div 
-          className="flex items-center justify-center w-full bg-gradient-to-br from-gray-50 to-gray-100" 
+          className="flex items-center justify-center w-full bg-stone-50" 
           style={{ height: "75vh" }}
         >
           <div className="text-center">
-            <Loader2 className="w-12 h-12 text-blue-600 animate-spin mx-auto mb-4" />
-            <p className="text-gray-700 font-medium text-lg">Loading Rosewood Cleaning...</p>
+            <div className="loader mx-auto mb-4"></div>
           </div>
         </div>
       )}
@@ -30,7 +28,7 @@ function Opener() {
           src={heroImage}
           alt="Hero"
           className="w-full h-full object-cover"
-          onLoad={() => setImageLoaded(true)}
+          onLoad={() => setTimeout(() => setImageLoaded(true), 800)}
         />
 
         {/* Text + Button in bottom-left */}
@@ -50,6 +48,25 @@ function Opener() {
           </button>
         </div>
       </div>
+
+      {/* Loader CSS */}
+      <style jsx>{`
+        .loader {
+          width: 32px;
+          aspect-ratio: 1;
+          --_g: no-repeat radial-gradient(farthest-side, #0f172a 90%, #0000);
+          background: var(--_g), var(--_g), var(--_g), var(--_g);
+          background-size: 40% 40%;
+          animation: l46 1s infinite;
+        }
+        @keyframes l46 {
+          0%   { background-position: 0 0, 100% 0, 100% 100%, 0 100% }
+          40%,
+          50%  { background-position: 100% 100%, 100% 0, 0 0, 0 100% }
+          90%,
+          100% { background-position: 100% 100%, 0 100%, 0 0, 100% 0 }
+        }
+      `}</style>
     </>
   );
 }
