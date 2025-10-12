@@ -1,8 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
 import heroImage from "../Images/alex-tyson-1eUtEZDFH9Y-unsplash.jpg";
 
 function Opener() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const loaderTextRef = useRef(null);
+
+  const prefersReducedMotion = window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+
+  // Loader text animation
+  useGSAP(() => {
+    if (!prefersReducedMotion && loaderTextRef.current) {
+      // Initial fade in
+      gsap.from(loaderTextRef.current, {
+        opacity: 0,
+        y: 8,
+        duration: 0.5,
+        ease: 'power2.out'
+      });
+
+      // Gentle breathing pulse
+      gsap.to(loaderTextRef.current, {
+        opacity: 0.5,
+        duration: 1.2,
+        ease: 'power1.inOut',
+        yoyo: true,
+        repeat: -1
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -14,6 +43,12 @@ function Opener() {
         >
           <div className="text-center">
             <div className="loader mx-auto mb-4"></div>
+            <p 
+              ref={loaderTextRef}
+              className="text-slate-600 text-sm tracking-wide"
+            >
+              Rosewood Cleaning
+            </p>
           </div>
         </div>
       )}
@@ -40,12 +75,15 @@ function Opener() {
           </h1>
 
           <p className="text-lg md:text-xl mb-4">
-            Top-tier house cleaning services in <span className="font-bold">Columbia, South Carolina</span>
+            Your home deserves the best cleaning in <span className="bold">Columbia, South Carolina</span>
           </p>
 
-          <button className="btn btn-primary px-4 py-2 font-semibold">
-            Call Us
-          </button>
+          <a 
+            href="tel:+18035096700" 
+            className="bg-white text-slate-950 no-underline rounded-lg px-5 py-3 font-medium inline-block"
+          >
+            Call Us!
+          </a>
         </div>
       </div>
 

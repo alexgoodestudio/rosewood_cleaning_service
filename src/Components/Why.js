@@ -145,7 +145,7 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-4xl text-slate-900 mb-4">
+              <h2 ref={headingRef} className="text-3xl text-slate-900 mb-4">
                 {phrases[currentIndex]}
               </h2>
             </div>

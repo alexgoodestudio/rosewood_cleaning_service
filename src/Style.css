@@ -3,7 +3,9 @@
 @tailwind utilities;
 
 /* ------------------------------    UTILITY CLASSES --------------------------------*/
-
+body {
+  overflow-x: hidden;
+}
 .font-bold {
   font-weight: 600;
 }

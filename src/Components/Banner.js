@@ -6,7 +6,7 @@ const MOTION = {
   quick: 0.3,
   smooth: 0.5,
   slow: 0.8,
-  story: 1.2
+  story: 1.2,
 };
 
 function Banner() {
@@ -14,18 +14,22 @@ function Banner() {
 
   useGSAP(() => {
     if (!prefersReducedMotion) {
-      gsap.from('.banner-text', {
-        y: -20,
+      const tl = gsap.timeline({ defaults: { ease: 'power2.out' } });
+      tl.from('.banner-section', {
         opacity: 0,
+        y: 10,
+        duration: MOTION.quick,
+      })
+      .from('.banner-text', {
+        opacity: 0,
+        y: -20,
         duration: MOTION.smooth,
-        ease: 'power2.out',
-        delay: 0.2
-      });
+      }, "-=0.2");
     }
   }, []);
 
   return (
-    <section className=" bg-indigo-100 text-center py-3">
+    <section className="banner-section bg-indigo-100 text-center py-3">
       <div className="container">
         <p className="banner-text text-md font-semibold text-slate-600 mb-0">
           Let us handle the cleaning stuff.
