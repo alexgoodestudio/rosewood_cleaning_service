@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-
-
+import { ArrowUpRight } from "lucide-react";
 
 function Contact() {
  
@@ -16,11 +15,15 @@ function Contact() {
               </p>
               
             </div>
-        <Link to="/contact">
-          <button className="bg-slate-900 text-white py-3 px-4  rounded mb-5">
-            Contact Us
-          </button>
-        </Link>
+<Link to="/contact">
+  <button className="btn-contact py-3 px-5 mb-5 inline-flex items-center gap-2">
+    Contact Us
+    <ArrowUpRight 
+      size={18} 
+      strokeWidth={1.5} 
+    />
+  </button>
+</Link>
       </div>
       </div>
     </section>

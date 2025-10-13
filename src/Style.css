@@ -34,6 +34,38 @@ body {
   text-align: center;
 }
 
+/* In your index.css or App.css */
+.btn-call-hero {
+  background-color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-call-hero:hover {
+  background-color: #020617;
+  color: white;
+}
+
+.btn-contact {
+  background-color: #0f172a;
+  color: white;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-contact:hover {
+  background-color: white;
+  color: #020617;
+}
+
+.btn-contact svg {
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.btn-contact:hover svg {
+  color: #020617 !important;
+  transform: rotate(45deg);
+}
+
         .loader {
           width: 32px;
           aspect-ratio: 1;

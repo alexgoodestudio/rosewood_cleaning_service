@@ -1,7 +1,10 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import heroImage from "../Images/alex-tyson-1eUtEZDFH9Y-unsplash.jpg";
+import { ArrowUpRight } from "lucide-react";
+
+          
 
 function Opener({ onImageLoad }) {
   const contentRef = useRef(null);
@@ -46,13 +49,18 @@ function Opener({ onImageLoad }) {
         <p className="text-lg md:text-xl mb-4">
           Your home deserves the best cleaning in <span className="font-bold">Columbia, South Carolina</span>
         </p>
-
-        <a 
-          href="tel:+18035096700" 
-          className="bg-white text-slate-950 no-underline rounded-lg px-5 py-3 font-medium inline-block"
-        >
-          Call Us
-        </a>
+<a 
+  href="tel:+18035096700" 
+  className="btn-call-hero text-slate-950 no-underline px-5 py-3 font-medium inline-flex items-center gap-2 group"
+>
+  Call Us
+  <ArrowUpRight 
+    size={18} 
+    className="text-slate-700 group-hover:text-white group-hover:rotate-45 transition-all duration-300" 
+    strokeWidth={1.5} 
+  />
+</a>
+    
       </div>
     </div>
   );
