@@ -28,7 +28,7 @@ function Banner() {
           each: 0.08,
           from: 'start'
         },
-        delay: 1.8
+        delay: 2.5
       });
     }
   }, []);

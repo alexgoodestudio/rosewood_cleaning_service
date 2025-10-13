@@ -33,7 +33,7 @@ body {
   align-items: center;
   text-align: center;
 }
-/* HTML: <div class="loader"></div> */
+
         .loader {
           width: 32px;
           aspect-ratio: 1;
@@ -49,6 +49,24 @@ body {
           90%,
           100% { background-position: 100% 100%, 0 100%, 0 0, 100% 0 }
         }
+
+
+        /* Ensure smooth magnetic hover transforms */
+.cta-button button {
+  will-change: transform;
+}
+
+/* Subtle hover state refinement */
+.cta-button button:hover {
+  background-color: #0f172a !important;
+}
+
+/* Prevent text selection during magnetic interaction */
+.cta-button button {
+  user-select: none;
+  -webkit-user-select: none;
+}
+
 /* ------------------------------    TEXT SIZE SYSTEM --------------------------------*/
 
 /* Headings */
@@ -534,6 +552,7 @@ body {
 
 .service-card-link:hover .service-cta {
   gap: 0.75rem;
+  
 }
 
 /* Mobile Service Items */

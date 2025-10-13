@@ -32,7 +32,7 @@ function Opener({ onImageLoad }) {
         src={heroImage}
         alt="Hero"
         className="w-full h-full object-cover"
-        onLoad={() => setTimeout(() => onImageLoad(), 1300)}
+        onLoad={() => setTimeout(() => onImageLoad(), 1100)}
       />
 
       {/* Text + Button in bottom-left */}

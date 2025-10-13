@@ -27,14 +27,6 @@ function Home() {
         ease: 'power2.out'
       });
 
-      // Gentle breathing pulse
-      gsap.to(loaderTextRef.current, {
-        opacity: 0.5,
-        duration: 1.2,
-        ease: 'power1.inOut',
-        yoyo: true,
-        repeat: -1
-      });
     }
   }, []);
 
@@ -43,7 +35,7 @@ function Home() {
     if (imageLoaded && loaderContainerRef.current) {
       gsap.to(loaderContainerRef.current, {
         opacity: 0,
-        duration: 1,
+        duration: .75,
         ease: 'power2.inOut',
         onComplete: () => {
           if (loaderContainerRef.current) {
@@ -69,7 +61,7 @@ function Home() {
           <div className="loader mx-auto mb-4"></div>
           <p 
             ref={loaderTextRef}
-            className="text-slate-600 text-sm tracking-wide"
+            className="text-slate-700 text-sm font-semibold tracking-wide"
           >
             Rosewood Cleaning
           </p>
@@ -84,25 +76,6 @@ function Home() {
         <ServicesNew />   
         <Why /> 
       </div>
-
-      {/* Loader CSS */}
-      <style jsx>{`
-        .loader {
-          width: 32px;
-          aspect-ratio: 1;
-          --_g: no-repeat radial-gradient(farthest-side, #0f172a 90%, #0000);
-          background: var(--_g), var(--_g), var(--_g), var(--_g);
-          background-size: 40% 40%;
-          animation: l46 1s infinite;
-        }
-        @keyframes l46 {
-          0%   { background-position: 0 0, 100% 0, 100% 100%, 0 100% }
-          40%,
-          50%  { background-position: 100% 100%, 100% 0, 0 0, 0 100% }
-          90%,
-          100% { background-position: 100% 100%, 0 100%, 0 0, 100% 0 }
-        }
-      `}</style>
     </>
   );
 }

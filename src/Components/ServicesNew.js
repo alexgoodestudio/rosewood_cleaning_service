@@ -64,17 +64,17 @@ function ServiceCard({ service, index }) {
             className="service-image"
             loading="lazy"
           />
-          <div className="service-icon-badge">
+          {/* <div className="service-icon-badge">
             <service.icon className="text-slate-700" size={20} strokeWidth={1.5} />
-          </div>
+          </div> */}
         </div>
         
         <div className="service-content">
-          <div className="service-metadata">
+          {/* <div className="service-metadata">
             <span className="text-xs text-slate-500 tracking-wider uppercase">
               {service.category}
             </span>
-          </div>
+          </div> */}
           
           <h3 className="text-2xl text-slate-900 mb-2">
             {service.title}
@@ -84,10 +84,10 @@ function ServiceCard({ service, index }) {
             {service.description}
           </p>
           
-          <div className="service-cta">
-            <span className="text-button text-slate-900">Explore Service</span>
-            <ArrowUpRight size={18} className="text-slate-700" strokeWidth={1.5} />
-          </div>
+        <div className="service-cta border border-black px-5 py-2 hover:bg-slate-950 group">
+          <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
+          <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white" strokeWidth={1.5} />
+        </div>
         </div>
       </a>
     </article>
@@ -144,7 +144,7 @@ function MobileServiceItem({ service, isExpanded, onToggle }) {
           {service.description}
         </p>
         <a href={service.link} className="mobile-service-link">
-          <span className="text-button">Get Started</span>
+          <span className="text-button">Learn More</span>
           <ArrowUpRight size={16} strokeWidth={2} />
         </a>
       </div>
@@ -169,7 +169,7 @@ function ServicesNew() {
       link: "/onetime",
     },
     {
-      title: "Move In / Out",
+      title: "Moving In / Out Clean",
       category: "Transition Service",
       image: Image2,
       icon: Home,
