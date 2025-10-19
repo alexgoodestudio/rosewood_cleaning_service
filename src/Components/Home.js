@@ -35,7 +35,7 @@ function Home() {
     if (imageLoaded && loaderContainerRef.current) {
       gsap.to(loaderContainerRef.current, {
         opacity: 0,
-        duration: .75,
+        duration: .5,
         ease: 'power2.inOut',
         onComplete: () => {
           if (loaderContainerRef.current) {

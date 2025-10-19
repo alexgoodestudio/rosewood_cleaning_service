@@ -9,8 +9,8 @@ function Contact() {
       <div class="vh-50 d-flex align-items-center justify-content-center text-center">
       <div className="container">
             <div className="py-5">
-              <h2 className=" text-3xl mb-4">Interesting in our services?</h2>
-              <p className=" text-lg text-slate-700 mb-5">
+              <h2 className=" text-4xl mb-4">Interested in our services?</h2>
+              <p className=" text-lg mx-auto  col-lg-8 col-11  text-slate-700 mb-5 ">
                 Rosewood Cleaning Services would love to work with you! Get in touch today and we will reach out with next steps about a quote, booking an appointment and more. Currently servicing Columbia, SC and surrounding areas.
               </p>
               

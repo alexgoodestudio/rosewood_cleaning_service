@@ -4,7 +4,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IMG from "../Images/7.jpg";
 // import IMG2 from "../Images/2.jpg";
-import IMG3 from "../Images/3.jpg";
+// import IMG3 from "../Images/3.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -191,7 +191,7 @@ function About() {
         </div>
       </div>
 
-      <div className="philosophy-section" style={{ 
+      {/* <div className="philosophy-section" style={{ 
         backgroundColor: '#eff6ff',
         padding: '8rem 0',
         borderTop: '1px solid #dbeafe',
@@ -238,7 +238,7 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="values-section" style={{
         backgroundColor: '#fafaf9',

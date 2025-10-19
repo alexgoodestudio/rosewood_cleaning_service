@@ -11,6 +11,7 @@ html, body {
 body {
   overflow-x: hidden;
 }
+
 .font-bold {
   font-weight: 600;
 }
@@ -26,7 +27,9 @@ body {
 .br {
   border-radius: 1rem;
 }
-
+.border-top.border-slate-800 {
+  border-top-color: #3d4a5f !important;
+}
 .justify-text {
   text-align: justify;
   text-justify: inter-word;

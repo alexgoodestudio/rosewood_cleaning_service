@@ -54,7 +54,7 @@ function ServiceCard({ service, index }) {
   }, []);
 
   return (
-    <article ref={cardRef} className="service-card-modern" data-index={index}>
+    <article ref={cardRef} className="service-card-modern " data-index={index}>
       <a href={service.link} className="service-card-link">
         <div className="service-image-container">
           <img
@@ -69,7 +69,7 @@ function ServiceCard({ service, index }) {
           </div> */}
         </div>
         
-        <div className="service-content">
+        <div className="service-content bg-white border">
           {/* <div className="service-metadata">
             <span className="text-xs text-slate-500 tracking-wider uppercase">
               {service.category}
@@ -84,7 +84,7 @@ function ServiceCard({ service, index }) {
             {service.description}
           </p>
           
-        <div className="service-cta border border-black px-5 py-3 hover:bg-slate-950 group">
+        <div className="service-cta border  px-5 py-3 hover:bg-slate-950 group">
           <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
           <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white group-hover:rotate-45" strokeWidth={1.5} />
         </div>
@@ -243,9 +243,9 @@ function ServicesNew() {
             <h2 ref={headingRef} className="text-5xl font-semibold text-slate-900 mb-3">
               Our Services
             </h2>
-            <p ref={subtitleRef} className="text-lg text-slate-600">
-              Professional cleaning solutions designed around your life
-            </p>
+            {/* <p ref={subtitleRef} className="text-lg text-slate-600">
+              Cleaning solutions designed around your life
+            </p> */}
           </div>
         </div>
 

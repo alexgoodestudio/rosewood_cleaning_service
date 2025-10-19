@@ -145,7 +145,7 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-3xl text-slate-900 mb-4">
+              <h2 ref={headingRef} className="text-3xl font-semibold text-slate-900 mb-4">
                 {phrases[currentIndex]}
               </h2>
             </div>
@@ -166,13 +166,13 @@ function Why() {
             </div>
 
             <div className="d-flex gap-2 flex-wrap mb-5">
-              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Child Safe Products
               </span>
-              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Community Focused
               </span>
-              <span className="community-badge badge bg-slate-800 text-white border border-slate-600 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Small Business
               </span>
             </div>
