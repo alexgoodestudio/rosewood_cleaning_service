@@ -50,10 +50,10 @@ function Opener({ onImageLoad }) {
           Your home deserves the best cleaning in <span className="font-bold">Columbia, South Carolina</span>
         </p>
 <a 
-  href="tel:+18035096700" 
+  href="/contact" 
   className="btn-call-hero text-slate-950 no-underline px-5 py-3 font-medium inline-flex items-center gap-2 group"
 >
-  Call Us
+  Get Started
   <ArrowUpRight 
     size={18} 
     className="text-slate-700 group-hover:text-white group-hover:rotate-45 transition-all duration-300" 

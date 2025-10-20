@@ -6,6 +6,7 @@ import ReviewMarquee from "./ReviewMarquee";
 import Why from "./Why";
 import Mission from "./Mission";
 import ServicesNew from "./ServicesNew";
+import Contact from "./Contact"
 
 function Home() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -75,6 +76,7 @@ function Home() {
         <Mission />
         <ServicesNew />   
         <Why /> 
+        <Contact/>
       </div>
     </>
   );
