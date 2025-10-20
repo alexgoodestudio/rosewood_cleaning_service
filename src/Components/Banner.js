@@ -45,12 +45,12 @@ function Banner() {
   }, []);
 
   return (
-    <section className="banner-section bg-indigo-100 py-3">
-      <div className="container">
-        <div className="d-flex align-items-center justify-content-between position-relative">
+    <section className="bg-indigo-100 py-3">
+      <div className="container mx-auto px-4">
+        <div className="relative flex items-center justify-center">
           
-          {/* Left Metadata - desktop only */}
-          <div className="d-none d-md-flex align-items-center gap-2">
+          {/* Left Metadata - absolutely positioned, desktop only */}
+          <div className="absolute left-0 hidden md:flex items-center gap-2">
             <span className="text-xs text-slate-500" style={{ 
               textTransform: 'uppercase', 
               letterSpacing: '0.1em',
@@ -69,9 +69,9 @@ function Banner() {
             </span>
           </div>
 
-          {/* Center Text */}
-          <div className="flex-grow-1 text-center">
-            <p ref={bannerRef} className="banner-text text-md font-semibold text-slate-900 mb-0">
+          {/* Center Text - now truly centered */}
+          <div className="text-center">
+            <p ref={bannerRef} className="text-base font-semibold text-slate-900 mb-0">
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>
@@ -93,8 +93,8 @@ function Banner() {
             </p>
           </div>
 
-          {/* Right Droplets Icon - visible on all screens */}
-          <div ref={dropletsRef}>
+          {/* Right Droplets Icon - absolutely positioned */}
+          <div ref={dropletsRef} className="absolute right-0">
             <Droplets 
               size={24} 
               className="text-indigo-400" 
