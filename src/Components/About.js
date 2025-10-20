@@ -240,10 +240,9 @@ function About() {
         </div>
       </div> */}
 
-      <div className="values-section" style={{
-        backgroundColor: '#fafaf9',
+      {/* <div className="values-section " style={{
         padding: '8rem 0',
-        borderTop: '1px solid #e7e5e4'
+   
       }}>
         <div className="container">
           <div className="row justify-content-center">
@@ -332,7 +331,7 @@ function About() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

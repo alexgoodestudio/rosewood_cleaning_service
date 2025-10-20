@@ -16,7 +16,6 @@ const MOTION = {
 };
 
 const phrases = [
-  // "Why Choose Us",
   "We handle the cleaning",
   "You handle everything else",
   "Clean homes, clear minds",
@@ -49,19 +48,39 @@ function Why() {
     gsap.set(image2Ref.current, { x: "100%", rotation: 0 });
     gsap.set(image1Ref.current, { rotation: 0 });
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: "center center",
-        end: "+=1000",
-        scrub: 1,
-        pin: true,
-        anticipatePin: 1,
-      },
-    });
+    // Desktop: Hide image1, only show rolling image2
+    if (window.innerWidth >= 992) {
+      gsap.set(image1Ref.current, { opacity: 0 });
+      
+      ScrollTrigger.create({
+        trigger: imageContainerRef.current,
+        start: "top 70%",
+        onEnter: () => {
+          gsap.to(image2Ref.current, { 
+            x: "0%", 
+            rotation: -360, 
+            duration: 1.5,
+            ease: "power2.out" 
+          });
+        },
+        once: true,
+      });
+    } else {
+      // Mobile/Tablet: Pinned scrub animation
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "center center",
+          end: "+=1000",
+          scrub: 1,
+          pin: true,
+          anticipatePin: 1,
+        },
+      });
 
-    tl.to(image2Ref.current, { x: "0%", rotation: -360, ease: "none" }, 0)
-      .to(image1Ref.current, { opacity: 0, ease: "none" }, 0);
+      tl.to(image2Ref.current, { x: "0%", rotation: -360, ease: "none" }, 0)
+        .to(image1Ref.current, { opacity: 0, ease: "none" }, 0);
+    }
 
     ScrollTrigger.create({
       trigger: metadataRef.current,
@@ -145,7 +164,7 @@ function Why() {
               >
                 Columbia, SC · Locally Owned
               </p>
-              <h2 ref={headingRef} className="text-3xl font-semibold text-slate-900 mb-4">
+              <h2 ref={headingRef} className="text-4xl font-semibold text-slate-900 mb-4">
                 {phrases[currentIndex]}
               </h2>
             </div>
@@ -166,13 +185,13 @@ function Why() {
             </div>
 
             <div className="d-flex gap-2 flex-wrap mb-5">
-              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Child Safe Products
               </span>
-              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Community Focused
               </span>
-              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2 !opacity-100" style={{ borderRadius: '2rem', cursor: 'default' }}>
+              <span className="community-badge badge bg-white text-dark border border-slate-700 px-4 py-2" style={{ borderRadius: '2rem', cursor: 'default' }}>
                 Small Business
               </span>
             </div>
@@ -199,6 +218,7 @@ function Why() {
             </div>
           </div>
 
+          {/* Image container - visible on all screens */}
           <div className="col-12 col-lg-4 order-1 order-lg-2 mb-4 mb-lg-0">
             <div 
               ref={imageContainerRef}

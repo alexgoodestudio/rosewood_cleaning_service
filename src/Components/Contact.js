@@ -1,30 +1,91 @@
-import { Link } from 'react-router-dom';
 import { ArrowUpRight } from "lucide-react";
 
 function Contact() {
- 
-
   return (
-    <section className="bg-slate-100 vh-50 text-center">
-      <div class="vh-50 d-flex align-items-center justify-content-center text-center">
+    <section className="bg-stone-50 py-24">
       <div className="container">
-            <div className="py-5">
-              <h2 className=" text-4xl mb-4">Interested in our services?</h2>
-              <p className=" text-lg mx-auto  col-lg-8 col-11  text-slate-700 mb-5 ">
-                Rosewood Cleaning Services would love to work with you! Get in touch today and we will reach out with next steps about a quote, booking an appointment and more. Currently servicing Columbia, SC and surrounding areas.
-              </p>
+        
+        <div className="row">
+          <div className="col-12 col-lg-12">
+            
+            {/* 70/30 Split */}
+            <div className="row align-items-start">
               
+              {/* Left: Main CTA - 70% */}
+              <div className="col-12 col-lg-7 mb-5 mb-lg-0 pe-lg-6">
+                
+                <div className="mb-4">
+                  <span className="text-metadata text-slate-500">
+                    Book a Clean
+                  </span>
+                </div>
+
+                <h2 className="text-5xl font-bold text-slate-900 mb-5" style={{ lineHeight: '1.1' }}>
+                  Let's talk about your home
+                </h2>
+                
+                <p className="text-xl text-slate-600 mb-6" style={{ lineHeight: '1.6', maxWidth: '560px' }}>
+                  Fill out our contact form or call <span className="font-semibold text-slate-900">(803) 555-0142</span> and we'll get back to you within 24 hours—usually same day.
+                </p>
+
+                <p className="text-base text-slate-700 mb-6" style={{ lineHeight: '1.6', maxWidth: '560px' }}>
+                  We'll ask about your square footage, how often you're thinking (weekly, biweekly, or one-time), and any rooms that need extra attention. Takes about 10 minutes on the phone.
+                </p>
+
+                <a 
+                  href="/contact" 
+                  className="btn-custom-dark"
+                >
+                  Send a Message
+                  <ArrowUpRight size={18} strokeWidth={1.5} />
+                </a>
+              </div>
+
+              {/* Right: Practical info - 30% */}
+              <div className="col-12 col-lg-5">
+                
+                {/* Pricing */}
+                <div className="mb-6 pb-6" style={{ borderBottom: '1px solid #e7e5e4' }}>
+                  <p className="text-metadata text-slate-500 mb-3">
+                    Pricing
+                  </p>
+                  <p className="text-lg text-slate-900 font-semibold mb-2">
+                    $120–$180 per clean
+                  </p>
+                  <p className="text-sm text-slate-600 mb-0" style={{ lineHeight: '1.6' }}>
+                    Depends on square footage and frequency. We'll give you an exact quote after we talk about your home.
+                  </p>
+                </div>
+
+                {/* Current availability */}
+                <div className="mb-6 pb-6" style={{ borderBottom: '1px solid #e7e5e4' }}>
+                  <p className="text-metadata text-slate-500 mb-3">
+                    Current Wait
+                  </p>
+                  <p className="text-lg text-slate-900 font-semibold mb-2">
+                    2–3 weeks
+                  </p>
+                  <p className="text-sm text-slate-600 mb-0" style={{ lineHeight: '1.6' }}>
+                    Updated October 19, 2025. Follow us on Instagram for any last-minute openings.
+                  </p>
+                </div>
+
+                {/* What to have ready */}
+                <div>
+                  <p className="text-metadata text-slate-500 mb-3">
+                    Have Ready When You Call
+                  </p>
+                  <p className="text-sm text-slate-700 mb-0" style={{ lineHeight: '1.6' }}>
+                    Approximate square footage • Whether you have stairs • Number of bathrooms • Your availability on Tuesdays
+                  </p>
+                </div>
+
+              </div>
+
             </div>
-<Link to="/contact">
-  <button className="btn-contact py-3 px-5 mb-5 inline-flex items-center gap-2">
-    Contact Us
-    <ArrowUpRight 
-      size={18} 
-      strokeWidth={1.5} 
-    />
-  </button>
-</Link>
-      </div>
+          </div>
+        </div>
+
       </div>
     </section>
   );

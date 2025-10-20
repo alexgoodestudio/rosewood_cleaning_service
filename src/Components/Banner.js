@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRef } from 'react';
+import { Droplets, Leaf } from 'lucide-react';
 
 const MOTION = {
   instant: 0.15,
@@ -12,6 +13,7 @@ const MOTION = {
 
 function Banner() {
   const bannerRef = useRef(null);
+  const dropletsRef = useRef(null);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
@@ -30,32 +32,77 @@ function Banner() {
         },
         delay: 2
       });
+
+      // Droplets float animation
+      gsap.to(dropletsRef.current, {
+        y: -8,
+        duration: 2.5,
+        repeat: -1,
+        yoyo: true,
+        ease: 'power1.inOut'
+      });
     }
   }, []);
 
   return (
-    <section className="banner-section bg-indigo-100 text-center py-3">
+    <section className="banner-section bg-indigo-100 py-3">
       <div className="container">
-        <p ref={bannerRef} className="banner-text text-md font-semibold text-slate-900 mb-0">
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block">Let </span>
-          </span>
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block">us </span>
-          </span>
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block">handle </span>
-          </span>
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block">the </span>
-          </span>
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block font-bold">cleaning </span>
-          </span>
-          <span className="overflow-hidden inline-block">
-            <span className="word inline-block">stuff.</span>
-          </span>
-        </p>
+        <div className="d-flex align-items-center justify-content-between position-relative">
+          
+          {/* Left Metadata - desktop only */}
+          <div className="d-none d-md-flex align-items-center gap-2">
+            <span className="text-xs text-slate-500" style={{ 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.1em',
+              fontWeight: '500'
+            }}>
+              Columbia, SC
+            </span>
+            <span className="text-slate-300">•</span>
+            <Leaf size={12} className="text-emerald-700" strokeWidth={2} />
+            <span className="text-xs text-slate-500" style={{ 
+              textTransform: 'uppercase', 
+              letterSpacing: '0.1em',
+              fontWeight: '500'
+            }}>
+              Eco-Friendly
+            </span>
+          </div>
+
+          {/* Center Text */}
+          <div className="flex-grow-1 text-center">
+            <p ref={bannerRef} className="banner-text text-md font-semibold text-slate-900 mb-0">
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">Let </span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">us </span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">handle </span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">the </span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block font-bold">cleaning </span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">stuff.</span>
+              </span>
+            </p>
+          </div>
+
+          {/* Right Droplets Icon - visible on all screens */}
+          <div ref={dropletsRef}>
+            <Droplets 
+              size={24} 
+              className="text-indigo-400" 
+              strokeWidth={1.5}
+            />
+          </div>
+
+        </div>
       </div>
     </section>
   );

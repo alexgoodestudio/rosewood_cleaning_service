@@ -1,20 +1,15 @@
 import { useState, useRef } from "react";
 import { Sparkles, Home, RotateCcw, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
 import { useGSAP } from "@gsap/react";
 import Image1 from "../Images/card3.png";
 import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const MOTION = {
-  instant: 0.15,
   quick: 0.3,
   smooth: 0.5,
   slow: 0.8,
-  story: 1.2
 };
 
 function ServiceCard({ service, index }) {
@@ -54,7 +49,7 @@ function ServiceCard({ service, index }) {
   }, []);
 
   return (
-    <article ref={cardRef} className="service-card-modern " data-index={index}>
+    <article ref={cardRef} className="service-card-modern" data-index={index}>
       <a href={service.link} className="service-card-link">
         <div className="service-image-container">
           <img
@@ -64,18 +59,9 @@ function ServiceCard({ service, index }) {
             className="service-image"
             loading="lazy"
           />
-          {/* <div className="service-icon-badge">
-            <service.icon className="text-slate-700" size={20} strokeWidth={1.5} />
-          </div> */}
         </div>
         
         <div className="service-content bg-white border">
-          {/* <div className="service-metadata">
-            <span className="text-xs text-slate-500 tracking-wider uppercase">
-              {service.category}
-            </span>
-          </div> */}
-          
           <h3 className="text-2xl text-slate-900 mb-2">
             {service.title}
           </h3>
@@ -84,10 +70,10 @@ function ServiceCard({ service, index }) {
             {service.description}
           </p>
           
-        <div className="service-cta border  px-5 py-3 hover:bg-slate-950 group">
-          <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
-          <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white group-hover:rotate-45" strokeWidth={1.5} />
-        </div>
+          <div className="service-cta border px-5 py-3 hover:bg-slate-950 group">
+            <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
+            <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white group-hover:rotate-45" strokeWidth={1.5} />
+          </div>
         </div>
       </a>
     </article>
@@ -154,10 +140,6 @@ function MobileServiceItem({ service, isExpanded, onToggle }) {
 
 function ServicesNew() {
   const [expandedMobile, setExpandedMobile] = useState(null);
-  const sectionRef = useRef();
-  const headingRef = useRef();
-  const subtitleRef = useRef();
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   const serviceData = [
     {
@@ -186,66 +168,14 @@ function ServicesNew() {
     },
   ];
 
-  useGSAP(() => {
-    if (prefersReducedMotion) {
-      gsap.set([headingRef.current, subtitleRef.current, ".service-card-modern"], { 
-        opacity: 1, 
-        y: 0 
-      });
-      return;
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        once: true
-      }
-    });
-
-    tl.fromTo(headingRef.current,
-      { y: 30, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: MOTION.smooth,
-        ease: "power2.out"
-      }
-    )
-    .fromTo(subtitleRef.current,
-      { y: 20, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: MOTION.smooth,
-        ease: "power2.out"
-      },
-      "-=0.3"
-    )
-    .fromTo(".service-card-modern",
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: MOTION.smooth,
-        stagger: 0.08,
-        ease: "power2.out"
-      },
-      "-=0.2"
-    );
-  }, []);
-
   return (
-    <section ref={sectionRef} className="bg-white mb-5">
+    <section className="bg-white mb-5">
       <div className="container py-5">
         <div className="row mb-5">
           <div className="col-lg-8">
-            <h2 ref={headingRef} className="text-5xl font-semibold text-slate-900 mb-3">
+            <h2 className="text-5xl font-semibold text-slate-900 mb-3">
               Our Services
             </h2>
-            {/* <p ref={subtitleRef} className="text-lg text-slate-600">
-              Cleaning solutions designed around your life
-            </p> */}
           </div>
         </div>
 
