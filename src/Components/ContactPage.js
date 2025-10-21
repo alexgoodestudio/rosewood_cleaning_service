@@ -20,6 +20,8 @@ function ContactPage() {
     service: '',
     message: ''
   });
+  const [errors, setErrors] = useState({});
+  const [submitStatus, setSubmitStatus] = useState(null);
 
   // Snow animation
   useGSAP(() => {
@@ -85,6 +87,76 @@ function ContactPage() {
     }
   }, []);
 
+  const validateForm = () => {
+    const newErrors = {};
+    
+    if (!formState.name.trim()) {
+      newErrors.name = 'Please share your name';
+    }
+    
+    if (!formState.email.trim()) {
+      newErrors.email = 'We need your email to respond';
+    } else if (!/\S+@\S+\.\S+/.test(formState.email)) {
+      newErrors.email = 'Please enter a valid email address';
+    }
+    
+    if (!formState.phone.trim()) {
+      newErrors.phone = 'Phone number helps us reach you quickly';
+    }
+    
+    if (!formState.service) {
+      newErrors.service = 'Let us know which service interests you';
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormState(prev => ({ ...prev, [name]: value }));
+    
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: '' }));
+    }
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    setSubmitStatus('sending');
+
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formState
+        }).toString()
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormState({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+    }
+  };
+
   useGSAP(() => {
     if (!prefersReducedMotion) {
       gsap.from('.hero-title', {
@@ -121,10 +193,6 @@ function ContactPage() {
     }
   }, []);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormState(prev => ({ ...prev, [name]: value }));
-  };
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
@@ -154,7 +222,38 @@ function ContactPage() {
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7">
                 <div className="form-container">
-                  <div className="mb-8">
+                  {submitStatus === 'success' && (
+                    <div className="text-center p-12 bg-green-50 rounded-lg mb-8">
+                      <div className="text-2xl font-semibold text-slate-900 mb-2">Message Sent</div>
+                      <p className="text-base text-slate-600">
+                        We'll get back to you within one business day. Check your inbox for a confirmation.
+                      </p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="p-5 bg-red-50 border border-red-200 rounded-md mb-8">
+                      <p className="text-sm text-red-700 mb-0">
+                        Something went wrong. Please try again or email us directly at hello@rosewoodcleaning.com
+                      </p>
+                    </div>
+                  )}
+
+                  <form 
+                    name="contact" 
+                    method="POST"
+                    netlify="true"
+                    netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                  >
+                    <input type="hidden" name="form-name" value="contact" />
+                    <div className="hidden">
+                      <label>
+                        Don't fill this out: <input name="bot-field" />
+                      </label>
+                    </div>
+
+                    <div className="mb-8">
                     <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-2">
                       Full Name
                     </label>
@@ -234,11 +333,14 @@ function ContactPage() {
                   </div>
 
                   <button 
-                    type="button"
-                    className="w-full bg-indigo-600 text-white py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-indigo-700 transition-colors"
+                    type="submit"
+                    className="w-full bg-indigo-600 text-white py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    disabled={submitStatus === 'sending'}
                   >
-                    Send Message
+                    {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
                   </button>
+                </form>
+           
                 </div>
               </div>
 
