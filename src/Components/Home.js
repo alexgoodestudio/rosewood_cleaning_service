@@ -6,7 +6,7 @@ import ReviewMarquee from "./ReviewMarquee";
 import Why from "./Why";
 import Mission from "./Mission";
 import ServicesNew from "./ServicesNew";
-import Contact from "./Contact"
+// import Contact from "./Contact"
 
 function Home() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -62,7 +62,7 @@ function Home() {
           <div className="loader mx-auto mb-4"></div>
           <p 
             ref={loaderTextRef}
-            className="text-slate-700 text-sm font-semibold tracking-wide"
+            className="text-slate-700  text-sm font-semibold tracking-wide"
           >
             Rosewood Cleaning
           </p>
@@ -76,7 +76,7 @@ function Home() {
         <Mission />
         <ServicesNew />   
         <Why /> 
-        <Contact/>
+        {/* <Contact/> */}
       </div>
     </>
   );

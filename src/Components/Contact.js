@@ -57,18 +57,6 @@ function Contact() {
                   </p>
                 </div>
 
-                {/* Current availability */}
-                <div className="mb-6 pb-6" style={{ borderBottom: '1px solid #e7e5e4' }}>
-                  <p className="text-metadata text-slate-500 mb-3">
-                    Current Wait
-                  </p>
-                  <p className="text-lg text-slate-900 font-semibold mb-2">
-                    2–3 weeks
-                  </p>
-                  <p className="text-sm text-slate-600 mb-0" style={{ lineHeight: '1.6' }}>
-                    Updated October 19, 2025. Follow us on Instagram for any last-minute openings.
-                  </p>
-                </div>
 
                 {/* What to have ready */}
                 <div>

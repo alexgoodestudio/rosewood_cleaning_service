@@ -40,7 +40,7 @@ function Opener({ onImageLoad }) {
 
       {/* Text + Button in bottom-left */}
       <div className="absolute bottom-0 left-0 p-6 md:p-12 text-white">
-        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-4">
+        <h1 className="apfel text-5xl md:text-7xl font-bold leading-tight mb-4">
           Rosewood
           <br />
           Cleaning Services

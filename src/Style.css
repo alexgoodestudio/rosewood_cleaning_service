@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'apfel';
+  src: url('./Components/Fonts/ApfelGrotezk-Mittel.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+.apfel {
+  font-family: 'apfel', sans-serif;
+  font-display: block; 
+}
+
 /* ------------------------------    UTILITY CLASSES --------------------------------*/
 html, body {
   overflow-x: hidden;
