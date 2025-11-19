@@ -29,8 +29,8 @@ function ContactPage() {
       const container = snowContainerRef.current;
       const snowflakes = [];
       
-      // Soft colors: amber, sky blue, soft indigo
-      const colors = ['#fbbf24', '#93c5fd', '#818cf8'];
+      // Soft colors: sky blue, soft indigo, lavender
+      const colors = ['#93c5fd', '#818cf8', '#c4b5fd'];
       
       for (let i = 0; i < 60; i++) {
         const snowflake = document.createElement('div');
@@ -49,7 +49,7 @@ function ContactPage() {
       }
       
       snowflakes.forEach((flake) => {
-        const duration = Math.random() * 8 + 12;
+        const duration = Math.random() * 6 + 9;
         const xMovement = Math.random() * 30 - 15;
         
         const tl = gsap.timeline({ repeat: -1 });
@@ -197,9 +197,9 @@ function ContactPage() {
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
       {/* Snow Container */}
-      <div 
-        ref={snowContainerRef} 
-        className="fixed inset-0 pointer-events-none z-10"
+      <div
+        ref={snowContainerRef}
+        className="absolute inset-0 pointer-events-none z-0"
         aria-hidden="true"
       />
 
@@ -208,10 +208,10 @@ function ContactPage() {
           <div className="w-full max-w-5xl">
             <div className="text-center mb-24">
               <h1 className="hero-title text-6xl font-bold text-slate-900 mb-3">
-                Hello.
+                Contact
               </h1>
               <p className="hero-subtitle text-lg text-slate-600 max-w-2xl mx-auto">
-                Ready to experience a cleaner, more organized space? We typically respond within 24 hours.
+                Ready to experience a cleaner, more organized space?
               </p>
             </div>
           </div>
@@ -221,7 +221,7 @@ function ContactPage() {
           <div className="w-full max-w-5xl">
             <div className="grid lg:grid-cols-12 gap-12">
               <div className="lg:col-span-7">
-                <div className="form-container">
+                <div className="form-container bg-white relative z-10">
                   {submitStatus === 'success' && (
                     <div className="text-center p-12 bg-green-50 rounded-lg mb-8">
                       <div className="text-2xl font-semibold text-slate-900 mb-2">Message Sent</div>
