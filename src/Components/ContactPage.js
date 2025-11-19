@@ -29,12 +29,12 @@ function ContactPage() {
       const container = snowContainerRef.current;
       const snowflakes = [];
       
-      // Soft colors: sky blue, soft indigo, lavender
-      const colors = ['#93c5fd', '#818cf8', '#c4b5fd'];
+      // Fresh, clean colors: soft teal, sky blue, mint
+      const colors = ['#5eead4', '#7dd3fc', '#86efac'];
       
       for (let i = 0; i < 60; i++) {
         const snowflake = document.createElement('div');
-        const size = 14;
+        const size = 18;
         snowflake.style.width = `${size}px`;
         snowflake.style.height = `${size}px`;
         snowflake.style.borderRadius = '50%';
@@ -208,7 +208,7 @@ function ContactPage() {
           <div className="w-full max-w-5xl">
             <div className="text-center mb-24">
               <h1 className="hero-title text-6xl font-bold text-slate-900 mb-3">
-                Contact
+                Get in touch
               </h1>
               <p className="hero-subtitle text-lg text-slate-600 max-w-2xl mx-auto">
                 Ready to experience a cleaner, more organized space?

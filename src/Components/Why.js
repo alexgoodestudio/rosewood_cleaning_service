@@ -196,26 +196,7 @@ function Why() {
               </span>
             </div>
 
-            <div className="row gx-4 gy-4">
-              <div className="col-4 col-md-4 col-lg-3">
-                <div className="stat-item">
-                  <div className="text-xl text-slate-900 mb-1">500+</div>
-                  <div className="text-sm text-slate-600">Homes Served</div>
-                </div>
-              </div>
-              <div className="col-4 col-md-4 col-lg-3">
-                <div className="stat-item">
-                  <div className="text-xl text-slate-900 mb-1">5 Years</div>
-                  <div className="text-sm text-slate-600">In Columbia</div>
-                </div>
-              </div>
-              <div className="col-4 col-md-4 col-lg-3">
-                <div className="stat-item">
-                  <div className="text-xl text-slate-900 mb-1">4.9★</div>
-                  <div className="text-sm text-slate-600">Average Rating</div>
-                </div>
-              </div>
-            </div>
+
           </div>
 
           {/* Image container - visible on all screens */}
