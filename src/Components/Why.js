@@ -157,13 +157,7 @@ function Why() {
           
           <div className="col-12 col-lg-8 order-2 order-lg-1">
             <div className="mb-4">
-              <p 
-                ref={metadataRef} 
-                className="text-xs text-slate-500 mb-3 tracking-wide"
-                style={{ letterSpacing: '0.05em', textTransform: 'uppercase' }}
-              >
-                Columbia, SC · Locally Owned
-              </p>
+
               <h2 ref={headingRef} className="text-4xl font-semibold text-slate-900 mb-4">
                 {phrases[currentIndex]}
               </h2>

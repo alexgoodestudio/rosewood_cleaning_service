@@ -26,9 +26,9 @@ function Footer() {
         <div className="row g-5 g-lg-6">
           <div className="col-12 col-md-6 col-lg-5">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-2xl text-white mb-0 ">Rosewood Cleaning</h3>
+              <h3 className="text-2xl text-white mb-0 apfel">Rosewood Cleaning</h3>
             </Link>
-            <p className="text-lg text-slate-400 mb-4 pe-lg-5">Let us handle the cleaning stuff while you focus on what matters.</p>
+            <p className="text-md tracking-wide text-slate-400 mb-4 pe-lg-5">Let us handle the cleaning stuff while you focus on what matters.</p>
             <p className="text-metadata text-slate-500">Columbia, South Carolina</p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
@@ -53,7 +53,7 @@ function Footer() {
               <a ref={(el) => (socialRefs.current[0] = el)} href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="social-icon-dark" onMouseMove={(e) => handleSocialMove(e, 0)} onMouseLeave={() => handleSocialLeave(0)} aria-label="Visit us on Facebook">
                 <Facebook size={20} className="text-slate-300" strokeWidth={1.5} />
               </a>
-              <a ref={(el) => (socialRefs.current[1] = el)} href="https://instagram.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="social-icon-dark" onMouseMove={(e) => handleSocialMove(e, 1)} onMouseLeave={() => handleSocialLeave(1)} aria-label="Visit us on Instagram">
+              <a ref={(el) => (socialRefs.current[1] = el)} href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="social-icon-dark" onMouseMove={(e) => handleSocialMove(e, 1)} onMouseLeave={() => handleSocialLeave(1)} aria-label="Visit us on Instagram">
                 <Instagram size={20} className="text-slate-300" strokeWidth={1.5} />
               </a>
             </div>

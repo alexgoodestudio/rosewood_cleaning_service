@@ -61,7 +61,7 @@ function ServiceCard({ service, index }) {
           />
         </div>
         
-        <div className="service-content bg-white border">
+        <div className="service-content bg-white">
           <h3 className="text-2xl text-slate-900 mb-2">
             {service.title}
           </h3>
@@ -176,12 +176,15 @@ function ServicesNew() {
             <h2 className="text-5xl font-semibold text-slate-900 mb-3">
               Our Services
             </h2>
+            <p className=" text-slate-600">
+              Explore our range of eco-friendly cleaning services designed to keep your home spotless and healthy.
+            </p>
           </div>
         </div>
 
-        <div className="row g-4 d-none d-md-flex">
+        <div className="row g-4 d-none d-md-flex ">
           {serviceData.map((service, index) => (
-            <div key={index} className="col-lg-4">
+            <div key={index} className="col-lg-4 ">
               <ServiceCard service={service} index={index} />
             </div>
           ))}
