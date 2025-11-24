@@ -26,7 +26,7 @@ function Footer() {
         <div className="row g-5 g-lg-6">
           <div className="col-12 col-md-6 col-lg-5">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-2xl text-white mb-0 apfel">Rosewood Cleaning</h3>
+              <h3 className="text-4xl apfel text-white mb-0 ">Rosewood Cleaning</h3>
             </Link>
             <p className="text-md tracking-wide text-slate-400 mb-4 pe-lg-5">Let us handle the cleaning stuff while you focus on what matters.</p>
             <p className="text-metadata text-slate-500">Columbia, South Carolina</p>

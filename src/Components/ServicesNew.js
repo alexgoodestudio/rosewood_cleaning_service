@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Sparkles, Home, RotateCcw, ArrowUpRight } from "lucide-react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -80,67 +80,75 @@ function ServiceCard({ service, index }) {
   );
 }
 
-function MobileServiceItem({ service, isExpanded, onToggle }) {
-  const contentRef = useRef();
+function MobileServiceCard({ service, index }) {
+  const cardRef = useRef();
+  const imageRef = useRef();
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
     if (prefersReducedMotion) return;
 
-    if (isExpanded) {
-      gsap.to(contentRef.current, {
-        height: "auto",
-        opacity: 1,
+    const card = cardRef.current;
+    const image = imageRef.current;
+
+    const handleTouchStart = () => {
+      gsap.to(image, {
+        scale: 1.05,
         duration: MOTION.quick,
         ease: "power2.out"
       });
-    } else {
-      gsap.to(contentRef.current, {
-        height: 0,
-        opacity: 0,
-        duration: MOTION.quick,
-        ease: "power2.in"
+    };
+
+    const handleTouchEnd = () => {
+      gsap.to(image, {
+        scale: 1,
+        duration: MOTION.smooth,
+        ease: "power2.inOut"
       });
-    }
-  }, [isExpanded]);
+    };
+
+    card.addEventListener('touchstart', handleTouchStart);
+    card.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      card.removeEventListener('touchstart', handleTouchStart);
+      card.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
 
   return (
-    <div className="mobile-service-item">
-      <button
-        onClick={onToggle}
-        className="mobile-service-header"
-        aria-expanded={isExpanded}
-      >
-        <div className="d-flex align-items-center gap-3">
-          <div className="mobile-icon-container">
-            <service.icon size={18} className="text-slate-700" strokeWidth={1.5} />
-          </div>
-          <div className="text-start">
-            <h3 className="text-lg text-slate-900 mb-0">{service.title}</h3>
-            <p className="text-xs text-slate-500 mb-0 mt-1">{service.category}</p>
+    <article ref={cardRef} className="mobile-service-card" data-index={index}>
+      <a href={service.link} className="service-card-link">
+        <div className="service-image-container">
+          <img
+            ref={imageRef}
+            src={service.image}
+            alt=""
+            className="service-image"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="service-content bg-white">
+          <h3 className="text-2xl text-slate-900 mb-2">
+            {service.title}
+          </h3>
+
+          <p className="text-md text-slate-600 mb-4">
+            {service.description}
+          </p>
+
+          <div className="service-cta border px-5 py-3 hover:bg-slate-950 group">
+            <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
+            <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white group-hover:rotate-45" strokeWidth={1.5} />
           </div>
         </div>
-        <div className="mobile-toggle-icon">
-          {isExpanded ? "−" : "+"}
-        </div>
-      </button>
-      
-      <div ref={contentRef} className="mobile-service-content">
-        <p className="text-md text-slate-700 mb-4">
-          {service.description}
-        </p>
-        <a href={service.link} className="mobile-service-link">
-          <span className="text-button">Learn More</span>
-          <ArrowUpRight size={16} strokeWidth={2} />
-        </a>
-      </div>
-    </div>
+      </a>
+    </article>
   );
 }
 
 function ServicesNew() {
-  const [expandedMobile, setExpandedMobile] = useState(null);
-
   const serviceData = [
     {
       title: "One-Time Clean",
@@ -190,13 +198,12 @@ function ServicesNew() {
           ))}
         </div>
 
-        <div className="d-md-none">
+        <div className="d-md-none mobile-services-grid">
           {serviceData.map((service, index) => (
-            <MobileServiceItem
+            <MobileServiceCard
               key={index}
               service={service}
-              isExpanded={expandedMobile === index}
-              onToggle={() => setExpandedMobile(expandedMobile === index ? null : index)}
+              index={index}
             />
           ))}
         </div>

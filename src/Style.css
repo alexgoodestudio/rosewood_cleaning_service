@@ -513,7 +513,7 @@ body {
   }
 
   .marquee-text {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
   }
 
   .marquee-separator {
@@ -531,7 +531,7 @@ body {
   }
 
   .marquee-text {
-    font-size: 2rem;
+    font-size: 3rem;
   }
 
   .marquee-separator {
@@ -609,64 +609,19 @@ body {
   
 }
 
-/* Mobile Service Items */
-.mobile-service-item {
-  border-bottom: 1px solid #e2e8f0;
-}
-
-.mobile-service-item:last-child {
-  border-bottom: none;
-}
-
-.mobile-service-header {
-  width: 100%;
+/* Mobile Service Cards */
+.mobile-services-grid {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 0;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.mobile-icon-container {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: #f1f5f9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.mobile-toggle-icon {
-  font-size: 1.5rem;
-  color: #334155;
-  font-weight: 300;
-  line-height: 1;
-  flex-shrink: 0;
-}
-
-.mobile-service-content {
-  height: 0;
-  opacity: 0;
+.mobile-service-card {
+  position: relative;
+  border-radius: 1rem;
   overflow: hidden;
-  padding: 0 0 1.5rem 0;
-}
-
-.mobile-service-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: #0f172a;
-  text-decoration: none;
-  transition: gap 0.3s ease;
-}
-
-.mobile-service-link:hover {
-  gap: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
 }
 
 .tracking-wider {

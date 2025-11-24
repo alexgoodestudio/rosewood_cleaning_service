@@ -28,13 +28,18 @@ function ContactPage() {
     if (!prefersReducedMotion && snowContainerRef.current) {
       const container = snowContainerRef.current;
       const snowflakes = [];
-      
-      // Fresh, clean colors: soft teal, sky blue, mint
-      const colors = ['#5eead4', '#7dd3fc', '#86efac'];
-      
-      for (let i = 0; i < 60; i++) {
+
+      // Pale indigo, slate-900, and soft sky blue
+      const colors = ['#c7d2fe', '#0f172a', '#bae6fd'];
+
+      // Responsive count and size based on screen width
+      const isMobile = window.innerWidth < 768;
+      const count = isMobile ? 30 : 60;
+      const size = isMobile ? 14 : 18;
+      const maxOpacity = isMobile ? 0.6 : 0.85;
+
+      for (let i = 0; i < count; i++) {
         const snowflake = document.createElement('div');
-        const size = 18;
         snowflake.style.width = `${size}px`;
         snowflake.style.height = `${size}px`;
         snowflake.style.borderRadius = '50%';
@@ -43,17 +48,17 @@ function ContactPage() {
         snowflake.style.opacity = 0; // Start invisible
         snowflake.style.pointerEvents = 'none';
         snowflake.style.left = `${Math.random() * 100}%`;
-        
+
         container.appendChild(snowflake);
         snowflakes.push(snowflake);
       }
-      
+
       snowflakes.forEach((flake) => {
         const duration = Math.random() * 6 + 9;
-        const xMovement = Math.random() * 30 - 15;
-        
+        const xMovement = isMobile ? Math.random() * 20 - 10 : Math.random() * 30 - 15;
+
         const tl = gsap.timeline({ repeat: -1 });
-        
+
         tl.fromTo(flake,
           { y: -150 },
           {
@@ -66,7 +71,7 @@ function ContactPage() {
               // Only show circle when it's below y=50
               const currentY = gsap.getProperty(flake, 'y');
               if (currentY > 50) {
-                gsap.set(flake, { opacity: 0.85 });
+                gsap.set(flake, { opacity: maxOpacity });
               } else {
                 gsap.set(flake, { opacity: 0 });
               }
@@ -80,7 +85,7 @@ function ContactPage() {
             }
           }
         );
-        
+
         // Start at random point in animation
         tl.progress(Math.random());
       });
@@ -206,12 +211,12 @@ function ContactPage() {
       <div className="relative z-20 container mx-auto px-4">
         <div className="flex justify-center pt-24 pb-12">
           <div className="w-full max-w-5xl">
-            <div className="text-center mb-24">
-              <h1 className="hero-title text-6xl font-bold text-slate-900 mb-3">
-                Get in touch
+            <div className="text-start mb-24">
+              <h1 className="hero-title text-9xl  text-slate-900 mb-3 apfel">
+                Contact Us
               </h1>
-              <p className="hero-subtitle text-lg text-slate-600 max-w-2xl mx-auto">
-                Ready to experience a cleaner, more organized space?
+              <p className="hero-subtitle text-start text-lg text-slate-600  mx-auto">
+                Have questions or ready to book? We're here to help! Fill out the form below and we'll respond within one business day.
               </p>
             </div>
           </div>

@@ -2,7 +2,6 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import Image from "../Images/image2.png";
 import Image2 from "../Images/image1.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,7 +27,6 @@ function Why() {
   const headingRef = useRef(null);
   const paragraphRef = useRef(null);
   const imageContainerRef = useRef(null);
-  const image1Ref = useRef(null);
   const image2Ref = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -46,21 +44,18 @@ function Why() {
     }
 
     gsap.set(image2Ref.current, { x: "100%", rotation: 0 });
-    gsap.set(image1Ref.current, { rotation: 0 });
 
-    // Desktop: Hide image1, only show rolling image2
+    // Desktop: Roll in image
     if (window.innerWidth >= 992) {
-      gsap.set(image1Ref.current, { opacity: 0 });
-      
       ScrollTrigger.create({
         trigger: imageContainerRef.current,
         start: "top 70%",
         onEnter: () => {
-          gsap.to(image2Ref.current, { 
-            x: "0%", 
-            rotation: -360, 
+          gsap.to(image2Ref.current, {
+            x: "0%",
+            rotation: -360,
             duration: 1.5,
-            ease: "power2.out" 
+            ease: "power2.out"
           });
         },
         once: true,
@@ -78,8 +73,7 @@ function Why() {
         },
       });
 
-      tl.to(image2Ref.current, { x: "0%", rotation: -360, ease: "none" }, 0)
-        .to(image1Ref.current, { opacity: 0, ease: "none" }, 0);
+      tl.to(image2Ref.current, { x: "0%", rotation: -360, ease: "none" }, 0);
     }
 
     ScrollTrigger.create({
@@ -199,13 +193,7 @@ function Why() {
               ref={imageContainerRef}
               className="position-relative w-100 image-square mx-auto overflow-hidden rounded" 
             >
-              <img
-                ref={image1Ref}
-                src={Image}
-                className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
-                alt="Clean home interior before"
-                loading="lazy"
-              />
+
               <img
                 ref={image2Ref}
                 src={Image2}

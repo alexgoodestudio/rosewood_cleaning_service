@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 
           
 
-function Opener({ onImageLoad }) {
+function Opener() {
   const contentRef = useRef(null);
 
   const prefersReducedMotion = window.matchMedia(
@@ -25,9 +25,9 @@ function Opener({ onImageLoad }) {
   }, []);
 
   return (
-    <div 
+    <div
       ref={contentRef}
-      className="relative w-full" 
+      className="relative w-full"
       style={{ height: "75vh" }}
     >
       {/* Hero Image */}
@@ -35,7 +35,6 @@ function Opener({ onImageLoad }) {
         src={heroImage}
         alt="Hero"
         className="w-full h-full object-cover"
-        onLoad={() => setTimeout(() => onImageLoad(), 1100)}
       />
 
       {/* Text + Button in bottom-left */}

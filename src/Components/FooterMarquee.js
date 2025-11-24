@@ -54,19 +54,19 @@ function FooterMarquee() {
         <span className="marquee-text text-slate-900">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-sky-300 font-bold">•</span>
+        <span className="marquee-separator text-slate-400 font-bold">•</span>
         <span className="marquee-text text-slate-900">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-sky-300 font-bold">•</span>
+        <span className="marquee-separator text-slate-400 font-bold">•</span>
         <span className="marquee-text text-slate-900">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-sky-300 font-bold">•</span>
+        <span className="marquee-separator text-slate-400 font-bold">•</span>
         <span className="marquee-text text-slate-900">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-sky-300 font-bold">•</span>
+        <span className="marquee-separator text-slate-400 font-bold">•</span>
       </div>
     </div>
   );
