@@ -25,9 +25,9 @@ function ServiceCard({ service, index }) {
             {service.description}
           </p>
 
-          <div className="service-cta border px-5 py-3 hover:bg-slate-950 group">
-            <span className="text-button text-slate-900 group-hover:text-white">LEARN MORE</span>
-            <ArrowUpRight size={18} className="text-slate-700 group-hover:text-white group-hover:rotate-45" strokeWidth={1.5} />
+          <div className="service-cta border px-5 py-3 hover:bg-neutral-50  group">
+            <span className="text-button text-slate-900 group-hover:text-dark">LEARN MORE</span>
+            <ArrowUpRight size={18} className="text-slate-700 group-hover:text-dark group-hover:rotate-45" strokeWidth={1.5} />
           </div>
         </div>
       </a>

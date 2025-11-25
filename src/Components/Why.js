@@ -66,7 +66,7 @@ function Why() {
         scrollTrigger: {
           trigger: containerRef.current,
           start: "center center",
-          end: "+=1000",
+          end: "+=1500",
           scrub: 1,
           pin: true,
           anticipatePin: 1,

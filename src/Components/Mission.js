@@ -100,7 +100,7 @@ function Mission() {
                 </h2>
                 <p className="mission-mobile-body text-slate-600">
                   No rotating crews. No strangers. Just Sarah and Marcus, 
-                  Tuesday afternoons, keeping your home clean and healthy.
+                  keeping your home clean and healthy.
                 </p>
               </div>
             </div>
@@ -122,7 +122,7 @@ function Mission() {
                 </h2>
                 <p className="text-lg text-slate-600 mt-4">
                   No rotating crews. No strangers. Just Sarah and Marcus, 
-                  Tuesday afternoons, keeping your home clean and healthy.
+                   keeping your home clean and healthy.
                 </p>
               </div>
 

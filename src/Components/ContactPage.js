@@ -13,6 +13,7 @@ const MOTION = {
 function ContactPage() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const snowContainerRef = useRef(null);
+  const frontSnowContainerRef = useRef(null);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -25,19 +26,22 @@ function ContactPage() {
 
   // Snow animation
   useGSAP(() => {
-    if (!prefersReducedMotion && snowContainerRef.current) {
+    if (!prefersReducedMotion && snowContainerRef.current && frontSnowContainerRef.current) {
       const container = snowContainerRef.current;
+      const frontContainer = frontSnowContainerRef.current;
       const snowflakes = [];
 
-      // Pale indigo, slate-900, and soft sky blue
-      const colors = ['#c7d2fe', '#0f172a', '#bae6fd'];
+      // Pale indigo and soft sky blue
+      const colors = ['#c7d2fe', '#bae6fd'];
 
       // Responsive count and size based on screen width
       const isMobile = window.innerWidth < 768;
       const count = isMobile ? 30 : 60;
-      const size = isMobile ? 14 : 18;
+      const frontCount = 5; // Only 5 circles in front
+      const size = isMobile ? 20 : 24;
       const maxOpacity = isMobile ? 0.6 : 0.85;
 
+      // Create background circles
       for (let i = 0; i < count; i++) {
         const snowflake = document.createElement('div');
         snowflake.style.width = `${size}px`;
@@ -53,6 +57,22 @@ function ContactPage() {
         snowflakes.push(snowflake);
       }
 
+      // Create front circles
+      for (let i = 0; i < frontCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.style.width = `${size}px`;
+        snowflake.style.height = `${size}px`;
+        snowflake.style.borderRadius = '50%';
+        snowflake.style.position = 'absolute';
+        snowflake.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        snowflake.style.opacity = 0; // Start invisible
+        snowflake.style.pointerEvents = 'none';
+        snowflake.style.left = `${Math.random() * 100}%`;
+
+        frontContainer.appendChild(snowflake);
+        snowflakes.push(snowflake);
+      }
+
       snowflakes.forEach((flake) => {
         const duration = Math.random() * 6 + 9;
         const xMovement = isMobile ? Math.random() * 20 - 10 : Math.random() * 30 - 15;
@@ -60,17 +80,17 @@ function ContactPage() {
         const tl = gsap.timeline({ repeat: -1 });
 
         tl.fromTo(flake,
-          { y: -150 },
+          { y: window.innerHeight + 50 },
           {
-            y: window.innerHeight + 50,
+            y: -150,
             x: xMovement,
             rotation: Math.random() * 60,
             duration: duration,
             ease: 'none',
             onUpdate: function() {
-              // Only show circle when it's below y=50
+              // Only show circle when it's above bottom and below top
               const currentY = gsap.getProperty(flake, 'y');
-              if (currentY > 50) {
+              if (currentY < window.innerHeight - 50 && currentY > 50) {
                 gsap.set(flake, { opacity: maxOpacity });
               } else {
                 gsap.set(flake, { opacity: 0 });
@@ -201,15 +221,22 @@ function ContactPage() {
 
   return (
     <div className="relative min-h-screen bg-white overflow-hidden">
-      {/* Snow Container */}
+      {/* Snow Container - Behind everything */}
       <div
         ref={snowContainerRef}
         className="absolute inset-0 pointer-events-none z-0"
         aria-hidden="true"
       />
 
+      {/* Front Snow Container - In front of form */}
+      <div
+        ref={frontSnowContainerRef}
+        className="absolute inset-0 pointer-events-none z-30"
+        aria-hidden="true"
+      />
+
       <div className="relative z-20 container mx-auto px-4">
-        <div className="flex justify-center pt-24 pb-12">
+        <div className="flex justify-center pt-24 pb-10">
           <div className="w-full max-w-5xl">
             <div className="text-start mb-24">
               <h1 className="hero-title text-9xl  text-slate-900 mb-3 apfel">

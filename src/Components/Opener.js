@@ -50,12 +50,12 @@ function Opener() {
         </p>
 <a 
   href="/contact" 
-  className="bg-indigo-400 text-white hover:bg-indigo-500 no-underline px-3 py-3 px-lg-4 py-lg-3 rounded-xl font-medium inline-flex items-center gap-2 group"
+  className="bg-lime-300 text-dark hover:bg-lime-400 no-underline px-3 py-3 px-lg-4 py-lg-3 rounded-xl font-medium inline-flex items-center gap-2 group"
 >
   Get Started
   <ArrowUpRight 
     size={18} 
-    className="text-white group-hover:rotate-45 transition-all duration-300" 
+    className="text-dark group-hover:rotate-45 transition-all duration-300" 
     strokeWidth={1.5} 
   />
 </a>

@@ -43,7 +43,7 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="marquee-container bg-indigo-200 overflow-hidden w-full"
+      className="marquee-container bg-blue-200 overflow-hidden w-full"
       role="complementary"
       aria-label="Call to action banner"
     >
@@ -54,19 +54,19 @@ function FooterMarquee() {
         <span className="marquee-text text-slate-900">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-slate-400 font-bold">•</span>
+        <span className="marquee-separator text-indigo-950 font-bold ">•</span>
         <span className="marquee-text text-slate-900">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-slate-400 font-bold">•</span>
+        <span className="marquee-separator text-indigo-950 font-bold ">•</span>
         <span className="marquee-text text-slate-900">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-slate-400 font-bold">•</span>
+        <span className="marquee-separator text-indigo-950  font-bold ">•</span>
         <span className="marquee-text text-slate-900">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-slate-400 font-bold">•</span>
+        <span className="marquee-separator text-indigo-950  font-bold ">•</span>
       </div>
     </div>
   );

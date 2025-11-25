@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="bg-indigo-100 py-3">
+    <section className="bg-blue-100 py-3">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
