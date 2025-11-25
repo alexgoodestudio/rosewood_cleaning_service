@@ -30,7 +30,7 @@ function Banner() {
           each: 0.08,
           from: 'start'
         },
-        delay: 2
+        delay: .75
       });
 
       // Droplets float animation
@@ -93,11 +93,11 @@ function Banner() {
             </p>
           </div>
 
-          {/* Right Droplets Icon - absolutely positioned */}
-          <div ref={dropletsRef} className="absolute right-0">
-            <Droplets 
-              size={24} 
-              className="text-indigo-400" 
+          {/* Right Droplets Icon - absolutely positioned, mobile only */}
+          <div ref={dropletsRef} className="absolute right-0 md:hidden">
+            <Droplets
+              size={24}
+              className="text-indigo-400"
               strokeWidth={1.5}
             />
           </div>

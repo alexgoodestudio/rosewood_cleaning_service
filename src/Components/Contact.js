@@ -34,7 +34,7 @@ function Contact() {
 
                 <a 
                   href="/contact" 
-                  className="bg-lime-300 text-dark hover:bg-lime-400 no-underline px-3 py-3 px-lg-4 py-lg-3 rounded-xl font-medium inline-flex items-center gap-2 group"
+                  className="bg-lime-300 text-dark hover:bg-lime-400 no-underline px-3 py-3 px-lg-4 py-lg-3 rounded-xl text-md inline-flex items-center gap-2 group"
                 >
                   Message
                   <ArrowUpRight size={18} strokeWidth={1.5} />
