@@ -28,7 +28,7 @@ function Footer() {
             <Link to="/" className="d-inline-block mb-4 no-underline">
               <h3 className="text-4xl apfel text-white mb-0 ">Rosewood Cleaning</h3>
             </Link>
-            <p className="text-md tracking-wide text-slate-400 mb-4 pe-lg-5">Let us handle the cleaning stuff while you focus on what matters.</p>
+            <p className="text-md tracking-wide text-slate-400 mb-4 pe-lg-5">Focus on what matters. Let us handle the cleaning stuff.</p>
             <p className="text-metadata text-slate-500">Columbia, South Carolina</p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">

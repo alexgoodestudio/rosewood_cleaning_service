@@ -25,7 +25,7 @@ function Contact() {
                 </h2>
                 
                 <p className="text-xl text-slate-600 mb-6" style={{ lineHeight: '1.6', maxWidth: '560px' }}>
-                  Fill out our contact form or call <span className="font-semibold text-slate-900">(803) 555-0142</span> and we'll get back to you within 24 hours—usually same day.
+                  Fill out our contact form and we'll get back to you within 24 hours—usually same day.
                 </p>
 
                 <p className="text-base text-slate-700 mb-6" style={{ lineHeight: '1.6', maxWidth: '560px' }}>
@@ -64,7 +64,7 @@ function Contact() {
                     Have Ready When You Call
                   </p>
                   <p className="text-sm text-slate-700 mb-0" style={{ lineHeight: '1.6' }}>
-                    Approximate square footage • Whether you have stairs • Number of bathrooms • Your availability on Tuesdays
+                    Approximate square footage • Whether you have stairs • Number of bathrooms 
                   </p>
                 </div>
 

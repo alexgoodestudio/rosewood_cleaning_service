@@ -50,12 +50,12 @@ function Opener() {
         </p>
 <a 
   href="/contact" 
-  className="btn-call-hero text-slate-950 no-underline px-5 py-3 font-medium inline-flex items-center gap-2 group"
+  className="bg-indigo-400 text-white hover:bg-indigo-500 no-underline px-3 py-3 px-lg-4 py-lg-3 rounded-xl font-medium inline-flex items-center gap-2 group"
 >
   Get Started
   <ArrowUpRight 
     size={18} 
-    className="text-slate-700 group-hover:text-white group-hover:rotate-45 transition-all duration-300" 
+    className="text-white group-hover:rotate-45 transition-all duration-300" 
     strokeWidth={1.5} 
   />
 </a>

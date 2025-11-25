@@ -58,15 +58,15 @@ function Banner() {
             }}>
               Columbia, SC
             </span>
-            <span className="text-slate-300">•</span>
+            {/* <span className="text-slate-300">•</span> */}
             <Leaf size={12} className="text-emerald-700" strokeWidth={2} />
-            <span className="text-xs text-slate-500" style={{ 
+            {/* <span className="text-xs text-slate-500" style={{ 
               textTransform: 'uppercase', 
               letterSpacing: '0.1em',
               fontWeight: '500'
             }}>
               Eco-Friendly
-            </span>
+            </span> */}
           </div>
 
           {/* Center Text - now truly centered */}
