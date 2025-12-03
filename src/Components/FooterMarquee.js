@@ -43,7 +43,7 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="marquee-container bg-blue-200 overflow-hidden w-full"
+      className="marquee-container bg-teal-300 overflow-hidden w-full"
       role="complementary"
       aria-label="Call to action banner"
     >
@@ -51,22 +51,22 @@ function FooterMarquee() {
         ref={trackRef}
         className="marquee-track"
       >
-        <span className="marquee-text text-slate-900">
+        <span className="marquee-text text-dark-teal">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-indigo-950 font-bold ">•</span>
-        <span className="marquee-text text-slate-900">
+        <span className="marquee-separator text-teal-950 font-bold ">•</span>
+        <span className="marquee-text text-dark-teal">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-indigo-950 font-bold ">•</span>
-        <span className="marquee-text text-slate-900">
+        <span className="marquee-separator text-teal-950 font-bold ">•</span>
+        <span className="marquee-text text-dark-teal">
           Interested in working with us?
         </span>
-        <span className="marquee-separator text-indigo-950  font-bold ">•</span>
-        <span className="marquee-text text-slate-900">
+        <span className="marquee-separator text-teal-950  font-bold ">•</span>
+        <span className="marquee-text text-dark-teal">
           Let us help you get your home the way it should be
         </span>
-        <span className="marquee-separator text-indigo-950  font-bold ">•</span>
+        <span className="marquee-separator text-teal-950  font-bold ">•</span>
       </div>
     </div>
   );

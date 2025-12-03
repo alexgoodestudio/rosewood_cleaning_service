@@ -153,7 +153,7 @@ function About() {
                 }}>
                   Established
                 </div>
-                <div className="text-base text-stone-900">2023</div>
+                <div className="text-base text-stone-900">2019</div>
               </div>
               
               <div style={{ 
