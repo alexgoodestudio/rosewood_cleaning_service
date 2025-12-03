@@ -100,11 +100,11 @@ function ServicesNew() {
       <div className="container py-5">
         <div className="row mb-5">
           <div className="col-lg-8">
-            <h2 className="text-5xl font-semibold text-slate-900 mb-3">
-              Our Services
+            <h2 className="text-5xl font-semibold text-slate-900 mb-3 apfel">
+              Services
             </h2>
             <p className=" text-slate-600">
-              Explore our range of eco-friendly cleaning services designed to keep your home spotless and healthy.
+              Explore our range of cleaning services designed to keep your home healthy.
             </p>
           </div>
         </div>

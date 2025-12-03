@@ -141,7 +141,7 @@ function About() {
             
             <div className="hero-body" style={{ maxWidth: '38rem' }}>
               <p className="text-lg text-stone-700 mb-0" style={{ lineHeight: '1.7' }}>
-                Husband and wife duo who discovered that our shared obsession with beautiful, thoughtfully maintained spaces could become something larger than ourselves. What started as weekend help for friends has evolved into a service built on trust, genuine care, and the belief that everyone deserves a space that feels like home.
+               Sarah and Andrew. What started as a weekend side hustle for friends has evolved into a service built on trust, genuine care, and the belief that everyone deserves a space that feels like home.
               </p>
             </div>
 

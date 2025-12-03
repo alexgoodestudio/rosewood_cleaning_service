@@ -3,9 +3,10 @@ import Opener from "./Opener";
 import ReviewMarquee from "./ReviewMarquee";
 import Why from "./Why";
 import Mission from "./Mission";
-import ServicesNew from "./ServicesNew";
+// import ServicesNew from "./ServicesNew";
 // import BannerBottom from "./BannerBottom";
 import Contact from "./Contact"
+import Services from "./Services";
 
 function Home() {
   return (
@@ -13,7 +14,8 @@ function Home() {
       <Opener />
       <ReviewMarquee />
       <Mission />
-      <ServicesNew />
+      {/* <ServicesNew /> */}
+      <Services/>
       <Why />
       {/* <BannerBottom /> */}
       <Contact/>

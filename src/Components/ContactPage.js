@@ -31,8 +31,8 @@ function ContactPage() {
       const frontContainer = frontSnowContainerRef.current;
       const snowflakes = [];
 
-      // Pale indigo and soft sky blue
-      const colors = ['#c7d2fe', '#bae6fd'];
+      // Rosewood brand colors - Teal variations
+      const colors = ['#00897B', '#B2DFDB'];
 
       // Responsive count and size based on screen width
       const isMobile = window.innerWidth < 768;

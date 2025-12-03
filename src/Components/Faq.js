@@ -7,7 +7,6 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "reactstrap";
-import { ChevronDown } from "lucide-react"; // modern chevron icon
 
 gsap.registerPlugin();
 
@@ -73,13 +72,6 @@ function FAQ() {
     const isOpen = open === id ? "" : id;
     setOpen(isOpen);
 
-    // Animate chevron
-    gsap.to(`.chevron-${id}`, {
-      rotate: isOpen === id ? 180 : 0,
-      duration: 0.4,
-      ease: "power2.out",
-    });
-
     // Animate answer body
     gsap.fromTo(
       `.answer-${id}`,
@@ -99,7 +91,6 @@ function FAQ() {
             <AccordionItem key={id} className="mb-3 border-b border-gray-300">
               <AccordionHeader targetId={id} className="flex items-center justify-between text-xl font-semibold text-gray-900">
                 {item.q}
-                <ChevronDown className={`chevron-${id} ml-2 transition-transform`} />
               </AccordionHeader>
               <AccordionBody accordionId={id} className={`answer-${id} text-md text-gray-700`}>
                 {item.a}

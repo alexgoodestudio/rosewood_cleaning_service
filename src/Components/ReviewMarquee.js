@@ -18,8 +18,6 @@ const pastelBgColors = [
   "bg-teal-200",
   "bg-green-200",
   "bg-lime-200",
-  "bg-yellow-200",
-  "bg-amber-200",
   "bg-orange-200",
   "bg-rose-200",
 ];
@@ -48,25 +46,89 @@ function Avatar({ name }) {
 }
 
 const reviewsRow1 = [
-  { name: "Emily R.", text: "Rosewood left my apartment looking spotless. Even my friends noticed how clean it was!" },
-  { name: "James K.", text: "Fast, reliable, and the crew was super friendly. Didn’t waste any time." },
-  { name: "Sophia L.", text: "Honestly the most stress-free cleaning I’ve ever had. I didn’t have to lift a finger." },
-  { name: "Michael B.", text: "They caught details I didn’t even notice myself. Way more thorough than I expected." },
-  { name: "Olivia P.", text: "Affordable and definitely worth it. My place feels so much fresher now." },
-  { name: "Daniel S.", text: "My apartment feels brand new again. I’d recommend them to anyone." },
-  { name: "Ava T.", text: "Professional, punctual, and they didn’t cut corners. Really impressed." },
-  { name: "Liam W.", text: "Hands down the best cleaning service I’ve used in the city." },
+  {
+    name: "Sarah M.",
+    text: "They cleaned my place before my parents visited and honestly saved me so much stress. The kitchen looked brand new and they even got the grout in the bathroom I'd been ignoring for months. Worth every penny.",
+    location: "Columbia, SC"
+  },
+  {
+    name: "Marcus T.",
+    text: "I was skeptical about hiring cleaners but wow. They showed up right on time, were super respectful of my space, and left everything spotless. My apartment hasn't looked this good since I moved in.",
+    location: "Forest Acres"
+  },
+  {
+    name: "Jennifer L.",
+    text: "Booked them for a move-out clean and my landlord was impressed. Got my full deposit back! They're thorough and don't rush through it.",
+    location: "Shandon"
+  },
+  {
+    name: "David K.",
+    text: "The team was professional and actually listened when I mentioned the baseboards needed extra attention. They came prepared with all their own supplies which was a huge plus.",
+    location: "Rosewood"
+  },
+  {
+    name: "Amanda R.",
+    text: "My house always feels chaotic with two dogs and a toddler. Having them come bi-weekly has been a game changer. I can actually relax on weekends now instead of spending Saturday cleaning.",
+    location: "Columbia, SC"
+  },
+  {
+    name: "Chris B.",
+    text: "Fair pricing and they don't try to upsell you on stuff you don't need. Just good, honest work.",
+    location: "Irmo"
+  },
+  {
+    name: "Rachel P.",
+    text: "I have bad allergies and they use eco-friendly products that don't trigger anything. Plus they were really careful around my cat who gets anxious with strangers.",
+    location: "West Columbia"
+  },
+  {
+    name: "Kevin H.",
+    text: "Scheduled a deep clean after renovating our kitchen. They got all the dust and debris I missed. Even cleaned inside the cabinets without me asking.",
+    location: "Columbia, SC"
+  },
 ];
 
 const reviewsRow2 = [
-  { name: "Charlotte H.", text: "Booking was super easy online and I got the time I wanted." },
-  { name: "Ethan M.", text: "The team showed up exactly when they said they would—rare these days!" },
-  { name: "Mia G.", text: "My carpets haven’t looked this fresh in years. Huge difference." },
-  { name: "Noah J.", text: "They really went above and beyond. Even organized a bit for me." },
-  { name: "Isabella F.", text: "Customer service replied quickly and was genuinely helpful." },
-  { name: "Lucas C.", text: "Start to finish, it was a five-star experience." },
-  { name: "Amelia D.", text: "Every corner was spotless. Even the baseboards were clean." },
-  { name: "Logan V.", text: "I’ll definitely be booking them again. Worth every dollar." },
+  {
+    name: "Maria S.",
+    text: "They cleaned my Airbnb between guests and it's always perfect. Guests have mentioned how clean everything is in their reviews. Reliable and consistent.",
+    location: "Downtown Columbia"
+  },
+  {
+    name: "Tyler W.",
+    text: "I'm terrible at remembering to clean the bathrooms. Having them come monthly keeps my place from turning into a disaster. Plus they're friendly and don't judge my mess lol.",
+    location: "Cayce"
+  },
+  {
+    name: "Lisa Chen",
+    text: "Used them for a one-time deep clean before hosting Thanksgiving. My mother-in-law actually complimented how clean the house was, which never happens. Money well spent.",
+    location: "Columbia, SC"
+  },
+  {
+    name: "Brandon M.",
+    text: "They fit me in last minute when family was coming to town. Showed up early, worked fast, and didn't cut any corners. Highly recommend.",
+    location: "Lexington"
+  },
+  {
+    name: "Nicole D.",
+    text: "The attention to detail is what impressed me most. They cleaned areas I didn't even think about like light switches and door handles.",
+    location: "Forest Acres"
+  },
+  {
+    name: "James R.",
+    text: "Been using them for 6 months now and they're always consistent. Same quality every time.",
+    location: "Columbia, SC"
+  },
+  {
+    name: "Emma K.",
+    text: "I was nervous about having someone in my apartment while I was at work but they were trustworthy and professional. Nothing out of place, just super clean when I got home.",
+    location: "Shandon"
+  },
+  {
+    name: "Alex G.",
+    text: "Great communication from start to finish. They confirmed the appointment, showed up when they said they would, and followed up after to make sure I was happy with everything.",
+    location: "Columbia, SC"
+  },
 ];
 
 function StarRating({ stars = 5 }) {
@@ -96,7 +158,7 @@ function ReviewMarquee() {
   const renderReview = (review, i) => (
     <div
       key={i}
-      className="min-w-[260px] shadow-md rounded-2xl py-5 px-3 text-base text-gray-700 border border-gray-200"
+      className="min-w-[320px] max-w-[320px] shadow-md rounded-2xl py-5 px-4 text-base text-gray-700 border border-gray-200"
     >
       {/* Avatar + Name */}
       <div className="flex items-center gap-3 mb-2">

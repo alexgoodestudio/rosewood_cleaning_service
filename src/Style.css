@@ -76,6 +76,34 @@ body {
   color: #020617;
 }
 
+/* CTA Button - Rosewood Teal */
+.btn-cta {
+  background-color: #00897B;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0.75rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #FF7961;
+}
+
+.btn-cta svg {
+  color: #FFFFFF;
+}
+
+@media (min-width: 992px) {
+  .btn-cta {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
 .btn-contact svg {
   color: white;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -1079,5 +1107,320 @@ body {
 @media (max-width: 420px) {
   .mtm {
     margin-top: 11rem;
+  }
+}
+
+/* Expandable Services - Horizontal Made Right Style */
+.expandable-services-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  background: white;
+  min-height: 70vh;
+}
+
+.expandable-service {
+  position: relative;
+  background: white;
+  border-right: 1px solid #e7e5e4;
+  overflow: hidden;
+  flex: 0 0 120px;
+  transition: all 0.3s ease;
+}
+
+.expandable-service:first-child {
+  border-left: 1px solid #e7e5e4;
+}
+
+.expandable-service.expanded {
+  flex: 1 1 0%;
+  min-width: 0;
+}
+
+/* Color schemes for each service - Unified Rosewood System */
+.expandable-service.expanded {
+  background-color: #F8FAFC; /* slate-50 - consistent across all */
+}
+
+.expandable-service.expanded .service-title,
+.expandable-service.expanded .service-content * {
+  color: #0F172A !important; /* slate-900 - dark headings */
+}
+
+.service-indicator {
+  background-color: #00897B; /* Rosewood Teal */
+  border-color: #00897B;
+}
+
+.expandable-service:hover:not(.expanded) .service-title {
+  color: #00897B; /* Teal hover */
+}
+
+.expandable-service:hover:not(.expanded) .service-indicator {
+  background-color: #FF7961; /* Coral hover accent */
+  border-color: #FF7961;
+}
+
+.service-trigger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+  transition: background-color 0.3s ease;
+}
+
+.expandable-service.expanded .service-trigger {
+  position: relative;
+  height: auto;
+  padding: 2rem 2rem 0 2rem;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-trigger:hover:not(.expandable-service.expanded *) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.service-indicator {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #0f172a;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  display: block;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.service-indicator.active {
+  background: #0f172a;
+}
+
+.expandable-service.expanded .service-indicator {
+  display: none;
+  animation: dotBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes dotBounce {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+.service-title {
+  font-weight: 300;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  display: block;
+  white-space: nowrap;
+  position: absolute;
+  top: calc(25% + 10px + 1.5rem);
+  left: 50%;
+  transform: translateX(-50%) rotate(180deg);
+  transition: color 0.3s ease;
+}
+
+.expandable-service.expanded .service-title {
+  display: none;
+}
+
+.service-content {
+  overflow: hidden;
+  padding: 0 2rem 2rem 2rem;
+  opacity: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+}
+
+.expandable-service.expanded .service-content {
+  opacity: 1;
+  display: block;
+}
+
+.service-inner {
+  padding: 0;
+  width: 100%;
+}
+
+.service-inner h3 {
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: 2rem;
+}
+
+.service-inner p {
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.service-image-wrapper {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.service-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 4/3;
+  border-radius: 12px;
+}
+
+.service-learn-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: inherit;
+  border: 1px solid currentColor;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.service-learn-more:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 768px) {
+  .expandable-services-wrapper {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .expandable-service {
+    border-right: none;
+    border-bottom: 1px solid #e7e5e4;
+    flex: 0 0 auto;
+    min-height: auto;
+  }
+
+  .expandable-service:first-child {
+    border-left: none;
+    border-top: 1px solid #e7e5e4;
+  }
+
+  .service-trigger {
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    height: auto;
+  }
+
+  .expandable-service.expanded .service-trigger {
+    padding: 1.25rem 1.5rem;
+    flex-direction: row;
+    pointer-events: auto;
+  }
+
+  .service-title {
+    writing-mode: horizontal-tb;
+    position: static;
+    transform: none;
+    margin-top: 0;
+    font-size: 1.5rem;
+  }
+
+  .expandable-service.expanded .service-title {
+    display: none;
+  }
+
+  .service-indicator {
+    position: static;
+    transform: none;
+    width: 16px;
+    height: 16px;
+  }
+
+  .expandable-service.expanded .service-indicator {
+    display: none;
+  }
+
+  .service-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .service-inner h3 {
+    font-size: 1.875rem;
+  }
+}
+
+/* Service Navigation Buttons */
+.services-carousel-wrapper {
+  position: relative;
+}
+
+.service-nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 1px solid #e7e5e4;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  color: #0f172a;
+}
+
+.service-nav-button:hover {
+  background: #0f172a;
+  color: white;
+  border-color: #0f172a;
+}
+
+.service-nav-prev {
+  left: -30px;
+}
+
+.service-nav-next {
+  right: -30px;
+}
+
+@media (max-width: 1200px) {
+  .service-nav-prev {
+    left: 0;
+  }
+
+  .service-nav-next {
+    right: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-nav-button {
+    display: none;
   }
 }

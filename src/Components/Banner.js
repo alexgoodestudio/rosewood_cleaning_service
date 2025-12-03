@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRef } from 'react';
-import { Droplets, Leaf } from 'lucide-react';
+import { Droplets } from 'lucide-react';
 
 const MOTION = {
   instant: 0.15,
@@ -56,10 +56,9 @@ function Banner() {
               letterSpacing: '0.1em',
               fontWeight: '500'
             }}>
-              Columbia, SC
+              Columbia, South Carolina
             </span>
             {/* <span className="text-slate-300">•</span> */}
-            <Leaf size={12} className="text-emerald-700" strokeWidth={2} />
             {/* <span className="text-xs text-slate-500" style={{ 
               textTransform: 'uppercase', 
               letterSpacing: '0.1em',

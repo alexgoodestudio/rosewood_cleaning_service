@@ -99,7 +99,7 @@ function Mission() {
                   Two people. Same every time.
                 </h2>
                 <p className="mission-mobile-body text-slate-600">
-                  No rotating crews. No strangers. Just Sarah and Marcus, 
+                  Just Sarah and Andrew, 
                   keeping your home clean and healthy.
                 </p>
               </div>
@@ -121,7 +121,7 @@ function Mission() {
                   The same two people clean your home.
                 </h2>
                 <p className="text-lg text-slate-600 mt-4">
-                  No rotating crews. No strangers. Just Sarah and Marcus, 
+                  No strangers. Just Sarah and Andrew, 
                    keeping your home clean and healthy.
                 </p>
               </div>
@@ -136,9 +136,8 @@ function Mission() {
                       What We Use
                     </p>
                     <p className="mission-card-text text-slate-700">
-                      Branch Basics concentrates diluted to spec. Seventh Generation 
-                      dish soap. Unscented everything. We've been using the same 
-                      products since 2019—no experiments on your counters.
+                      Unscented everything. Safe Eco-friendly products. We've been using the same 
+                      products since 2019.
                     </p>
                   </div>
 
@@ -160,10 +159,9 @@ function Mission() {
                       Who Hires Us
                     </p>
                     <p className="mission-card-text text-slate-700">
-                      Families with toddlers crawling on floors. People with 
-                      asthma or chemical sensitivities. Households that compost, 
-                      keep plants, cook daily. Not the fastest service in town, 
-                      but we remember your dog's name.
+                     Families with toddlers crawling on floors. People with 
+                     chemical sensitivities or respiratory issues. Everyday households 
+                      wanting a reliable, trustworthy cleaning team.
                     </p>
                   </div>
 
