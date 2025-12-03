@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import heroImage from "../Images/alex-tyson-1eUtEZDFH9Y-unsplash.jpg";
+import heroImage from "../Images/2.jpg";
 import { ArrowUpRight } from "lucide-react";
 
           
@@ -44,7 +44,7 @@ function Opener() {
           Enjoy 10% off all services this season.
         </h1>
 
-        <p className="text-lg md:text-2xl mb-4">
+        <p className="text-lg md:text-xl mb-4">
           Your home deserves the best cleaning in <span className="">Columbia, SC</span>
         </p>
         <a href="/contact" className="btn-cta group">

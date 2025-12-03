@@ -82,9 +82,7 @@ function Mission() {
                   Since 2019
                 </span>
                 <span className="text-slate-300">•</span>
-                <span className="text-metadata text-slate-500">
-                  Residential
-                </span>
+
               </div>
             </div>
           </div>
@@ -136,7 +134,7 @@ function Mission() {
                       What We Use
                     </p>
                     <p className="mission-card-text text-slate-700">
-                      Unscented everything. Safe Eco-friendly products. We've been using the same 
+                      Naturally scented everything. Safe Eco-friendly products. We've been using the same 
                       products since 2019.
                     </p>
                   </div>
