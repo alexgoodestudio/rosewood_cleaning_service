@@ -32,6 +32,21 @@ body {
   font-weight: 600;
 }
 
+.text-rosewood-red{
+  color:#FF7961 
+}
+
+.bg-rosewood-teal{
+  background-color: #00897B;
+}
+.bg-footer-teal{
+   background-color: #002A28;
+}
+
+
+.text-rosewood-teal{
+  color:#00897B ;
+}
 .thin {
   font-weight: 250;
 }
@@ -1157,7 +1172,7 @@ body {
 }
 
 .expandable-service:hover:not(.expanded) .service-indicator {
-  background-color: #FF7961; /* Coral hover accent */
+  background-color: #FF7961 ; /* Coral hover accent */
   border-color: #FF7961;
 }
 

@@ -20,7 +20,7 @@ function Contact() {
                   </span>
                 </div>
 
-                <h2 className="text-5xl font-bold text-slate-900 mb-5" style={{ lineHeight: '1.1' }}>
+                <h2 className="text-4xl font-bold text-slate-900 mb-5" style={{ lineHeight: '1.1' }}>
                   Let's talk about your home
                 </h2>
                 

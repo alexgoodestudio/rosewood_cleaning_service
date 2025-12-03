@@ -45,13 +45,13 @@ function Banner() {
   }, []);
 
   return (
-    <section className="bg-blue-100 py-3">
+    <section className="py-3 bg-indigo-50">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
           {/* Left Metadata - absolutely positioned, desktop only */}
           <div className="absolute left-0 hidden md:flex items-center gap-2">
-            <span className="text-xs text-slate-500" style={{ 
+            <span className="text-xs text-slate-600" style={{ 
               textTransform: 'uppercase', 
               letterSpacing: '0.1em',
               fontWeight: '500'
@@ -69,8 +69,8 @@ function Banner() {
           </div>
 
           {/* Center Text - now truly centered */}
-          <div className="text-center">
-            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
+          <div className="text-center ">
+            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-500 mb-0">
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>
