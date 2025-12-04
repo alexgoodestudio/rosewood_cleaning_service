@@ -1,5 +1,21 @@
 import { Link } from 'react-router-dom';
 import SideBarNav from "./SideBarNav";
+import ServiceImage from "../Images/card3.png";
+
+const ImageModule = () => (
+  <div className="row">
+    <div className="col-12 col-md-8 col-lg-7">
+      <div className="rounded-2xl overflow-hidden">
+        <img
+          src={ServiceImage}
+          alt="One-Time Cleaning Service"
+          className="w-100 h-auto"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      </div>
+    </div>
+  </div>
+);
 
 const HeroModule = () => (
   <div className="space-y-8">
@@ -70,17 +86,22 @@ function OneTime() {
             
             {/* Main content area - 9 columns on large screens */}
             <div className="lg:col-span-9 space-y-16">
-              
+
               {/* Hero module */}
               <section className="content-module">
                 <HeroModule />
               </section>
-              
+
+              {/* Image module */}
+              <section className="content-module">
+                <ImageModule />
+              </section>
+
               {/* Call-to-action module */}
               <section className="content-module">
                 <CTAModule />
               </section>
-              
+
             </div>
             
             {/* Sidebar - 3 columns on large screens */}

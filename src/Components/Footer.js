@@ -9,21 +9,22 @@ function Footer() {
         <div className="row g-5 g-lg-6">
           <div className="col-12 col-md-6 col-lg-5">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-3xl  text-white mb-0 ">Rosewood Cleaning</h3>
+              <h3 className="text-3xl text-white mb-0">Rosewood Cleaning</h3>
             </Link>
-            <p className="text-md tracking-wide text-slate-400 mb-4 pe-lg-5">Focus on what matters. Let us handle the cleaning stuff.</p>
-            <p className="text-metadata text-slate-500">Columbia, South Carolina</p>
+            <p className="text-base tracking-wide text-slate-400 mb-4 pe-lg-5">Focus on what matters. Let us handle the cleaning stuff.</p>
+            <p className="text-sm text-slate-500">Columbia, South Carolina</p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
-            <h4 className="text-metadata text-slate-500 mb-4">Services</h4>
+            <h4 className="text-sm text-slate-500 mb-4">Services</h4>
             <nav className="d-flex flex-column gap-3">
-              <Link to="/services/one-time" className="text-base text-slate-300 footer-link">One Time Cleaning</Link>
+              <Link to="/services/onetime" className="text-base text-slate-300 footer-link">One Time Cleaning</Link>
               <Link to="/services/recurring" className="text-base text-slate-300 footer-link">Recurring Service</Link>
               <Link to="/services/moving" className="text-base text-slate-300 footer-link">Moving Clean</Link>
+              <Link to="/services/laundry" className="text-base text-slate-300 footer-link">Laundry Service</Link>
             </nav>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
-            <h4 className="text-metadata text-slate-500 mb-4">Company</h4>
+            <h4 className="text-sm text-slate-500 mb-4">Company</h4>
             <nav className="d-flex flex-column gap-3">
               <Link to="/about" className="text-base text-slate-300 footer-link">About</Link>
               <Link to="/contact" className="text-base text-slate-300 footer-link">Contact</Link>
@@ -31,7 +32,7 @@ function Footer() {
             </nav>
           </div>
           <div className="col-12 col-lg-3">
-            <h4 className="text-metadata text-slate-500 mb-4">Connect</h4>
+            <h4 className="text-sm text-slate-500 mb-4">Connect</h4>
             <nav className="d-flex flex-column gap-3">
               <a href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Facebook</a>
               <a href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Instagram</a>

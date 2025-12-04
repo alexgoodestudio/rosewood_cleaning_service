@@ -4,7 +4,7 @@ import ReviewMarquee from "./ReviewMarquee";
 import Why from "./Why";
 import Mission from "./Mission";
 // import ServicesNew from "./ServicesNew";
-// import BannerBottom from "./BannerBottom";
+import BannerBottom from "./BannerBottom";
 import Contact from "./Contact"
 import Services from "./Services";
 
@@ -14,11 +14,11 @@ function Home() {
       <Opener />
       <ReviewMarquee />
       <Mission />
-      {/* <ServicesNew /> */}
       <Services/>
+      {/* <ServicesNew /> */}
       <Why />
-      {/* <BannerBottom /> */}
       <Contact/>
+      <BannerBottom />
     </div>
   );
 }

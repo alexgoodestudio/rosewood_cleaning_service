@@ -1,5 +1,21 @@
 import { Link } from 'react-router-dom';
 import SideBarNav from "./SideBarNav";
+import ServiceImage from "../Images/card5.png";
+
+const ImageModule = () => (
+  <div className="row">
+    <div className="col-12 col-md-8 col-lg-7">
+      <div className="rounded-2xl overflow-hidden">
+        <img
+          src={ServiceImage}
+          alt="Moving Cleaning Service"
+          className="w-100 h-auto"
+          style={{ maxWidth: '100%', height: 'auto' }}
+        />
+      </div>
+    </div>
+  </div>
+);
 
 const HeroModule = () => (
   <div className="space-y-8">
@@ -72,6 +88,11 @@ function Moving() {
             <div className="lg:col-span-9 space-y-16">
               <section className="content-module">
                 <HeroModule />
+              </section>
+
+              {/* Image module */}
+              <section className="content-module">
+                <ImageModule />
               </section>
 
               <section className="content-module">

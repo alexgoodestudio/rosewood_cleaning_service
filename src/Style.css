@@ -519,12 +519,14 @@ body {
   font-size: 4rem;
   font-weight: 600;
   line-height: 1.2;
+  letter-spacing: -0.025em;
   display: inline-block;
 }
 
 .marquee-separator {
   font-size: 2rem;
   font-weight: 300;
+  letter-spacing: 0.05em;
   display: inline-block;
 }
 
@@ -532,6 +534,7 @@ body {
 @media (max-width: 1200px) {
   .marquee-text {
     font-size: 3.5rem;
+    letter-spacing: -0.02em;
   }
 
   .marquee-separator {
@@ -550,6 +553,7 @@ body {
 
   .marquee-text {
     font-size: 3.25rem;
+    letter-spacing: -0.02em;
   }
 
   .marquee-separator {
@@ -568,6 +572,7 @@ body {
 
   .marquee-text {
     font-size: 3.25rem;
+    letter-spacing: -0.02em;
   }
 
   .marquee-separator {
@@ -1297,21 +1302,21 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 1rem 2rem;
+  padding: 0.75rem 1rem;
   background-color: transparent;
-  color: inherit;
-  border: 1px solid currentColor;
-  border-radius: 0;
+  color: #0f172a;
+  border: 2px solid #00897B;
+  border-radius: 0.75rem;
   text-decoration: none;
   font-weight: 400;
   font-size: 0.875rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   transition: all 0.3s ease;
 }
 
 .service-learn-more:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #00897B;
+  color: #FFFFFF;
+  border-color: #00897B;
 }
 
 @media (max-width: 768px) {

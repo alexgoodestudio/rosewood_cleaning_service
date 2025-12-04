@@ -33,7 +33,7 @@ function Nav() {
     <nav className="navbar bg-slate-50 text-slate-800 flex flex-col">
       {/* Always fixed header row */}
       <div className="container-fluid d-flex justify-content-between align-items-center">
-        <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
+        <Link to="/" className="navbar-brand btn btn-link  p-0 text-decoration-none">
           <span className="font-bold">Rosewood</span> Cleaning Services
         </Link>
         <button
@@ -122,8 +122,8 @@ function Nav() {
         {/* Row 3 - Service Links */}
         <div className="row mb-3">
           <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/onetime" 
+            <Link
+              to="/services/onetime"
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
@@ -134,8 +134,8 @@ function Nav() {
             </Link>
           </div>
           <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/recurring" 
+            <Link
+              to="/services/recurring"
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
@@ -147,14 +147,26 @@ function Nav() {
             </Link>
           </div>
           <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/moving" 
+            <Link
+              to="/services/moving"
               className="text-decoration-none text-slate-800"
               onClick={handleLinkClick}
             >
               <h5 className="">Move In / Out</h5>
               <p className="text-slate-600 text-sm">
                 We'll handle the scrubbing so your move is easier and stress-free.
+              </p>
+            </Link>
+          </div>
+          <div className="col-lg-3 col-12  text-slate-800 p-3">
+            <Link
+              to="/services/laundry"
+              className="text-decoration-none text-slate-800"
+              onClick={handleLinkClick}
+            >
+              <h5 className="">Laundry</h5>
+              <p className="text-slate-600 text-sm">
+                We'll wash, dry, and fold so you can spend your time elsewhere.
               </p>
             </Link>
           </div>

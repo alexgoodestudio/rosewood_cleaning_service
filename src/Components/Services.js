@@ -5,6 +5,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import Image1 from "../Images/card3.png";
 import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
+import Image4 from "../Images/2.jpg";
 
 const ExpandableService = ({ title, description, image, link, index, isExpanded, onExpand }) => {
   const contentRef = useRef(null);
@@ -114,41 +115,47 @@ function Services() {
   const [expandedService, setExpandedService] = useState(0);
 
   const handleNext = () => {
-    setExpandedService((prev) => (prev + 1) % 3);
+    setExpandedService((prev) => (prev + 1) %4);
   };
 
   const handlePrev = () => {
-    setExpandedService((prev) => (prev - 1 + 3) % 3);
+    setExpandedService((prev) => (prev - 1 + 4) % 4);
   };
 
   const serviceData = [
     {
       title: "One-Time Clean",
-      description: "A thorough, one-off cleaning service using eco-friendly products for a sparkling, healthy home. Perfect for special occasions, seasonal deep cleans, or whenever you need a fresh start.",
+      description: "A one-off cleaning service using eco-friendly products for a sparkling, healthy home. Perfect for special occasions, seasonal deep cleans, or whenever you need a fresh start.",
       image: Image1,
-      link: "/services/one-time",
+      link: "/services/onetime",
     },
         {
       title: "Recurring Service",
-      description: "Regular cleaning schedules tailored to your needs, maintaining cleanliness with eco-safe products. Weekly, bi-weekly, or monthly options available to keep your home consistently fresh.",
+      description: "Regular cleaning schedules tailored to your needs. Weekly, bi-weekly, or monthly options available to keep your home consistently fresh. We Also serve AirBnB Hosts!",
       image: Image3,
       link: "/services/recurring",
     },
     {
       title: "Moving Clean",
-      description: "Comprehensive cleaning for your new or old space, ensuring it's immaculate and move-in ready. We handle every detail so you can focus on your transition.",
+      description: "Cleaning for your new or old space, ensuring it's move-in ready. We handle every detail so you can focus on your transition.",
       image: Image2,
       link: "/services/moving",
+    },
+    {
+      title: "Laundry Service",
+      description: "Let us handle your laundry so you don't have to. We'll wash, dry, fold, and have everything ready for you. Good for busy weeks when the pile just keeps growing or when you'd rather spend your time doing literally anything else.",
+      image: Image4,
+      link: "/services/laundry",
     },
 
   ];
 
   return (
-    <section className="bg-white py-5 position-relative">
+    <section className="bg-white py-16 position-relative">
       <div className="container">
-        <div className="row mb-5">
+        <div className="row mb-8">
           <div className="col-lg-8">
-            <h2 className="text-5xl font-semibold text-slate-900 mb-3 ">
+            <h2 className="text-5xl font-semibold text-slate-900 mb-6">
               Our Services
             </h2>
             <p className="text-lg text-slate-600">

@@ -239,7 +239,7 @@ function ContactPage() {
         <div className="flex justify-center pt-24 pb-10">
           <div className="w-full max-w-5xl">
             <div className="text-start mb-24">
-              <h1 className="hero-title text-9xl  text-slate-900 mb-3 apfel">
+              <h1 className="hero-title text-6xl  text-slate-900 mb-3 apfel">
                 Contact Us
               </h1>
               <p className="hero-subtitle text-start text-lg text-slate-600  mx-auto">
@@ -366,7 +366,7 @@ function ContactPage() {
 
                   <button 
                     type="submit"
-                    className="w-full bg-indigo-600 text-white py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full bg-teal-700 text-white py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     disabled={submitStatus === 'sending'}
                   >
                     {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}

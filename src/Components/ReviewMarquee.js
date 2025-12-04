@@ -158,7 +158,7 @@ function ReviewMarquee() {
   const renderReview = (review, i) => (
     <div
       key={i}
-      className="min-w-[320px] max-w-[320px] shadow-md rounded-2xl py-5 px-4 text-base text-gray-700 border border-gray-200"
+      className="min-w-[360px] max-w-[360px] shadow-md rounded-2xl py-4 px-5 text-base text-gray-700 border border-gray-200"
     >
       {/* Avatar + Name */}
       <div className="flex items-center gap-3 mb-2">
@@ -173,8 +173,8 @@ function ReviewMarquee() {
   );
 
   return (
-    <div className="space-y-12 bg-white py-12">
-      <h1 className="text-xl font-semibold ms-5">Loved By Our Customers</h1>
+    <div className="space-y-12 bg-white py-16">
+      <h2 className="text-5xl font-semibold mb-8 container">Loved By Our Customers</h2>
 
       {/* Row 1 */}
       <div className="overflow-hidden">

@@ -2,7 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 
 function Contact() {
   return (
-    <section className="bg-stone-50 py-24">
+    <section className="bg-stone-50 py-16">
       <div className="container">
         
         <div className="row">

@@ -4,17 +4,21 @@ function SideBarNav() {
   const location = useLocation();
 
   const services = [
-    { 
-      path: "/onetime", 
+    {
+      path: "/services/onetime",
       name: "One Time Cleaning"
     },
-    { 
-      path: "/recurring", 
+    {
+      path: "/services/recurring",
       name: "Recurring Cleaning"
     },
-    { 
-      path: "/moving", 
+    {
+      path: "/services/moving",
       name: "Moving Cleaning"
+    },
+    {
+      path: "/services/laundry",
+      name: "Laundry Service"
     }
   ];
 

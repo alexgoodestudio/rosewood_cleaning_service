@@ -81,18 +81,18 @@ function FAQ() {
   };
 
   return (
-    <div ref={containerRef} className="container py-5">
-      <h1 className="text-5xl font-bold mb-5 text-gray-800">Common Questions</h1>
+    <div ref={containerRef} className="container py-16">
+      <h1 className="text-5xl font-bold mb-8 text-gray-800">Common Questions</h1>
 
       <Accordion open={open} toggle={toggle}>
         {faqs.map((item, i) => {
           const id = `${i}`;
           return (
             <AccordionItem key={id} className="mb-3 border-b border-gray-300">
-              <AccordionHeader targetId={id} className="flex items-center justify-between text-xl font-semibold text-gray-900">
+              <AccordionHeader targetId={id} className="flex items-center justify-between text-2xl font-semibold text-gray-900">
                 {item.q}
               </AccordionHeader>
-              <AccordionBody accordionId={id} className={`answer-${id} text-md text-gray-700`}>
+              <AccordionBody accordionId={id} className={`answer-${id} text-lg text-gray-700`}>
                 {item.a}
               </AccordionBody>
             </AccordionItem>

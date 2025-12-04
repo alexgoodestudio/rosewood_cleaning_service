@@ -16,8 +16,8 @@ const MOTION = {
 
 const phrases = [
   "We handle the cleaning",
-  "You handle everything else",
-  "Clean homes, clear minds",
+  "You focus on everything else",
+  "With the products you like",
   "Done right, every time"
 ];
 
@@ -145,22 +145,22 @@ function Why() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-5 py-md-6 mb-5 mt-5">
+    <section ref={containerRef} className="py-16">
       <div className="container">
         <div className="row align-items-center">
-          
+
           <div className="col-12 col-lg-8 order-2 order-lg-1">
             <div className="mb-4">
 
-              <h2 ref={headingRef} className="text-4xl  mb-4">
+              <h2 ref={headingRef} className="text-4xl mb-6">
                 {phrases[currentIndex]}
               </h2>
             </div>
 
-            <div className="mb-5">
-              <p 
-                ref={paragraphRef} 
-                className="text-md text-slate-700 mb-0"
+            <div className="mb-6">
+              <p
+                ref={paragraphRef}
+                className="text-lg text-slate-700 mb-0"
                 style={{ maxWidth: '600px' }}
               >
                 We're not just another cleaning company — we're part of your

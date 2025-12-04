@@ -119,7 +119,7 @@ function Mission() {
                   The same two people clean your home.
                 </h2>
                 <p className="text-lg text-slate-600 mt-4">
-                  No strangers. Just Sarah and Andrew, 
+                 Sarah and Andrew, 
                    keeping your home clean and healthy.
                 </p>
               </div>
@@ -134,7 +134,7 @@ function Mission() {
                       What We Use
                     </p>
                     <p className="mission-card-text text-slate-700">
-                      Naturally scented everything. Safe Eco-friendly products. We've been using the same 
+                      Unscented everything. Safe Eco-friendly products. We've been using the same 
                       products since 2019.
                     </p>
                   </div>
