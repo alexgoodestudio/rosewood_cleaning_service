@@ -134,7 +134,7 @@ function Mission() {
                       What We Use
                     </p>
                     <p className="mission-card-text text-slate-700">
-                      Unscented everything. Safe Eco-friendly products. We've been using the same 
+                      Safe Eco-friendly products. We've been using the same 
                       products since 2019.
                     </p>
                   </div>
@@ -146,8 +146,8 @@ function Mission() {
                     </p>
                     <p className="mission-card-text text-slate-700">
                       Shandon, Rosewood, Forest Acres, Elmwood Park. 
-                      Within 4 miles of Five Points. If you're further, 
-                      we'll be honest about drive time affecting our schedule.
+                      Within 5 miles of Five Points. If you're further, 
+                      contact us to discuss.
                     </p>
                   </div>
 

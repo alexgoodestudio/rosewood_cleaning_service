@@ -1,13 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Calendar, Home, Shirt, ArrowRight } from 'lucide-react';
 import Image1 from "../Images/card3.png";
 import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
 import Image4 from "../Images/2.jpg";
 
-const ExpandableService = ({ title, description, image, link, index, isExpanded, onExpand }) => {
+const ExpandableService = ({ title, description, image, link, index, isExpanded, onExpand, icon: Icon }) => {
   const contentRef = useRef(null);
   const serviceRef = useRef(null);
   const isInitialMount = useRef(true);
@@ -71,7 +71,11 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         aria-controls={`service-content-${index}`}
         aria-label={isExpanded ? `Collapse ${title}` : `Expand ${title}`}
       >
-        <span className={`service-indicator ${isExpanded ? 'active' : ''}`}></span>
+        {Icon ? (
+          <Icon className="service-icon" size={24} strokeWidth={1.5} />
+        ) : (
+          <span className={`service-indicator ${isExpanded ? 'active' : ''}`}></span>
+        )}
         <span className="service-title text-5xl text-slate-900">{title}</span>
       </button>
 
@@ -81,6 +85,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         className="service-content"
       >
         <div className="service-inner">
+          <h3 className="text-4xl font-semibold text-slate-900 mb-6">{title}</h3>
           <div className="row">
             <div className="col-12 col-md-6 mb-5 mb-md-5">
               <div className="service-image-wrapper">
@@ -99,9 +104,10 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
 
               <a
                 href={link}
-                className="service-learn-more"
+                className="btn-cta"
               >
-                Learn More
+                <span>Learn More</span>
+                <ArrowRight size={16} />
               </a>
             </div>
           </div>
@@ -128,24 +134,28 @@ function Services() {
       description: "A one-off cleaning service using eco-friendly products for a sparkling, healthy home. Perfect for special occasions, seasonal deep cleans, or whenever you need a fresh start.",
       image: Image1,
       link: "/services/onetime",
+      icon: Sparkles,
     },
         {
       title: "Recurring Service",
       description: "Regular cleaning schedules tailored to your needs. Weekly, bi-weekly, or monthly options available to keep your home consistently fresh. We Also serve AirBnB Hosts!",
       image: Image3,
       link: "/services/recurring",
+      icon: Calendar,
     },
     {
       title: "Moving Clean",
       description: "Cleaning for your new or old space, ensuring it's move-in ready. We handle every detail so you can focus on your transition.",
       image: Image2,
       link: "/services/moving",
+      icon: Home,
     },
     {
       title: "Laundry Service",
       description: "Let us handle your laundry so you don't have to. We'll wash, dry, fold, and have everything ready for you. Good for busy weeks when the pile just keeps growing or when you'd rather spend your time doing literally anything else.",
       image: Image4,
       link: "/services/laundry",
+      icon: Shirt,
     },
 
   ];
@@ -181,6 +191,7 @@ function Services() {
                 description={service.description}
                 image={service.image}
                 link={service.link}
+                icon={service.icon}
                 index={index}
                 isExpanded={expandedService === index}
                 onExpand={() => setExpandedService(index)}

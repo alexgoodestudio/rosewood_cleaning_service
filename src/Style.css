@@ -9,6 +9,17 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'gs';
+  src: url('./Components/Fonts/GeneralSans-Regular.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+.gs {
+  font-family: 'gs', sans-serif;
+  font-display: block; 
+}
+
 .apfel {
   font-family: 'apfel', sans-serif;
   font-display: block; 
@@ -85,31 +96,122 @@ body {
 }
 
 /* CTA Button - Rosewood Teal */
+a.btn-cta,
+a.btn-cta:link,
+a.btn-cta:visited,
+a.btn-cta:active,
+a.btn-cta:focus,
 .btn-cta {
-  background-color: #00897B;
-  color: #FFFFFF;
-  text-decoration: none;
+  background-color: #00897B !important;
+  text-decoration: none !important;
   padding: 0.75rem 1rem;
   border-radius: 0.75rem;
   font-size: 0.875rem;
-  display: inline-flex;
+  display: inline-flex !important;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
 }
 
+a.btn-cta:hover,
+a.btn-cta:focus:hover,
 .btn-cta:hover {
-  background-color: #FF7961;
+  background-color: #FF7961 !important;
+  text-decoration: none !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
 }
 
+a.btn-cta span,
+a.btn-cta svg,
+.btn-cta span,
 .btn-cta svg {
-  color: #FFFFFF;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: all 0.3s ease;
+}
+
+a.btn-cta svg,
+.btn-cta svg {
+  stroke: #FFFFFF !important;
+  fill: none !important;
+}
+
+a.btn-cta:hover span,
+a.btn-cta:hover svg,
+.btn-cta:hover span,
+.btn-cta:hover svg {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+}
+
+a.btn-cta:hover svg,
+.btn-cta:hover svg {
+  stroke: #0f172a !important;
+  fill: none !important;
 }
 
 @media (min-width: 992px) {
   .btn-cta {
     padding: 0.75rem 1.5rem;
   }
+}
+
+/* Hero Text Container */
+.hero-text-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 1.5rem;
+  color: white;
+}
+
+@media (min-width: 768px) {
+  .hero-text-container {
+    inset: 0;
+    display: flex;
+    align-items: center;
+    padding: 3rem;
+  }
+}
+
+/* Hero Heading - Custom Responsive Size */
+.hero-heading {
+  opacity: 1;
+  font-size: 1.875rem; /* Between text-xl (1.25rem) and text-2xl (1.5rem) for mobile */
+  line-height: 1.3;
+}
+
+@media (min-width: 768px) {
+  .hero-heading {
+    font-size: 2.625rem; /* Between text-4xl (2.25rem) and text-5xl (3rem) for desktop */
+    line-height: 1.25;
+  }
+}
+
+/* Hero Dot Navigation */
+.hero-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.hero-dot:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  transform: scale(1.2);
+}
+
+.hero-dot.active {
+  background-color: #FFFFFF;
+  width: 24px;
+  border-radius: 5px;
 }
 
 .btn-contact svg {
@@ -1228,6 +1330,11 @@ body {
   animation: dotBounce 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Hide icons on desktop */
+.service-icon {
+  display: none;
+}
+
 @keyframes dotBounce {
   0% { transform: scale(0); }
   100% { transform: scale(1); }
@@ -1365,14 +1472,53 @@ body {
     display: none;
   }
 
+  /* Hide circles on mobile */
   .service-indicator {
-    position: static;
-    transform: none;
-    width: 16px;
-    height: 16px;
+    display: none !important;
   }
 
-  .expandable-service.expanded .service-indicator {
+  /* Show icons on mobile */
+  .service-icon {
+    display: block;
+    flex-shrink: 0;
+    transition: color 0.3s ease;
+  }
+
+  /* Individual icon colors */
+  .expandable-service:nth-child(1) .service-icon {
+    color: #F59E0B; /* Orange - One-Time Clean */
+  }
+
+  .expandable-service:nth-child(2) .service-icon {
+    color: #00897B; /* Green/Teal - Recurring Service */
+  }
+
+  .expandable-service:nth-child(3) .service-icon {
+    color: #8B5CF6; /* Purple - Moving Clean */
+  }
+
+  .expandable-service:nth-child(4) .service-icon {
+    color: #FF7961; /* Red/Coral - Laundry Service */
+  }
+
+  /* Hover states - brighten on hover */
+  .expandable-service:nth-child(1):hover:not(.expanded) .service-icon {
+    color: #FBBF24;
+  }
+
+  .expandable-service:nth-child(2):hover:not(.expanded) .service-icon {
+    color: #00B3A0;
+  }
+
+  .expandable-service:nth-child(3):hover:not(.expanded) .service-icon {
+    color: #A78BFA;
+  }
+
+  .expandable-service:nth-child(4):hover:not(.expanded) .service-icon {
+    color: #FF9580;
+  }
+
+  .expandable-service.expanded .service-icon {
     display: none;
   }
 
