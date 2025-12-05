@@ -70,7 +70,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
+            <p ref={bannerRef} className="text-sm tracking-wider chillax font-semibold text-slate-900 mb-0">
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>

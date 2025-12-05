@@ -152,7 +152,7 @@ function Why() {
           <div className="col-12 col-lg-8 order-2 order-lg-1">
             <div className="mb-4">
 
-              <h2 ref={headingRef} className="text-4xl mb-6">
+              <h2 ref={headingRef} className="text-4xl chillax font-bold mb-6">
                 {phrases[currentIndex]}
               </h2>
             </div>

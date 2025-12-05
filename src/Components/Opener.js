@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import heroImage3 from "../Images/2.jpg";
 import heroImage2 from "../Images/3.jpg";
 import heroImage from "../Images/d.jpg";
 
@@ -11,6 +12,7 @@ import { ArrowUpRight } from "lucide-react";
 function Opener() {
   const image1Ref = useRef(null);
   const image2Ref = useRef(null);
+  const image3Ref = useRef(null);
   const textRef = useRef(null);
   const isInitialMount = useRef(true);
   const [currentImage, setCurrentImage] = useState(0);
@@ -28,8 +30,8 @@ function Opener() {
     if (prefersReducedMotion) return;
 
     const interval = setInterval(() => {
-      setCurrentImage(prev => (prev === 0 ? 1 : 0));
-    }, 15000);
+      setCurrentImage(prev => (prev + 1) % 3);
+    }, 9000);
 
     return () => clearInterval(interval);
   }, [prefersReducedMotion]);
@@ -44,20 +46,26 @@ function Opener() {
       return;
     }
 
-    const nextImage = currentImage === 0 ? image1Ref.current : image2Ref.current;
-    const prevImage = currentImage === 0 ? image2Ref.current : image1Ref.current;
+    // Set all images to opacity 0 first
+    gsap.set([image1Ref.current, image2Ref.current, image3Ref.current], { opacity: 0 });
 
-    // Switch images instantly - no fade
-    gsap.set(nextImage, { opacity: 1 });
-    gsap.set(prevImage, { opacity: 0 });
+    // Set current image to opacity 1
+    const currentImageRef = currentImage === 0 ? image1Ref.current :
+                           currentImage === 1 ? image2Ref.current :
+                           image3Ref.current;
+    gsap.set(currentImageRef, { opacity: 1 });
 
     // Update text and subtext instantly
     const newText = currentImage === 0
       ? "Surprise! Enjoy 10% off all services this season."
-      : "First time? Save 20% off your first booking!";
+      : currentImage === 1
+      ? "First time? Save 20% off your first booking!"
+      : "Ask us about our membership plans for exclusive savings!";
     const newSubtext = currentImage === 0
       ? "Your home deserves the best cleaning in Columbia, SC"
-      : "Message us today for a free estimate";
+      : currentImage === 1
+      ? "Message us today for a free estimate"
+      : "Keep your home fresh with our exclusive membership program";
     setDisplayedText(newText);
     setDisplayedSubtext(newSubtext);
   }, { dependencies: [currentImage] });
@@ -77,6 +85,13 @@ function Opener() {
           ref={image2Ref}
           src={heroImage2}
           alt="Clean Bathroom Sink"
+          className="absolute inset-0 w-full h-full object-cover"
+          style={{ opacity: 0 }}
+        />
+        <img
+          ref={image3Ref}
+          src={heroImage3}
+          alt="Professional Cleaning Service"
           className="absolute inset-0 w-full h-full object-cover"
           style={{ opacity: 0 }}
         />
@@ -116,6 +131,11 @@ function Opener() {
           onClick={() => setCurrentImage(1)}
           className={`hero-dot ${currentImage === 1 ? 'active' : ''}`}
           aria-label="View second image"
+        />
+        <button
+          onClick={() => setCurrentImage(2)}
+          className={`hero-dot ${currentImage === 2 ? 'active' : ''}`}
+          aria-label="View third image"
         />
       </div>
     </div>
