@@ -67,6 +67,37 @@ function FooterMarquee() {
           Let us help you get your home the way it should be
         </span>
         <span className="marquee-separator text-teal-950 font-bold">•</span>
+         <span className="marquee-text text-teal-950">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Let us help you get your home the way it should be
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Let us help you get your home the way it should be
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+         <span className="marquee-text text-teal-950">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Let us help you get your home the way it should be
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Interested in working with us?
+        </span>
+        <span className="marquee-separator text-teal-950 font-bold">•</span>
+        <span className="marquee-text text-teal-950">
+          Let us help you get your home the way it should be
+        </span>
       </div>
     </div>
   );

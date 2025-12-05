@@ -51,12 +51,12 @@ function Banner() {
           
           {/* Left Metadata - absolutely positioned, desktop only */}
           <div className="absolute left-0 hidden md:flex items-center gap-2">
-            <span className="text-xs text-slate-600" style={{ 
+            <span className="text-xs " style={{ 
               textTransform: 'uppercase', 
               letterSpacing: '0.1em',
               fontWeight: '500'
             }}>
-              Columbia, South Carolina
+              <span className='text-slate-500'>Columbia, South Carolina</span>
             </span>
             {/* <span className="text-slate-300">•</span> */}
             {/* <span className="text-xs text-slate-500" style={{ 
@@ -70,7 +70,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-500 mb-0">
+            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>

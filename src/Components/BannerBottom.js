@@ -110,6 +110,66 @@ function BannerBottom() {
           <span className="apfel tracking-wider text-bold text-teal-950">
             Located in Columbia, South Carolina
           </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+<span className="apfel tracking-wider text-bold text-teal-950">
+            We're looking forward to serving you
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+          Let us handle the cleaning stuff
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            Located in Columbia, South Carolina
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+           <span className="apfel tracking-wider text-bold text-teal-950">
+            We're looking forward to serving you
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+          Let us handle the cleaning stuff
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            Located in Columbia, South Carolina
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+           <span className="apfel tracking-wider text-bold text-teal-950">
+            We're looking forward to serving you
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+          Let us handle the cleaning stuff
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            Located in Columbia, South Carolina
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+           <span className="apfel tracking-wider text-bold text-teal-950">
+            We're looking forward to serving you
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+          Let us handle the cleaning stuff
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            Located in Columbia, South Carolina
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            We're looking forward to serving you
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+          Let us handle the cleaning stuff
+          </span>
+          <span className="apfel text-bold text-teal-950 px-3">•</span>
+          <span className="apfel tracking-wider text-bold text-teal-950">
+            Located in Columbia, South Carolina
+          </span>
         </div>
       </div>
     </div>

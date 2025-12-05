@@ -29,7 +29,7 @@ function Contact() {
                 </p>
 
                 <p className="text-base text-slate-700 mb-6" style={{ lineHeight: '1.6', maxWidth: '560px' }}>
-                  We'll ask about your square footage, how often you're thinking (weekly, biweekly, or one-time), and any rooms that need extra attention. Takes about 10 minutes on the phone.
+                  We'll ask about your square footage, and any rooms that need extra attention. 
                 </p>
 
                 <a href="/contact" className="btn-cta">
@@ -47,7 +47,7 @@ function Contact() {
                     Pricing
                   </p>
                   <p className="text-lg text-slate-900 font-semibold mb-2">
-                    $120–$180 per clean
+                    $120–$240 per clean
                   </p>
                   <p className="text-sm text-slate-600 mb-0" style={{ lineHeight: '1.6' }}>
                     Depends on square footage and frequency. We'll give you an exact quote after we talk about your home.
