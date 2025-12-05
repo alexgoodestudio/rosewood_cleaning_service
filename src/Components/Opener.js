@@ -63,9 +63,9 @@ function Opener() {
   }, { dependencies: [currentImage] });
 
   return (
-    <div className="relative w-full" style={{ height: "75vh" }}>
-      {/* Hero Images Container - Stacked for crossfade */}
-      <div className="absolute inset-0">
+    <div className="hero-wrapper">
+      {/* Hero Images Container - Top half on mobile, full on desktop */}
+      <div className="hero-image-section">
         <img
           ref={image1Ref}
           src={heroImage}
@@ -82,7 +82,7 @@ function Opener() {
         />
       </div>
 
-      {/* Text + Button - bottom on mobile, vertically centered on desktop */}
+      {/* Text + Button - bottom half on mobile with background, vertically centered on desktop */}
       <div className="hero-text-container">
         <div className="row w-full">
           <div className="col-lg-4 col-12">
@@ -106,7 +106,7 @@ function Opener() {
       </div>
 
       {/* Dot Navigation - bottom right */}
-      <div className="absolute bottom-6 right-6 md:bottom-12 md:right-12 flex gap-2">
+      <div className="hero-dot-navigation">
         <button
           onClick={() => setCurrentImage(0)}
           className={`hero-dot ${currentImage === 0 ? 'active' : ''}`}

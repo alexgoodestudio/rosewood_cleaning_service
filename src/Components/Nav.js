@@ -1,177 +1,100 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { gsap } from "gsap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav() {
-  const [isOpen, setIsOpen] = useState(false);
-  const navContentRef = useRef(null);
-
-  useEffect(() => {
-    if (isOpen) {
-      gsap.fromTo(
-        navContentRef.current.children,
-        { y: -20, opacity: 0 },
-        { y: 0, opacity: 1, stagger: 0.1, duration: 0.4, ease: "power2.out" }
-      );
-    } else {
-      gsap.to(navContentRef.current.children, {
-        y: -20,
-        opacity: 0,
-        stagger: 0.05,
-        duration: 0.3,
-        ease: "power2.in",
-      });
-    }
-  }, [isOpen]);
-
-  const handleLinkClick = () => {
-    setIsOpen(false);
-  };
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   return (
-    <nav className="navbar bg-slate-50 text-slate-800 flex flex-col">
-      {/* Always fixed header row */}
-      <div className="container-fluid d-flex justify-content-between align-items-center">
-        <Link to="/" className="navbar-brand btn btn-link  p-0 text-decoration-none">
+    <nav className="navbar text-slate-800 flex flex-col" style={{ padding: 0 }}>
+      {/* Top bar with brand name */}
+      <div className="container-fluid d-flex justify-content-between align-items-center bg-slate-50" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
+        <Link to="/" className="navbar-brand text-primar  btn btn-link  p-0 text-decoration-none">
           <span className="font-bold">Rosewood</span> Cleaning Services
         </Link>
-        <button
-          className="navbar-toggler d-block"
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-      </div>
 
-      {/* Collapsible content BELOW, doesn't push brand/toggler */}
-      <div
-        className={`w-100 px-3 mt-2 ${isOpen ? "d-block" : "d-none"}`}
-        ref={navContentRef}
-      >
-        {/* Row 1 */}
-        <div className="row mb-3">
-          
-          <div className="col-12  text-slate-800  p-3">
-            <h4>Welcome</h4>
-            <p className="text-slate-600 text-sm">
-              We make homes cleaner, healthier, and more relaxing — so you can
-              focus on what matters.
-            </p>
-          </div>
-        </div>
+        {/* Desktop Navigation Links */}
+        <div className="d-none d-lg-flex align-items-center gap-4" style={{ marginRight: '3rem' }}>
+          <Link to="/" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors">
+            Home
+          </Link>
+          <Link to="/about" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors">
+            About
+          </Link>
 
-        {/* Row 2 - Company Info Links */}
-        <div className="row mb-3">
-                    <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/" 
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">Home</h5>
-              <p className="text-slate-600 text-sm">
-                Welcome to Rosewood Cleaning Services, your trusted partner for
-                a cleaner, healthier home.
-              </p>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/about" 
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">About Us</h5>
-              <p className="text-slate-600 text-sm">
-                Local, reliable, and eco-friendly. We treat every home like our
-                own.
-              </p>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/contact" 
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">Contact</h5>
-              <p className="text-slate-600 text-sm">
-                Call, email, or book online. We'll build a plan that works for
-                you.
-              </p>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link 
-              to="/faq" 
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">FAQ</h5>
-              <p className="text-slate-600 text-sm">
-                Quick answers about pricing, supplies, and what's included in our
-                services.
-              </p>
-            </Link>
-          </div>
-          
-        </div>
+          {/* Services Dropdown */}
+          <div
+            className="position-relative"
+            onMouseEnter={() => setServicesDropdownOpen(true)}
+            onMouseLeave={() => setServicesDropdownOpen(false)}
+          >
+            <span className="text-slate-800 hover:text-slate-600 transition-colors" style={{ cursor: 'pointer' }}>
+              Services
+            </span>
 
-        {/* Row 3 - Service Links */}
-        <div className="row mb-3">
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link
-              to="/services/onetime"
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">One-Time</h5>
-              <p className="text-slate-600 text-sm">
-                Perfect for deep cleans, special events, or seasonal refreshes.
-              </p>
-            </Link>
+            {/* Dropdown Menu */}
+            {servicesDropdownOpen && (
+              <div
+                className="position-absolute bg-white shadow-lg border border-slate-200"
+                style={{
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  marginTop: '0.5rem',
+                  borderRadius: '0.5rem',
+                  minWidth: '200px',
+                  zIndex: 1000
+                }}
+              >
+                <Link
+                  to="/services/onetime"
+                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                  style={{ fontSize: '0.9rem' }}
+                >
+                  One-Time Clean
+                </Link>
+                <Link
+                  to="/services/recurring"
+                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                  style={{ fontSize: '0.9rem' }}
+                >
+                  Recurring Service
+                </Link>
+                <Link
+                  to="/services/moving"
+                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                  style={{ fontSize: '0.9rem' }}
+                >
+                  Move In / Out
+                </Link>
+                <Link
+                  to="/services/laundry"
+                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                  style={{ fontSize: '0.9rem', borderRadius: '0 0 0.5rem 0.5rem' }}
+                >
+                  Laundry Service
+                </Link>
+              </div>
+            )}
           </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link
-              to="/services/recurring"
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">Recurring</h5>
-              <p className="text-slate-600 text-sm">
-                Weekly, bi-weekly, or monthly cleanings to keep your home
-                spotless.
-              </p>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link
-              to="/services/moving"
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">Move In / Out</h5>
-              <p className="text-slate-600 text-sm">
-                We'll handle the scrubbing so your move is easier and stress-free.
-              </p>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-12  text-slate-800 p-3">
-            <Link
-              to="/services/laundry"
-              className="text-decoration-none text-slate-800"
-              onClick={handleLinkClick}
-            >
-              <h5 className="">Laundry</h5>
-              <p className="text-slate-600 text-sm">
-                We'll wash, dry, and fold so you can spend your time elsewhere.
-              </p>
-            </Link>
-          </div>
+
+          <Link to="/contact" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors">
+            Contact
+          </Link>
+          <Link to="/faq" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors">
+            FAQ
+          </Link>
         </div>
       </div>
+
+      {/* Mobile Navigation Links - Below brand name */}
+      <div className="mobile-links-nav d-lg-none">
+        <Link to="/" className="mobile-link-item">Home</Link>
+        <Link to="/about" className="mobile-link-item">About</Link>
+        <Link to="/contact" className="mobile-link-item">Contact</Link>
+        <Link to="/faq" className="mobile-link-item">FAQ</Link>
+      </div>
+
     </nav>
   );
 }

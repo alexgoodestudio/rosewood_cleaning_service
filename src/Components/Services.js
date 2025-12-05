@@ -85,7 +85,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         className="service-content"
       >
         <div className="service-inner">
-          <h3 className="text-4xl font-semibold text-slate-900 mb-6">{title}</h3>
+          <h3 className="text-2xl font-semibold text-slate-900 mb-6">{title}</h3>
           <div className="row">
             <div className="col-12 col-md-6 mb-5 mb-md-5">
               <div className="service-image-wrapper">

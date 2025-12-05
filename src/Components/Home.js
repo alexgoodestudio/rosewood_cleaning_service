@@ -13,8 +13,8 @@ function Home() {
     <div>
       <Opener />
       <ReviewMarquee />
-      <Mission />
       <Services/>
+      <Mission />
       {/* <ServicesNew /> */}
       <Why />
       <Contact/>
