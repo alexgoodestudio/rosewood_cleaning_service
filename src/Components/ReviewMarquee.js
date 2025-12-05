@@ -174,7 +174,7 @@ function ReviewMarquee() {
 
   return (
     <div className="space-y-12 bg-white py-16">
-      <h2 className="text-5xl font-semibold mb-8 container">Loved By Our Customers</h2>
+      <h2 className="text-3xl font-semibold mb-8 container">Loved By Our Customers</h2>
 
       {/* Row 1 */}
       <div className="overflow-hidden">

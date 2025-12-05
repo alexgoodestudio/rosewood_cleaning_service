@@ -119,8 +119,8 @@ function Mission() {
                   The same two people clean your home.
                 </h2>
                 <p className="text-lg text-slate-600 mt-4">
-                 Sarah and Andrew, 
-                   keeping your home clean and healthy.
+                 
+                   Sarah and Andrew, keeping your home clean, happy and healthy.
                 </p>
               </div>
 
@@ -157,9 +157,9 @@ function Mission() {
                       Who Hires Us
                     </p>
                     <p className="mission-card-text text-slate-700">
-                     Families with toddlers crawling on floors. People with 
-                     chemical sensitivities or respiratory issues. Everyday households 
-                      wanting a reliable, trustworthy cleaning team.
+                     Busy families with kids, and pets. People with 
+                     chemical sensitivities or allergies. Everyday households 
+                      wanting a reliable, neighborhood cleaning team.
                     </p>
                   </div>
 
