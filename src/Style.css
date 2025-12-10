@@ -108,7 +108,7 @@ body {
   color: #020617;
 }
 
-/* CTA Button - Rosewood Coral */
+/* CTA Button - Rosewood Teal */
 a.btn-cta,
 a.btn-cta:link,
 a.btn-cta:visited,
@@ -118,14 +118,17 @@ a.btn-cta:focus,
   background-color: #115e59 !important;
   text-decoration: none !important;
   padding: 0.75rem 1rem;
-  border-radius: 0.75rem;
+  border-radius: 2rem; /* Full pill shape */
   font-size: 0.875rem;
+  font-weight: 600 !important; /* Semibold */
+  letter-spacing: 0.015em; /* Slightly open for legibility */
   display: inline-flex !important;
   align-items: center;
   gap: 0.5rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
+  will-change: transform, background-color;
 }
 
 a.btn-cta:hover,
@@ -135,6 +138,7 @@ a.btn-cta:focus:hover,
   text-decoration: none !important;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;
+  transform: scale(1.03);
 }
 
 a.btn-cta span,
@@ -150,25 +154,51 @@ a.btn-cta svg,
 .btn-cta svg {
   stroke: #FFFFFF !important;
   fill: none !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a.btn-cta:hover span,
-a.btn-cta:hover svg,
-.btn-cta:hover span,
-.btn-cta:hover svg {
-  color: #0f172a !important;
-  -webkit-text-fill-color: #0f172a !important;
-}
-
+/* Hover: Arrow slides right */
 a.btn-cta:hover svg,
 .btn-cta:hover svg {
-  stroke: #0f172a !important;
-  fill: none !important;
+  transform: translateX(4px);
 }
 
 @media (min-width: 992px) {
   .btn-cta {
     padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Idle Animation - Gentle Pulse */
+@keyframes ctaPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.95;
+  }
+}
+
+.btn-cta.idle-animate {
+  animation: ctaPulse 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta.idle-animate {
+    animation: none;
+  }
+
+  a.btn-cta:hover,
+  .btn-cta:hover {
+    transform: none;
+  }
+
+  a.btn-cta:hover svg,
+  .btn-cta:hover svg {
+    transform: none;
   }
 }
 

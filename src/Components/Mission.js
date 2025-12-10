@@ -40,6 +40,29 @@ function Mission() {
       0
     );
 
+    // CTA Idle Animation - triggers after 3s, repeats every 7s
+    const ctaButton = ctaRef.current?.querySelector('a');
+    if (ctaButton) {
+      const addIdleClass = () => {
+        ctaButton.classList.add('idle-animate');
+        setTimeout(() => {
+          ctaButton.classList.remove('idle-animate');
+        }, 1500); // Animation duration
+      };
+
+      // First animation after 3s
+      const initialTimeout = setTimeout(addIdleClass, 3000);
+
+      // Repeat every 7s
+      const repeatInterval = setInterval(addIdleClass, 7000);
+
+      // Cleanup
+      return () => {
+        clearTimeout(initialTimeout);
+        clearInterval(repeatInterval);
+      };
+    }
+
   }, { scope: containerRef });
 
   return (
@@ -135,7 +158,7 @@ function Mission() {
             {/* CTA Button */}
             <div ref={ctaRef} className="mt-6 mt-lg-7">
               <a href="/contact" className="btn-cta">
-                Send a message
+                Contact Us
                 <ArrowUpRight size={18} strokeWidth={2} />
               </a>
             </div>
