@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-3 bg-blue-100">
+    <section className="py-3 bg-sky-100">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -92,14 +92,32 @@ function Banner() {
             </p>
           </div>
 
-          {/* Right Droplets Icon - absolutely positioned, mobile only */}
-          {/* <div ref={dropletsRef} className="absolute right-0 md:hidden">
-            <Droplets
-              size={24}
-              className="text-indigo-400"
-              strokeWidth={1.5}
-            />
-          </div> */}
+          {/* Right — Contact Info */}
+          <div className="absolute right-0 hidden md:flex items-center" style={{ gap: '0.75rem' }}>
+            <a
+              href="mailto:hello@rosewoodcleaning.com"
+              className="text-xs text-slate-600 hover:text-slate-900"
+              style={{
+                letterSpacing: '0.01em',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+            >
+              hello@rosewoodcleaning.com
+            </a>
+            <span className="text-slate-300">•</span>
+            <a
+              href="tel:+18031234567"
+              className="text-xs text-slate-600 hover:text-slate-900"
+              style={{
+                letterSpacing: '0.01em',
+                textDecoration: 'none',
+                transition: 'color 0.2s ease'
+              }}
+            >
+              (803) 123-4567
+            </a>
+          </div>
 
         </div>
       </div>

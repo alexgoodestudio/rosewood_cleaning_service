@@ -1,186 +1,194 @@
 import { useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ArrowUpRight } from "lucide-react";
+import Image2 from "../Images/image1.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const MOTION = {
-  instant: 0.15,
-  quick: 0.3,
-  smooth: 0.5,
-  slow: 0.8,
-  story: 1.2
-};
-
 function Mission() {
-  const containerRef = useRef();
-  const metaRef = useRef();
-  const statementRef = useRef();
-  const mobileStatementRef = useRef();
-  const cardsRef = useRef();
+  const containerRef = useRef(null);
+  const imageRef = useRef(null);
+  const textRef = useRef(null);
+  const badgesRef = useRef(null);
+
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
     if (prefersReducedMotion) {
-      gsap.set([metaRef.current, statementRef.current, mobileStatementRef.current, '.mission-card'], { 
-        opacity: 1, 
-        x: 0,
-        y: 0
-      });
+      gsap.set([imageRef.current, textRef.current, badgesRef.current], { opacity: 1, y: 0, scale: 1 });
       return;
     }
 
+    // Locomotive-style: Pin section + Scrub animation
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
-        start: "top 75%",
-        once: true
-      }
+        start: "top top",
+        end: "+=100%",
+        scrub: 1,
+        pin: true,
+        anticipatePin: 1,
+      },
     });
 
-    tl.from(metaRef.current, {
-      x: -30,
-      opacity: 0,
-      duration: MOTION.smooth,
-      ease: "power2.out"
-    })
-    .from([statementRef.current, mobileStatementRef.current], {
-      y: 40,
-      opacity: 0,
-      duration: MOTION.slow,
-      ease: "power3.out"
-    }, "-=0.3")
-    .from('.mission-card', {
-      y: 30,
-      opacity: 0,
-      duration: MOTION.smooth,
-      ease: "power2.out",
-      stagger: 0.12
-    }, "-=0.4");
+    // Image: Fade in + subtle scale (not rotation - too playful)
+    tl.fromTo(imageRef.current,
+      { opacity: 0, scale: 0.95 },
+      { opacity: 1, scale: 1, ease: "none" },
+      0
+    );
 
-  }, []);
+    // Text: Stagger fade in
+    tl.from(textRef.current.children, {
+      opacity: 0,
+      y: 30,
+      stagger: 0.1,
+      ease: "none"
+    }, 0.2);
+
+    // Badges: Fade in last
+    tl.from(badgesRef.current.children, {
+      opacity: 0,
+      y: 20,
+      stagger: 0.05,
+      ease: "none"
+    }, 0.4);
+
+  }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="mission-section bg-stone-50">
+    <section ref={containerRef} className="py-16 py-lg-24 bg-white">
       <div className="container">
-        
-        {/* Metadata bar - offset on desktop */}
-        <div className="row">
-          <div className="col-12 offset-lg-1 col-lg-11">
-            <div className="mb-4 mb-md-5">
-              <div 
-                ref={metaRef}
-                className="d-flex flex-wrap align-items-center"
-                style={{ gap: '0.5rem 0.75rem' }}
-              >
-                <span className="text-metadata text-slate-500">
-                  Columbia, SC
-                </span>
-                <span className="text-slate-300">•</span>
-                <span className="text-metadata text-slate-500">
-                  Since 2019
-                </span>
-                <span className="text-slate-300">•</span>
+        <div className="row align-items-center">
 
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile-only hero - full width */}
-        <div className="row d-lg-none">
-          <div className="col-12">
-            <div className="mb-4">
-              <div ref={mobileStatementRef}>
-                <h2 className="mission-mobile-title text-slate-900 mb-3">
-                  Two people. Same every time.
-                </h2>
-                <p className="mission-mobile-body text-slate-600">
-                  Just Sarah and Andrew, 
-                  keeping your home clean and healthy.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Desktop layout - offset with 60/40 split */}
-        <div className="row">
-          <div className="col-12 offset-lg-1 col-lg-11">
-            <div className="row align-items-start">
-              
-              {/* Large statement - 60% */}
-              <div className="col-12 col-lg-7 mb-5 mb-lg-0 pe-lg-5 d-none d-lg-block">
-                <h2 
-                  ref={statementRef}
-                  className="mission-desktop-title text-5xl text-slate-900"
+          {/* Text Column - 60% (Asymmetric Layout) */}
+          <div className="col-12 col-lg-7 order-2 order-lg-1 pe-lg-5">
+            <div ref={textRef}>
+              {/* Metadata - Uppercase with wide tracking */}
+              <div className="mb-4">
+                <span
+                  className="text-xs text-slate-500"
+                  style={{ letterSpacing: '0.15em', textTransform: 'uppercase' }}
                 >
-                  The same two people clean your home.
-                </h2>
-                <p className="text-lg text-slate-600 mt-4">
-                 
-                   Sarah and Andrew, keeping your home clean, happy and healthy.
-                </p>
+                  Our Mission
+                </span>
               </div>
 
-              {/* Bento cards - 40% */}
-              <div ref={cardsRef} className="col-12 col-lg-5">
-                <div className="mission-cards-container">
-                  
-                  {/* Card 1: Products */}
-                  <div className="mission-card  bg-white rounded">
-                    <p className="text-metadata text-slate-500 mb-2">
-                      What We Use
-                    </p>
-                    <p className="mission-card-text text-slate-700">
-                      Safe Eco-friendly products. We've been using the same 
-                      products since 2019.
-                    </p>
-                  </div>
+              {/* Heading - Editorial bold with tight tracking */}
+              <h2
+                className="text-3xl font-bold text-slate-900 mb-5 mb-lg-6"
+                style={{
+                  letterSpacing: '-0.025em',
+                  lineHeight: '1.1'
+                }}
+              >
+                We handle the cleaning, so you can enjoy what matters most.
+              </h2>
 
-                  {/* Card 2: Service area */}
-                  <div className="mission-card  bg-stone-100 rounded">
-                    <p className="text-metadata text-slate-500 mb-2">
-                      Where We Work
-                    </p>
-                    <p className="mission-card-text text-slate-700">
-                      Shandon, Rosewood, Forest Acres, Elmwood Park. 
-                      Within 5 miles of Five Points. If you're further, 
-                      contact us to discuss.
-                    </p>
-                  </div>
+              {/* Body - Generous line height, slight negative tracking */}
+              <p
+                className="text-lg text-slate-700 mb-6"
+                style={{
+                  letterSpacing: '-0.01em',
+                  lineHeight: '1.6',
+                  maxWidth: '600px'
+                }}
+              >
+                We're not just another cleaning company — we're part of your
+                community. From local families to busy professionals, we take pride
+                in making homes across Columbia cleaner, healthier, and more
+                welcoming.
+              </p>
+            </div>
 
-                  {/* Card 3: Target client */}
-                  <div className="mission-card  bg-white rounded">
-                    <p className="text-metadata text-slate-500 mb-2">
-                      Who Hires Us
-                    </p>
-                    <p className="mission-card-text text-slate-700">
-                     Busy families with kids, and pets. People with 
-                     chemical sensitivities or allergies. Everyday households 
-                      wanting a reliable, neighborhood cleaning team.
-                    </p>
-                  </div>
+            {/* Badges */}
+            <div ref={badgesRef} className="d-flex gap-2 flex-wrap">
+              <span
+                className="bg-white border border-slate-300"
+                style={{
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '2rem',
+                  fontSize: '0.875rem',
+                  letterSpacing: '0.01em',
+                  fontWeight: '500',
+                  color: '#0f172a'
+                }}
+              >
+                Child Safe Products
+              </span>
+              <span
+                className="bg-white border border-slate-300"
+                style={{
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '2rem',
+                  fontSize: '0.875rem',
+                  letterSpacing: '0.01em',
+                  fontWeight: '500',
+                  color: '#0f172a'
+                }}
+              >
+                Community Focused
+              </span>
+              <span
+                className="bg-white border border-slate-300"
+                style={{
+                  display: 'inline-block',
+                  padding: '0.5rem 1rem',
+                  borderRadius: '2rem',
+                  fontSize: '0.875rem',
+                  letterSpacing: '0.01em',
+                  fontWeight: '500',
+                  color: '#0f172a'
+                }}
+              >
+                Small Business
+              </span>
+            </div>
 
-                  {/* Card 4: Honest limitations */}
-                  <div className="mission-card  bg-stone-50 rounded border border-stone-200">
-                    <p className="text-metadata text-slate-500 mb-2">
-                      What We Don't Do
-                    </p>
-                    <p className="mission-card-text-small text-slate-600">
-                      Last-minute requests. We're a two-person team scheduling 
-                      2 to 3 weeks out. Keep up with us on Instagram for additional openings. 
-                    </p>
-                  </div>
-
-                </div>
-              </div>
-
+            {/* CTA Button */}
+            <div className="mt-6 mt-lg-7">
+              <a
+                href="/contact"
+                className="btn-cta"
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                  padding: '0.875rem 1.5rem',
+                  borderRadius: '9999px',
+                  fontSize: '1rem',
+                  fontWeight: '500',
+                  letterSpacing: '-0.01em',
+                  transition: 'all 0.2s ease'
+                }}
+              >
+                Send a message
+                <ArrowUpRight size={18} strokeWidth={2} />
+              </a>
             </div>
           </div>
-        </div>
 
+          {/* Image Column - 40% (Asymmetric Layout) */}
+          <div className="col-12 col-lg-5 order-1 order-lg-2 mb-5 mb-lg-0">
+            <div
+              ref={imageRef}
+              className="position-relative w-100 overflow-hidden rounded"
+              style={{ aspectRatio: '1/1', maxWidth: '400px', margin: '0 auto' }}
+            >
+              <img
+                src={Image2}
+                className="position-absolute top-0 start-0 w-100 h-100 object-fit-cover"
+                alt="Professional cleaning service team in Columbia, SC"
+                loading="lazy"
+              />
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

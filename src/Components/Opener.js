@@ -1,9 +1,9 @@
 import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-import heroImage from "../Images/2.jpg";
-import heroImage2 from "../Images/3.jpg";
-import heroImage3 from "../Images/n.jpg";
+import heroImage3 from "../Images/2.jpg";
+import heroImage from "../Images/3.jpg";
+import heroImage2 from "../Images/n.jpg";
 
 import { ArrowUpRight } from "lucide-react";
 

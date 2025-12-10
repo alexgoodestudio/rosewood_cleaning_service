@@ -542,23 +542,18 @@ a.btn-cta:hover svg,
 
 /* Desktop title */
 .mission-desktop-title {
-  font-size: 3rem;
+
   line-height: 1.25;
   font-weight: 600;
 }
 
 @media (min-width: 1200px) {
   .mission-desktop-title {
-    font-size: 3.5rem;
     line-height: 1.2;
   }
 }
 
-@media (min-width: 1400px) {
-  .mission-desktop-title {
-    font-size: 4rem;
-  }
-}
+
 
 /* Mobile body text */
 .mission-mobile-body {
