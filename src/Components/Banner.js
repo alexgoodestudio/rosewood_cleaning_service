@@ -109,7 +109,7 @@ function Banner() {
               hello@rosewoodcleaning.com
             </a>
             <span className="text-slate-300">•</span>
-            <a
+            {/* <a
               href="tel:+18031234567"
               className="text-xs text-slate-600 hover:text-slate-900"
               style={{
@@ -119,7 +119,7 @@ function Banner() {
               }}
             >
               (803) 509-6700
-            </a>
+            </a> */}
           </div>
 
         </div>

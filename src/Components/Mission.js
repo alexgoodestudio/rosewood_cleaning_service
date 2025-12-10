@@ -17,11 +17,11 @@ function Mission() {
 
   useGSAP(() => {
     if (prefersReducedMotion) {
-      gsap.set([imageRef.current, textRef.current, ctaRef.current], { opacity: 1, y: 0, scale: 1 });
+      gsap.set(imageRef.current, { opacity: 1, scale: 1 });
       return;
     }
 
-    // Locomotive-style: Pin section + Scrub animation
+    // Locomotive-style: Pin section + Scrub animation - only image fades
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -33,27 +33,12 @@ function Mission() {
       },
     });
 
-    // Image: Fade in + subtle scale (not rotation - too playful)
+    // Image: Fade in + subtle scale
     tl.fromTo(imageRef.current,
       { opacity: 0, scale: 0.95 },
       { opacity: 1, scale: 1, ease: "none" },
       0
     );
-
-    // Text: Stagger fade in
-    tl.from(textRef.current.children, {
-      opacity: 0,
-      y: 30,
-      stagger: 0.1,
-      ease: "none"
-    }, 0.2);
-
-    // CTA: Fade in last
-    tl.from(ctaRef.current, {
-      opacity: 0,
-      y: 20,
-      ease: "none"
-    }, 0.4);
 
   }, { scope: containerRef });
 
@@ -83,7 +68,7 @@ function Mission() {
                   lineHeight: '1.1'
                 }}
               >
-                Own your free time! 
+                Own Your Free Time
               </h2>
 
               {/* Body - Generous line height, slight negative tracking */}
