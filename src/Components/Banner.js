@@ -87,7 +87,10 @@ function Banner() {
                 <span className="word inline-block font-bold">cleaning </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">stuff.</span>
+                <span className="word inline-block">stuff</span>
+              </span>
+               <span className="overflow-hidden inline-block">
+                <span className="word inline-block">☀️</span>
               </span>
             </p>
           </div>
@@ -115,7 +118,7 @@ function Banner() {
                 transition: 'color 0.2s ease'
               }}
             >
-              (803) 123-4567
+              (803) 509-6700
             </a>
           </div>
 

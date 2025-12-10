@@ -78,7 +78,7 @@ function Opener() {
           ? "Surprise! Enjoy 10% off all services this season."
           : currentImage === 1
           ? "First time? Save 20% off your first booking!"
-          : "Ask us about our membership plans for exclusive savings!";
+          : "Ask us about our membership plans!";
         const newSubtext = currentImage === 0
           ? "Your home deserves the best cleaning in Columbia, SC"
           : currentImage === 1

@@ -11,13 +11,13 @@ function Mission() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
-  const badgesRef = useRef(null);
+  const ctaRef = useRef(null);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   useGSAP(() => {
     if (prefersReducedMotion) {
-      gsap.set([imageRef.current, textRef.current, badgesRef.current], { opacity: 1, y: 0, scale: 1 });
+      gsap.set([imageRef.current, textRef.current, ctaRef.current], { opacity: 1, y: 0, scale: 1 });
       return;
     }
 
@@ -48,11 +48,10 @@ function Mission() {
       ease: "none"
     }, 0.2);
 
-    // Badges: Fade in last
-    tl.from(badgesRef.current.children, {
+    // CTA: Fade in last
+    tl.from(ctaRef.current, {
       opacity: 0,
       y: 20,
-      stagger: 0.05,
       ease: "none"
     }, 0.4);
 
@@ -78,13 +77,13 @@ function Mission() {
 
               {/* Heading - Editorial bold with tight tracking */}
               <h2
-                className="text-3xl font-bold text-slate-900 mb-5 mb-lg-6"
+                className="text-3xl font-mono font-bold text-slate-900 mb-5 mb-lg-6"
                 style={{
                   letterSpacing: '-0.025em',
                   lineHeight: '1.1'
                 }}
               >
-                We handle the cleaning, so you can enjoy what matters most.
+                Own your free time! 
               </h2>
 
               {/* Body - Generous line height, slight negative tracking */}
@@ -98,13 +97,12 @@ function Mission() {
               >
                 We're not just another cleaning company — we're part of your
                 community. From local families to busy professionals, we take pride
-                in making homes across Columbia cleaner, healthier, and more
-                welcoming.
+                in making homes across Columbia cleaner, healthier, and ready to go.
               </p>
             </div>
 
             {/* Badges */}
-            <div ref={badgesRef} className="d-flex gap-2 flex-wrap">
+            {/* <div ref={badgesRef} className="d-flex gap-2 flex-wrap">
               <span
                 className="bg-white border border-slate-300"
                 style={{
@@ -147,25 +145,11 @@ function Mission() {
               >
                 Small Business
               </span>
-            </div>
+            </div> */}
 
             {/* CTA Button */}
-            <div className="mt-6 mt-lg-7">
-              <a
-                href="/contact"
-                className="btn-cta"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.5rem',
-                  padding: '0.875rem 1.5rem',
-                  borderRadius: '9999px',
-                  fontSize: '1rem',
-                  fontWeight: '500',
-                  letterSpacing: '-0.01em',
-                  transition: 'all 0.2s ease'
-                }}
-              >
+            <div ref={ctaRef} className="mt-6 mt-lg-7">
+              <a href="/contact" className="btn-cta">
                 Send a message
                 <ArrowUpRight size={18} strokeWidth={2} />
               </a>

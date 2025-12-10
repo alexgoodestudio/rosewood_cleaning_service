@@ -48,42 +48,42 @@ function Avatar({ name }) {
 const reviewsRow1 = [
   {
     name: "Sarah M.",
-    text: "They cleaned my place before my parents visited and honestly saved me so much stress. The kitchen looked brand new and they even got the grout in the bathroom I'd been ignoring for months. Worth every penny.",
+    text: "Saved me so much stress before my parents visited. Kitchen looked brand new and they even got the grout in the bathroom. Worth every penny.",
     location: "Columbia, SC"
   },
   {
     name: "Marcus T.",
-    text: "I was skeptical about hiring cleaners but wow. They showed up right on time, were super respectful of my space, and left everything spotless. My apartment hasn't looked this good since I moved in.",
+    text: "I was skeptical but wow. Showed up on time, super respectful, and left everything spotless. My apartment hasn't looked this good since I moved in.",
     location: "Forest Acres"
   },
   {
     name: "Jennifer L.",
-    text: "Booked them for a move-out clean and my landlord was impressed. Got my full deposit back! They're thorough and don't rush through it.",
+    text: "Got my full deposit back! They're thorough and don't rush.",
     location: "Shandon"
   },
   {
     name: "David K.",
-    text: "The team was professional and actually listened when I mentioned the baseboards needed extra attention. They came prepared with all their own supplies which was a huge plus.",
+    text: "Professional and actually listened when I mentioned the baseboards needed extra attention. Came prepared with all their own supplies.",
     location: "Rosewood"
   },
   {
     name: "Amanda R.",
-    text: "My house always feels chaotic with two dogs and a toddler. Having them come bi-weekly has been a game changer. I can actually relax on weekends now instead of spending Saturday cleaning.",
+    text: "Two dogs and a toddler make everything chaotic. Having them bi-weekly has been a game changer. I actually relax on weekends now instead of cleaning all Saturday.",
     location: "Columbia, SC"
   },
   {
     name: "Chris B.",
-    text: "Fair pricing and they don't try to upsell you on stuff you don't need. Just good, honest work.",
+    text: "Fair pricing, no upselling. Just honest work.",
     location: "Irmo"
   },
   {
     name: "Rachel P.",
-    text: "I have bad allergies and they use eco-friendly products that don't trigger anything. Plus they were really careful around my cat who gets anxious with strangers.",
+    text: "I have bad allergies and they use eco-friendly products that don't trigger anything. Really careful around my cat too.",
     location: "West Columbia"
   },
   {
     name: "Kevin H.",
-    text: "Scheduled a deep clean after renovating our kitchen. They got all the dust and debris I missed. Even cleaned inside the cabinets without me asking.",
+    text: "Deep clean after kitchen reno. Got all the dust I missed, even cleaned inside cabinets without asking.",
     location: "Columbia, SC"
   },
 ];
@@ -91,49 +91,49 @@ const reviewsRow1 = [
 const reviewsRow2 = [
   {
     name: "Maria S.",
-    text: "They cleaned my Airbnb between guests and it's always perfect. Guests have mentioned how clean everything is in their reviews. Reliable and consistent.",
+    text: "They clean my Airbnb between guests. Always perfect. Guests mention it in their reviews.",
     location: "Downtown Columbia"
   },
   {
     name: "Tyler W.",
-    text: "I'm terrible at remembering to clean the bathrooms. Having them come monthly keeps my place from turning into a disaster. Plus they're friendly and don't judge my mess lol.",
+    text: "I'm terrible at cleaning bathrooms. Having them monthly keeps my place from becoming a disaster. Plus they're friendly and don't judge my mess lol.",
     location: "Cayce"
   },
   {
     name: "Lisa Chen",
-    text: "Used them for a one-time deep clean before hosting Thanksgiving. My mother-in-law actually complimented how clean the house was, which never happens. Money well spent.",
+    text: "Deep clean before Thanksgiving. My mother-in-law actually complimented the house, which never happens. Money well spent.",
     location: "Columbia, SC"
   },
   {
     name: "Brandon M.",
-    text: "They fit me in last minute when family was coming to town. Showed up early, worked fast, and didn't cut any corners. Highly recommend.",
+    text: "Fit me in last minute when family came to town. Showed up early, worked fast, didn't cut corners.",
     location: "Lexington"
   },
   {
     name: "Nicole D.",
-    text: "The attention to detail is what impressed me most. They cleaned areas I didn't even think about like light switches and door handles.",
+    text: "The attention to detail impressed me. Cleaned areas I didn't think about like light switches and door handles.",
     location: "Forest Acres"
   },
   {
     name: "James R.",
-    text: "Been using them for 6 months now and they're always consistent. Same quality every time.",
+    text: "Six months in, always consistent. Same quality every time.",
     location: "Columbia, SC"
   },
   {
     name: "Emma K.",
-    text: "I was nervous about having someone in my apartment while I was at work but they were trustworthy and professional. Nothing out of place, just super clean when I got home.",
+    text: "Nervous about someone in my apartment while at work but they were trustworthy. Nothing out of place, just super clean when I got home.",
     location: "Shandon"
   },
   {
     name: "Alex G.",
-    text: "Great communication from start to finish. They confirmed the appointment, showed up when they said they would, and followed up after to make sure I was happy with everything.",
+    text: "Great communication. Confirmed appointment, showed up on time, followed up after to make sure I was happy.",
     location: "Columbia, SC"
   },
 ];
 
 function StarRating({ stars = 5 }) {
   return (
-    <div className="text-yellow-400 mt-1">
+    <div className="mt-1" style={{ color: '#f59e0b' }}>
       {"★".repeat(stars)}{" "}
       <span className="text-gray-400 text-sm">{"/5"}</span>
     </div>
@@ -173,8 +173,8 @@ function ReviewMarquee() {
   );
 
   return (
-    <div className="space-y-12 bg-white pt-0 pb-3 py-lg-5 pt-5">
-      <h2 className="text-3xl font-semibold mb-3 mb-md-5 container">Loved By Our Customers</h2>
+    <div className="space-y-12 bg-white pb-3 py-lg-5 pt-5">
+      <h2 className="text-3xl font-semibold mb-3 mb-md-5 container font-mono">Loved By Our Customers 💘</h2>
 
       {/* Row 1 */}
       <div className="overflow-hidden">

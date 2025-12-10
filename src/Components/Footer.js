@@ -11,11 +11,11 @@ function Footer() {
             <Link to="/" className="d-inline-block mb-4 no-underline">
               <h3 className="text-3xl text-white mb-0 ">Rosewood Cleaning</h3>
             </Link>
-            <p className="text-base tracking-wide text-slate-400 mb-4 pe-lg-5">Own your free time. Let us handle the cleaning stuff.</p>
-            <p className="text-sm text-slate-500">Columbia, South Carolina</p>
+            <p className="text-md tracking-wide text-slate-300 mb-4 pe-lg-5 gs">Own your free time. Let us handle the cleaning stuff.</p>
+            <p className="text-sm text-slate-400">Columbia, South Carolina</p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
-            <h4 className="text-sm text-slate-500 mb-4">Services</h4>
+            <h4 className="text-md text-slate-400 mb-4 font-mono">Services</h4>
             <nav className="d-flex flex-column gap-3">
               <Link to="/services/onetime" className="text-base text-slate-300 footer-link">One Time Cleaning</Link>
               <Link to="/services/recurring" className="text-base text-slate-300 footer-link">Recurring Service</Link>
@@ -24,7 +24,7 @@ function Footer() {
             </nav>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
-            <h4 className="text-sm text-slate-500 mb-4">Company</h4>
+            <h4 className="text-md text-slate-400 mb-4 font-mono">Company</h4>
             <nav className="d-flex flex-column gap-3">
               <Link to="/about" className="text-base text-slate-300 footer-link">About</Link>
               <Link to="/contact" className="text-base text-slate-300 footer-link">Contact</Link>
@@ -32,7 +32,7 @@ function Footer() {
             </nav>
           </div>
           <div className="col-12 col-lg-3">
-            <h4 className="text-sm text-slate-500 mb-4">Connect</h4>
+            <h4 className="text-md text-slate-400 mb-4 font-mono">Connect</h4>
             <nav className="d-flex flex-column gap-3">
               <a href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Facebook</a>
               <a href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Instagram</a>
@@ -42,7 +42,7 @@ function Footer() {
       </div>
 
       <div className="px-5 mt-5 mt-md-6">
-        <div className="pt-5 pt-md-6 border-top border-slate-800">
+        <div className="pt-5 pt-md-6 border-top border-slate-800 font-mono">
           <p className="text-sm text-slate-500 mb-0 text-center">© {currentYear} Rosewood Cleaning Services • Columbia, SC</p>
         </div>
       </div>
