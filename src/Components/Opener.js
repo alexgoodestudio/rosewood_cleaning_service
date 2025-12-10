@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import heroImage from "../Images/2.jpg";
 import heroImage2 from "../Images/3.jpg";
-import heroImage3 from "../Images/d.jpg";
+import heroImage3 from "../Images/n.jpg";
 
 import { ArrowUpRight } from "lucide-react";
 
@@ -36,7 +36,7 @@ function Opener() {
     return () => clearInterval(interval);
   }, [prefersReducedMotion]);
 
-  // Update images and text instantly when currentImage changes
+  // Smooth crossfade animation when currentImage changes
   useGSAP(() => {
     if (prefersReducedMotion) return;
 
@@ -46,34 +46,61 @@ function Opener() {
       return;
     }
 
-    // Set all images to opacity 0 first
-    gsap.set([image1Ref.current, image2Ref.current, image3Ref.current], { opacity: 0 });
+    const images = [image1Ref.current, image2Ref.current, image3Ref.current];
+    const currentImageRef = images[currentImage];
 
-    // Set current image to opacity 1
-    const currentImageRef = currentImage === 0 ? image1Ref.current :
-                           currentImage === 1 ? image2Ref.current :
-                           image3Ref.current;
-    gsap.set(currentImageRef, { opacity: 1 });
+    // Fade out all images except the current one
+    images.forEach((img, index) => {
+      if (index !== currentImage) {
+        gsap.to(img, {
+          opacity: 0,
+          duration: 1.2,
+          ease: "power2.inOut"
+        });
+      }
+    });
 
-    // Update text and subtext instantly
-    const newText = currentImage === 0
-      ? "Surprise! Enjoy 10% off all services this season."
-      : currentImage === 1
-      ? "First time? Save 20% off your first booking!"
-      : "Ask us about our membership plans for exclusive savings!";
-    const newSubtext = currentImage === 0
-      ? "Your home deserves the best cleaning in Columbia, SC"
-      : currentImage === 1
-      ? "Message us today for a free estimate"
-      : "Keep your home fresh with our exclusive membership program";
-    setDisplayedText(newText);
-    setDisplayedSubtext(newSubtext);
+    // Fade in the current image
+    gsap.to(currentImageRef, {
+      opacity: 1,
+      duration: 1.2,
+      ease: "power2.inOut"
+    });
+
+    // Smooth text transition with fade
+    gsap.to(textRef.current, {
+      opacity: 0,
+      duration: 0.4,
+      ease: "power2.in",
+      onComplete: () => {
+        // Update text content
+        const newText = currentImage === 0
+          ? "Surprise! Enjoy 10% off all services this season."
+          : currentImage === 1
+          ? "First time? Save 20% off your first booking!"
+          : "Ask us about our membership plans for exclusive savings!";
+        const newSubtext = currentImage === 0
+          ? "Your home deserves the best cleaning in Columbia, SC"
+          : currentImage === 1
+          ? "Message us today for a free estimate"
+          : "Keep your home fresh with our exclusive membership program";
+        setDisplayedText(newText);
+        setDisplayedSubtext(newSubtext);
+
+        // Fade text back in
+        gsap.to(textRef.current, {
+          opacity: 1,
+          duration: 0.4,
+          ease: "power2.out"
+        });
+      }
+    });
   }, { dependencies: [currentImage] });
 
   return (
     <div className="hero-wrapper">
       {/* Hero Images Container - Top half on mobile, full on desktop */}
-      <div className="hero-image-section">
+      <div className="hero-image-section bg-teal-900">
         <img
           ref={image1Ref}
           src={heroImage}

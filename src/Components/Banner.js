@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRef } from 'react';
-import { Droplets } from 'lucide-react';
+// import { Droplets } from 'lucide-react';
 
 const MOTION = {
   instant: 0.15,
@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-3 bg-indigo-100">
+    <section className="py-3 bg-blue-100">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -70,7 +70,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="text-sm tracking-wider chillax font-semibold text-slate-900 mb-0">
+            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>
@@ -93,13 +93,13 @@ function Banner() {
           </div>
 
           {/* Right Droplets Icon - absolutely positioned, mobile only */}
-          <div ref={dropletsRef} className="absolute right-0 md:hidden">
+          {/* <div ref={dropletsRef} className="absolute right-0 md:hidden">
             <Droplets
               size={24}
               className="text-indigo-400"
               strokeWidth={1.5}
             />
-          </div>
+          </div> */}
 
         </div>
       </div>

@@ -165,7 +165,7 @@ function Services() {
       <div className="container">
         <div className="row mb-8">
           <div className="col-lg-8">
-            <h2 className="text-5xl chillax font-semibold text-slate-900 mb-6">
+            <h2 className="text-4xl  font-semibold text-slate-900 mb-6">
               Our Services
             </h2>
             <p className="text-lg text-slate-600">

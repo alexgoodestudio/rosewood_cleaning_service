@@ -9,7 +9,7 @@ function Footer() {
         <div className="row g-5 g-lg-6">
           <div className="col-12 col-md-6 col-lg-5">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-3xl text-white mb-0 chillax">Rosewood Cleaning</h3>
+              <h3 className="text-3xl text-white mb-0 ">Rosewood Cleaning</h3>
             </Link>
             <p className="text-base tracking-wide text-slate-400 mb-4 pe-lg-5">Own your free time. Let us handle the cleaning stuff.</p>
             <p className="text-sm text-slate-500">Columbia, South Carolina</p>
