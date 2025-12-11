@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Home from "./Components/Home";
 import OneTime from "./Components/OneTime";
 import Recurring from "./Components/Recurring";
@@ -20,6 +20,7 @@ function WebRoutes() {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<ContactPage />} />
       <Route path="/faq" element={<FAQ/>} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
