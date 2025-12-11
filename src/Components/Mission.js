@@ -67,7 +67,7 @@ function Mission() {
                   lineHeight: '1.1'
                 }}
               >
-                Reclaim your free time
+                Reclaim Your Free Time 🎉
               </h2>
 
               {/* Body - Generous line height, slight negative tracking */}

@@ -76,7 +76,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         ) : (
           <span className={`service-indicator ${isExpanded ? 'active' : ''}`}></span>
         )}
-        <span className="service-title text-5xl text-slate-900">{title}</span>
+        <span className="service-title text-5xl text-slate-900 cabinet">{title}</span>
       </button>
 
       <div
@@ -85,7 +85,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         className="service-content"
       >
         <div className="service-inner">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-6">{title}</h3>
+          <h3 className="text-2xl font-semibold text-slate-900 mb-6 cabinet">{title}</h3>
           <div className="row">
             <div className="col-12 col-md-6 mb-5 mb-md-5">
               <div className="service-image-wrapper">
@@ -169,8 +169,8 @@ function Services() {
       <div className="container-fluid px-4 px-lg-5">
         <div className="row mb-8">
           <div className="col-lg-8">
-            <h2 className="text-4xl font-black font-mono text-slate-900 mb-6">
-              Our Services
+            <h2 className="text-3xl font-black font-mono text-slate-900 mb-6">
+              Our Services 🫧
             </h2>
             <p className="text-lg text-slate-600">
               Explore our range of cleaning services designed to keep your home healthy and spotless.
