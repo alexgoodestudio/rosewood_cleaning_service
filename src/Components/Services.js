@@ -7,7 +7,7 @@ import Image2 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
 import Image4 from "../Images/2.jpg";
 
-const ExpandableService = ({ title, description, image, link, index, isExpanded, onExpand, icon: Icon }) => {
+const ExpandableService = ({ title, description, image, link, index, isExpanded, onExpand, icon: Icon, buttonColor }) => {
   const contentRef = useRef(null);
   const serviceRef = useRef(null);
   const isInitialMount = useRef(true);
@@ -104,7 +104,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
 
               <a
                 href={link}
-                className="btn-peach"
+                className={`btn-service ${buttonColor}`}
               >
                 <span>Learn More</span>
                 <ArrowRight size={16} />
@@ -135,13 +135,15 @@ function Services() {
       image: Image1,
       link: "/services/onetime",
       icon: Sparkles,
+      buttonColor: "btn-service-red", // Red like Alex G. review
     },
-        {
+    {
       title: "Recurring Service",
       description: "Regular cleaning schedules tailored to your needs. Weekly, bi-weekly, or monthly options available to keep your home consistently fresh. We Also serve AirBnB Hosts!",
       image: Image3,
       link: "/services/recurring",
       icon: Calendar,
+      buttonColor: "btn-service-lime", // Lime/Green
     },
     {
       title: "Moving Clean",
@@ -149,6 +151,7 @@ function Services() {
       image: Image2,
       link: "/services/moving",
       icon: Home,
+      buttonColor: "btn-service-purple", // Purple
     },
     {
       title: "Laundry Service",
@@ -156,6 +159,7 @@ function Services() {
       image: Image4,
       link: "/services/laundry",
       icon: Shirt,
+      buttonColor: "btn-service-indigo", // Indigo
     },
 
   ];
@@ -192,6 +196,7 @@ function Services() {
                 image={service.image}
                 link={service.link}
                 icon={service.icon}
+                buttonColor={service.buttonColor}
                 index={index}
                 isExpanded={expandedService === index}
                 onExpand={() => setExpandedService(index)}

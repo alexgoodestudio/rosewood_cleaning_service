@@ -94,7 +94,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-3 bg-sky-100">
+    <section className="py-3" style={{ backgroundColor: '#c7d2fe' }}>
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -150,7 +150,7 @@ function Banner() {
             <a
               href="mailto:hello@rosewoodcleaning.com"
               ref={emailRef}
-              className="text-xs"
+              className="text-sm lora"
               onMouseEnter={handleEmailHover}
               onMouseLeave={handleEmailLeave}
               style={{

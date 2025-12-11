@@ -56,14 +56,14 @@ function Footer() {
   };
 
   return (
-    <footer className="bg-teal-950 py-5">
-      <div className="container py-md-6">
+    <footer className="bg-teal-950 pt-5 pb-3">
+      <div className="container-fluid px-5 pt-3 py-md-6">
         <div className="row g-5 g-lg-6">
-          <div className="col-12 col-md-6 col-lg-5">
+          <div className="col-12 col-md-6 col-lg-4">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-3xl text-white mb-0 ">Rosewood Cleaning</h3>
+              <h3 className="text-4xl text-white mb-0 cabinet">Rosewood Cleaning</h3>
             </Link>
-            <p className="text-md tracking-wide text-slate-300 mb-4 pe-lg-5 gs">Own your free time. Let us handle the cleaning stuff.</p>
+            <p className="text-lg tracking-wide text-slate-300 mb-4 pe-lg-5 ">Reclaim your free time. Let us handle the cleaning stuff.</p>
             <p className="text-sm text-slate-400">Columbia, South Carolina</p>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
@@ -81,14 +81,21 @@ function Footer() {
               <Link to="/about" className="text-base text-slate-300 footer-link">About</Link>
               <Link to="/contact" className="text-base text-slate-300 footer-link">Contact</Link>
               <Link to="/faq" className="text-base text-slate-300 footer-link">FAQ</Link>
-            </nav>
-          </div>
-          <div className="col-12 col-lg-3">
-            <h4 className="text-md text-slate-400 mb-4 font-mono">Connect</h4>
-            <nav className="d-flex flex-column gap-3">
               <a href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Facebook</a>
               <a href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Instagram</a>
             </nav>
+          </div>
+          <div className="col-6 col-md-3 col-lg-3">
+            <h4 className="text-md text-slate-400 mb-4 font-mono">Hours</h4>
+            <div className="d-flex flex-column gap-2">
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Monday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Tuesday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Wednesday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Thursday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Friday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Saturday <span className="text-sm text-slate-300">9:00 AM - 3:00 PM</span></p>
+              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Sunday <span className="text-sm text-slate-300">Closed</span></p>
+            </div>
           </div>
         </div>
       </div>

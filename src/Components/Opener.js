@@ -128,7 +128,7 @@ function Opener() {
       <div className="hero-text-container">
         <div className="row w-full">
           <div className="col-lg-4 col-12">
-            <h1 ref={textRef} className="hero-heading font-medium mb-6">
+            <h1 ref={textRef} className="hero-heading cabinet font-medium mb-6">
               {displayedText}
             </h1>
 

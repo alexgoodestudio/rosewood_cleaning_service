@@ -10,8 +10,8 @@ function Nav() {
     <nav className="navbar text-slate-800 flex flex-col" style={{ padding: 0 }}>
       {/* Top bar with brand name */}
       <div className="container-fluid d-flex justify-content-between align-items-center bg-slate-50" style={{ paddingTop: '1rem', paddingBottom: '1rem' }}>
-        <Link to="/" className="navbar-brand chillax ps-lg-4  btn btn-link  p-0 text-decoration-none">
-          <span className=""><span className="font-bold ">Rosewood</span> Cleaning Services</span> 
+        <Link to="/" className="navbar-brand  ps-lg-4  btn btn-link  p-0 text-decoration-none">
+          <span className="cabinet text-2xl"><span className="font-bold ">Rosewood</span> Cleaning Services</span> 
         </Link>
 
         {/* Desktop Navigation Links */}
