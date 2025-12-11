@@ -104,7 +104,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
 
               <a
                 href={link}
-                className="btn-cta"
+                className="btn-peach"
               >
                 <span>Learn More</span>
                 <ArrowRight size={16} />

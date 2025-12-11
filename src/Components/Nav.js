@@ -28,53 +28,81 @@ function Nav() {
             className="position-relative"
             onMouseEnter={() => setServicesDropdownOpen(true)}
             onMouseLeave={() => setServicesDropdownOpen(false)}
+            style={{ padding: '0.5rem 0' }}
           >
-            <span className="text-slate-800 hover:text-slate-600 transition-colors" style={{ cursor: 'pointer' }}>
+            <span
+              className="text-slate-800 hover:text-slate-600 transition-colors d-flex align-items-center gap-1"
+              style={{ cursor: 'pointer' }}
+            >
               Services
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 12 12"
+                fill="none"
+                style={{
+                  transform: servicesDropdownOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                  transition: 'transform 0.2s ease'
+                }}
+              >
+                <path
+                  d="M3 4.5L6 7.5L9 4.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
             </span>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu with bridge area */}
             {servicesDropdownOpen && (
               <div
-                className="position-absolute bg-white shadow-lg border border-slate-200"
+                className="position-absolute"
                 style={{
-                  top: '100%',
+                  top: 'calc(100% - 0.5rem)',
                   left: '50%',
                   transform: 'translateX(-50%)',
-                  marginTop: '0.5rem',
-                  borderRadius: '0.5rem',
-                  minWidth: '200px',
+                  paddingTop: '0.5rem',
                   zIndex: 1000
                 }}
               >
-                <Link
-                  to="/services/onetime"
-                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
-                  style={{ fontSize: '0.9rem' }}
+                <div
+                  className="bg-white shadow-lg border border-slate-200"
+                  style={{
+                    borderRadius: '0.5rem',
+                    minWidth: '200px',
+                  }}
                 >
-                  One-Time Clean
-                </Link>
-                <Link
-                  to="/services/recurring"
-                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
-                  style={{ fontSize: '0.9rem' }}
-                >
-                  Recurring Service
-                </Link>
-                <Link
-                  to="/services/moving"
-                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
-                  style={{ fontSize: '0.9rem' }}
-                >
-                  Move In / Out
-                </Link>
-                <Link
-                  to="/services/laundry"
-                  className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
-                  style={{ fontSize: '0.9rem', borderRadius: '0 0 0.5rem 0.5rem' }}
-                >
-                  Laundry Service
-                </Link>
+                  <Link
+                    to="/services/onetime"
+                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    style={{ fontSize: '0.9rem', borderRadius: '0.5rem 0.5rem 0 0' }}
+                  >
+                    One-Time Clean
+                  </Link>
+                  <Link
+                    to="/services/recurring"
+                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    Recurring Service
+                  </Link>
+                  <Link
+                    to="/services/moving"
+                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    style={{ fontSize: '0.9rem' }}
+                  >
+                    Move In / Out
+                  </Link>
+                  <Link
+                    to="/services/laundry"
+                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    style={{ fontSize: '0.9rem', borderRadius: '0 0 0.5rem 0.5rem' }}
+                  >
+                    Laundry Service
+                  </Link>
+                </div>
               </div>
             )}
           </div>

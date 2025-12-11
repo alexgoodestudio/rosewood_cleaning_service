@@ -1,6 +1,6 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 // import { Droplets } from 'lucide-react';
 
 const MOTION = {
@@ -14,7 +14,56 @@ const MOTION = {
 function Banner() {
   const bannerRef = useRef(null);
   const dropletsRef = useRef(null);
+  const emailRef = useRef(null);
+  const [emailChars, setEmailChars] = useState([]);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Split email into characters on mount
+  useEffect(() => {
+    const email = "hello@rosewoodcleaning.com";
+    setEmailChars(email.split(''));
+  }, []);
+
+  // Playful GSAP-style email animation
+  const handleEmailHover = () => {
+    if (prefersReducedMotion) return;
+
+    const chars = emailRef.current?.querySelectorAll('.email-char');
+    if (!chars) return;
+
+    gsap.to(chars, {
+      y: -6,
+      rotation: () => gsap.utils.random(-12, 12),
+      scale: 1.15,
+      color: '#115e59', // Rosewood teal on hover
+      duration: 0.4,
+      ease: 'back.out(3)',
+      stagger: {
+        amount: 0.25,
+        from: 'random'
+      }
+    });
+  };
+
+  const handleEmailLeave = () => {
+    if (prefersReducedMotion) return;
+
+    const chars = emailRef.current?.querySelectorAll('.email-char');
+    if (!chars) return;
+
+    gsap.to(chars, {
+      y: 0,
+      rotation: 0,
+      scale: 1,
+      color: '#64748b', // Slate-600 as default
+      duration: 0.5,
+      ease: 'elastic.out(1, 0.6)',
+      stagger: {
+        amount: 0.2,
+        from: 'random'
+      }
+    });
+  };
 
   useGSAP(() => {
     if (!prefersReducedMotion) {
@@ -71,6 +120,7 @@ function Banner() {
           {/* Center Text - now truly centered */}
           <div className="text-center ">
             <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
+              
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>
@@ -90,7 +140,7 @@ function Banner() {
                 <span className="word inline-block">stuff</span>
               </span>
                <span className="overflow-hidden inline-block">
-                <span className="word inline-block">☀️</span>
+                <span className="word inline-block ">💛</span>
               </span>
             </p>
           </div>
@@ -99,14 +149,31 @@ function Banner() {
           <div className="absolute right-0 hidden md:flex items-center" style={{ gap: '0.75rem' }}>
             <a
               href="mailto:hello@rosewoodcleaning.com"
-              className="text-xs text-slate-600 hover:text-slate-900"
+              ref={emailRef}
+              className="text-xs"
+              onMouseEnter={handleEmailHover}
+              onMouseLeave={handleEmailLeave}
               style={{
                 letterSpacing: '0.01em',
                 textDecoration: 'none',
-                transition: 'color 0.2s ease'
+                color: '#64748b',
+                cursor: 'pointer',
+                userSelect: 'none'
               }}
             >
-              hello@rosewoodcleaning.com
+              {emailChars.length > 0 ? (
+                emailChars.map((char, idx) => (
+                  <span
+                    key={idx}
+                    className="email-char"
+                    style={{ display: 'inline-block' }}
+                  >
+                    {char}
+                  </span>
+                ))
+              ) : (
+                'hello@rosewoodcleaning.com'
+              )}
             </a>
             <span className="text-slate-300">•</span>
             {/* <a

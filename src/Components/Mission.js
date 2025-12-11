@@ -2,7 +2,6 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { ArrowUpRight } from "lucide-react";
 import Image2 from "../Images/image1.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -11,7 +10,7 @@ function Mission() {
   const containerRef = useRef(null);
   const imageRef = useRef(null);
   const textRef = useRef(null);
-  const ctaRef = useRef(null);
+  const badgesRef = useRef(null);
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -40,33 +39,10 @@ function Mission() {
       0
     );
 
-    // CTA Idle Animation - triggers after 3s, repeats every 7s
-    const ctaButton = ctaRef.current?.querySelector('a');
-    if (ctaButton) {
-      const addIdleClass = () => {
-        ctaButton.classList.add('idle-animate');
-        setTimeout(() => {
-          ctaButton.classList.remove('idle-animate');
-        }, 1500); // Animation duration
-      };
-
-      // First animation after 3s
-      const initialTimeout = setTimeout(addIdleClass, 3000);
-
-      // Repeat every 7s
-      const repeatInterval = setInterval(addIdleClass, 7000);
-
-      // Cleanup
-      return () => {
-        clearTimeout(initialTimeout);
-        clearInterval(repeatInterval);
-      };
-    }
-
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="py-16 py-lg-24 bg-white">
+    <section ref={containerRef} className="pt-16 pt-lg-24 pb-16 pb-lg-48 bg-white">
       <div className="container">
         <div className="row align-items-center">
 
@@ -91,7 +67,7 @@ function Mission() {
                   lineHeight: '1.1'
                 }}
               >
-                Own Your Free Time
+                Reclaim your free time
               </h2>
 
               {/* Body - Generous line height, slight negative tracking */}
@@ -110,7 +86,7 @@ function Mission() {
             </div>
 
             {/* Badges */}
-            {/* <div ref={badgesRef} className="d-flex gap-2 flex-wrap">
+            <div ref={badgesRef} className="d-flex gap-2 flex-wrap">
               <span
                 className="bg-white border border-slate-300"
                 style={{
@@ -153,14 +129,6 @@ function Mission() {
               >
                 Small Business
               </span>
-            </div> */}
-
-            {/* CTA Button */}
-            <div ref={ctaRef} className="mt-6 mt-lg-7">
-              <a href="/contact" className="btn-cta">
-                Contact Us
-                <ArrowUpRight size={18} strokeWidth={2} />
-              </a>
             </div>
           </div>
 

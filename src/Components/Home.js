@@ -4,6 +4,7 @@ import ReviewMarquee from "./ReviewMarquee";
 import Mission from "./Mission";
 // import About from "./About";
 import Services from "./Services";
+import Interested from "./Interested";
 
 function Home() {
   return (
@@ -13,6 +14,7 @@ function Home() {
       {/* <About /> */}
       <ReviewMarquee />
       <Mission />
+      <Interested/>
     </div>
   );
 }

@@ -202,6 +202,80 @@ a.btn-cta:hover svg,
   }
 }
 
+/* Teal Light Button - Services Variant */
+a.btn-peach,
+a.btn-peach:link,
+a.btn-peach:visited,
+a.btn-peach:active,
+a.btn-peach:focus,
+.btn-peach {
+  background-color: #99f6e4 !important; /* Teal-200 - matches review circles */
+  text-decoration: none !important;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem; /* Full pill shape */
+  font-size: 0.875rem;
+  font-weight: 600 !important; /* Semibold */
+  letter-spacing: 0.015em; /* Slightly open for legibility */
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #0f172a !important; /* Slate-900 for contrast */
+  -webkit-text-fill-color: #0f172a !important;
+  will-change: transform, background-color;
+}
+
+a.btn-peach:hover,
+a.btn-peach:focus:hover,
+.btn-peach:hover {
+  background-color: #5eead4 !important; /* Teal-300 - darker on hover */
+  text-decoration: none !important;
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  transform: scale(1.03);
+}
+
+a.btn-peach span,
+a.btn-peach svg,
+.btn-peach span,
+.btn-peach svg {
+  color: #0f172a !important;
+  -webkit-text-fill-color: #0f172a !important;
+  transition: all 0.3s ease;
+}
+
+a.btn-peach svg,
+.btn-peach svg {
+  stroke: #0f172a !important;
+  fill: none !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Hover: Arrow slides right */
+a.btn-peach:hover svg,
+.btn-peach:hover svg {
+  transform: translateX(4px);
+}
+
+@media (min-width: 992px) {
+  .btn-peach {
+    padding: 0.75rem 1.5rem;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  a.btn-peach:hover,
+  .btn-peach:hover {
+    transform: none;
+  }
+
+  a.btn-peach:hover svg,
+  .btn-peach:hover svg {
+    transform: none;
+  }
+}
+
 /* Hero Wrapper - Main Container */
 .hero-wrapper {
   position: relative;
