@@ -32,10 +32,10 @@ function Mission() {
       },
     });
 
-    // Image: Fade in + subtle scale
+    // Image: Roll in with rotation (like a wheel rolling from left)
     tl.fromTo(imageRef.current,
-      { opacity: 0, scale: 0.95 },
-      { opacity: 1, scale: 1, ease: "none" },
+      { opacity: 0, scale: 0.95, x: -200, rotation: -180 },
+      { opacity: 1, scale: 1, x: 0, rotation: 0, ease: "power2.out" },
       0
     );
 
@@ -67,7 +67,7 @@ function Mission() {
                   lineHeight: '1.1'
                 }}
               >
-                Reclaim Your Free Time 🎉
+                Reclaim Your Free Time 
               </h2>
 
               {/* Body - Generous line height, slight negative tracking */}
