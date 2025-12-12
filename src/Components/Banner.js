@@ -140,7 +140,7 @@ function Banner() {
                 <span className="word inline-block">stuff</span>
               </span>
                <span className="overflow-hidden inline-block">
-                <span className="word inline-block ">💛</span>
+                <span className="word inline-block ">:-)</span>
               </span>
             </p>
           </div>

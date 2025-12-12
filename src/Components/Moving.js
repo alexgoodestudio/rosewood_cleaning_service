@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import SideBarNav from "./SideBarNav";
 import ServiceImage from "../Images/card5.png";
 
@@ -20,7 +21,7 @@ const ImageModule = () => (
 const HeroModule = () => (
   <div className="space-y-8">
     <div className="space-y-6">
-      <h1 className="text-5xl font-semibold tracking-tight leading-tight text-slate-900">
+      <h1 className="text-5xl font-semibold tracking-tight leading-tight text-slate-900 cabinet">
         Moving Cleaning Services
       </h1>
       <div className="max-w-2xl">
@@ -31,19 +32,16 @@ const HeroModule = () => (
         </p>
       </div>
     </div>
-    <div className="flex flex-wrap gap-6 text-sm text-slate-500">
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
-        <span>Move-in ready cleaning</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 bg-blue-400 rounded-full"></span>
-        <span>Move-out deep clean</span>
-      </div>
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
-        <span>Deposit return assistance</span>
-      </div>
+    <div className="flex flex-wrap gap-3">
+      <span className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full text-sm font-medium">
+        Move-in ready cleaning
+      </span>
+      <span className="px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+        Move-out deep clean
+      </span>
+      <span className="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+        Deposit return assistance
+      </span>
     </div>
   </div>
 );
@@ -51,7 +49,7 @@ const HeroModule = () => (
 const CTAModule = () => (
   <div className="bg-slate-50 rounded-2xl p-8 lg:p-12">
     <div className="max-w-2xl">
-      <h3 className="text-2xl font-semibold tracking-tight text-slate-900 mb-4">
+      <h3 className="text-2xl font-semibold tracking-tight text-slate-900 mb-4 cabinet">
         Moving made easier?
       </h3>
       <p className="text-slate-600 mb-6 leading-relaxed">
@@ -59,17 +57,17 @@ const CTAModule = () => (
         Our thorough service ensures a stress-free transition and helps secure deposit returns.
       </p>
       <div className="flex flex-col sm:flex-row gap-4">
-        <a 
-          href="tel:8035096700" 
-          className="bg-slate-900 text-white px-6 py-3 rounded-lg font-medium hover:bg-slate-800 transition-colors text-center"
+        <a
+          href="tel:8035096700"
+          className="btn-service btn-service-purple"
         >
-          Call
+          <span>Call Us</span>
+          <ArrowRight size={16} />
         </a>
-<Link to="/contact">
-  <button className="border border-slate-300 text-slate-700 px-6 py-3 rounded-lg font-medium hover:bg-slate-50 transition-colors">
-    Contact
-  </button>
-</Link>
+        <Link to="/contact" className="btn-service btn-service-red">
+          <span>Contact</span>
+          <ArrowRight size={16} />
+        </Link>
       </div>
     </div>
   </div>
