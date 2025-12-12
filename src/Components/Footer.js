@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+import { ArrowUpRight } from 'lucide-react';
 
 function Footer() {
   const currentYear = new Date().getFullYear();
@@ -61,7 +62,12 @@ function Footer() {
         <div className="row g-5 g-lg-6">
           <div className="col-12 col-md-6 col-lg-4">
             <Link to="/" className="d-inline-block mb-4 no-underline">
-              <h3 className="text-4xl text-white mb-0 cabinet">Rosewood Cleaning</h3>
+              <h3 className="text-4xl text-white mb-0 cabinet" style={{
+                borderTop: '1px solid #cbd5e1',
+                borderBottom: '1px solid #cbd5e1',
+                paddingTop: '0.5rem',
+                paddingBottom: '0.5rem'
+              }}>Rosewood Cleaning</h3>
             </Link>
             <p className="text-lg tracking-wide text-slate-300 mb-4 pe-lg-5 ">Reclaim your free time. Let us handle the cleaning stuff.</p>
             <p className="text-sm text-slate-400">Columbia, South Carolina</p>
@@ -69,32 +75,80 @@ function Footer() {
           <div className="col-6 col-md-3 col-lg-2">
             <h4 className="text-md text-slate-400 mb-4 font-mono">Services</h4>
             <nav className="d-flex flex-column gap-3">
-              <Link to="/services/onetime" className="text-base text-slate-300 footer-link">One Time Cleaning</Link>
-              <Link to="/services/recurring" className="text-base text-slate-300 footer-link">Recurring Service</Link>
-              <Link to="/services/moving" className="text-base text-slate-300 footer-link">Moving Clean</Link>
-              <Link to="/services/laundry" className="text-base text-slate-300 footer-link">Laundry Service</Link>
+              <Link to="/services/onetime" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                One Time Cleaning
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              <Link to="/services/recurring" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Recurring Service
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              <Link to="/services/moving" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Moving Clean
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              <Link to="/services/laundry" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Laundry Service
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
             </nav>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
             <h4 className="text-md text-slate-400 mb-4 font-mono">Company</h4>
             <nav className="d-flex flex-column gap-3">
-              <Link to="/about" className="text-base text-slate-300 footer-link">About</Link>
-              <Link to="/contact" className="text-base text-slate-300 footer-link">Contact</Link>
-              <Link to="/faq" className="text-base text-slate-300 footer-link">FAQ</Link>
-              <a href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Facebook</a>
-              <a href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link">Instagram</a>
+              <Link to="/about" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                About
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              <Link to="/contact" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Contact
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              <Link to="/faq" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                FAQ
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </Link>
+              {/* <a href="https://facebook.com/rosewoodcleaning" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Facebook
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </a>
+              <a href="https://instagram.com/rosewoodcleaningservices" target="_blank" rel="noopener noreferrer" className="text-base text-slate-300 footer-link d-inline-flex align-items-center gap-2">
+                Instagram
+                <ArrowUpRight size={14} strokeWidth={1.5} />
+              </a> */}
             </nav>
           </div>
           <div className="col-6 col-md-3 col-lg-3">
             <h4 className="text-md text-slate-400 mb-4 font-mono">Hours</h4>
-            <div className="d-flex flex-column gap-2">
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Monday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Tuesday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Wednesday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Thursday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Friday <span className="text-sm text-slate-300">8:00 AM - 5:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Saturday <span className="text-sm text-slate-300">9:00 AM - 3:00 PM</span></p>
-              <p className="text-md text-slate-300 mb-0 d-flex justify-content-between">Sunday <span className="text-sm text-slate-300">Closed</span></p>
+            <div className="d-flex flex-column" style={{ gap: '0.625rem' }}>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Mon</span>
+                <span className="text-sm text-slate-300 font-mono">8:00 AM - 5:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Tue</span>
+                <span className="text-sm text-slate-300 font-mono">8:00 AM - 5:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Wed</span>
+                <span className="text-sm text-slate-300 font-mono">8:00 AM - 5:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Thu</span>
+                <span className="text-sm text-slate-300 font-mono">8:00 AM - 5:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Fri</span>
+                <span className="text-sm text-slate-300 font-mono">8:00 AM - 5:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Sat</span>
+                <span className="text-sm text-slate-300 font-mono">9:00 AM - 3:00 PM</span>
+              </div>
+              <div className="d-flex align-items-center" style={{ gap: '1rem' }}>
+                <span className="text-sm text-slate-400 font-mono" style={{ minWidth: '3rem' }}>Sun</span>
+                <span className="text-sm text-slate-300 font-mono">Closed</span>
+              </div>
             </div>
           </div>
         </div>
