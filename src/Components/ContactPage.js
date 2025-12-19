@@ -36,8 +36,8 @@ function ContactPage() {
 
       // Responsive count and size based on screen width
       const isMobile = window.innerWidth < 768;
-      const count = isMobile ? 15 : 30;
-      const frontCount = 3; // Only 3 circles in front
+      const count = isMobile ? 8 : 15;
+      const frontCount = 2; // Only 2 circles in front
       const size = isMobile ? 20 : 24;
       const maxOpacity = isMobile ? 0.6 : 0.85;
 
