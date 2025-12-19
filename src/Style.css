@@ -119,14 +119,14 @@ body {
   color: #020617;
 }
 
-/* CTA Button - Rosewood Teal */
+/* CTA Button - Banner Blue */
 a.btn-cta,
 a.btn-cta:link,
 a.btn-cta:visited,
 a.btn-cta:active,
 a.btn-cta:focus,
 .btn-cta {
-  background-color: #115e59 !important;
+  background-color: #476bff !important;
   text-decoration: none !important;
   padding: 0.75rem 1rem;
   border-radius: 2rem; /* Full pill shape */
@@ -145,7 +145,7 @@ a.btn-cta:focus,
 a.btn-cta:hover,
 a.btn-cta:focus:hover,
 .btn-cta:hover {
-  background-color: #00897B !important;
+  background-color: #3d5eeb !important;
   text-decoration: none !important;
   color: #FFFFFF !important;
   -webkit-text-fill-color: #FFFFFF !important;

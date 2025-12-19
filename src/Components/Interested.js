@@ -66,7 +66,7 @@ function Interested() {
             {/* Large centered heading */}
             <h2
               ref={headingRef}
-              className="text-5xl text-lg-6xl font-mono font-bold text-slate-900 mb-6 mb-lg-7"
+              className="text-5xl gs font-bold text-slate-900 mb-6 mb-lg-7"
               style={{
                 letterSpacing: '-0.03em',
                 lineHeight: '1.05',

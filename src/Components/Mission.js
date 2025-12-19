@@ -61,7 +61,7 @@ function Mission() {
 
               {/* Heading - Editorial bold with tight tracking */}
               <h2
-                className="text-3xl font-mono font-bold text-slate-900 mb-5 mb-lg-6"
+                className="text-4xl font-mono font-bold text-slate-900 mb-5 mb-lg-6"
                 style={{
                   letterSpacing: '-0.025em',
                   lineHeight: '1.1'

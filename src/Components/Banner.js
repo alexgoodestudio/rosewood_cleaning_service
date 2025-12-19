@@ -1,6 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
 import { useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 // import { Droplets } from 'lucide-react';
 
 const MOTION = {
@@ -35,7 +36,7 @@ function Banner() {
       y: -6,
       rotation: () => gsap.utils.random(-12, 12),
       scale: 1.15,
-      color: '#115e59', // Rosewood teal on hover
+      color: '#fde68a', // Yellow-200 on hover - warm and inviting
       duration: 0.4,
       ease: 'back.out(3)',
       stagger: {
@@ -55,7 +56,7 @@ function Banner() {
       y: 0,
       rotation: 0,
       scale: 1,
-      color: '#64748b', // Slate-600 as default
+      color: '#ffffff', // White as default
       duration: 0.5,
       ease: 'elastic.out(1, 0.6)',
       stagger: {
@@ -94,7 +95,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-3" style={{ backgroundColor: '#c7d2fe' }}>
+    <section className="py-1 gs text-white" style={{ backgroundColor: '#476bff' }}>
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -105,7 +106,7 @@ function Banner() {
               letterSpacing: '0.1em',
               fontWeight: '500'
             }}>
-              <span className='text-slate-500'>Columbia, South Carolina</span>
+              <span className='font-semibold'>Columbia, South Carolina</span>
             </span>
             {/* <span className="text-slate-300">•</span> */}
             {/* <span className="text-xs text-slate-500" style={{ 
@@ -119,7 +120,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-slate-900 mb-0">
+            <p ref={bannerRef} className="text-sm tracking-wider font-semibold text-white mb-0">
               
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
@@ -139,14 +140,24 @@ function Banner() {
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">stuff</span>
               </span>
-               <span className="overflow-hidden inline-block">
-                <span className="word inline-block ">:-)</span>
+                            <span className="overflow-hidden inline-block">
+                <span className="word inline-block ">🫧</span>
               </span>
+               <span className="overflow-hidden inline-block">
+                <span className="word inline-block ">|</span>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <Link to="/services/onetime" className="word inline-block underline text-white hover:text-yellow-200 transition-colors">View Services</Link>
+              </span>
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block">→</span>
+              </span>
+
             </p>
           </div>
 
           {/* Right — Contact Info */}
-          <div className="absolute right-0 hidden md:flex items-center" style={{ gap: '0.75rem' }}>
+          <div className=" text-white absolute right-0 hidden md:flex items-center" style={{ gap: '0.75rem' }}>
             <a
               href="mailto:hello@rosewoodcleaning.com"
               ref={emailRef}
@@ -156,7 +167,7 @@ function Banner() {
               style={{
                 letterSpacing: '0.01em',
                 textDecoration: 'none',
-                color: '#64748b',
+                color: '#ffffff',
                 cursor: 'pointer',
                 userSelect: 'none'
               }}
@@ -166,7 +177,7 @@ function Banner() {
                   <span
                     key={idx}
                     className="email-char"
-                    style={{ display: 'inline-block' }}
+                    style={{ display: 'inline-block', color: '#ffffff' }}
                   >
                     {char}
                   </span>
@@ -175,18 +186,8 @@ function Banner() {
                 'hello@rosewoodcleaning.com'
               )}
             </a>
-            <span className="text-slate-300">•</span>
-            {/* <a
-              href="tel:+18031234567"
-              className="text-xs text-slate-600 hover:text-slate-900"
-              style={{
-                letterSpacing: '0.01em',
-                textDecoration: 'none',
-                transition: 'color 0.2s ease'
-              }}
-            >
-              (803) 509-6700
-            </a> */}
+
+          
           </div>
 
         </div>
