@@ -14,8 +14,8 @@ function Home() {
       <Services/>
       <Highlight />
       {/* <About /> */}
-      <ReviewMarquee />
       <Mission />
+      <ReviewMarquee />
       <Interested/>
     </div>
   );
