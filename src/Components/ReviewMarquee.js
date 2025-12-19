@@ -151,8 +151,8 @@ function ReviewMarquee() {
     const row1Width = row1.scrollWidth / 2;
     const row2Width = row2.scrollWidth / 2;
 
-    gsap.fromTo(row1, { x: 0 }, { x: -row1Width, duration: 25, repeat: -1, ease: "linear" });
-    gsap.fromTo(row2, { x: -row2Width }, { x: 0, duration: 25, repeat: -1, ease: "linear" });
+    gsap.fromTo(row1, { x: 0 }, { x: -row1Width, duration: 35, repeat: -1, ease: "linear" });
+    gsap.fromTo(row2, { x: -row2Width }, { x: 0, duration: 35, repeat: -1, ease: "linear" });
   }, []);
 
   const renderReview = (review, i) => (
@@ -174,7 +174,7 @@ function ReviewMarquee() {
 
   return (
     <div className="space-y-12 bg-white pb-3 py-lg-5 pt-5">
-      <h2 className="text-3xl font-semibold mb-3 mb-md-5 container font-mono">Loved By Our Customers 💘</h2>
+      <h2 className="text-4xl font-semibold mb-3 mb-md-5 container cabinet">Loved By Our Customers </h2>
 
       {/* Row 1 */}
       <div className="overflow-hidden">

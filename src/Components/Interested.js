@@ -66,13 +66,8 @@ function Interested() {
             {/* Large centered heading */}
             <h2
               ref={headingRef}
-              className="text-5xl gs font-bold text-slate-900 mb-6 mb-lg-7"
-              style={{
-                letterSpacing: '-0.03em',
-                lineHeight: '1.05',
-                maxWidth: '800px',
-                margin: '0 auto 2rem auto'
-              }}
+              className="text-4xl cabinet font-bold  mb-6 mb-lg-7"
+
             >
               Let us handle the cleaning stuff.
             </h2>
@@ -87,12 +82,12 @@ function Interested() {
                 margin: '0 auto 2.5rem auto'
               }}
             >
-              Get a quote today and see how we can make your life easier.
+              So <span className="italic">you</span> can <span className="border rounded-xl px-2 bg-slate-200 ">focus</span> on what <span className="font-bold">matters</span>.
             </p>
 
             {/* CTA */}
             <div ref={ctaRef}>
-              <a href="/contact" className="btn-cta">
+              <a href="/contact" className="btn-cta cabinet">
                 Get Started
                 <ArrowUpRight size={18} strokeWidth={2} />
               </a>
@@ -100,13 +95,13 @@ function Interested() {
 
             {/* Subtle footer note */}
             <p
-              className="text-sm text-slate-500 mt-5"
+              className="text-sm text-slate-500 italic mt-5"
               style={{
                 letterSpacing: '0.02em',
                 fontWeight: '500'
               }}
             >
-              Local cleaning services in Columbia, SC
+              Located in Columbia, SC
             </p>
           </div>
         </div>

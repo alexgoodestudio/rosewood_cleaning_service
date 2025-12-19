@@ -135,14 +135,14 @@ function Opener() {
             <p className="text-xl mb-6">
               {displayedSubtext}
             </p>
-            <a href="/contact" className="btn-cta group">
+            <a href="/contact" className="btn-cta cabinet group">
               Get Started
               <ArrowUpRight
                 size={18}
                 className="group-hover:rotate-45 transition-all duration-300"
                 strokeWidth={1.5}
               />
-            </a>
+            </a> 
           </div>
         </div>
       </div>

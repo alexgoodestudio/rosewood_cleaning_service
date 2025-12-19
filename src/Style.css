@@ -49,6 +49,19 @@
   font-display: block;
 }
 
+/* Brand text responsive sizing */
+.brand-text {
+  font-size: 1.875rem; /* 3xl on desktop */
+  line-height: 2.25rem;
+}
+
+@media (max-width: 991px) {
+  .brand-text {
+    font-size: 1.75rem; /* 3xl on mobile (smaller than 2rem) */
+    line-height: 2rem;
+  }
+}
+
 /* ------------------------------    UTILITY CLASSES --------------------------------*/
 html, body {
   overflow-x: hidden;
@@ -265,41 +278,19 @@ a.btn-service:hover svg,
   transform: translateX(4px);
 }
 
-/* Service Button Color Variants - Matching Review Marquee */
-/* Red - One-Time Clean (Alex G.) */
-.btn-service-red {
-  background-color: #fecaca !important; /* bg-red-200 */
-}
-
-.btn-service-red:hover {
-  background-color: #fca5a5 !important; /* bg-red-300 */
-}
-
-/* Lime/Green - Recurring Service */
-.btn-service-lime {
-  background-color: #d9f99d !important; /* bg-lime-200 */
-}
-
-.btn-service-lime:hover {
-  background-color: #bef264 !important; /* bg-lime-300 */
-}
-
-/* Purple - Moving Clean */
-.btn-service-purple {
-  background-color: #e9d5ff !important; /* bg-purple-200 */
-}
-
-.btn-service-purple:hover {
-  background-color: #d8b4fe !important; /* bg-purple-300 */
-}
-
-/* Indigo - Laundry Service */
+/* Service Button Color Variants - All use bg-slate-300 */
+.btn-service-red,
+.btn-service-lime,
+.btn-service-purple,
 .btn-service-indigo {
-  background-color: #c7d2fe !important; /* bg-indigo-200 */
+  background-color: #cbd5e1 !important; /* bg-slate-300 */
 }
 
+.btn-service-red:hover,
+.btn-service-lime:hover,
+.btn-service-purple:hover,
 .btn-service-indigo:hover {
-  background-color: #a5b4fc !important; /* bg-indigo-300 */
+  background-color: #94a3b8 !important; /* bg-slate-400 */
 }
 
 @media (min-width: 992px) {
@@ -360,8 +351,7 @@ a.btn-service:hover svg,
   height: 50%;
   padding: 1.5rem;
   color: #042f2e;
-  /* background-color: #f8fafc; */
-    background-color: #ccfbf1 ;
+  background-color: #eff6ff; /* blue-50 - very light blue, soft and clean */
   display: flex;
   align-items: center;
 }
@@ -446,7 +436,7 @@ a.btn-service:hover svg,
 
 .mobile-link-item {
   text-decoration: none;
-  color: #64748b;
+  color: #1e293b; /* slate-800 - darker */
   font-size: 0.875rem;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -455,7 +445,7 @@ a.btn-service:hover svg,
 
 .mobile-link-item:hover,
 .mobile-link-item:active {
-  color: #00897B;
+  color: #476bff; /* banner blue */
 }
 
 /* Mobile Services Dropdown */
@@ -488,7 +478,7 @@ a.btn-service:hover svg,
 .mobile-service-item {
   display: block;
   padding: 0.75rem 1rem;
-  color: #64748b;
+  color: #1e293b; /* slate-800 - darker */
   text-decoration: none;
   font-size: 0.875rem;
   font-weight: 500;

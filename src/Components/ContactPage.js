@@ -36,8 +36,8 @@ function ContactPage() {
 
       // Responsive count and size based on screen width
       const isMobile = window.innerWidth < 768;
-      const count = isMobile ? 30 : 60;
-      const frontCount = 5; // Only 5 circles in front
+      const count = isMobile ? 15 : 30;
+      const frontCount = 3; // Only 3 circles in front
       const size = isMobile ? 20 : 24;
       const maxOpacity = isMobile ? 0.6 : 0.85;
 
@@ -239,8 +239,8 @@ function ContactPage() {
         <div className="flex justify-center pt-24 pb-10">
           <div className="w-full max-w-5xl">
             <div className="text-start mb-24">
-              <h1 className="hero-title text-5xl font-semibold text-slate-900 mb-3 font-mono">
-                Contact Us 👋
+              <h1 className="hero-title text-5xl font-semibold text-slate-900 mb-3 cabinet">
+                Lets Get Started
               </h1>
               <p className="hero-subtitle text-start text-lg text-slate-600  mx-auto">
                  Fill out the form below and we'll try to respond within one business day!
@@ -366,7 +366,7 @@ function ContactPage() {
 
                   <button 
                     type="submit"
-                    className="w-full bg-teal-200 text-black py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-teal-300 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="w-full bg-indigo-600 text-white py-3.5 px-8 rounded-md text-sm font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                     disabled={submitStatus === 'sending'}
                   >
                     {submitStatus === 'sending' ? 'Sending...' : 'Send Message'}
