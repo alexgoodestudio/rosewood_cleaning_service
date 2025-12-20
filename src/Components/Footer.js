@@ -63,7 +63,7 @@ function Footer() {
           <div className="col-12 col-md-6 col-lg-4">
             <Link to="/" className="d-inline-block mb-4 no-underline">
               <h3 className="text-4xl text-white mb-0 cabinet" style={{
-                borderTop: '1px solid #cbd5e1',
+                // borderTop: '1px solid #cbd5e1',
                 borderBottom: '1px solid #cbd5e1',
                 paddingTop: '0.5rem',
                 paddingBottom: '0.5rem'
