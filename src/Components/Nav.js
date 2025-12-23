@@ -23,7 +23,7 @@ function Nav() {
           </div>
 
           <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
-            <span className="cabinet-bold brand-text">Rosewood Cleaning </span>
+            <span className="cabinet-med brand-text">Rosewood Cleaning </span>
           </Link>
 
           {/* Desktop Navigation Links */}

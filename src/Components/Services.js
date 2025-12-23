@@ -169,7 +169,7 @@ function Services() {
       <div className="container-fluid px-4 px-lg-5">
         <div className="row mb-8">
           <div className="col-lg-8">
-            <h2 className="text-4xl font-black cabinet text-slate-900 mb-6">
+            <h2 className="text-4xl font-black gs text-slate-900 mb-6">
               Our Services 
             </h2>
             <p className="text-lg text-slate-600">

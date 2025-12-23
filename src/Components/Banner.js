@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-1 gs text-white bg-banner-dark d-none d-md-block">
+    <section className="py-1 gs text-slate-900 bg-banner-dark">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -69,32 +69,35 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="font-semibold text-white mb-0" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em' }}>
+            <p ref={bannerRef} className="font-semibold text-slate-900 mb-0" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em' }}>
               
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">Us </span>
+                <span className="word inline-block">us </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">Handle </span>
+                <span className="word inline-block">handle </span>
               </span>
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">the </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block font-bold">Cleaning </span>
+                <span className="word inline-block font-bold">cleaning </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">Stuff</span>
+                <span className="word inline-block">stuff</span>
               </span>
-                            <span className="overflow-hidden inline-block">
+              <span className="overflow-hidden inline-block">
+                <span className="word inline-block ">🏡</span>
+              </span>
+              <span className="overflow-hidden inline-block">
                 <span className="word inline-block ">|</span>
               </span>
 
               <span className="overflow-hidden inline-block">
-                <Link to="/services/onetime" className="word inline-block underline text-white hover:text-yellow-200 transition-colors">View Services</Link>
+                <Link to="/services/onetime" className="word inline-block underline text-slate-900 hover:text-slate-700 transition-colors">View Services</Link>
               </span>
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">→</span>

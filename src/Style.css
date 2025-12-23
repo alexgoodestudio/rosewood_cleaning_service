@@ -37,6 +37,16 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: 'cabinet-med';
+  src: url('./Components/Fonts/CabinetGrotesk-Medium.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+.cabinet-med {
+  font-family: 'cabinet-med', sans-serif;
+  font-display: block;
+}
 
 .cabinet-bold {
   font-family: 'cabinet-bold', sans-serif;
@@ -76,9 +86,9 @@
   }
 }
 
-/* Banner background - Bootstrap primary blue for all screens */
+/* Banner background - Pastel teal for all screens */
 .bg-banner-dark {
-  background-color: #0d6efd !important; /* Bootstrap primary blue */
+  background-color: #d4f1f4 !important; /* Soft pastel teal, cohesive with site palette */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
