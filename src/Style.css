@@ -481,7 +481,7 @@ a.btn-service:hover svg,
   height: 50%;
   padding: 1.5rem;
   color: white;
-  background-color: #2947d4; /* Darker shade of brand blue for mobile */
+  background-color: #2947d4 !important; /* Darker shade of brand blue for mobile */
   display: flex;
   align-items: center;
 }
@@ -495,7 +495,7 @@ a.btn-service:hover svg,
     align-items: center;
     padding: 3rem;
     padding-top: calc(3rem + 25vh); /* Move content down 25% */
-    background-color: transparent;
+    background-color: transparent !important;
     color: white;
   }
 }

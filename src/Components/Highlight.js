@@ -117,7 +117,7 @@ function Highlight() {
     <div
       ref={containerRef}
       className="py-24 relative min-h-screen flex items-center justify-center"
-      style={{ backgroundColor: '#476bff' }}
+      style={{ backgroundColor: '#2947d4' }}
     >
       <div className="container mx-auto px-4">
         <h2

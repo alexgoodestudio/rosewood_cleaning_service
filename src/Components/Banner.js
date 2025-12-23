@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-1 gs text-white bg-banner-dark">
+    <section className="py-1 gs text-white bg-banner-dark d-none d-md-block">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -87,14 +87,12 @@ function Banner() {
                 <span className="word inline-block font-bold">Cleaning </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">Stuff!</span>
+                <span className="word inline-block">Stuff</span>
               </span>
                             <span className="overflow-hidden inline-block">
-                <span className="word inline-block ">🫧</span>
-              </span>
-               <span className="overflow-hidden inline-block">
                 <span className="word inline-block ">|</span>
               </span>
+
               <span className="overflow-hidden inline-block">
                 <Link to="/services/onetime" className="word inline-block underline text-white hover:text-yellow-200 transition-colors">View Services</Link>
               </span>
