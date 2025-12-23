@@ -1,4 +1,5 @@
 import React from "react";
+import MobileHeader from "./MobileHeader";
 import Opener from "./Opener";
 import ReviewMarquee from "./ReviewMarquee";
 import Mission from "./Mission";
@@ -10,6 +11,7 @@ import Interested from "./Interested";
 function Home() {
   return (
     <div>
+      <MobileHeader />
       <Opener />
       <Services/>
       <Highlight />

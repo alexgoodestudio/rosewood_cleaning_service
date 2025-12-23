@@ -16,6 +16,7 @@
   font-display: swap;
 }
 
+
 @font-face {
   font-family: 'gs';
   src: url('./Components/Fonts/GeneralSans-Regular.woff2') format('woff2');
@@ -29,6 +30,19 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'cabinet-bold';
+  src: url('./Components/Fonts/CabinetGrotesk-Bold.woff2') format('woff2');
+  font-style: normal;
+  font-display: swap;
+}
+
+.cabinet-bold {
+  font-family: 'cabinet-bold', sans-serif;
+  font-display: block;
+}
+
 .cabinet {
   font-family: 'cabinet', sans-serif;
   font-display: block;
@@ -60,6 +74,12 @@
     font-size: 1.75rem; /* 3xl on mobile (smaller than 2rem) */
     line-height: 2rem;
   }
+}
+
+/* Banner background - just barely darker than standard banner blue */
+.bg-banner-dark {
+  background-color: #4265f5 !important; /* Just barely darker than #476bff */
+  overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
 /* ------------------------------    UTILITY CLASSES --------------------------------*/
@@ -222,6 +242,99 @@ a.btn-cta:hover svg,
 
   a.btn-cta:hover svg,
   .btn-cta:hover svg {
+    transform: none;
+  }
+}
+
+/* Teal CTA Button Variant */
+a.btn-cta-teal,
+a.btn-cta-teal:link,
+a.btn-cta-teal:visited,
+a.btn-cta-teal:active,
+a.btn-cta-teal:focus,
+.btn-cta-teal {
+  background-color: #134e4a !important; /* teal-900 */
+  text-decoration: none !important;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.015em;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+a.btn-cta-teal:hover,
+a.btn-cta-teal:focus:hover,
+.btn-cta-teal:hover {
+  background-color: #0f766e !important; /* teal-700 */
+  text-decoration: none !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transform: scale(1.03);
+}
+
+a.btn-cta-teal span,
+a.btn-cta-teal svg,
+.btn-cta-teal span,
+.btn-cta-teal svg {
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transition: all 0.3s ease;
+}
+
+a.btn-cta-teal svg,
+.btn-cta-teal svg {
+  stroke: #FFFFFF !important;
+  fill: none !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.btn-cta-teal:hover svg,
+.btn-cta-teal:hover svg {
+  transform: translateX(4px);
+}
+
+@media (min-width: 992px) {
+  a.btn-cta-teal,
+  a.btn-cta-teal:link,
+  a.btn-cta-teal:visited,
+  a.btn-cta-teal:active,
+  a.btn-cta-teal:focus,
+  .btn-cta-teal {
+    padding: 0.75rem 1.5rem;
+    background-color: #0d6efd !important; /* Bootstrap primary blue */
+  }
+
+  a.btn-cta-teal:hover,
+  a.btn-cta-teal:focus:hover,
+  .btn-cta-teal:hover {
+    background-color: #0b5ed7 !important; /* Darker primary blue on hover */
+  }
+}
+
+.btn-cta-teal.idle-animate {
+  animation: ctaPulse 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-cta-teal.idle-animate {
+    animation: none;
+  }
+
+  a.btn-cta-teal:hover,
+  .btn-cta-teal:hover {
+    transform: none;
+  }
+
+  a.btn-cta-teal:hover svg,
+  .btn-cta-teal:hover svg {
     transform: none;
   }
 }
@@ -425,13 +538,28 @@ a.btn-service:hover svg,
 }
 
 /* Mobile Navigation Links - Below brand name */
+/* Mobile Navigation - Horizontal Scroll */
+.mobile-links-nav-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  background-color: white;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.mobile-links-nav-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 .mobile-links-nav {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  padding: 0.75rem 0;
+  padding: 0.75rem 1rem;
   background-color: white;
-  width: 100%;
+  gap: 1.5rem;
+  width: max-content;
+  min-width: 100%;
 }
 
 .mobile-link-item {
@@ -441,60 +569,13 @@ a.btn-service:hover svg,
   font-weight: 500;
   transition: color 0.3s ease;
   padding: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .mobile-link-item:hover,
 .mobile-link-item:active {
   color: #476bff; /* banner blue */
-}
-
-/* Mobile Services Dropdown */
-.mobile-services-dropdown {
-  position: relative;
-  border-left: 1px solid #e2e8f0;
-  padding-left: 0.5rem;
-}
-
-.mobile-services-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.mobile-services-menu {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: white;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 180px;
-  z-index: 1000;
-  margin-top: 0.5rem;
-}
-
-.mobile-service-item {
-  display: block;
-  padding: 0.75rem 1rem;
-  color: #1e293b; /* slate-800 - darker */
-  text-decoration: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border-bottom: 1px solid #f1f5f9;
-}
-
-.mobile-service-item:last-child {
-  border-bottom: none;
-  border-radius: 0 0 0.5rem 0.5rem;
-}
-
-.mobile-service-item:hover,
-.mobile-service-item:active {
-  background-color: #f8fafc;
-  color: #00897B;
 }
 
 .btn-contact svg {

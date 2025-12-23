@@ -53,7 +53,6 @@ function Highlight() {
       pinSpacing: true,
     });
 
-    // Single ScrollTrigger for all items - like Plank.co
     ScrollTrigger.create({
       trigger: container,
       start: 'top top',
@@ -123,7 +122,7 @@ function Highlight() {
       <div className="container mx-auto px-4">
         <h2
           ref={titleRef}
-          className="text-4xl md:text-5xl font-semibold text-white mb-16 text-center cabinet"
+          className="text-4xl md:text-5xl  text-white mb-16 text-center cabinet-bold"
         >
           Why Choose Rosewood
         </h2>

@@ -1,31 +1,33 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { Home } from "lucide-react";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Nav() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
 
   return (
-    <nav className="navbar text-slate-800 flex flex-col" style={{ padding: 0 }}>
-      {/* Top bar with brand name */}
-      <div className="container-fluid d-flex justify-content-center align-items-center bg-slate-50" style={{ paddingTop: '1rem', paddingBottom: '1rem', position: 'relative' }}>
-        {/* Home & Contact links - far left on desktop */}
-        <div className="d-none d-lg-flex align-items-center gap-4" style={{ position: 'absolute', left: '3rem' }}>
-          <Link to="/" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
-            Home
-          </Link>
-          <Link to="/contact" className="text-decoration-none transition-colors font-semibold" style={{ fontSize: '1.05rem', color: '#476bff' }}>
-            Contact
-          </Link>
-        </div>
+    <nav className="navbar text-slate-800 flex flex-col" style={{ padding: 0, overflowX: 'hidden' }}>
+      {/* Top bar with brand name - desktop only */}
+      <div className="bg-slate-50 d-none d-lg-block" style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem', width: '100%' }}>
+        <div className="d-flex justify-content-center align-items-center" style={{ position: 'relative' }}>
+          {/* Home & Contact links - far left on desktop */}
+          <div className="d-none d-lg-flex align-items-center gap-4" style={{ position: 'absolute', left: '2rem' }}>
+            <Link to="/" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold d-flex align-items-center gap-2" style={{ fontSize: '1.05rem' }}>
+              <Home size={20} strokeWidth={2} />
+              Home
+            </Link>
+            <Link to="/contact" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem'}}>
+              Contact
+            </Link>
+          </div>
 
-        <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
-          <span className="cabinet font-medium brand-text">Rosewood Cleaning Services</span>
-        </Link>
+          <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
+            <span className="cabinet-bold brand-text">Rosewood Cleaning </span>
+          </Link>
 
-        {/* Desktop Navigation Links */}
-        <div className="d-none d-lg-flex align-items-center gap-4" style={{ marginRight: '3rem', position: 'absolute', right: 0 }}>
+          {/* Desktop Navigation Links */}
+          <div className="d-none d-lg-flex align-items-center gap-4" style={{ marginRight: '2rem', position: 'absolute', right: 0 }}>
           <Link to="/about" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
             About
           </Link>
@@ -118,38 +120,23 @@ function Nav() {
             FAQ
           </Link>
         </div>
+        </div>
       </div>
 
-      {/* Mobile Navigation Links - Below brand name */}
-      <div className="mobile-links-nav d-lg-none cabinet">
-        <Link to="/" className="mobile-link-item">Home</Link>
-        <div className="mobile-services-dropdown">
-          <button
-            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-            className="mobile-link-item mobile-services-button"
-          >
-            Services
-          </button>
-          {mobileServicesOpen && (
-            <div className="mobile-services-menu">
-              <Link to="/services/onetime" className="mobile-service-item" onClick={() => setMobileServicesOpen(false)}>
-                One-Time Clean
-              </Link>
-              <Link to="/services/recurring" className="mobile-service-item" onClick={() => setMobileServicesOpen(false)}>
-                Recurring Service
-              </Link>
-              <Link to="/services/moving" className="mobile-service-item" onClick={() => setMobileServicesOpen(false)}>
-                Move In / Out
-              </Link>
-              <Link to="/services/laundry" className="mobile-service-item" onClick={() => setMobileServicesOpen(false)}>
-                Laundry Service
-              </Link>
-            </div>
-          )}
+      {/* Mobile Navigation Links - Below brand name with horizontal scroll */}
+      <div className="mobile-links-nav-scroll d-lg-none">
+        <div className="mobile-links-nav cabinet">
+          <Link to="/" className="mobile-link-item">
+            <Home size={24} strokeWidth={2} />
+          </Link>
+          <Link to="/services/onetime" className="mobile-link-item">One-Time</Link>
+          <Link to="/services/recurring" className="mobile-link-item">Recurring</Link>
+          <Link to="/services/moving" className="mobile-link-item">Move In/Out</Link>
+          <Link to="/services/laundry" className="mobile-link-item">Laundry</Link>
+          <Link to="/about" className="mobile-link-item">About</Link>
+          <Link to="/contact" className="mobile-link-item">Contact</Link>
+          <Link to="/faq" className="mobile-link-item">FAQ</Link>
         </div>
-        <Link to="/about" className="mobile-link-item">About</Link>
-        <Link to="/contact" className="mobile-link-item">Contact</Link>
-        <Link to="/faq" className="mobile-link-item">FAQ</Link>
       </div>
 
     </nav>

@@ -135,7 +135,7 @@ function Opener() {
             <p className="text-xl mb-6">
               {displayedSubtext}
             </p>
-            <a href="/contact" className="btn-cta cabinet group">
+            <a href="/contact" className="btn-cta-teal cabinet group">
               Get Started
               <ArrowUpRight
                 size={18}

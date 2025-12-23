@@ -2,8 +2,8 @@ import React, { useState, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ChevronLeft, ChevronRight, Sparkles, Calendar, Home, Shirt, ArrowRight } from 'lucide-react';
-import Image1 from "../Images/card3.png";
-import Image2 from "../Images/card5.png";
+import Image2 from "../Images/card3.png";
+import Image1 from "../Images/card5.png";
 import Image3 from "../Images/qwe.png";
 import Image4 from "../Images/2.jpg";
 
@@ -85,7 +85,7 @@ const ExpandableService = ({ title, description, image, link, index, isExpanded,
         className="service-content"
       >
         <div className="service-inner">
-          <h3 className="text-2xl font-semibold text-slate-900 mb-6 cabinet">{title}</h3>
+          <h3 className="text-2xl text-slate-900 mb-6 ">{title}</h3>
           <div className="row">
             <div className="col-12 col-md-6 mb-5 mb-md-5">
               <div className="service-image-wrapper">

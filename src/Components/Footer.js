@@ -156,8 +156,8 @@ function Footer() {
 
       <div className="px-5 mt-5 mt-md-6">
         <div className="pt-5 pt-md-6 border-top border-slate-800 font-mono">
-          {/* Email - Mobile Only */}
-          <div className="d-md-none text-center mb-4">
+          {/* Email - All Screens */}
+          <div className="text-center mb-4">
             <a
               href="mailto:hello@rosewoodcleaning.com"
               ref={emailRef}

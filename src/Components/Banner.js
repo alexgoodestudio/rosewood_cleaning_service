@@ -1,8 +1,7 @@
 import { useGSAP } from '@gsap/react';
 import { gsap } from 'gsap';
-import { useRef, useState, useEffect } from 'react';
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-// import { Droplets } from 'lucide-react';
 
 const MOTION = {
   instant: 0.15,
@@ -15,56 +14,7 @@ const MOTION = {
 function Banner() {
   const bannerRef = useRef(null);
   const dropletsRef = useRef(null);
-  const emailRef = useRef(null);
-  const [emailChars, setEmailChars] = useState([]);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Split email into characters on mount
-  useEffect(() => {
-    const email = "hello@rosewoodcleaning.com";
-    setEmailChars(email.split(''));
-  }, []);
-
-  // Playful GSAP-style email animation
-  const handleEmailHover = () => {
-    if (prefersReducedMotion) return;
-
-    const chars = emailRef.current?.querySelectorAll('.email-char');
-    if (!chars) return;
-
-    gsap.to(chars, {
-      y: -6,
-      rotation: () => gsap.utils.random(-12, 12),
-      scale: 1.15,
-      color: '#fde68a', // Yellow-200 on hover - warm and inviting
-      duration: 0.4,
-      ease: 'back.out(3)',
-      stagger: {
-        amount: 0.25,
-        from: 'random'
-      }
-    });
-  };
-
-  const handleEmailLeave = () => {
-    if (prefersReducedMotion) return;
-
-    const chars = emailRef.current?.querySelectorAll('.email-char');
-    if (!chars) return;
-
-    gsap.to(chars, {
-      y: 0,
-      rotation: 0,
-      scale: 1,
-      color: '#ffffff', // White as default
-      duration: 0.5,
-      ease: 'elastic.out(1, 0.6)',
-      stagger: {
-        amount: 0.2,
-        from: 'random'
-      }
-    });
-  };
 
   useGSAP(() => {
     if (!prefersReducedMotion) {
@@ -95,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-1 gs text-white" style={{ backgroundColor: '#476bff' }}>
+    <section className="py-1 gs text-white bg-banner-dark">
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -106,7 +56,6 @@ function Banner() {
               letterSpacing: '0.1em',
               fontWeight: '500'
             }}>
-              <span className='font-semibold'>Columbia, South Carolina</span>
             </span>
             {/* <span className="text-slate-300">•</span> */}
             {/* <span className="text-xs text-slate-500" style={{ 
@@ -126,19 +75,19 @@ function Banner() {
                 <span className="word inline-block">Let </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">us </span>
+                <span className="word inline-block">Us </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">handle </span>
+                <span className="word inline-block">Handle </span>
               </span>
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">the </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block font-bold">cleaning </span>
+                <span className="word inline-block font-bold">Cleaning </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block">stuff</span>
+                <span className="word inline-block">Stuff!</span>
               </span>
                             <span className="overflow-hidden inline-block">
                 <span className="word inline-block ">🫧</span>
@@ -156,39 +105,6 @@ function Banner() {
             </p>
           </div>
 
-          {/* Right — Contact Info */}
-          <div className=" text-white absolute right-0 hidden md:flex items-center" style={{ gap: '0.75rem' }}>
-            <a
-              href="mailto:hello@rosewoodcleaning.com"
-              ref={emailRef}
-              className="text-sm lora"
-              onMouseEnter={handleEmailHover}
-              onMouseLeave={handleEmailLeave}
-              style={{
-                letterSpacing: '0.01em',
-                textDecoration: 'none',
-                color: '#ffffff',
-                cursor: 'pointer',
-                userSelect: 'none'
-              }}
-            >
-              {emailChars.length > 0 ? (
-                emailChars.map((char, idx) => (
-                  <span
-                    key={idx}
-                    className="email-char"
-                    style={{ display: 'inline-block', color: '#ffffff' }}
-                  >
-                    {char}
-                  </span>
-                ))
-              ) : (
-                'hello@rosewoodcleaning.com'
-              )}
-            </a>
-
-          
-          </div>
 
         </div>
       </div>
