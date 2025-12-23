@@ -96,7 +96,7 @@ function Mission() {
                   color: '#0f172a'
                 }}
               >
-                Child Safe Products
+                Local
               </span>
               <span
                 className="bg-white border border-slate-300"
@@ -110,7 +110,7 @@ function Mission() {
                   color: '#0f172a'
                 }}
               >
-                Community Focused
+                Eco-Friendly
               </span>
               <span
                 className="bg-white border border-slate-300"

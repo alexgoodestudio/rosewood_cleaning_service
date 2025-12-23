@@ -34,56 +34,56 @@ function MobileHeader() {
           <nav className="d-flex flex-column" style={{ gap: '0.5rem', paddingLeft: '1rem', paddingRight: '1rem' }}>
             <Link
               to="/"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Home
             </Link>
             <Link
               to="/services/onetime"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               One-Time Clean
             </Link>
             <Link
               to="/services/recurring"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Recurring Service
             </Link>
             <Link
               to="/services/moving"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Move In / Out
             </Link>
             <Link
               to="/services/laundry"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Laundry Service
             </Link>
             <Link
               to="/about"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               About
             </Link>
             <Link
               to="/contact"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
             </Link>
             <Link
               to="/faq"
-              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors font-bold"
+              className="text-decoration-none text-slate-800 py-2 hover:text-slate-600 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
