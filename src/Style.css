@@ -253,7 +253,7 @@ a.btn-cta-teal:visited,
 a.btn-cta-teal:active,
 a.btn-cta-teal:focus,
 .btn-cta-teal {
-  background-color: #134e4a !important; /* teal-900 */
+  background-color: #ffffff !important; /* white for mobile */
   text-decoration: none !important;
   padding: 0.75rem 1rem;
   border-radius: 2rem;
@@ -263,8 +263,8 @@ a.btn-cta-teal:focus,
   display: inline-flex !important;
   align-items: center;
   gap: 0.5rem;
-  color: #FFFFFF !important;
-  -webkit-text-fill-color: #FFFFFF !important;
+  color: #4265f5 !important; /* brand blue text */
+  -webkit-text-fill-color: #4265f5 !important;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   border: none;
@@ -284,14 +284,14 @@ a.btn-cta-teal span,
 a.btn-cta-teal svg,
 .btn-cta-teal span,
 .btn-cta-teal svg {
-  color: #FFFFFF !important;
-  -webkit-text-fill-color: #FFFFFF !important;
+  color: #4265f5 !important; /* brand blue for mobile */
+  -webkit-text-fill-color: #4265f5 !important;
   transition: all 0.3s ease;
 }
 
 a.btn-cta-teal svg,
 .btn-cta-teal svg {
-  stroke: #FFFFFF !important;
+  stroke: #4265f5 !important; /* brand blue for mobile */
   fill: none !important;
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -463,8 +463,8 @@ a.btn-service:hover svg,
   width: 100%;
   height: 50%;
   padding: 1.5rem;
-  color: #042f2e;
-  background-color: #eff6ff; /* blue-50 - very light blue, soft and clean */
+  color: white;
+  background-color: #4265f5; /* Same as banner background */
   display: flex;
   align-items: center;
 }

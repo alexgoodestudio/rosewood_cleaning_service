@@ -95,13 +95,13 @@ function Interested() {
 
             {/* Subtle footer note */}
             <p
-              className="text-sm text-slate-500 italic mt-5"
+              className="text-sm text-slate-500  mt-5"
               style={{
                 letterSpacing: '0.02em',
                 fontWeight: '500'
               }}
             >
-              Located in Columbia, SC
+              Located in <span className='underline'>Columbia, SC</span>
             </p>
           </div>
         </div>
