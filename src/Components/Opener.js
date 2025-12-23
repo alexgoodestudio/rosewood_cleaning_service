@@ -128,14 +128,14 @@ function Opener() {
       <div className="hero-text-container">
         <div className="row w-full">
           <div className="col-lg-4 col-12">
-            <h1 ref={textRef} className="hero-heading cabinet font-medium mb-6">
+            <h1 ref={textRef} className="hero-heading gs font-semibold mb-6">
               {displayedText}
             </h1>
 
             <p className="text-xl mb-6">
               {displayedSubtext}
             </p>
-            <a href="/contact" className="btn-cta-teal cabinet group">
+            <a href="/contact" className="btn-cta-teal gs group">
               Get Started
               <ArrowUpRight
                 size={18}

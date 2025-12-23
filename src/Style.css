@@ -76,9 +76,9 @@
   }
 }
 
-/* Banner background - just barely darker than standard banner blue */
+/* Banner background - Bootstrap primary blue for all screens */
 .bg-banner-dark {
-  background-color: #4265f5 !important; /* Just barely darker than #476bff */
+  background-color: #0d6efd !important; /* Bootstrap primary blue */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
@@ -310,12 +310,29 @@ a.btn-cta-teal:hover svg,
   .btn-cta-teal {
     padding: 0.75rem 1.5rem;
     background-color: #0d6efd !important; /* Bootstrap primary blue */
+    color: #ffffff !important; /* White text for desktop */
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  a.btn-cta-teal span,
+  a.btn-cta-teal svg,
+  .btn-cta-teal span,
+  .btn-cta-teal svg {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  a.btn-cta-teal svg,
+  .btn-cta-teal svg {
+    stroke: #ffffff !important;
   }
 
   a.btn-cta-teal:hover,
   a.btn-cta-teal:focus:hover,
   .btn-cta-teal:hover {
     background-color: #0b5ed7 !important; /* Darker primary blue on hover */
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
   }
 }
 
@@ -464,7 +481,7 @@ a.btn-service:hover svg,
   height: 50%;
   padding: 1.5rem;
   color: white;
-  background-color: #4265f5; /* Same as banner background */
+  background-color: #2947d4; /* Darker shade of brand blue for mobile */
   display: flex;
   align-items: center;
 }
@@ -503,14 +520,16 @@ a.btn-service:hover svg,
 /* Hero Heading - Custom Responsive Size */
 .hero-heading {
   opacity: 1;
-  font-size: 1.875rem; /* Between text-xl (1.25rem) and text-2xl (1.5rem) for mobile */
+  font-size: 1.75rem; /* Between text-xl (1.25rem) and text-2xl (1.5rem) for mobile */
   line-height: 1.3;
+  letter-spacing: -0.003em; /* More airy, subtle tightness */
 }
 
 @media (min-width: 768px) {
   .hero-heading {
-    font-size: 2.625rem; /* Between text-4xl (2.25rem) and text-5xl (3rem) for desktop */
+    font-size: 2.5rem; /* Between text-4xl (2.25rem) and text-5xl (3rem) for desktop */
     line-height: 1.25;
+    letter-spacing: -0.005em; /* More airy for desktop, less aggressive */
   }
 }
 
@@ -559,7 +578,7 @@ a.btn-service:hover svg,
   align-items: center;
   padding: 0.75rem 1rem;
   background-color: white;
-  gap: 2rem;
+  gap: 1rem;
   width: max-content;
   min-width: min-content;
 }
@@ -567,7 +586,7 @@ a.btn-service:hover svg,
 .mobile-link-item {
   text-decoration: none;
   color: #1e293b; /* slate-800 - darker */
-  font-size: 0.875rem;
+  font-size: 0.8125rem; /* Slightly smaller - between 0.75rem and 0.875rem */
   font-weight: 700; /* font-bold */
   transition: color 0.3s ease;
   padding: 0.5rem;
@@ -696,6 +715,7 @@ a.btn-service:hover svg,
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.45;
+  letter-spacing: 0em; /* Neutral spacing, more airy and readable */
 }
 .text-lg {
   font-size: 1.125rem;

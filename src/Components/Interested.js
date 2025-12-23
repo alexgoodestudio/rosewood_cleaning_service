@@ -87,9 +87,13 @@ function Interested() {
 
             {/* CTA */}
             <div ref={ctaRef}>
-              <a href="/contact" className="btn-cta cabinet">
+              <a href="/contact" className="btn-cta-teal gs group">
                 Get Started
-                <ArrowUpRight size={18} strokeWidth={2} />
+                <ArrowUpRight
+                  size={18}
+                  className="group-hover:rotate-45 transition-all duration-300"
+                  strokeWidth={1.5}
+                />
               </a>
             </div>
 
