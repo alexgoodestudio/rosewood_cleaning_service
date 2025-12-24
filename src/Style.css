@@ -104,7 +104,7 @@
 
 /* Banner text color - responsive */
 .banner-text {
-  color: #2947d4; /* Blue text on pastel background for mobile */
+  color: #1e293b; /* Slate-800 text on pastel background for mobile */
 }
 
 @media (min-width: 768px) {

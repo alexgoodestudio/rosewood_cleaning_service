@@ -69,7 +69,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="font-semibold banner-text" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4, paddingTop: '0.2rem', paddingBottom: '0.2rem' }}>
+            <p ref={bannerRef} className="font-semibold banner-text" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4, paddingTop: '0.3rem', paddingBottom: '0.15rem' }}>
               
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
@@ -91,7 +91,7 @@ function Banner() {
               </span>
 
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block ">|</span>
+                <span className="word inline-block px-1">🌼</span>
               </span>
 
               <span className="overflow-hidden inline-block">
