@@ -97,8 +97,8 @@ function Banner() {
               <span className="overflow-hidden inline-block">
                 <Link to="/services/onetime" className="word inline-block underline transition-colors banner-text">View Services</Link>
               </span>
-              <span className="overflow-hidden inline-block">
-                <span className="word inline-block">→</span>
+              <span className="overflow-hidden mobile-hide inline-block">
+                <span className="word  inline-block">→</span>
               </span>
 
             </p>

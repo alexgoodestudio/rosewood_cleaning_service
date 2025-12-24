@@ -79,14 +79,14 @@
   line-height: 2.25rem;
 }
 
-.text-purple{
-  color: #1935b2;
-}
 
 @media (max-width: 991px) {
   .brand-text {
     font-size: 1.75rem; /* 3xl on mobile (smaller than 2rem) */
     line-height: 2rem;
+  }
+  .mobile-hide{
+    display: none;
   }
 }
 
