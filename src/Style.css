@@ -79,6 +79,10 @@
   line-height: 2.25rem;
 }
 
+.text-purple{
+  color: #1935b2;
+}
+
 @media (max-width: 991px) {
   .brand-text {
     font-size: 1.75rem; /* 3xl on mobile (smaller than 2rem) */
@@ -86,10 +90,27 @@
   }
 }
 
-/* Banner background - Pastel teal for all screens */
+/* Banner background - Pastel teal for mobile, reversed for desktop */
 .bg-banner-dark {
-  background-color: #d4f1f4 !important; /* Soft pastel teal, cohesive with site palette */
+  background-color: #d4f1f4 !important; /* Soft pastel teal for mobile */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
+}
+
+@media (min-width: 768px) {
+  .bg-banner-dark {
+    background-color: #2947d4 !important; /* Deep blue for desktop */
+  }
+}
+
+/* Banner text color - responsive */
+.banner-text {
+  color: #2947d4; /* Blue text on pastel background for mobile */
+}
+
+@media (min-width: 768px) {
+  .banner-text {
+    color: #d4f1f4 !important; /* Pastel text on blue background for desktop */
+  }
 }
 
 /* ------------------------------    UTILITY CLASSES --------------------------------*/

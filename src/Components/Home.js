@@ -14,10 +14,10 @@ function Home() {
       <MobileHeader />
       <Opener />
       <Services/>
+      <ReviewMarquee />
       <Highlight />
       {/* <About /> */}
       <Mission />
-      <ReviewMarquee />
       <Interested/>
     </div>
   );

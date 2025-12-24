@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="py-1 gs text-slate-900 bg-banner-dark">
+    <section className="gs bg-banner-dark" style={{ paddingTop: '0.25rem', paddingBottom: '0.25rem' }}>
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -69,7 +69,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="font-semibold text-slate-900 mb-0" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em' }}>
+            <p ref={bannerRef} className="font-semibold banner-text" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4, paddingTop: '0.2rem', paddingBottom: '0.2rem' }}>
               
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
@@ -89,15 +89,13 @@ function Banner() {
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">stuff</span>
               </span>
-              <span className="overflow-hidden inline-block">
-                <span className="word inline-block ">🏡</span>
-              </span>
+
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block ">|</span>
               </span>
 
               <span className="overflow-hidden inline-block">
-                <Link to="/services/onetime" className="word inline-block underline text-slate-900 hover:text-slate-700 transition-colors">View Services</Link>
+                <Link to="/services/onetime" className="word inline-block underline transition-colors banner-text">View Services</Link>
               </span>
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">→</span>

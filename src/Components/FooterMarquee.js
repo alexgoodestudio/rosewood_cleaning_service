@@ -43,9 +43,10 @@ function FooterMarquee() {
   return (
     <div
       ref={containerRef}
-      className="marquee-container bg-teal-100 overflow-hidden w-full"
+      className="marquee-container overflow-hidden w-full"
       role="complementary"
       aria-label="Call to action banner"
+      style={{ background: { backgroundColor: '#C3F380' } }}
     >
       <div
         ref={trackRef}
