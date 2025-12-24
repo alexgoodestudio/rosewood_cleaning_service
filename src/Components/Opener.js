@@ -136,7 +136,7 @@ function Opener() {
               {displayedSubtext}
             </p>
             <a href="/contact" className="btn-cta-teal gs group">
-              Get Started
+              Let's Go
               <ArrowUpRight
                 size={18}
                 className="group-hover:rotate-45 transition-all duration-300"

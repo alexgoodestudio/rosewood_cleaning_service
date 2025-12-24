@@ -96,30 +96,30 @@ function Interested() {
             {/* Large Statement Heading */}
             <h2
               ref={headingRef}
-              className="text-5xl interested-heading gs mb-5 font-bold"
+              className="text-4xl interested-heading gs mb-3 font-bold"
               style={{
                 letterSpacing: '-0.015em',
                 maxWidth: '600px'
               }}
             >
-              You've got better things to do.
+              Reclaim Your Free Time
             </h2>
 
             {/* Supporting Body Text */}
             <p
-              className="text-lg interested-subtext mb-6"
+              className="text-lg interested-subtext mb-5"
               style={{
                 letterSpacing: '-0.005em',
                 maxWidth: '540px'
               }}
             >
-              We'll take care of the cleaning. You take care of everything else.
+              We understand. We're here to support your busy lives. We'll take care of the cleaning. You take care of everything else.
             </p>
 
             {/* CTA */}
             <div ref={ctaRef}>
               <a href="/contact" className="btn-cta-teal gs group">
-                Get Started
+                Let's Go
                 <ArrowUpRight
                   size={18}
                   className="group-hover:rotate-45 transition-all duration-300"

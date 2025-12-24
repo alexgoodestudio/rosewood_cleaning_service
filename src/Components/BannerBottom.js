@@ -30,7 +30,7 @@ function BannerBottom() {
         onEnter: () => {
           gsap.to(track, {
             x: containerWidth,
-            duration: distance / 80,
+            duration: distance / 40,
             ease: "none",
             repeat: -1,
           });
@@ -41,7 +41,7 @@ function BannerBottom() {
   );
 
   return (
-    <div className="bg-white pt-3 pb-3">
+    <div className="bg-white pt-3 pb-3" style={{ borderTop: '1px solid #cbd5e1', borderBottom: '1px solid #cbd5e1' }}>
       <div
         ref={containerRef}
         className="overflow-hidden w-full"
@@ -52,63 +52,63 @@ function BannerBottom() {
           style={{ whiteSpace: 'nowrap', willChange: 'transform' }}
         >
           <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
 <span className="apfel tracking-wider text-bold text-teal-950">
@@ -124,51 +124,51 @@ function BannerBottom() {
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
            <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            We're looking forward to serving you
+            Book your cleaning today
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-          Let us handle the cleaning stuff
+            Located in Columbia, SC
           </span>
           <span className="apfel text-bold text-teal-950 px-3">•</span>
           <span className="apfel tracking-wider text-bold text-teal-950">
-            Located in Columbia, South Carolina
+            Same-day service available
           </span>
         </div>
       </div>

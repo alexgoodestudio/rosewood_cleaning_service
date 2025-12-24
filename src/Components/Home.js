@@ -8,9 +8,13 @@ import Highlight from "./Highlight";
 import Services from "./Services";
 import Interested from "./Interested";
 
+import BannerBottom from "./BannerBottom";
+
 function Home() {
   return (
     <div>
+      <BannerBottom/>
+  
       <MobileHeader />
       <Opener />
       <Services/>

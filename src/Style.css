@@ -98,7 +98,7 @@
 
 @media (min-width: 768px) {
   .bg-banner-dark {
-    background-color: #2947d4 !important; /* Deep blue for desktop */
+    background-color: #0d6efd !important; /* Bootstrap primary blue, matching btn-cta-teal */
   }
 }
 

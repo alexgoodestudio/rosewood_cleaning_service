@@ -20,7 +20,7 @@ function Mission() {
       return;
     }
 
-    // Locomotive-style: Pin section + Scrub animation - only image fades
+    // Pin section + Scrub animation - only image fades
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -59,15 +59,15 @@ function Mission() {
                 </span>
               </div>
 
-              {/* Heading - Editorial bold with tight tracking */}
+              {/* Heading  */}
               <h2
                 className="text-4xl font-black gs text-slate-900 mb-5 mb-lg-6"
 
               >
-                Reclaim Your Free Time 
+                Support Local Business
               </h2>
 
-              {/* Body - Generous line height, slight negative tracking */}
+              {/* Body  */}
               <p
                 className="text-lg text-slate-700 mb-6"
                 style={{
@@ -77,8 +77,7 @@ function Mission() {
                 }}
               >
                 We're not just another cleaning company — we're part of your
-                community. From local families to busy professionals, we take pride
-                in making homes across Columbia cleaner, healthier, and ready to go.
+                community. We take pride in providing the best cleaning services in Columbia, SC.
               </p>
             </div>
 
