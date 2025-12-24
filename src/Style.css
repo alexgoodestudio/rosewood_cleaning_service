@@ -113,6 +113,24 @@
   }
 }
 
+/* Interested component background - pastel teal for all screens */
+.bg-interested {
+  background-color: #d4f1f4 !important; /* Pastel teal for all screens, matching mobile banner */
+}
+
+/* Interested component text colors - dark for all screens */
+.interested-heading {
+  color: #1e293b; /* Dark text */
+}
+
+.interested-subtext {
+  color: #475569; /* Slate-600 */
+}
+
+.interested-footer {
+  color: #64748b; /* Slate-500 */
+}
+
 /* ------------------------------    UTILITY CLASSES --------------------------------*/
 html, body {
   overflow-x: hidden;

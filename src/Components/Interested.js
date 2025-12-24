@@ -47,42 +47,73 @@ function Interested() {
   return (
     <section
       ref={containerRef}
-      className="py-20 py-lg-28 bg-slate-100 mt-5 position-relative overflow-hidden"
+      className="bg-interested position-relative overflow-hidden"
+      style={{ paddingTop: '6rem', paddingBottom: '6rem' }}
     >
-      {/* Decorative elements */}
-      <div
-        className="position-absolute top-0 start-0 w-100 h-100 opacity-50"
-        style={{
-          background: 'radial-gradient(circle at 20% 50%, rgba(245, 158, 11, 0.06) 0%, transparent 50%)',
-          pointerEvents: 'none'
-        }}
-      />
+      <div className="container-fluid" style={{ maxWidth: '1400px' }}>
+        <div className="row">
 
-      <div className="container position-relative text-center">
-        {/* Centered band layout */}
-        <div className="row justify-content-center">
-          <div className="col-12 col-lg-10 col-xl-8">
+          {/* Left Column - 40% Metadata & Context */}
+          <div className="col-12 col-lg-5 mb-5 mb-lg-0">
+            <div style={{ position: 'sticky', top: '2rem' }}>
+              {/* Overline Metadata */}
+              <p
+                className="text-xs interested-footer mb-3"
+                style={{
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.15em',
+                  fontWeight: '600'
+                }}
+              >
+                Get Started
+              </p>
 
-            {/* Large centered heading */}
+              {/* Divider Line */}
+              <div
+                style={{
+                  width: '48px',
+                  height: '1px',
+                  backgroundColor: '#cbd5e1',
+                  marginBottom: '1.5rem'
+                }}
+              />
+
+              {/* Location */}
+              <p
+                className="text-sm interested-footer"
+                style={{
+                  letterSpacing: '0.02em'
+                }}
+              >
+                Located in Columbia, SC
+              </p>
+            </div>
+          </div>
+
+          {/* Right Column - 60% Main Content */}
+          <div className="col-12 col-lg-7">
+
+            {/* Large Statement Heading */}
             <h2
               ref={headingRef}
-              className="text-4xl cabinet font-bold  mb-6 mb-lg-7"
-
-            >
-              Let us handle the cleaning stuff.
-            </h2>
-
-            {/* Subtext */}
-            <p
-              className="text-xl text-slate-600 mb-7 mb-lg-8"
+              className="text-5xl interested-heading gs mb-5 font-bold"
               style={{
-                letterSpacing: '-0.005em',
-                lineHeight: '1.5',
-                maxWidth: '600px',
-                margin: '0 auto 2.5rem auto'
+                letterSpacing: '-0.015em',
+                maxWidth: '600px'
               }}
             >
-              So <span className="italic">you</span> can <span className="border rounded-xl px-2 bg-slate-200 ">focus</span> on what <span className="font-bold">matters</span>.
+              You've got better things to do.
+            </h2>
+
+            {/* Supporting Body Text */}
+            <p
+              className="text-lg interested-subtext mb-6"
+              style={{
+                letterSpacing: '-0.005em',
+                maxWidth: '540px'
+              }}
+            >
+              We'll take care of the cleaning. You take care of everything else.
             </p>
 
             {/* CTA */}
@@ -97,17 +128,8 @@ function Interested() {
               </a>
             </div>
 
-            {/* Subtle footer note */}
-            <p
-              className="text-sm text-slate-500  mt-5"
-              style={{
-                letterSpacing: '0.02em',
-                fontWeight: '500'
-              }}
-            >
-              Located in <span className='underline'>Columbia, SC</span>
-            </p>
           </div>
+
         </div>
       </div>
     </section>
