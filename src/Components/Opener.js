@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import heroImage3 from "../Images/3.jpg";
-import heroImage from "../Images/o.jpg";
+import heroImage from "../Images/m.jpeg";
 import heroImage2 from "../Images/n.jpg";
 
 import { ArrowUpRight } from "lucide-react";
@@ -105,7 +105,7 @@ function Opener() {
           ref={image1Ref}
           src={heroImage}
           alt="Folding Fresh Laundry"
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover hero-image-1"
           style={{ opacity: 1 }}
         />
         <img

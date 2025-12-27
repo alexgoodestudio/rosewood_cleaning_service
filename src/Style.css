@@ -90,27 +90,15 @@
   }
 }
 
-/* Banner background - Pastel teal for mobile, reversed for desktop */
+/* Banner background - Pastel teal for all screens */
 .bg-banner-dark {
-  background-color: #d4f1f4 !important; /* Soft pastel teal for mobile */
+  background-color: #d4f1f4 !important; /* Soft pastel teal for all screens */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
-@media (min-width: 768px) {
-  .bg-banner-dark {
-    background-color: #0d6efd !important; /* Bootstrap primary blue, matching btn-cta-teal */
-  }
-}
-
-/* Banner text color - responsive */
+/* Banner text color - consistent across all screens */
 .banner-text {
-  color: #1e293b; /* Slate-800 text on pastel background for mobile */
-}
-
-@media (min-width: 768px) {
-  .banner-text {
-    color: #d4f1f4 !important; /* Pastel text on blue background for desktop */
-  }
+  color: #1e293b; /* Slate-800 text on pastel background */
 }
 
 /* Interested component background - pastel teal for all screens */
@@ -520,6 +508,10 @@ a.btn-service:hover svg,
     position: absolute;
     height: 100%;
     inset: 0;
+  }
+
+  .hero-image-section .hero-image-1 {
+    object-position: center 40%;
   }
 }
 
