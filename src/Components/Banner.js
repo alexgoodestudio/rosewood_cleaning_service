@@ -91,7 +91,7 @@ function Banner() {
               </span>
 
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block px-1">🌼</span>
+                <span className="word inline-block px-1">💧</span>
               </span>
 
               <span className="overflow-hidden inline-block">

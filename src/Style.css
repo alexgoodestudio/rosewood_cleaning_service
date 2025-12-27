@@ -393,6 +393,97 @@ a.btn-cta-teal:hover svg,
   }
 }
 
+/* Reversed button for mobile only */
+a.btn-cta-teal-reversed,
+a.btn-cta-teal-reversed:link,
+a.btn-cta-teal-reversed:visited,
+a.btn-cta-teal-reversed:active,
+a.btn-cta-teal-reversed:focus,
+.btn-cta-teal-reversed {
+  background-color: #1e293b !important; /* Slate-800 background for mobile */
+  text-decoration: none !important;
+  padding: 0.75rem 1rem;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-weight: 600 !important;
+  letter-spacing: 0.015em;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff !important; /* White text for mobile */
+  -webkit-text-fill-color: #ffffff !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border: none;
+}
+
+a.btn-cta-teal-reversed:hover,
+a.btn-cta-teal-reversed:focus:hover,
+.btn-cta-teal-reversed:hover {
+  background-color: #0f766e !important; /* teal-700 on hover */
+  text-decoration: none !important;
+  color: #FFFFFF !important;
+  -webkit-text-fill-color: #FFFFFF !important;
+  transform: scale(1.03);
+}
+
+a.btn-cta-teal-reversed span,
+a.btn-cta-teal-reversed svg,
+.btn-cta-teal-reversed span,
+.btn-cta-teal-reversed svg {
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  transition: all 0.3s ease;
+}
+
+a.btn-cta-teal-reversed svg,
+.btn-cta-teal-reversed svg {
+  stroke: #ffffff !important;
+  fill: none !important;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+a.btn-cta-teal-reversed:hover svg,
+.btn-cta-teal-reversed:hover svg {
+  transform: translateX(4px);
+}
+
+/* Desktop: Use normal btn-cta-teal styling */
+@media (min-width: 992px) {
+  a.btn-cta-teal-reversed,
+  a.btn-cta-teal-reversed:link,
+  a.btn-cta-teal-reversed:visited,
+  a.btn-cta-teal-reversed:active,
+  a.btn-cta-teal-reversed:focus,
+  .btn-cta-teal-reversed {
+    padding: 0.75rem 1.5rem;
+    background-color: #0d6efd !important; /* Bootstrap primary blue */
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  a.btn-cta-teal-reversed span,
+  a.btn-cta-teal-reversed svg,
+  .btn-cta-teal-reversed span,
+  .btn-cta-teal-reversed svg {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+
+  a.btn-cta-teal-reversed svg,
+  .btn-cta-teal-reversed svg {
+    stroke: #ffffff !important;
+  }
+
+  a.btn-cta-teal-reversed:hover,
+  a.btn-cta-teal-reversed:focus:hover,
+  .btn-cta-teal-reversed:hover {
+    background-color: #0b5ed7 !important;
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}
+
 /* Service Button Base Styles - Pastel Colors from Review Marquee */
 a.btn-service,
 a.btn-service:link,

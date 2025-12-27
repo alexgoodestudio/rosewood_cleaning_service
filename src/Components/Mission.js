@@ -64,7 +64,7 @@ function Mission() {
                 className="text-4xl font-black gs text-slate-900 mb-5 mb-lg-6"
 
               >
-                Support Local Business
+                Supporting Our Communities
               </h2>
 
               {/* Body  */}

@@ -102,7 +102,7 @@ function Interested() {
                 maxWidth: '600px'
               }}
             >
-              Reclaim Your Free Time
+              Reclaim <span className='italic pe-2'>Your</span> Free Time
             </h2>
 
             {/* Supporting Body Text */}
@@ -118,7 +118,7 @@ function Interested() {
 
             {/* CTA */}
             <div ref={ctaRef}>
-              <a href="/contact" className="btn-cta-teal gs group">
+              <a href="/contact" className="btn-cta-teal-reversed gs group">
                 Let's Go
                 <ArrowUpRight
                   size={18}
