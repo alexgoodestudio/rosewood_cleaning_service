@@ -10,7 +10,7 @@ function MobileHeader() {
       <div className="d-lg-none bg-slate-50" style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem' }}>
         <div className="d-flex justify-content-between align-items-center">
           <Link to="/" className="text-decoration-none">
-            <span className="cabinet-bold brand-text text-slate-800">Rosewood Cleaning</span>
+            <span className="cabinet-bold brand-text text-teal-800">Rosewood Cleaning</span>
           </Link>
 
           <button

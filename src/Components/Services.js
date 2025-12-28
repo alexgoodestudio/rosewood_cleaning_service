@@ -179,7 +179,7 @@ function Services() {
                 letterSpacing: '-0.015em'
               }}
             >
-              Our Services
+              Our Services 
             </h2>
             <p className="text-lg text-slate-600">
               Explore our range of cleaning services designed to keep your home healthy and spotless.

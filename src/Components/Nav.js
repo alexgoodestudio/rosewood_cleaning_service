@@ -7,28 +7,28 @@ function Nav() {
   const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
 
   return (
-    <nav className="navbar  text-slate-800 flex flex-col" style={{ padding: 0 }}>
+    <nav className="navbar  text-teal-900 flex flex-col" style={{ padding: 0 }}>
       {/* Top bar with brand name - desktop only */}
       <div className="bg-white d-none d-lg-block" style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem', width: '100%' }}>
         <div className="d-flex justify-content-center align-items-center" style={{ position: 'relative' }}>
           {/* Home & Contact links - far left on desktop */}
           <div className="d-none d-lg-flex align-items-center gap-4" style={{ position: 'absolute', left: '2rem' }}>
-            <Link to="/" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold d-flex align-items-center gap-2" style={{ fontSize: '1.05rem' }}>
+            <Link to="/" className="text-decoration-none text-teal-900 hover:text-teal-600 transition-colors font-semibold d-flex align-items-center gap-2" style={{ fontSize: '1.05rem' }}>
               <Home size={20} strokeWidth={2} />
               Home
             </Link>
-            <Link to="/contact" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem'}}>
+            <Link to="/contact" className="text-decoration-none text-teal-900 hover:text-teal-600 transition-colors font-semibold" style={{ fontSize: '1.05rem'}}>
               Contact
             </Link>
           </div>
 
           <Link to="/" className="navbar-brand btn btn-link p-0 text-decoration-none">
-            <span className="cabinet-bold brand-text text-slate-800">Rosewood Cleaning Services</span>
+            <span className=" brand-text text-teal-900 "> <span className="cabinet-bold">Rosewood</span> <span className="tracking-wide font-light italic">Cleaning Services</span> </span>
           </Link>
 
           {/* Desktop Navigation Links */}
           <div className="d-none d-lg-flex align-items-center gap-4" style={{ marginRight: '2rem', position: 'absolute', right: 0 }}>
-          <Link to="/about" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
+          <Link to="/about" className="text-decoration-none text-teal-900 hover:text-teal-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
             About
           </Link>
 
@@ -40,7 +40,7 @@ function Nav() {
             style={{ padding: '0.5rem 0' }}
           >
             <span
-              className="text-slate-800 hover:text-slate-600 transition-colors d-flex align-items-center gap-1 font-semibold"
+              className="text-teal-900 hover:text-teal-600 transition-colors d-flex align-items-center gap-1 font-semibold"
               style={{ cursor: 'pointer', fontSize: '1.05rem' }}
             >
               Services
@@ -71,13 +71,13 @@ function Nav() {
                 style={{
                   top: 'calc(100% - 0.5rem)',
                   left: '50%',
-                  transform: 'translateX(-50%)',
+                  transform: 'trantealX(-50%)',
                   paddingTop: '0.5rem',
                   zIndex: 1000
                 }}
               >
                 <div
-                  className="bg-white shadow-lg border border-slate-200"
+                  className="bg-white shadow-lg border border-teal-200"
                   style={{
                     borderRadius: '0.5rem',
                     minWidth: '200px',
@@ -85,28 +85,28 @@ function Nav() {
                 >
                   <Link
                     to="/services/onetime"
-                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    className="d-block px-4 py-2 text-decoration-none text-teal-900 hover:bg-teal-50 transition-colors"
                     style={{ fontSize: '0.9rem', borderRadius: '0.5rem 0.5rem 0 0' }}
                   >
                     One-Time Clean
                   </Link>
                   <Link
                     to="/services/recurring"
-                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    className="d-block px-4 py-2 text-decoration-none text-teal-900 hover:bg-teal-50 transition-colors"
                     style={{ fontSize: '0.9rem' }}
                   >
                     Recurring Service
                   </Link>
                   <Link
                     to="/services/moving"
-                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    className="d-block px-4 py-2 text-decoration-none text-teal-900 hover:bg-teal-50 transition-colors"
                     style={{ fontSize: '0.9rem' }}
                   >
                     Move In / Out
                   </Link>
                   <Link
                     to="/services/laundry"
-                    className="d-block px-4 py-2 text-decoration-none text-slate-800 hover:bg-slate-50 transition-colors"
+                    className="d-block px-4 py-2 text-decoration-none text-teal-900 hover:bg-teal-50 transition-colors"
                     style={{ fontSize: '0.9rem', borderRadius: '0 0 0.5rem 0.5rem' }}
                   >
                     Laundry Service
@@ -116,7 +116,7 @@ function Nav() {
             )}
           </div>
 
-          <Link to="/faq" className="text-decoration-none text-slate-800 hover:text-slate-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
+          <Link to="/faq" className="text-decoration-none text-teal-900 hover:text-teal-600 transition-colors font-semibold" style={{ fontSize: '1.05rem' }}>
             FAQ
           </Link>
         </div>

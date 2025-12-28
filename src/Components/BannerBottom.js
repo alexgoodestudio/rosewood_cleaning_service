@@ -51,123 +51,123 @@ function BannerBottom() {
           className="d-inline-flex text-sm align-items-center"
           style={{ whiteSpace: 'nowrap', willChange: 'transform' }}
         >
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-<span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+<span className="gs tracking-wider font-bold text-teal-950">
             We're looking forward to serving you
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
           Let us handle the cleaning stuff
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, South Carolina
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-           <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+           <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Book your cleaning today
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Located in Columbia, SC
           </span>
-          <span className="gs text-bold text-font-semi950 px-3">•</span>
-          <span className="gs tracking-wider font-semibold text-teal-950">
+          <span className="gs text-bold text-red-300 px-3">•</span>
+          <span className="gs tracking-wider font-bold text-teal-950">
             Same-day service available
           </span>
         </div>

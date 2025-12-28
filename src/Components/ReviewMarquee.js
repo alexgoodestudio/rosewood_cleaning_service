@@ -184,7 +184,7 @@ function ReviewMarquee() {
           letterSpacing: '-0.015em'
         }}
       >
-        Loved By Our Customers ❤️
+        Loved By Our Customers 🧹
       </h2>
 
       {/* Row 1 */}
