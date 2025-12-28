@@ -96,13 +96,17 @@ function Interested() {
             {/* Large Statement Heading */}
             <h2
               ref={headingRef}
-              className="text-4xl interested-heading gs mb-3 font-bold"
+              className="text-4xl interested-heading cabinet-bold mb-3 font-bold"
               style={{
                 letterSpacing: '-0.015em',
-                maxWidth: '600px'
+                maxWidth: '600px',
+                textDecoration: 'underline',
+                textDecorationColor: '#cbd5e1',
+                textDecorationThickness: '2px',
+                textUnderlineOffset: '8px'
               }}
             >
-              Reclaim <span className='italic pe-2'>Your</span> Free Time
+              Reclaim <span className='italic'>Your&nbsp;</span>&nbsp;Free Time
             </h2>
 
             {/* Supporting Body Text */}

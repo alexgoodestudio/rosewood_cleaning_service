@@ -61,8 +61,14 @@ function Mission() {
 
               {/* Heading  */}
               <h2
-                className="text-4xl font-black gs text-slate-900 mb-5 mb-lg-6"
-
+                className="text-4xl font-black cabinet-bold text-slate-900 mb-5 mb-lg-6"
+        style={{
+          textDecoration: 'underline',
+          textDecorationColor: '#cbd5e1',
+          textDecorationThickness: '2px',
+          textUnderlineOffset: '8px',
+          letterSpacing: '-0.015em'
+        }}
               >
                 Supporting Our Communities
               </h2>

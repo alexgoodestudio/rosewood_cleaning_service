@@ -169,8 +169,17 @@ function Services() {
       <div className="container-fluid px-4 px-lg-5">
         <div className="row mb-8">
           <div className="col-lg-8">
-            <h2 className="text-4xl font-black gs text-slate-900 mb-6">
-              Our Services 
+            <h2
+              className="text-5xl font-black cabinet-bold text-slate-900 mb-6"
+              style={{
+                textDecoration: 'underline',
+                textDecorationColor: '#cbd5e1',
+                textDecorationThickness: '2px',
+                textUnderlineOffset: '8px',
+                letterSpacing: '-0.015em'
+              }}
+            >
+              Our Services
             </h2>
             <p className="text-lg text-slate-600">
               Explore our range of cleaning services designed to keep your home healthy and spotless.

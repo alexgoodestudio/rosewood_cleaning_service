@@ -45,7 +45,7 @@ function Banner() {
   }, []);
 
   return (
-    <section className="gs bg-banner-dark" style={{ paddingTop: '0.25rem', paddingBottom: '0.25rem' }}>
+    <section className="gs bg-banner-dark " style={{ paddingTop: '0.25rem', paddingBottom: '0.25rem' }}>
       <div className="container mx-auto px-4">
         <div className="relative flex items-center justify-center">
           
@@ -69,7 +69,7 @@ function Banner() {
 
           {/* Center Text - now truly centered */}
           <div className="text-center ">
-            <p ref={bannerRef} className="font-semibold banner-text" style={{ fontSize: '0.8125rem', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4, paddingTop: '0.3rem', paddingBottom: '0.15rem' }}>
+            <p ref={bannerRef} className="font-semibold banner-text" style={{ fontSize: '0.8725rem', letterSpacing: '0.05em', margin: 0, lineHeight: 1.4, paddingTop: '0.3rem', paddingBottom: '0.15rem' }}>
               
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">Let </span>
@@ -84,14 +84,14 @@ function Banner() {
                 <span className="word inline-block">the </span>
               </span>
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block font-bold">cleaning </span>
+                <span className="word inline-block font-bold ">cleaning </span>
               </span>
               <span className="overflow-hidden inline-block">
                 <span className="word inline-block">stuff</span>
               </span>
 
               <span className="overflow-hidden inline-block">
-                <span className="word inline-block px-1">💧</span>
+                <span className="word inline-block px-1">☀️</span>
               </span>
 
               <span className="overflow-hidden inline-block">

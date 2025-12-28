@@ -7,6 +7,9 @@ function Footer() {
   const currentYear = new Date().getFullYear();
   const emailRef = useRef(null);
   const [emailChars, setEmailChars] = useState([]);
+  const [footerEmail, setFooterEmail] = useState('');
+  const [footerEmailError, setFooterEmailError] = useState('');
+  const [footerEmailSuccess, setFooterEmailSuccess] = useState(false);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // Split email into characters on mount
@@ -56,6 +59,43 @@ function Footer() {
     });
   };
 
+  const handleFooterEmailSubmit = async (e) => {
+    e.preventDefault();
+    setFooterEmailError('');
+    setFooterEmailSuccess(false);
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!footerEmail || !emailRegex.test(footerEmail)) {
+      setFooterEmailError('Please enter a valid email address');
+      return;
+    }
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/hello@rosewoodcleaning.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          email: footerEmail,
+          _subject: 'New Email Signup from Footer',
+          _template: 'table'
+        })
+      });
+
+      if (response.ok) {
+        setFooterEmailSuccess(true);
+        setFooterEmail('');
+      } else {
+        setFooterEmailError('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setFooterEmailError('Something went wrong. Please try again.');
+    }
+  };
+
   return (
     <footer className="bg-teal-950 pt-5 pb-3">
       <div className="container-fluid px-5 pt-3 py-md-6">
@@ -69,8 +109,53 @@ function Footer() {
                 paddingBottom: '0.5rem'
               }}>Rosewood Cleaning</h3>
             </Link>
-            <p className="text-lg tracking-wide text-slate-300 mb-4 pe-lg-5 ">Reclaim your free time. Let us handle the cleaning stuff.</p>
-            <p className="text-sm text-slate-400">Columbia, South Carolina</p>
+            <p className="text-xl tracking-wide text-slate-300 mb-4 pe-lg-5 cabinet">Reclaim your free time. Let us handle the cleaning stuff.</p>
+            <p className="text-md text-slate-400 mb-4">Columbia, South Carolina</p>
+
+            {/* Email Signup Form */}
+            <form onSubmit={handleFooterEmailSubmit} className="d-flex flex-column gap-3" style={{ maxWidth: '320px' }}>
+              <div>
+                <input
+                  type="email"
+                  value={footerEmail}
+                  onChange={(e) => setFooterEmail(e.target.value)}
+                  placeholder="Your email"
+                  className="w-100 bg-transparent text-slate-300 border border-slate-600 font-mono text-sm"
+                  style={{
+                    padding: '0.5rem 0.75rem',
+                    borderRadius: '0.25rem',
+                    outline: 'none',
+                    transition: 'border-color 0.2s'
+                  }}
+                  onFocus={(e) => e.target.style.borderColor = '#14b8a6'}
+                  onBlur={(e) => e.target.style.borderColor = '#475569'}
+                />
+                {footerEmailError && (
+                  <p className="text-xs text-red-400 mt-2 mb-0">{footerEmailError}</p>
+                )}
+                {footerEmailSuccess && (
+                  <p className="text-xs text-teal-400 mt-2 mb-0">Thanks for signing up!</p>
+                )}
+              </div>
+              <button
+                type="submit"
+                className="btn-footer-email text-sm font-mono"
+                style={{
+                  padding: '0.5rem 1rem',
+                  backgroundColor: '#14b8a6',
+                  color: '#0f172a',
+                  border: 'none',
+                  borderRadius: '0.25rem',
+                  cursor: 'pointer',
+                  fontWeight: '600',
+                  transition: 'background-color 0.2s'
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#0d9488'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#14b8a6'}
+              >
+                Submit
+              </button>
+            </form>
           </div>
           <div className="col-6 col-md-3 col-lg-2">
             <h4 className="text-md text-slate-400 mb-4 font-mono">Services</h4>

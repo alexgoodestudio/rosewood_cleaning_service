@@ -90,20 +90,49 @@
   }
 }
 
-/* Banner background - Pastel teal for all screens */
+/* Banner background - Pastel teal for mobile, pastel pink for desktop */
 .bg-banner-dark {
-  background-color: #d4f1f4 !important; /* Soft pastel teal for all screens */
+  background-color: #d4f1f4 !important; /* Soft pastel teal for mobile */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
-/* Banner text color - consistent across all screens */
-.banner-text {
-  color: #1e293b; /* Slate-800 text on pastel background */
+/* Desktop: Warm electric coral background for banner */
+@media (min-width: 992px) {
+  .bg-banner-dark {
+    background-color: #ff6b6b !important; /* Warm electric coral for desktop */
+  }
 }
 
-/* Interested component background - pastel teal for all screens */
+/* Banner text color - black for mobile, white for desktop */
+.banner-text {
+  color: #0f172a; /* Rich black for mobile on pastel teal */
+}
+
+/* Desktop: White text for electric blue background */
+@media (min-width: 992px) {
+  .banner-text {
+    color: #ffffff; /* Pure white for maximum contrast on electric blue */
+  }
+}
+
+/* Interested component background - pastel teal with noise texture */
 .bg-interested {
   background-color: #d4f1f4 !important; /* Pastel teal for all screens, matching mobile banner */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+  background-size: 4px 4px;
+  background-position: 0 0, 25px 25px;
+}
+
+/* BannerBottom component background - white for mobile, slate-50 for desktop */
+.banner-bottom-bg {
+  background-color: #ffffff; /* White for mobile */
+}
+
+@media (min-width: 992px) {
+  .banner-bottom-bg {
+    background-color: #f8fafc !important; /* Slate-50 for desktop */
+  }
 }
 
 /* Interested component text colors - dark for all screens */
@@ -346,7 +375,7 @@ a.btn-cta-teal:hover svg,
   a.btn-cta-teal:focus,
   .btn-cta-teal {
     padding: 0.75rem 1.5rem;
-    background-color: #0d6efd !important; /* Bootstrap primary blue */
+    background-color: #2947d4 !important; /* Custom deep blue */
     color: #ffffff !important; /* White text for desktop */
     -webkit-text-fill-color: #ffffff !important;
   }
@@ -448,7 +477,7 @@ a.btn-cta-teal-reversed:hover svg,
   transform: translateX(4px);
 }
 
-/* Desktop: Use normal btn-cta-teal styling */
+/* Desktop: Use custom blue styling */
 @media (min-width: 992px) {
   a.btn-cta-teal-reversed,
   a.btn-cta-teal-reversed:link,
@@ -457,7 +486,7 @@ a.btn-cta-teal-reversed:hover svg,
   a.btn-cta-teal-reversed:focus,
   .btn-cta-teal-reversed {
     padding: 0.75rem 1.5rem;
-    background-color: #0d6efd !important; /* Bootstrap primary blue */
+    background-color: #2947d4 !important; /* Custom deep blue */
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
   }
@@ -582,7 +611,8 @@ a.btn-service:hover svg,
 /* Mobile: Split layout - top half image, bottom half text */
 @media (max-width: 767px) {
   .hero-wrapper {
-    height: 80vh;
+    height: 100dvh; /* Use dvh (dynamic viewport height) to account for mobile browser UI */
+    min-height: 600px;
   }
 }
 

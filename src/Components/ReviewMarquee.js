@@ -174,7 +174,18 @@ function ReviewMarquee() {
 
   return (
     <div className="space-y-12 bg-white pb-3 py-lg-5 pt-5">
-      <h2 className="text-4xl font-black gs mb-3 mb-md-5 container"> Loved By Our Customers ❤️</h2>
+      <h2
+        className="text-4xl font-black cabinet-bold mb-3 mb-md-5 container"
+        style={{
+          textDecoration: 'underline',
+          textDecorationColor: '#cbd5e1',
+          textDecorationThickness: '2px',
+          textUnderlineOffset: '8px',
+          letterSpacing: '-0.015em'
+        }}
+      >
+        Loved By Our Customers ❤️
+      </h2>
 
       {/* Row 1 */}
       <div className="overflow-hidden">

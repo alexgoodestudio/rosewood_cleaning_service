@@ -9,7 +9,7 @@ function Nav() {
   return (
     <nav className="navbar  text-slate-800 flex flex-col" style={{ padding: 0 }}>
       {/* Top bar with brand name - desktop only */}
-      <div className="bg-slate-50 d-none d-lg-block" style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem', width: '100%' }}>
+      <div className="bg-white d-none d-lg-block" style={{ paddingTop: '1rem', paddingBottom: '1rem', paddingLeft: '1rem', paddingRight: '1rem', width: '100%' }}>
         <div className="d-flex justify-content-center align-items-center" style={{ position: 'relative' }}>
           {/* Home & Contact links - far left on desktop */}
           <div className="d-none d-lg-flex align-items-center gap-4" style={{ position: 'absolute', left: '2rem' }}>
