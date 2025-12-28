@@ -90,29 +90,15 @@
   }
 }
 
-/* Banner background - Pastel teal for mobile, pastel pink for desktop */
+/* Banner background - Teal-900 (one shade lighter than teal-950) for all screens */
 .bg-banner-dark {
-  background-color: #d4f1f4 !important; /* Soft pastel teal for mobile */
+  background-color: #134e4a !important; /* Teal-900 - one shade lighter */
   overflow-x: hidden !important; /* Prevent banner from stretching on mobile */
 }
 
-/* Desktop: Warm electric coral background for banner */
-@media (min-width: 992px) {
-  .bg-banner-dark {
-    background-color: #ff6b6b !important; /* Warm electric coral for desktop */
-  }
-}
-
-/* Banner text color - black for mobile, white for desktop */
+/* Banner text color - white for all screens */
 .banner-text {
-  color: #0f172a; /* Rich black for mobile on pastel teal */
-}
-
-/* Desktop: White text for electric blue background */
-@media (min-width: 992px) {
-  .banner-text {
-    color: #ffffff; /* Pure white for maximum contrast on electric blue */
-  }
+  color: #ffffff; /* Pure white for maximum contrast on teal-950 */
 }
 
 /* Interested component background - pastel teal with noise texture */
